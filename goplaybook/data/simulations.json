@@ -4951,7 +4951,7 @@
           {
             "label": "Take 2 from the 2-pile (leaves 1, 0, 3)",
             "next": "n27",
-            "why": "Leaves piles with nim-sum 2; a perfect opponent can still restore zero."
+            "why": "Leaves piles with nim-sum 1; a perfect opponent can still restore zero."
           }
         ]
       },
@@ -5365,7 +5365,10 @@
       }
     },
     "mode": "basic",
-    "evidence": "estimate: the chances are the author's, not measured"
+    "evidence": "estimate: the chances are the author's, not measured",
+    "sources": [
+      "Bouton (1901): with piles 1, 2, 3 the nim-sum is zero, so the player to move loses against perfect play. Leaving a non-zero nim-sum lets the opponent restore zero."
+    ]
   },
   {
     "id": "war-of-attrition",
@@ -6015,7 +6018,10 @@
       }
     },
     "mode": "basic",
-    "evidence": "estimate: the chances are the author's, not measured"
+    "evidence": "estimate: the chances are the author's, not measured",
+    "sources": [
+      "Lanchester (1916), Aircraft in Warfare: under aimed fire, fighting strength grows with the square of the numbers (the square law)."
+    ]
   },
   {
     "id": "search-game-hide-and-seek",
@@ -8537,7 +8543,10 @@
       }
     },
     "mode": "basic",
-    "evidence": "estimate: the chances are the author's, not measured"
+    "evidence": "estimate: the chances are the author's, not measured",
+    "sources": [
+      "Bertrand (1883): with identical products and unlimited capacity, price competition drives prices toward cost. Differentiation or limited capacity softens this, as the sim notes."
+    ]
   },
   {
     "id": "stackelberg-leadership",
@@ -8735,7 +8744,10 @@
       }
     },
     "mode": "basic",
-    "evidence": "estimate: the chances are the author's, not measured"
+    "evidence": "estimate: the chances are the author's, not measured",
+    "sources": [
+      "von Stackelberg (1934): the leader commits to a larger output, and the follower takes a smaller share. The sim follows that pattern qualitatively."
+    ]
   },
   {
     "id": "coalition-formation",
@@ -10890,7 +10902,10 @@
       }
     },
     "mode": "basic",
-    "evidence": "estimate: the chances are the author's, not measured"
+    "evidence": "estimate: the chances are the author's, not measured",
+    "sources": [
+      "Gilbert and Mosteller (1966), Journal of the American Statistical Association: reject about the first n/e candidates, then take the first better one; this succeeds about 1/e (37%) of the time."
+    ]
   },
   {
     "id": "explore-exploit-bandit",
@@ -12014,7 +12029,10 @@
       }
     },
     "mode": "basic",
-    "evidence": "estimate: the chances are the author's, not measured"
+    "evidence": "estimate: the chances are the author's, not measured",
+    "sources": [
+      "Tic-tac-toe is a solved game: with perfect play from both sides the result is a draw."
+    ]
   },
   {
     "id": "team-production-shirking",
@@ -16249,7 +16267,10 @@
       }
     },
     "mode": "basic",
-    "evidence": "estimate: the chances are the author's, not measured"
+    "evidence": "estimate: the chances are the author's, not measured",
+    "sources": [
+      "Cournot (1838): with linear demand and two equal firms, each produces a third of the gap between demand and cost. The price war outcome here is a deviation from that equilibrium."
+    ]
   },
   {
     "id": "sealed-bid-auctions",
