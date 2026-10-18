@@ -79,7 +79,8 @@
         "outcome": "failure",
         "text": "You walk away with no offer."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "vs-tit-for-tat",
@@ -230,7 +231,8 @@
         "outcome": "draw",
         "text": "You scored 7 points (the bot scored 2). Win at 10 or more, draw at 7 to 9, lose at 6 or fewer."
       }
-    }
+    },
+    "evidence": "illustrative: no chances, the outcomes follow from the choices"
   },
   {
     "id": "commons-two-seasons",
@@ -421,7 +423,8 @@
         "outcome": "victory",
         "text": "The stock survives both seasons."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "regime-survival",
@@ -906,7 +909,8 @@
         "outcome": "victory",
         "text": "The regime holds, though it remains fragile."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "nonviolent-campaign",
@@ -1486,7 +1490,8 @@
         "outcome": "failure",
         "text": "Turnout fades and the demands are dropped."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "cult-exit-decision",
@@ -2066,7 +2071,8 @@
         "outcome": "failure",
         "text": "Isolation deepens and the group's hold tightens."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "sealed-bid-auction",
@@ -2175,7 +2181,8 @@
         "outcome": "failure",
         "text": "You win at 70k, paying more than the item is worth to you."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "stag-hunt",
@@ -2428,7 +2435,8 @@
         "text": "Partial success: safe but small gains. Final score 3. Path: Ask your partner to commit first -> Partner hesitates -> Propose a written plan with shares."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "chicken",
@@ -2680,7 +2688,8 @@
         "text": "Your credibility and the peace hold. Final score 4. Path: Offer a face-saving compromise -> Confirm the compromise in writing."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "battle-of-the-sexes",
@@ -2932,7 +2941,8 @@
         "text": "You miss each other entirely. Final score -1. Path: Wait and see what they propose -> Nobody proposes -> Adjust if they seem unhappy."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "trust-game",
@@ -3185,7 +3195,8 @@
         "text": "The trust was betrayed and the stake lost. Final score 1. Path: Send everything -> Keeps everything -> Ask for a written agreement."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "centipede-game",
@@ -3436,7 +3447,8 @@
         "text": "You were exploited and lost the pot. Final score 1. Path: Pass and signal that you will reciprocate -> Takes it -> Split the pot."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "entry-deterrence",
@@ -3688,7 +3700,8 @@
         "text": "Entry happens; a moderate outcome follows. Final score 3. Path: Accept entry and price competitively -> Offer a partnership."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "signaling-game",
@@ -4055,7 +4068,8 @@
         "text": "The offer is lost through exaggeration. Final score 0. Path: Offer a paid trial project -> Counter with an alternative offer -> Withdraw."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "principal-agent",
@@ -4306,7 +4320,8 @@
         "text": "Incentives backfire and trust collapses. Final score 1. Path: Bonus plus regular reviews -> Ignore it."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "rock-paper-scissors",
@@ -4653,7 +4668,8 @@
         "text": "The game is level. Final score 2. Path: Repeat your last winning throw -> Does not adapt -> Switch to a counter-plan."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "liars-dice",
@@ -4904,7 +4920,8 @@
         "text": "A bluff was called and you lost. Final score 0. Path: Challenge the previous bid -> The bid was true -> Track their habits and adjust."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "nim",
@@ -5347,7 +5364,8 @@
         "text": "The opponent found the winning line. Final score -3. Path: Take 2 from the 2-pile (leaves 1, 0, 3) -> Opponent restores zero -> Grab as many as possible."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "war-of-attrition",
@@ -5545,7 +5563,8 @@
         "text": "You outlasted nothing and lost more than the prize. Final score -2. Path: Quit immediately -> Hold on longer."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "colonel-blotto",
@@ -5797,7 +5816,8 @@
         "text": "The rival concentrated where you were weakest. Final score 0. Path: Concentrate on one front, leave two -> Keep the reserve untouched."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "lanchester-combat",
@@ -5994,7 +6014,8 @@
         "text": "The larger force overwhelmed you. Final score 0. Path: Fight in close, unaimed combat -> Press the attack."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "search-game-hide-and-seek",
@@ -6299,7 +6320,8 @@
         "text": "You gave up or searched in the wrong places. Final score -2. Path: A place you have not searched -> Not there -> Stop searching."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "crisis-negotiation",
@@ -6551,7 +6573,8 @@
         "text": "The crisis is paused. Final score 2. Path: Offer a concession that rewards no harm -> Verify the facts before acting."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "arms-race-security-dilemma",
@@ -6802,7 +6825,8 @@
         "text": "A tense balance holds. Final score 2. Path: Build up, but publicise your intent -> Reciprocate restraint."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "all-pay-contest",
@@ -7054,7 +7078,8 @@
         "text": "The contest is split. Final score 2. Path: Do not enter -> Find a cheaper route to the prize."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "hiring-screening",
@@ -7306,7 +7331,8 @@
         "text": "You hire adequately. Final score 3. Path: Reference checks -> Offer a fair salary with a development plan."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "firing-and-performance",
@@ -7502,7 +7528,8 @@
         "text": "The problem festers or the process creates legal risk. Final score -2. Path: Ignore it for now -> Drop the matter."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "promotion-tournament",
@@ -7752,7 +7779,8 @@
         "text": "The contest damages you or your relationships. Final score -1. Path: Sabotage the rival -> Accept the outcome and plan the next step."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "defending-a-position",
@@ -8004,7 +8032,8 @@
         "text": "The rival takes your position. Final score 0. Path: Cut price in the challenged segment -> Withdraw from the segment."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "lemons-market",
@@ -8255,7 +8284,8 @@
         "text": "You bought, with limited protection. Final score 2. Path: Walk away -> Ask for independent certification."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "bertrand-price-war",
@@ -8506,7 +8536,8 @@
         "text": "A price war destroys margin. Final score -3. Path: Undercut further -> Cut again."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "stackelberg-leadership",
@@ -8703,7 +8734,8 @@
         "text": "A balanced share with some concessions. Final score 2. Path: Commit to a medium level, keeping flexibility -> Propose a joint plan."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "coalition-formation",
@@ -8953,7 +8985,8 @@
         "text": "No government forms, or it collapses quickly. Final score 0. Path: Start with the most extreme partner -> Keep a fallback deal in reserve."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "median-voter-spatial-competition",
@@ -9203,7 +9236,8 @@
         "text": "The rival takes the centre and you lose the vote. Final score 1. Path: Target a niche nobody else serves -> Attack the rival's record."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "elite-defection-coordination",
@@ -9399,7 +9433,8 @@
         "text": "You acted alone and were exposed. Final score -2. Path: Act now, before others are committed -> Stay quiet."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "whistleblowing",
@@ -9650,7 +9685,8 @@
         "text": "You are exposed and the wrongdoing continues. Final score -3. Path: Post publicly without records -> Act on your own without advice."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "vaccination-free-riding",
@@ -9901,7 +9937,8 @@
         "text": "Uptake drops and the risk rises. Final score 1. Path: Check reliable information first -> Stay silent."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "cake-cutting-fair-division",
@@ -10097,7 +10134,8 @@
         "text": "The split is unfair and resented. Final score -1. Path: Ask your partner to cut -> Let the stronger person decide."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "bank-run",
@@ -10402,7 +10440,8 @@
         "text": "The run takes the bank down. Final score 0. Path: Leave your money in place -> Others run -> Wait for official information."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "herding-cascades",
@@ -10653,7 +10692,8 @@
         "text": "The cascade carried everyone into an error. Final score 0. Path: Seek independent evidence -> Copy the next person too."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "secretary-problem",
@@ -10849,7 +10889,8 @@
         "text": "You waited too long or committed too early. Final score -2. Path: Reject everyone until the perfect one -> Hire the next candidate regardless."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "explore-exploit-bandit",
@@ -11101,7 +11142,8 @@
         "text": "You found and kept the best option. Final score 4. Path: Try it once, then decide -> Not good -> Try a third option."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "algorithmic-collusion",
@@ -11298,7 +11340,8 @@
         "text": "Prices are acceptable but unexamined. Final score 2. Path: Let the algorithm set prices freely -> Document and report."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "ess-hawk-dove-population",
@@ -11603,7 +11646,8 @@
         "text": "Payoffs are average. Final score 2. Path: Conditional: fight only if the opponent escalates -> A hawk -> Switch to dove."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "tic-tac-toe-minimax",
@@ -11969,7 +12013,8 @@
         "text": "A missed threat or fork lost the game. Final score -1. Path: Take an edge -> Play a random square."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "team-production-shirking",
@@ -12220,7 +12265,8 @@
         "text": "The project was delivered unevenly. Final score 2. Path: Rotate a reviewer role -> Reward visible contributions."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "ai-opponent-exploitation",
@@ -12470,7 +12516,8 @@
         "text": "The bot adapted and out-thought your pattern. Final score 0. Path: Copy its last move -> Changes -> Give up."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "ai-self-play-learning",
@@ -12721,7 +12768,8 @@
         "text": "Unmonitored cycling or collusion causes harm. Final score 0. Path: Freeze the strategy early -> Update the opponent model regularly."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "dating-marriage-market-search",
@@ -12971,7 +13019,8 @@
         "text": "A mismatch or lost opportunity. Final score 0. Path: Keep searching for a better match -> Set a review date."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "poker-bluffing",
@@ -13222,7 +13271,8 @@
         "text": "Predictable bluffing lost chips. Final score 0. Path: Check and see what happens -> Stop playing after a loss."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "chess-minimax",
@@ -13473,7 +13523,8 @@
         "text": "A tactical miss lost the game. Final score 1. Path: Make a quiet move that improves your position -> Offer a draw when equal."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "keynes-beauty-contest",
@@ -13724,7 +13775,8 @@
         "text": "You assumed a rationality the crowd did not have. Final score -1. Path: Guess 50 -> Guess lower again."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "dollar-auction-escalation",
@@ -13921,7 +13973,8 @@
         "text": "Sunk costs drove you past the prize's value. Final score -1. Path: Bid well above the prize -> Propose splitting the prize."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "prisoners-dilemma",
@@ -14227,7 +14280,8 @@
         "text": "Cooperation was secured and held. Final score 4. Path: Propose a binding agreement first -> Refuses -> Enforce the agreement."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-prisoners-dilemma",
@@ -14425,7 +14479,8 @@
         "text": "Defection ended the gains from cooperation. Final score 1. Path: Propose a repeated commitment -> Defect for the rest of the game."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "zero-sum-games",
@@ -14677,7 +14732,8 @@
         "text": "Your predictable pattern lost. Final score 0. Path: Switch after each win -> Does not adapt -> Play the same as last time."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "inspection-game",
@@ -14928,7 +14984,8 @@
         "text": "Violation pays and compliance collapses. Final score -1. Path: Never inspect -> Complies -> Keep the schedule secret and random."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "public-goods",
@@ -15180,7 +15237,8 @@
         "text": "Free-riding left the project unfunded. Final score 1. Path: Contribute nothing -> Thank contributors publicly."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "tragedy-of-the-commons",
@@ -15431,7 +15489,8 @@
         "text": "The pasture is stable but reduced. Final score 2. Path: Propose a limit to the community -> Refuses -> Ban all grazing."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "ultimatum-game",
@@ -15740,7 +15799,8 @@
     "sources": [
       "Oosterbeek, Sloof and van de Kuilen, meta-analysis of 37 papers and 75 results (2003 working paper): offers average 40.4% of the pie (range 26-58%); rejection averages 16.2% (range 0-40%).",
       "Offers of 20% and 10% are below the range in that meta-analysis. Both use 40% rejection, the highest average rejection any study reported. This is an extrapolation."
-    ]
+    ],
+    "evidence": "partly sourced: see sources"
   },
   {
     "id": "rubinstein-bargaining",
@@ -15991,7 +16051,8 @@
         "text": "The deal closed with some delay. Final score 3. Path: Make an offer and show your patience -> Walk away with your outside option."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "cournot-competition",
@@ -16187,7 +16248,8 @@
         "text": "The price war destroyed your margin. Final score 1. Path: Produce a low quantity -> Signal a stable plan publicly."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "sealed-bid-auctions",
@@ -16383,7 +16445,8 @@
         "text": "You overpaid through the winner's curse. Final score -3. Path: Bid well above value -> Bid more to be safe."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "agenda-setting-voting",
@@ -16579,7 +16642,8 @@
         "text": "The agenda let a worse option win. Final score -1. Path: Vote sincerely on each in turn -> Abstain."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "authoritarian-survival",
@@ -16829,7 +16893,8 @@
         "text": "The analysis missed the key signal, or escalation hurt the movement. Final score -3. Path: Official statements -> Violence."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "mass-uprising-threshold",
@@ -17026,7 +17091,8 @@
         "text": "The movement stayed steady. Final score 3. Path: Share verified information about turnout -> Plan safe participation."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "nonviolent-resistance",
@@ -17222,7 +17288,8 @@
         "text": "The campaign held its ground. Final score 3. Path: Disciplined nonviolent action -> Keep steady pressure."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "asymmetric-insurgency",
@@ -17473,7 +17540,8 @@
         "text": "The contest stayed unresolved. Final score 2. Path: Pursue a political settlement -> Shift to community-based policing."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "climate-treaty-public-goods",
@@ -17670,7 +17738,8 @@
         "text": "Without partners or monitoring the treaty failed. Final score 0. Path: Refuse without financing -> Link the agreement to trade commitments."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "standards-war-network-effects",
@@ -17921,7 +17990,8 @@
         "text": "The rival's standard took the market. Final score 0. Path: Make the standard open -> Stalls -> Lock users in."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "insurance-moral-hazard",
@@ -18118,7 +18188,8 @@
         "text": "The policy was adequate. Final score 3. Path: Excess tied to verified precautions -> Reward verified precautions."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "household-chores-bills",
@@ -18314,7 +18385,8 @@
         "text": "Resentment damaged the household. Final score 0. Path: Do only the chores you like -> Track contributions visibly."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "alliance-entrapment",
@@ -18565,7 +18637,8 @@
         "text": "You were drawn into a fight you did not choose. Final score 0. Path: Vague support -> Hold back and wait."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "veto-players-reform",
@@ -18761,7 +18834,8 @@
         "text": "The reform passed in weaker form. Final score 3. Path: A small first step to build support -> Add compensation for losers."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "lobbying-influence",
@@ -19011,7 +19085,8 @@
         "text": "Your credibility collapsed under scrutiny. Final score -1. Path: Hidden funding for a front group -> Engage repeatedly, not just at the final vote."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "cults-coercive-groups",
@@ -19207,7 +19282,8 @@
         "text": "Isolation deepened. Final score 1. Path: Confront the group publicly -> Consult a specialist in coercive groups."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "plea-bargaining",
@@ -19458,7 +19534,8 @@
         "text": "The outcome was acceptable. Final score 2. Path: Negotiate a better offer -> Refuses -> Appeal if the advice was wrong."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "travelers-dilemma",
@@ -19709,7 +19786,8 @@
         "text": "Undercutting left you with little. Final score 1. Path: Claim the minimum to force the lowest result -> Claim high to signal honesty."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "hold-up",
@@ -19960,7 +20038,8 @@
         "text": "Your investment was held hostage to a higher price. Final score -1. Path: Refuse to invest -> Threaten to leave."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "reputation-reviews",
@@ -20211,7 +20290,8 @@
         "text": "Shortcuts and concealment damaged your reputation. Final score -1. Path: Ask for good reviews by any means -> Thank the reviewer and improve."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "matching-markets",
@@ -20408,7 +20488,8 @@
         "text": "You were left without a good match. Final score 1. Path: Include only the safest option -> Ask for a clear decision deadline."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "intel-warning-problem",
@@ -20659,7 +20740,8 @@
         "text": "A miss or a dismissed warning left the decision-makers unready. Final score 0. Path: Downgrade the threat -> Set out what would change your assessment."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "analysis-bayesian-updating",
@@ -20910,7 +20992,8 @@
         "text": "You overreacted or double-counted and were wrong. Final score 0. Path: Ignore it until you have more -> Discard both."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "deception-cheap-talk",
@@ -21161,7 +21244,8 @@
         "text": "You trusted a cheap assurance and were deceived. Final score 0. Path: Reject them outright -> Adopt a wait-and-see posture."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "double-agent-counterintelligence",
@@ -21412,7 +21496,8 @@
         "text": "Blanket suspicion or an unsupported accusation caused the harm. Final score -1. Path: Heavy-handed investigation of everyone -> Note it and watch."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "disclosure-game",
@@ -21663,7 +21748,8 @@
         "text": "Silence or exposure of sources damaged your position. Final score 0. Path: Disclose a summary only -> Disclose nothing further."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "information-sharing-alliance",
@@ -21914,7 +22000,8 @@
         "text": "Silos or leaks ended the exchange. Final score 0. Path: Share everything immediately without handling rules -> Track contributions visibly."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "intel-analysis-methods",
@@ -22111,7 +22198,8 @@
         "text": "The judgement rested on confirmation and was not challenged. Final score 1. Path: Keep the first explanation and collect confirming evidence -> Assign a team member to argue the opposite."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "pandemic-quarantine-game",
@@ -22362,7 +22450,8 @@
         "text": "Restrictions eroded and the outbreak returned. Final score -2. Path: Do nothing -> Keep restrictions without review."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "testing-contact-tracing",
@@ -22613,7 +22702,8 @@
         "text": "The programme was partly effective. Final score 3. Path: Make testing free and easy -> Publish how the programme performed."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "emergency-supply-hoarding",
@@ -22864,7 +22954,8 @@
         "text": "Supplies were tight but managed. Final score 2. Path: Wait and check reliable supply information -> Share surplus with neighbours."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "disaster-preparedness-investment",
@@ -23061,7 +23152,8 @@
         "text": "Underinvestment left everyone exposed. Final score -3. Path: Assume the disaster will not come -> Blame the lack of investment on others."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "nuclear-deterrence-second-strike",
@@ -23312,7 +23404,8 @@
         "text": "A first-strike logic and a race began. Final score 0. Path: Rely on ambiguity as a deterrent -> Offer a limited, checkable step."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "crisis-escalation-ladder",
@@ -23563,7 +23656,8 @@
         "text": "The ladder was climbed and the crisis escalated. Final score 1. Path: Ignore the step -> State your reading of the situation directly."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "siege-and-logistics",
@@ -23814,7 +23908,8 @@
         "text": "The siege stalled and you withdrew. Final score 2. Path: Protect your own supply lines first -> Withdraw to a stronger position."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "surprise-and-reconnaissance",
@@ -24065,7 +24160,8 @@
         "text": "They were ready and the surprise failed. Final score 0. Path: Strike without scouting -> Hold a fallback in case surprise fails."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "vcg-mechanism-design",
@@ -24316,7 +24412,8 @@
         "text": "Misreporting and collusion undermined it. Final score -1. Path: Allocate by claimed need without checks -> Publish the rule and the outcome."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "bayesian-persuasion",
@@ -24567,7 +24664,8 @@
         "text": "The disclosure was accepted with caution. Final score 3. Path: Disclose a summary with stated uncertainty -> Correct any gap you find."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "shapley-value-sharing",
@@ -24764,7 +24862,8 @@
         "text": "A subgroup left and the venture broke up. Final score -1. Path: Give the largest share to the one who asks most -> Agree how disputes about contribution will be settled."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "voting-paradoxes",
@@ -24961,7 +25060,8 @@
         "text": "A manipulated rule destroyed trust in the result. Final score -2. Path: Pick the rule after seeing which option it favours -> Propose a runoff if no option has broad support."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "subgame-perfection-threats",
@@ -25158,7 +25258,8 @@
         "text": "A stable but tense market. Final score 2. Path: Enter and prepare to answer any price cut -> Offer to cooperate on pricing."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "folk-theorem-cooperation",
@@ -25355,7 +25456,8 @@
         "text": "The relationship was mixed. Final score 2. Path: Cooperate with no stated punishment -> Agree a longer relationship."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "contract-incentives-incomplete",
@@ -25552,7 +25654,8 @@
         "text": "Unclear control and one-sided gains broke the partnership. Final score 0. Path: Leave control unclear -> Set a fair review point."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "global-games-coordination",
@@ -25803,7 +25906,8 @@
         "text": "The group failed to reach the threshold. Final score -1. Path: Act regardless of the signal -> Ignore the announcement."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "bluffing-with-a-hidden-hand",
@@ -26108,7 +26212,8 @@
         "text": "Hidden strength beat you. Final score -4. Path: Bluff big -> Strong, they call -> Fold to any bet."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "partner-hidden-move",
@@ -26359,7 +26464,8 @@
         "text": "Shirking and punishment ended the partnership. Final score -2. Path: Withhold until they commit -> Stop cooperating for good."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "noisy-intelligence-report",
@@ -26664,7 +26770,8 @@
         "text": "The report was misread, and the response was too late or too early. Final score -6. Path: Dismiss the report -> Accurate -> Hold the assessment back."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "cuban-missile-crisis-simplified",
@@ -26915,7 +27022,8 @@
         "text": "The crisis escalated beyond control. Final score -4. Path: Invade Cuba -> Ignore the offer and tighten the blockade."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "hiring-structured-interview",
@@ -27165,7 +27273,8 @@
         "text": "A biased or rushed process led to a poor hire. Final score -3. Path: Hire from a referral without an interview -> Hire without a review point."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "fair-performance-review",
@@ -27361,7 +27470,8 @@
         "text": "The decision was unfair and hard to defend. Final score 0. Path: Ignore the problem -> Extend the plan with a clearer goal and a new date."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "merger-antitrust-review",
@@ -27612,7 +27722,8 @@
         "text": "The merger was blocked or unwound. Final score -1. Path: Drop the merger -> Publish the remedy and its timetable."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "crisis-negotiation-de-escalation",
@@ -27863,7 +27974,8 @@
         "text": "Hostility hardened and the standoff escalated. Final score 1. Path: Stay silent and wait -> Offer a time-out and a scheduled next meeting."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "berlin-airlift-simplified",
@@ -28114,7 +28226,8 @@
         "text": "The city was lost or a wider clash began. Final score -2. Path: Withdraw from the city -> Publicise the airlift as a symbol of resolve."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "chip-shortage-allocation",
@@ -28365,7 +28478,8 @@
         "text": "Customers left and trust was lost. Final score -2. Path: Cut production and wait for supply to recover -> Stop forecasting until supply is certain."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "open-source-maintainer-dispute",
@@ -28616,7 +28730,8 @@
         "text": "The fork took most of the community and users. Final score 1. Path: Hand over control to a neutral foundation -> Ignore the fork and keep releasing."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "wildfire-evacuation-order",
@@ -28867,7 +28982,8 @@
         "text": "People were caught by the fire. Final score -1. Path: Issue a warning and let people decide -> Ask people to shelter in place."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "union-strike-negotiation",
@@ -29118,7 +29234,8 @@
         "text": "The strike resumed or the settlement failed. Final score 0. Path: Propose arbitration -> Leave the terms vague to save face."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "setting-limits-with-a-teenager",
@@ -29369,7 +29486,8 @@
         "text": "The rule was imposed, hidden or dropped. Final score -2. Path: Do nothing for now -> Drop the rule because it is hard to keep."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "supporting-without-enabling",
@@ -29619,7 +29737,8 @@
         "text": "Payments continued and the problem grew. Final score 0. Path: Refuse all contact until they change -> Step back and look after your own wellbeing."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "sibling-inheritance-dispute",
@@ -29870,7 +29989,8 @@
         "text": "The dispute went to a long fight that cost the family. Final score 0. Path: Refuse to discuss until the others apologise -> Ask a mediator to help the family talk."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "power-dynamics-manager",
@@ -30121,7 +30241,8 @@
         "text": "The pattern continued and the cost to you grew. Final score 0. Path: Stay silent and hope it changes -> Look for a transfer or new role while you keep records."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "ageing-parent-care-split",
@@ -30372,7 +30493,8 @@
         "text": "The care was shared unevenly but managed. Final score 2. Path: Hire paid care without discussing the costs -> Ask the parent what they want."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "young-child-school-refusal",
@@ -30622,7 +30744,8 @@
         "text": "The refusal continued and the child became more distressed. Final score 1. Path: Keep the child home without a plan -> Seek support from the school counsellor or a child specialist."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "tariff-war-decisions",
@@ -30873,7 +30996,8 @@
         "text": "A tariff war hurt both economies. Final score -2. Path: Do nothing and wait -> Pause talks until the other side concedes."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "cyber-defence-priorities",
@@ -31124,7 +31248,8 @@
         "text": "A failure in a critical system was costly and slow to recover from. Final score -2. Path: Postpone investment until a problem appears -> Replace the system without reviewing the plan."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "supply-shortage-planning",
@@ -31375,7 +31500,8 @@
         "text": "Panic orders left stock wasted after the shortage. Final score -2. Path: Wait and place no orders -> Keep the buffer large indefinitely."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "choosing-a-shop-site",
@@ -31626,7 +31752,8 @@
         "text": "The shop lost customers to a rival it had crowded. Final score -1. Path: Wait and see before deciding -> Copy every product the rival sells."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "braess-shortcut-decision",
@@ -31823,7 +31950,8 @@
         "text": "The shortcut jammed and the whole network slowed. Final score -1. Path: Take whichever route the app says is fastest -> Leave the link as it is and see what happens."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "busy-night-bar-choice",
@@ -32020,7 +32148,8 @@
         "text": "The group waited in a crowd and the evening was lost. Final score 1. Path: Say nothing and let the group decide -> Split the group between the two bars."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "tic-tac-toe-random-opponent",
@@ -147540,7 +147669,8 @@
           }
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "tic-tac-toe-perfect-opponent",
@@ -157060,7 +157190,8 @@
           }
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "nim-random-opponent",
@@ -160841,7 +160972,8 @@
           }
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "nim-perfect-reference",
@@ -163126,7 +163258,8 @@
         "outcome": "victory",
         "text": "You took the last stones, so you win."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "connect-four-depth-three",
@@ -427813,7 +427946,8 @@
           }
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-pd-pattern-bot",
@@ -456548,7 +456682,8 @@
         "outcome": "victory",
         "text": "Score 38 over 10 rounds: you learned the bot's rule and used it."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-pd-grim-bot",
@@ -485328,7 +485463,8 @@
           }
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-pd-tit-for-tat-bot",
@@ -514073,7 +514209,8 @@
         "outcome": "failure",
         "text": "Score 14 over 10 rounds: the bot out-scored you."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "flank-attack",
@@ -514233,7 +514370,8 @@
         "outcome": "failure",
         "text": "Your split force is beaten on the right."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "ambush-on-the-road",
@@ -514372,7 +514510,8 @@
         "outcome": "draw",
         "text": "You turn back and keep your convoy, but the road is closed."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "naval-blockade",
@@ -514488,7 +514627,8 @@
         "outcome": "victory",
         "text": "The port falls to the blockade, and the land route is too slow to matter."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "fortress-defence",
@@ -514606,7 +514746,8 @@
         "outcome": "failure",
         "text": "The breach is made before the reserve arrives."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "guerrilla-hit-and-run",
@@ -514724,7 +514865,8 @@
         "outcome": "draw",
         "text": "The talks drag on, and neither side can win outright."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "salary-talk-with-manager",
@@ -514965,7 +515107,8 @@
         "outcome": "failure",
         "text": "Backing down ends your leverage, and the raise stays where it was."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "price-war-with-competitor",
@@ -515173,7 +515316,8 @@
         "outcome": "draw",
         "text": "You sell less, but at a margin you can keep."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "landlord-rent-increase",
@@ -515336,7 +515480,8 @@
         "outcome": "failure",
         "text": "You wait too long, and the best homes are gone."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "ceasefire-talks",
@@ -515511,7 +515656,8 @@
         "outcome": "draw",
         "text": "The peace holds for now, but the cause is still open."
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-prisoners-dilemma-live",
@@ -517276,7 +517422,8 @@
     "sources": [
       "Dal Bó and Fréchette (2019), American Economic Review 109: most chosen strategies are Always Defect, Tit-for-Tat and Grim. The opponent here copies your last move, as Tit-for-Tat does.",
       "The game here has three fixed rounds. Dal Bó and Fréchette vary the chance of continuing, which changes cooperation; that is not modelled here."
-    ]
+    ],
+    "evidence": "partly sourced: see sources"
   },
   {
     "id": "repeated-chicken-live",
@@ -519037,7 +519184,8 @@
           0.7
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-ultimatum-live",
@@ -520801,8 +520949,9 @@
     },
     "sources": [
       "Oosterbeek, Sloof and van de Kuilen (2003 working paper): offers average 40.4% of the pie; rejection averages 16.2%, rising when offers are small.",
-      "Greedy offers here are rejected 40% of the time after a greedy rejection, 30% after a greedy acceptance and 50% otherwise. These are estimates within the meta-analysis range."
-    ]
+      "Here greedy offers (80/20) are rejected 40% of the time, rising to 70% after an earlier greedy rejection; fair offers (50/50) are rejected 10% of the time. These are estimates within the meta-analysis range, with the 20% offer extrapolated as above."
+    ],
+    "evidence": "partly sourced: see sources"
   },
   {
     "id": "repeated-trust-game-live",
@@ -522566,7 +522715,8 @@
     },
     "sources": [
       "Berg, Dickhaut and McCabe (1995), Games and Economic Behavior: about half is sent on average. Secondary summaries disagree on returns, so the return odds here are estimates."
-    ]
+    ],
+    "evidence": "partly sourced: see sources"
   },
   {
     "id": "repeated-public-goods-live",
@@ -524331,7 +524481,8 @@
     "sources": [
       "Fischbacher and Gächter (2009 discussion paper, American Economic Review 2010): 55% conditional cooperators, 23% free riders, 12% triangle contributors, 10% unclassifiable. Contributions decline over rounds.",
       "Odds here are fixed per round, so the decline is not modelled. The conditional-cooperator share sets the reply odds."
-    ]
+    ],
+    "evidence": "partly sourced: see sources"
   },
   {
     "id": "repeated-price-war-live",
@@ -526092,7 +526243,8 @@
           0.7
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-stag-hunt-live",
@@ -527853,7 +528005,8 @@
           0.7
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-war-of-attrition-live",
@@ -529614,7 +529767,8 @@
           0.5
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-arms-race-live",
@@ -531375,7 +531529,8 @@
           0.7
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-deadline-negotiation-live",
@@ -533136,7 +533291,8 @@
           0.2
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-volunteer-dilemma-live",
@@ -534897,7 +535053,8 @@
           0.3
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-tenant-repairs-live",
@@ -536658,7 +536815,8 @@
           0.7
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-campaign-attacks-live",
@@ -538419,7 +538577,8 @@
           0.7
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-team-effort-live",
@@ -540180,7 +540339,8 @@
           0.7
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-blockade-live",
@@ -541941,7 +542101,8 @@
           0.3
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-customer-loyalty-live",
@@ -543702,7 +543863,8 @@
           0.6
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-hawk-dove-live",
@@ -545463,7 +545625,8 @@
           0.5
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-insurance-claims-live",
@@ -547224,7 +547387,8 @@
           0.7
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-tax-compliance-live",
@@ -548985,7 +549149,8 @@
           0.4
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-alliance-commitment-live",
@@ -550746,7 +550911,8 @@
           0.7
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-intelligence-sharing-live",
@@ -552507,7 +552673,8 @@
           0.7
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-cartel-live",
@@ -554268,7 +554435,8 @@
           0.8
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-bidding-war-live",
@@ -556029,7 +556197,8 @@
           0.5
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-diplomatic-standoff-live",
@@ -557790,7 +557959,8 @@
           0.8
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-pandemic-compliance-live",
@@ -559551,7 +559721,8 @@
           0.7
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-coalition-deal-live",
@@ -561312,7 +561483,8 @@
           0.5
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-ai-aggression-live",
@@ -563073,7 +563245,8 @@
           0.6
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   },
   {
     "id": "repeated-fishery-quota-live",
@@ -564834,6 +565007,7 @@
           0.2
         ]
       }
-    }
+    },
+    "evidence": "estimate: the chances are the author's, not measured"
   }
 ]

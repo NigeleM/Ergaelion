@@ -91,6 +91,8 @@ While you play, type `b` at any choice to go back to your previous decision and 
 
 Some simulations are **live**: the other side answers what you just did. Its reply is chosen from its own odds for the choice you made, so the same choice can get a different answer each time. Examples are `salary-talk-with-manager`, `price-war-with-competitor`, `landlord-rent-increase` and `ceasefire-talks`. The repeated live games, such as `repeated-prisoners-dilemma-live`, `repeated-chicken-live`, `repeated-stag-hunt-live` and `repeated-arms-race-live`, play three rounds, and the other side's reply depends on how you have played so far.
 
+Each simulation records its evidence. Most chances are the author's estimates and are labelled as such. A simulation names its sources only where they were checked against the original research, and the notes say where a figure is an extrapolation.
+
 Hints show the chance of victory from each choice and the best strategy. Before a game you are asked whether to show them. Type `h` at any choice to turn them on or off from that choice on, so you can have hints in round 1 and none in round 2. Use `--no-hints` to start with them off:
 
 ```
