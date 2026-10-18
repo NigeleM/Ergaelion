@@ -515745,13 +515745,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.9,
-            0.1
+            0.7,
+            0.3
           ]
         },
         "default": [
-          0.9,
-          0.1
+          0.7,
+          0.3
         ]
       },
       "n10": {
@@ -515781,13 +515781,13 @@
         ],
         "policy": {
           "Defect": [
-            0.6,
-            0.4
+            0.2,
+            0.8
           ]
         },
         "default": [
-          0.6,
-          0.4
+          0.2,
+          0.8
         ]
       },
       "n12": {
@@ -515833,13 +515833,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.9,
-            0.1
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.9,
-          0.1
+          0.4,
+          0.6
         ]
       },
       "n17": {
@@ -515869,13 +515869,13 @@
         ],
         "policy": {
           "Defect": [
-            0.6,
-            0.4
+            0.2,
+            0.8
           ]
         },
         "default": [
-          0.6,
-          0.4
+          0.2,
+          0.8
         ]
       },
       "n4": {
@@ -515895,13 +515895,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.9,
-            0.1
+            0.7,
+            0.3
           ]
         },
         "default": [
-          0.9,
-          0.1
+          0.7,
+          0.3
         ]
       },
       "n20": {
@@ -515947,13 +515947,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.2,
-            0.8
+            0.7,
+            0.3
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.7,
+          0.3
         ]
       },
       "n25": {
@@ -516035,13 +516035,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.2,
-            0.8
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.4,
+          0.6
         ]
       },
       "n32": {
@@ -516097,13 +516097,13 @@
         ],
         "policy": {
           "Defect": [
-            0.6,
-            0.4
+            0.2,
+            0.8
           ]
         },
         "default": [
-          0.6,
-          0.4
+          0.2,
+          0.8
         ]
       },
       "n34": {
@@ -516165,13 +516165,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.9,
-            0.1
+            0.7,
+            0.3
           ]
         },
         "default": [
-          0.9,
-          0.1
+          0.7,
+          0.3
         ]
       },
       "n41": {
@@ -516201,13 +516201,13 @@
         ],
         "policy": {
           "Defect": [
-            0.6,
-            0.4
+            0.2,
+            0.8
           ]
         },
         "default": [
-          0.6,
-          0.4
+          0.2,
+          0.8
         ]
       },
       "n43": {
@@ -516253,13 +516253,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.9,
-            0.1
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.9,
-          0.1
+          0.4,
+          0.6
         ]
       },
       "n48": {
@@ -516289,13 +516289,13 @@
         ],
         "policy": {
           "Defect": [
-            0.6,
-            0.4
+            0.2,
+            0.8
           ]
         },
         "default": [
-          0.6,
-          0.4
+          0.2,
+          0.8
         ]
       },
       "n35": {
@@ -516315,13 +516315,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.9,
-            0.1
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.9,
-          0.1
+          0.4,
+          0.6
         ]
       },
       "n51": {
@@ -516367,13 +516367,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.2,
-            0.8
+            0.7,
+            0.3
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.7,
+          0.3
         ]
       },
       "n56": {
@@ -516455,13 +516455,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.2,
-            0.8
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.4,
+          0.6
         ]
       },
       "n63": {
@@ -516517,13 +516517,13 @@
         ],
         "policy": {
           "Defect": [
-            0.6,
-            0.4
+            0.2,
+            0.8
           ]
         },
         "default": [
-          0.6,
-          0.4
+          0.2,
+          0.8
         ]
       },
       "n2": {
@@ -516543,13 +516543,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.9,
-            0.1
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.9,
-          0.1
+          0.3,
+          0.7
         ]
       },
       "n66": {
@@ -516611,13 +516611,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.9,
-            0.1
+            0.7,
+            0.3
           ]
         },
         "default": [
-          0.9,
-          0.1
+          0.7,
+          0.3
         ]
       },
       "n73": {
@@ -516647,13 +516647,13 @@
         ],
         "policy": {
           "Defect": [
-            0.6,
-            0.4
+            0.2,
+            0.8
           ]
         },
         "default": [
-          0.6,
-          0.4
+          0.2,
+          0.8
         ]
       },
       "n75": {
@@ -516699,13 +516699,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.9,
-            0.1
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.9,
-          0.1
+          0.4,
+          0.6
         ]
       },
       "n80": {
@@ -516735,13 +516735,13 @@
         ],
         "policy": {
           "Defect": [
-            0.6,
-            0.4
+            0.2,
+            0.8
           ]
         },
         "default": [
-          0.6,
-          0.4
+          0.2,
+          0.8
         ]
       },
       "n67": {
@@ -516761,13 +516761,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.2,
-            0.8
+            0.7,
+            0.3
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.7,
+          0.3
         ]
       },
       "n83": {
@@ -516813,13 +516813,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.2,
-            0.8
+            0.7,
+            0.3
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.7,
+          0.3
         ]
       },
       "n88": {
@@ -516901,13 +516901,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.2,
-            0.8
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.4,
+          0.6
         ]
       },
       "n95": {
@@ -517031,13 +517031,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.9,
-            0.1
+            0.7,
+            0.3
           ]
         },
         "default": [
-          0.9,
-          0.1
+          0.7,
+          0.3
         ]
       },
       "n104": {
@@ -517067,13 +517067,13 @@
         ],
         "policy": {
           "Defect": [
-            0.6,
-            0.4
+            0.2,
+            0.8
           ]
         },
         "default": [
-          0.6,
-          0.4
+          0.2,
+          0.8
         ]
       },
       "n106": {
@@ -517119,13 +517119,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.9,
-            0.1
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.9,
-          0.1
+          0.4,
+          0.6
         ]
       },
       "n111": {
@@ -517155,13 +517155,13 @@
         ],
         "policy": {
           "Defect": [
-            0.6,
-            0.4
+            0.2,
+            0.8
           ]
         },
         "default": [
-          0.6,
-          0.4
+          0.2,
+          0.8
         ]
       },
       "n98": {
@@ -517181,13 +517181,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.2,
-            0.8
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.4,
+          0.6
         ]
       },
       "n114": {
@@ -517233,13 +517233,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.2,
-            0.8
+            0.7,
+            0.3
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.7,
+          0.3
         ]
       },
       "n119": {
@@ -517321,13 +517321,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.2,
-            0.8
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.4,
+          0.6
         ]
       },
       "n126": {
@@ -517409,19 +517409,19 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.3,
+          0.7
         ]
       }
     },
     "sources": [
-      "Dal Bó and Fréchette (2019), American Economic Review 109: most chosen strategies are Always Defect, Tit-for-Tat and Grim. The opponent here copies your last move, as Tit-for-Tat does.",
-      "The game here has three fixed rounds. Dal Bó and Fréchette vary the chance of continuing, which changes cooperation; that is not modelled here."
+      "Dal Bó and Fréchette (2007 working paper; American Economic Review 2011). Cooperation is lower when the game is not expected to continue: first-round cooperation in repeated games was 9.8% to 85%, depending on the continuation probability and the payoff (Table 5).",
+      "This game has three fixed rounds, so the finite-game prediction is defection, and the odds are set low. First-round partner cooperation is 30%; after your cooperation it is 70% if they cooperated last round and 40% if not; after your defection it is 20%. Those last values are estimates."
     ],
     "evidence": "partly sourced: see sources"
   },
