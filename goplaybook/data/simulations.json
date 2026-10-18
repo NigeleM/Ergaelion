@@ -521039,13 +521039,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.5,
+            0.5
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.5,
+          0.5
         ]
       },
       "n10": {
@@ -521127,13 +521127,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.3,
+          0.7
         ]
       },
       "n17": {
@@ -521189,13 +521189,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.5,
+            0.5
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.5,
+          0.5
         ]
       },
       "n20": {
@@ -521241,13 +521241,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.5,
+            0.5
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.5,
+          0.5
         ]
       },
       "n25": {
@@ -521329,13 +521329,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.3,
+          0.7
         ]
       },
       "n32": {
@@ -521459,13 +521459,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.5,
+            0.5
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.5,
+          0.5
         ]
       },
       "n41": {
@@ -521547,13 +521547,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.3,
+          0.7
         ]
       },
       "n48": {
@@ -521609,13 +521609,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.3,
+          0.7
         ]
       },
       "n51": {
@@ -521661,13 +521661,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.5,
+            0.5
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.5,
+          0.5
         ]
       },
       "n56": {
@@ -521749,13 +521749,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.3,
+          0.7
         ]
       },
       "n63": {
@@ -521837,13 +521837,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.5,
+            0.5
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.5,
+          0.5
         ]
       },
       "n66": {
@@ -521905,13 +521905,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.5,
+            0.5
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.5,
+          0.5
         ]
       },
       "n73": {
@@ -521993,13 +521993,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.3,
+          0.7
         ]
       },
       "n80": {
@@ -522055,13 +522055,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.5,
+            0.5
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.5,
+          0.5
         ]
       },
       "n83": {
@@ -522107,13 +522107,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.5,
+            0.5
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.5,
+          0.5
         ]
       },
       "n88": {
@@ -522195,13 +522195,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.3,
+          0.7
         ]
       },
       "n95": {
@@ -522325,13 +522325,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.5,
+            0.5
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.5,
+          0.5
         ]
       },
       "n104": {
@@ -522413,13 +522413,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.3,
+          0.7
         ]
       },
       "n111": {
@@ -522475,13 +522475,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.3,
+          0.7
         ]
       },
       "n114": {
@@ -522527,13 +522527,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.5,
+            0.5
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.5,
+          0.5
         ]
       },
       "n119": {
@@ -522615,13 +522615,13 @@
         ],
         "policy": {
           "Send half": [
-            0.7,
-            0.3
+            0.3,
+            0.7
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.3,
+          0.7
         ]
       },
       "n126": {
@@ -522714,7 +522714,8 @@
       }
     },
     "sources": [
-      "Berg, Dickhaut and McCabe (1995), Games and Economic Behavior: about half is sent on average. Secondary summaries disagree on returns, so the return odds here are estimates."
+      "Johnson and Mislin (2011), meta-analysis of 84 trust-game replications (Berg, Dickhaut and McCabe, 1995): senders pass about 51% of their endowment on average; trustees return about 37% of the amount available to return (Table 1).",
+      "The 'Returns more' reply is set to 50% after being trusted, roughly the share of trustees who return the average share. After being betrayed it is 30%. These are approximations of an averaged figure, not measured per trustee."
     ],
     "evidence": "partly sourced: see sources"
   },
