@@ -15650,13 +15650,13 @@
         "prompt": "The responder:",
         "branches": [
           {
-            "p": 0.3,
+            "p": 0.5,
             "label": "Accepts",
             "next": "n20",
             "why": "The responder accepts a low offer."
           },
           {
-            "p": 0.7,
+            "p": 0.5,
             "label": "Rejects",
             "next": "n24",
             "why": "The lowball is rejected."
@@ -15736,7 +15736,11 @@
         "text": "Unfair offers were rejected and nothing was won. Final score -1. Path: Offer 10/90 -> Rejects -> Counter-propose 40/60."
       }
     },
-    "mode": "basic"
+    "mode": "basic",
+    "sources": [
+      "Oosterbeek, Sloof and van de Kuilen (2004), meta-analysis: average offer about 40%, about 16% of offers rejected overall.",
+      "Very low offers (under about 20%) are rejected about half the time in secondary summaries of the experiments; the 10/90 branch uses 50%."
+    ]
   },
   {
     "id": "rubinstein-bargaining",
@@ -517268,7 +517272,11 @@
           0.8
         ]
       }
-    }
+    },
+    "sources": [
+      "Dal Bó and Fréchette (2019), American Economic Review 109: most chosen strategies are Always Defect, Tit-for-Tat and Grim. The opponent here copies your last move, as Tit-for-Tat does.",
+      "The game here has three fixed rounds. Dal Bó and Fréchette vary the chance of continuing, which changes cooperation; that is not modelled here."
+    ]
   },
   {
     "id": "repeated-chicken-live",
@@ -520790,7 +520798,11 @@
           0.4
         ]
       }
-    }
+    },
+    "sources": [
+      "Oosterbeek, Sloof and van de Kuilen (2004), meta-analysis: average offer about 40%, about 16% of offers rejected overall.",
+      "Very low offers (under about 20%) are rejected about half the time in secondary summaries of the experiments; the 10/90 branch uses 50%."
+    ]
   },
   {
     "id": "repeated-trust-game-live",
@@ -522551,7 +522563,10 @@
           0.6
         ]
       }
-    }
+    },
+    "sources": [
+      "Berg, Dickhaut and McCabe (1995), Games and Economic Behavior: about half is sent on average. Secondary summaries disagree on returns, so the return odds here are estimates."
+    ]
   },
   {
     "id": "repeated-public-goods-live",
@@ -524312,7 +524327,11 @@
           0.7
         ]
       }
-    }
+    },
+    "sources": [
+      "Fischbacher, Gächter and Fehr (2001): about half of people are conditional cooperators and about a third are free riders.",
+      "Fischbacher and Gächter (2010), American Economic Review: contributions fall over rounds. Odds here are fixed per round, so the decline is not modelled."
+    ]
   },
   {
     "id": "repeated-price-war-live",
