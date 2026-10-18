@@ -1,0 +1,412 @@
+[
+  {
+    "id": "intel-warning-problem",
+    "name": "The Warning Problem",
+    "category": "Sequential, imperfect information, signal detection",
+    "summary": "An analyst must decide whether evidence is strong enough to issue a warning. Warn too early or too often and decision-makers stop listening; warn too late, or not at all, and the surprise is costly.",
+    "how_it_works": "Each warning is a judgement under uncertainty. False alarms erode credibility and cost resources; misses cost far more when the threat is real. Decision-makers learn how much weight to give warnings from their track record.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes"
+    },
+    "domains": [
+      "military",
+      "politics",
+      "government"
+    ],
+    "examples": [
+      "An analyst deciding whether indicators of an attack justify an alert",
+      "A crisis team judging whether a neighbour's exercises are a warning sign",
+      "A company deciding whether a supplier's trouble requires contingency plans"
+    ],
+    "matrix": {
+      "rows": [
+        "Warn",
+        "Stay quiet"
+      ],
+      "cols": [
+        "Act on warning",
+        "Ignore"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            -2,
+            -2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "State the evidence, your confidence and the alternative explanations together, so decision-makers can weigh the warning.",
+      "Separate the warning threshold from the response threshold: a warning can be issued at lower confidence than the action it recommends.",
+      "Track your false-alarm and miss rates, so the cost of each kind of error is visible and the threshold can be tuned.",
+      "Look for indicators that would be seen if your leading hypothesis were wrong, and treat their absence as evidence too."
+    ],
+    "pitfalls": [
+      "Crying wolf until the warning is ignored.",
+      "Waiting for certainty, which usually arrives too late to act on."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (an analyst warns or stays quiet; the decision-maker acts on the warning or ignores it)"
+  },
+  {
+    "id": "analysis-bayesian-updating",
+    "name": "Updating on Evidence (Bayesian Analysis)",
+    "category": "Single decision-maker against uncertainty, probability updating",
+    "summary": "Analysts hold a belief about what is happening and must revise it as evidence arrives. Bayesian updating says how far each new piece of evidence should move the belief, depending on how likely that evidence is under each explanation.",
+    "how_it_works": "Start with a prior probability for each hypothesis, then multiply by how likely the new evidence is under each one and renormalise. Evidence that is equally likely under all explanations tells you nothing; evidence that is much more likely under one explanation moves belief strongly.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "common-interest",
+      "communication": "no"
+    },
+    "domains": [
+      "military",
+      "politics",
+      "government",
+      "business"
+    ],
+    "examples": [
+      "Deciding whether a suspicious shipment is a routine transfer or a precursor to escalation",
+      "Judging whether a market move reflects news or manipulation",
+      "Weighing conflicting reports from several sources"
+    ],
+    "matrix": {
+      "rows": [
+        "Update on the evidence",
+        "Ignore the evidence"
+      ],
+      "cols": [
+        "Evidence strong",
+        "Evidence weak"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Write down the explanations you are weighing before reading the evidence, and give each a rough prior.",
+      "Ask how likely each new fact is under each explanation, not just how likely it is under your favourite one.",
+      "Avoid updating too strongly on a single vivid report, and check whether sources share a common origin.",
+      "Keep the analysis open: record what would change your mind, so you notice when the evidence has crossed that line."
+    ],
+    "pitfalls": [
+      "Confirmation bias: reading each new fact as support for the first explanation you formed.",
+      "Base-rate neglect: ignoring how common the event is before the evidence arrived."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "deception-cheap-talk",
+    "name": "Deception and Cheap Talk",
+    "category": "Sequential, signalling with possible deception",
+    "summary": "One side can send messages that may or may not be true. Cheap talk costs nothing to send, so it carries little information unless it is backed by something costly or checkable.",
+    "how_it_works": "When lying is free, every message is suspect and receivers discount them. Messages become informative when the sender bears a cost for sending a false one, or when the claim can be independently checked. Receivers therefore look for costly or verifiable signals.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes"
+    },
+    "domains": [
+      "military",
+      "politics",
+      "government"
+    ],
+    "examples": [
+      "Assessing a diplomatic assurance that a military exercise is defensive",
+      "Judging whether a source's account of an event is accurate",
+      "Deciding whether a counterpart's stated red lines are real"
+    ],
+    "strategies": [
+      "Give more weight to claims that are costly to fake or that can be checked independently than to claims that are merely asserted.",
+      "Ask what the sender would gain by deceiving you; if the answer is nothing, the message may be honest.",
+      "If you want to be believed, back your words with a verifiable action that would be costly to reverse.",
+      "Test a claim with a small, low-risk request and watch whether the follow-through matches the words."
+    ],
+    "pitfalls": [
+      "Treating a cheap assurance as proof of intent.",
+      "Assuming every message is deception and missing the honest signal that was available."
+    ],
+    "matrix": {
+      "rows": [
+        "Tell the truth",
+        "Mislead"
+      ],
+      "cols": [
+        "Trust",
+        "Verify"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            -1
+          ],
+          [
+            -2,
+            2
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a sender tells the truth or misleads; the receiver trusts or verifies, and a lie that is caught costs the sender)"
+  },
+  {
+    "id": "double-agent-counterintelligence",
+    "name": "Counterintelligence: Detecting and Misleading",
+    "category": "Repeated, zero-sum, detection and deception",
+    "summary": "Counterintelligence is a repeated contest: one side tries to detect hidden influence and the other tries to avoid detection or mislead. Each side's checks shape what the other can safely do, which makes it a close relative of the inspection game.",
+    "how_it_works": "Checks that are predictable are easy to avoid. Randomised checks, compartmented access and cross-checking of reports raise the cost of deception. The defender must balance detection rate against the cost of checks and the harm of false accusations.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "military",
+      "government",
+      "politics"
+    ],
+    "examples": [
+      "An organisation deciding how often to audit sensitive access",
+      "Checking whether a source's reporting is consistent with independent information",
+      "Balancing security checks against the cost to staff"
+    ],
+    "matrix": {
+      "rows": [
+        "Monitor",
+        "Act on suspicion"
+      ],
+      "cols": [
+        "Loyal",
+        "Double"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            -1
+          ],
+          [
+            2,
+            -2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Vary checks so that they cannot be predicted; a fixed schedule is easy to plan around.",
+      "Compare reports from sources that should be independent; agreement among sources that share a origin is not corroboration.",
+      "Calibrate responses to evidence: a proportionate review is better than an accusation that cannot be supported.",
+      "Protect against false accusations, which damage the organisation and its people as much as real breaches do."
+    ],
+    "pitfalls": [
+      "Concluding that a single anomaly proves hostile intent.",
+      "Overconfidence in a source simply because it has been reliable before."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (an analytic view only: a service monitors or acts on suspicion; the source is loyal or working for the other side)"
+  },
+  {
+    "id": "disclosure-game",
+    "name": "Disclose or Conceal (Evidence Games)",
+    "category": "Sequential, information revelation",
+    "summary": "A party holds evidence and decides whether to reveal it. Strong evidence is usually disclosed, but the absence of disclosure can itself signal that the evidence is bad. Often what is not said is the most informative message.",
+    "how_it_works": "If the receiver assumes that silence means bad news, a sender with good news discloses it, and the silence that remains reveals the worst case. This unravelling logic is why partial disclosure often reveals more than it seems to.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes"
+    },
+    "domains": [
+      "military",
+      "politics",
+      "government"
+    ],
+    "examples": [
+      "Deciding whether to share an intelligence finding with a partner",
+      "A company deciding whether to disclose a product test result",
+      "A party deciding whether to release a document in a dispute"
+    ],
+    "matrix": {
+      "rows": [
+        "Disclose",
+        "Conceal"
+      ],
+      "cols": [
+        "Inspect",
+        "Trust"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            -2,
+            1
+          ],
+          [
+            3,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As the holder of good evidence, disclose it early and in a checkable form, since the market for silence punishes concealment.",
+      "As the receiver, ask what a silent party would have to hide, and weigh silence as a signal.",
+      "If disclosure would expose sources or methods, disclose the conclusion and its confidence rather than the raw material.",
+      "Plan for the unravelling: once one party discloses, others may be pressed to follow."
+    ],
+    "pitfalls": [
+      "Disclosing selectively, which is itself read as concealment.",
+      "Assuming that silence will be read as neutral."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a firm discloses or conceals; the regulator inspects or trusts)"
+  },
+  {
+    "id": "information-sharing-alliance",
+    "name": "Sharing Information Among Partners",
+    "category": "Repeated, cooperation and free-riding on information",
+    "summary": "Partners gain from pooling information, but each prefers to take what others share while sharing less. Like a public good, shared information is under-supplied unless trust, reciprocity and visible contribution are in place.",
+    "how_it_works": "Information is cheap to copy but costly to produce and to protect. Partners who receive more than they give drain the common pool. Reciprocal exchange, clear rules on handling, and visible contribution keep the flow of information going.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "no"
+    },
+    "domains": [
+      "military",
+      "politics",
+      "government"
+    ],
+    "examples": [
+      "Partner agencies deciding whether to share alerts",
+      "Companies in a sector pooling data on a common threat",
+      "Allied governments exchanging assessments of a shared adversary"
+    ],
+    "matrix": {
+      "rows": [
+        "Share",
+        "Withhold"
+      ],
+      "cols": [
+        "Share",
+        "Withhold"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Set reciprocity rules up front: what is shared, how it is handled, and what each partner gets back.",
+      "Share first in a limited, low-risk way to build the trust that makes fuller exchange possible.",
+      "Track contributions visibly, so free-riding is noticed early rather than after trust has eroded.",
+      "Protect sources and methods in the handling rules, since a partner who leaks costs everyone the future flow."
+    ],
+    "pitfalls": [
+      "Expecting partners to share fully without a reciprocity arrangement.",
+      "Sharing raw material without context, which invites misreading."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (partners share intelligence or withhold it)"
+  }
+]

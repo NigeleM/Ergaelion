@@ -1,0 +1,129 @@
+[
+  {
+    "name": "find_games",
+    "description": "Find the games, areas and simulations that a short description of a situation points to, from the words in it. Use this first when someone describes a situation in their own words.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "a few words or a sentence describing the situation"
+        }
+      },
+      "required": [
+        "description"
+      ]
+    }
+  },
+  {
+    "name": "get_game",
+    "description": "Get one game: its summary, how it works, its strategies, pitfalls, and its payoff table if it has one.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "game": {
+          "type": "string",
+          "description": "a game id such as prisoners-dilemma, or its name"
+        }
+      },
+      "required": [
+        "game"
+      ]
+    }
+  },
+  {
+    "name": "list_games",
+    "description": "List every game with its id, name and category, or only the games in one area.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "area": {
+          "type": "string",
+          "description": "optional area name, such as Work games"
+        }
+      }
+    }
+  },
+  {
+    "name": "solve_matrix",
+    "description": "Analyse a two-player payoff matrix: dominance steps, surviving strategies, maximin values and every equilibrium (for matrices up to 4 by 4).",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "matrix": {
+          "type": "string",
+          "description": "rows separated by \";\", each cell \"yours,theirs\", e.g. \"3,3 0,5; 5,0 1,1\""
+        }
+      },
+      "required": [
+        "matrix"
+      ]
+    }
+  },
+  {
+    "name": "list_simulations",
+    "description": "List the simulations. Basic simulations are fixed choices you can read; live simulations have an opponent who replies to each move.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "basic",
+            "live"
+          ],
+          "description": "optional: only one mode"
+        }
+      }
+    }
+  },
+  {
+    "name": "get_simulation",
+    "description": "Get a simulation's summary, its path to victory and its path to failure as chances, and how many endings it has.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "simulation": {
+          "type": "string",
+          "description": "a simulation id or name"
+        }
+      },
+      "required": [
+        "simulation"
+      ]
+    }
+  },
+  {
+    "name": "repeat_summary",
+    "description": "Describe repeated play of a game against a bot for a number of rounds: the bot's rule, and the best plan of always choosing the same option. Does not play the rounds.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "game": {
+          "type": "string",
+          "description": "a game id that has a payoff table"
+        },
+        "opponent": {
+          "type": "string",
+          "enum": [
+            "tit-for-tat",
+            "grim",
+            "pattern",
+            "learner",
+            "wsls",
+            "random"
+          ]
+        },
+        "rounds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        }
+      },
+      "required": [
+        "game",
+        "opponent"
+      ]
+    }
+  }
+]

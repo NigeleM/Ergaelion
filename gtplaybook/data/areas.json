@@ -1,0 +1,625 @@
+[
+  {
+    "family": "Classic game theory",
+    "summary": "The foundational games every course starts with: dilemmas, coordination, commitment, signalling and sequential bargaining.",
+    "learn": [
+      "Osborne & Rubinstein, A Course in Game Theory (1994)",
+      "Dixit & Nalebuff, Thinking Strategically (1991)",
+      "Von Neumann & Morgenstern, Theory of Games and Economic Behavior (1944)"
+    ],
+    "subdomains": [
+      {
+        "name": "Dilemmas and cooperation",
+        "games": [
+          "prisoners-dilemma",
+          "repeated-prisoners-dilemma",
+          "dictator-game"
+        ]
+      },
+      {
+        "name": "Coordination",
+        "games": [
+          "stag-hunt",
+          "battle-of-the-sexes"
+        ]
+      },
+      {
+        "name": "Conflict and commitment",
+        "games": [
+          "chicken",
+          "entry-deterrence",
+          "stackelberg-leadership"
+        ]
+      },
+      {
+        "name": "Information and signalling",
+        "games": [
+          "signaling-game"
+        ]
+      },
+      {
+        "name": "Sequential play",
+        "games": [
+          "centipede-game",
+          "trust-game",
+          "ultimatum-game",
+          "rubinstein-bargaining"
+        ]
+      },
+      {
+        "name": "Zero-sum and mixed strategies",
+        "games": [
+          "zero-sum-games",
+          "inspection-game",
+          "matching-pennies",
+          "penalty-kicks-and-serves"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Traditional and parlour games",
+    "summary": "Dice, cards, hand games and board games, where bluffing, probability and search decide the result.",
+    "learn": [
+      "Berlekamp, Conway & Guy, Winning Ways for Your Mathematical Plays",
+      "Sklansky, The Theory of Poker",
+      "Von Neumann & Morgenstern, Theory of Games and Economic Behavior (1944)"
+    ],
+    "subdomains": [
+      {
+        "name": "Hands, dice and bluffing",
+        "games": [
+          "poker-bluffing",
+          "liars-dice",
+          "rock-paper-scissors"
+        ]
+      },
+      {
+        "name": "Board and combinatorial games",
+        "games": [
+          "chess-minimax",
+          "tic-tac-toe-minimax",
+          "nim"
+        ]
+      },
+      {
+        "name": "Guessing and reasoning",
+        "games": [
+          "keynes-beauty-contest"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Life games",
+    "summary": "Everyday decisions: choosing, searching, sharing, staying healthy and cooperating at home.",
+    "learn": [
+      "Christian & Griffiths, Algorithms to Live By (2016)",
+      "Ostrom, Governing the Commons (1990)",
+      "Gale & Shapley, College Admissions and the Stability of Marriage (1962)"
+    ],
+    "subdomains": [
+      {
+        "name": "Choosing and searching",
+        "games": [
+          "secretary-problem",
+          "explore-exploit-bandit",
+          "dating-marriage-market-search",
+          "matching-markets"
+        ]
+      },
+      {
+        "name": "Home and family",
+        "games": [
+          "household-chores-bills",
+          "cake-cutting-fair-division",
+          "parent-teen-curfew-trust"
+        ]
+      },
+      {
+        "name": "Health and everyday risk",
+        "games": [
+          "vaccination-free-riding",
+          "insurance-moral-hazard"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "War and security games",
+    "summary": "Force, attrition, deterrence, crisis and search: games of conflict between armed or security actors.",
+    "learn": [
+      "Schelling, The Strategy of Conflict (1960)",
+      "Lanchester, Aircraft in Warfare (1916)",
+      "Chenoweth & Stephan, Why Civil Resistance Works (2011)"
+    ],
+    "subdomains": [
+      {
+        "name": "Force and attrition",
+        "games": [
+          "lanchester-combat",
+          "colonel-blotto",
+          "war-of-attrition",
+          "all-pay-contest",
+          "siege-and-logistics"
+        ]
+      },
+      {
+        "name": "Deterrence and crisis",
+        "games": [
+          "arms-race-security-dilemma",
+          "crisis-negotiation",
+          "alliance-entrapment",
+          "nuclear-deterrence-second-strike",
+          "crisis-escalation-ladder",
+          "cyber-defence-allocation"
+        ]
+      },
+      {
+        "name": "Counter-insurgency",
+        "games": [
+          "asymmetric-insurgency"
+        ]
+      },
+      {
+        "name": "Search and inspection",
+        "games": [
+          "search-game-hide-and-seek",
+          "inspection-game",
+          "surprise-and-reconnaissance"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Work games",
+    "summary": "Hiring, managing, rewarding and defending positions inside organisations.",
+    "learn": [
+      "Lazear & Rosen, Rank-Order Tournaments as Optimum Labor Contracts (1981)",
+      "Alchian & Demsetz, Production, Information Costs, and Economic Organization (1972)",
+      "Spence, Job Market Signaling (1973)"
+    ],
+    "subdomains": [
+      {
+        "name": "Hiring and selection",
+        "games": [
+          "hiring-screening",
+          "secretary-problem"
+        ]
+      },
+      {
+        "name": "Performance and incentives",
+        "games": [
+          "firing-and-performance",
+          "principal-agent",
+          "promotion-tournament",
+          "team-production-shirking"
+        ]
+      },
+      {
+        "name": "Position and power",
+        "games": [
+          "defending-a-position"
+        ]
+      },
+      {
+        "name": "Contracts and partnerships",
+        "games": [
+          "hold-up",
+          "insurance-moral-hazard"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Government and politics",
+    "summary": "Coalitions, voting, elections, lobbying, regime survival and mass movements.",
+    "learn": [
+      "Baron & Ferejohn, Bargaining in Legislatures (1989)",
+      "Brams, Game Theory and Politics (1975)",
+      "Svolik, The Politics of Authoritarian Rule (2012)",
+      "Bueno de Mesquita et al., The Logic of Political Survival (2003)",
+      "Granovetter, Threshold Models of Collective Behavior (1978)"
+    ],
+    "subdomains": [
+      {
+        "name": "Coalitions and legislatures",
+        "games": [
+          "coalition-formation",
+          "veto-players-reform",
+          "agenda-setting-voting"
+        ]
+      },
+      {
+        "name": "Elections and voting",
+        "games": [
+          "median-voter-spatial-competition",
+          "all-pay-contest"
+        ]
+      },
+      {
+        "name": "Lobbying and influence",
+        "games": [
+          "lobbying-influence"
+        ]
+      },
+      {
+        "name": "Regime survival and transitions",
+        "games": [
+          "authoritarian-survival",
+          "elite-defection-coordination",
+          "mass-uprising-threshold",
+          "nonviolent-resistance"
+        ]
+      },
+      {
+        "name": "Global cooperation",
+        "games": [
+          "climate-treaty-public-goods",
+          "tariff-war-trade-deal"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Society and groups",
+    "summary": "Coercive groups, reporting wrongdoing, legal settlement, social learning and shared resources.",
+    "learn": [
+      "Lifton, Thought Reform and the Psychology of Totalism (1961)",
+      "Kuran, Private Truths, Public Lies (1995)",
+      "Ostrom, Governing the Commons (1990)"
+    ],
+    "subdomains": [
+      {
+        "name": "Cults and coercion",
+        "games": [
+          "cults-coercive-groups"
+        ]
+      },
+      {
+        "name": "Ethics and reporting",
+        "games": [
+          "whistleblowing"
+        ]
+      },
+      {
+        "name": "Law and settlement",
+        "games": [
+          "plea-bargaining"
+        ]
+      },
+      {
+        "name": "Social learning",
+        "games": [
+          "herding-cascades",
+          "minority-game-crowds"
+        ]
+      },
+      {
+        "name": "Shared resources",
+        "games": [
+          "tragedy-of-the-commons",
+          "public-goods"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Business and markets",
+    "summary": "Pricing, auctions, trust, platforms, standards and contracts.",
+    "learn": [
+      "Akerlof, The Market for Lemons (1970)",
+      "Tirole, The Theory of Industrial Organization (1988)",
+      "Milgrom & Weber, A Theory of Auctions and Competitive Bidding (1982)"
+    ],
+    "subdomains": [
+      {
+        "name": "Pricing and competition",
+        "games": [
+          "bertrand-price-war",
+          "cournot-competition",
+          "stackelberg-leadership",
+          "entry-deterrence",
+          "hotelling-shop-location"
+        ]
+      },
+      {
+        "name": "Auctions and bidding",
+        "games": [
+          "sealed-bid-auctions",
+          "dollar-auction-escalation"
+        ]
+      },
+      {
+        "name": "Information and trust",
+        "games": [
+          "lemons-market",
+          "reputation-reviews",
+          "travelers-dilemma",
+          "supply-chain-bullwhip"
+        ]
+      },
+      {
+        "name": "Platforms and standards",
+        "games": [
+          "standards-war-network-effects"
+        ]
+      },
+      {
+        "name": "Contracts and insurance",
+        "games": [
+          "hold-up",
+          "insurance-moral-hazard"
+        ]
+      },
+      {
+        "name": "Algorithmic markets",
+        "games": [
+          "algorithmic-collusion"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Economics and finance",
+    "summary": "Financial stability, expectations, herding and learning under risk.",
+    "learn": [
+      "Diamond & Dybvig, Bank Runs, Deposit Insurance, and Liquidity (1983)",
+      "Morris & Shin, Social Value of Public Information (2002)",
+      "Sutton & Barto, Reinforcement Learning: An Introduction (2018)"
+    ],
+    "subdomains": [
+      {
+        "name": "Financial stability",
+        "games": [
+          "bank-run"
+        ]
+      },
+      {
+        "name": "Expectations and markets",
+        "games": [
+          "keynes-beauty-contest",
+          "herding-cascades"
+        ]
+      },
+      {
+        "name": "Learning and risk",
+        "games": [
+          "explore-exploit-bandit"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Negotiation and fairness",
+    "summary": "Bargaining, fair division and settlement, including how patience and outside options shape outcomes.",
+    "learn": [
+      "Rubinstein, Perfect Equilibrium in a Bargaining Model (1982)",
+      "Brams & Taylor, Fair Division (1996)",
+      "Fisher, Ury & Patton, Getting to Yes (1981)"
+    ],
+    "subdomains": [
+      {
+        "name": "Sequential bargaining",
+        "games": [
+          "rubinstein-bargaining",
+          "ultimatum-game"
+        ]
+      },
+      {
+        "name": "Fair division",
+        "games": [
+          "cake-cutting-fair-division",
+          "nash-bargaining-demands"
+        ]
+      },
+      {
+        "name": "Settlement",
+        "games": [
+          "plea-bargaining"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Public goods and environment",
+    "summary": "Shared resources, global commons and collective health.",
+    "learn": [
+      "Ostrom, Governing the Commons (1990)",
+      "Hardin, The Tragedy of the Commons (1968)",
+      "Barrett, Environment and Statecraft (2003)"
+    ],
+    "subdomains": [
+      {
+        "name": "Commons",
+        "games": [
+          "tragedy-of-the-commons",
+          "public-goods",
+          "braess-paradox-traffic"
+        ]
+      },
+      {
+        "name": "Global and public health",
+        "games": [
+          "climate-treaty-public-goods",
+          "vaccination-free-riding"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Games against AI",
+    "summary": "Playing a computer opponent: how to read a fixed or adaptive bot, and when to play near equilibrium.",
+    "learn": [
+      "Sutton & Barto, Reinforcement Learning: An Introduction (2018)",
+      "Von Neumann & Morgenstern, Theory of Games and Economic Behavior (1944)",
+      "Brown & Sandholm, Superhuman AI for heads-up no-limit poker (2017)"
+    ],
+    "subdomains": [
+      {
+        "name": "Fixed-rule and adaptive opponents",
+        "games": [
+          "ai-opponent-exploitation"
+        ]
+      },
+      {
+        "name": "Strong-play games",
+        "games": [
+          "chess-minimax",
+          "poker-bluffing",
+          "tic-tac-toe-minimax",
+          "liars-dice",
+          "rock-paper-scissors"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "AI vs AI (multi-agent)",
+    "summary": "Learning agents that compete, bargain or set prices with each other, including tacit collusion and cycling.",
+    "learn": [
+      "Calvano, Calzolari, Denicolò & Pastorello, Artificial Intelligence, Algorithmic Pricing, and Collusion (2020)",
+      "Shoham & Leyton-Brown, Multiagent Systems (2008)",
+      "Sutton & Barto, Reinforcement Learning: An Introduction (2018)"
+    ],
+    "subdomains": [
+      {
+        "name": "Learning dynamics",
+        "games": [
+          "ai-self-play-learning"
+        ]
+      },
+      {
+        "name": "Market algorithms",
+        "games": [
+          "algorithmic-collusion",
+          "bertrand-price-war"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Evolution and biology",
+    "summary": "Strategies that persist in populations without conscious choice.",
+    "learn": [
+      "Smith & Price, The Logic of Animal Conflict (1973)",
+      "Maynard Smith, Evolution and the Theory of Games (1982)",
+      "Axelrod, The Evolution of Cooperation (1984)"
+    ],
+    "subdomains": [
+      {
+        "name": "Population strategies",
+        "games": [
+          "ess-hawk-dove-population",
+          "kin-selection-helping-relatives"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Intelligence and deception",
+    "summary": "Analysis under uncertainty, warning, deception and counterintelligence, and sharing information between partners. The strategy is about judgement and credibility, not operations: how analysts weigh evidence, how signals can be believed, and how partners keep information flowing.",
+    "learn": [
+      "Heuer, Psychology of Intelligence Analysis (CIA, 1999)",
+      "Jervis, Perception and Misperception in International Politics (1976)",
+      "Milgrom, Good News and Bad News: Representation Theorems (1981)",
+      "Schelling, The Strategy of Conflict (1960)"
+    ],
+    "subdomains": [
+      {
+        "name": "Analysis and judgement",
+        "games": [
+          "intel-warning-problem",
+          "analysis-bayesian-updating"
+        ]
+      },
+      {
+        "name": "Deception and counterintelligence",
+        "games": [
+          "deception-cheap-talk",
+          "double-agent-counterintelligence"
+        ]
+      },
+      {
+        "name": "Disclosure and sharing",
+        "games": [
+          "disclosure-game",
+          "information-sharing-alliance"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Pandemic and disaster",
+    "summary": "Pandemic response, emergency supplies and preparing for rare disasters: trade-offs between restriction and economic cost, privacy and testing, and the public-goods problem of shared defences.",
+    "learn": [
+      "Ferguson et al., Report 9: Impact of non-pharmaceutical interventions (Imperial College London, 2020)",
+      "Ostrom, Governing the Commons (1990)",
+      "Kahneman, Thinking, Fast and Slow (2011): how people neglect rare risks"
+    ],
+    "subdomains": [
+      {
+        "name": "Pandemic response",
+        "games": [
+          "pandemic-quarantine-game",
+          "testing-contact-tracing"
+        ]
+      },
+      {
+        "name": "Supplies and preparedness",
+        "games": [
+          "emergency-supply-hoarding",
+          "disaster-preparedness-investment"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "Advanced game theory",
+    "summary": "The theory behind the games: mechanism design, information design, coalition payoffs, voting paradoxes, credible threats, sustained cooperation, incomplete contracts and coordination under noise.",
+    "learn": [
+      "Myerson, Game Theory: Analysis of Conflict (1991)",
+      "Shapley, A Value for n-Person Games (1953)",
+      "Arrow, Social Choice and Individual Values (1951)",
+      "Kamenica & Gentzkow, Bayesian Persuasion (American Economic Review, 2011)",
+      "Carlsson & van Damme, Global Games and Equilibrium Selection (Econometrica, 1993)"
+    ],
+    "subdomains": [
+      {
+        "name": "Mechanisms and auctions",
+        "games": [
+          "vcg-mechanism-design"
+        ]
+      },
+      {
+        "name": "Information design",
+        "games": [
+          "bayesian-persuasion",
+          "global-games-coordination",
+          "traffic-signal-correlated",
+          "beliefs-after-surprise"
+        ]
+      },
+      {
+        "name": "Coalitions and voting",
+        "games": [
+          "shapley-value-sharing",
+          "voting-paradoxes"
+        ]
+      },
+      {
+        "name": "Credibility and cooperation",
+        "games": [
+          "subgame-perfection-threats",
+          "folk-theorem-cooperation"
+        ]
+      },
+      {
+        "name": "Contracts",
+        "games": [
+          "contract-incentives-incomplete"
+        ]
+      }
+    ]
+  }
+]

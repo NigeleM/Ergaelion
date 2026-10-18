@@ -1,0 +1,46 @@
+playbook: game theory playbook
+
+Ask in plain words, or use a command.
+
+Find and understand
+  list [--domain D] [--search TEXT]    list games (optionally by domain or search)
+  show <game> [--formats md,json]      explain a game: how it works, its payoff table, how to play
+  areas [family]                       the areas of game theory and what to read
+  problems [query]                     practice problems with answers
+  keywords <words>                     say which games and areas your words point to
+  advise -d "sentence" [--set k=v]     match a plain-English situation to games, combined advice and scenarios
+  advise <file.gt>                     match a scenario file to games and rules
+  new [file.gt]                        build a scenario file with prompts
+  template                             print the scenario file syntax
+
+Analyse and simulate
+  solve "a,b c,d; e,f g,h" [--json]    analyse a payoff matrix (dominance, equilibria, maximin)
+  sim                                  list the simulations
+  sim <id> [--play] [--formats LIST]   paths to victory and failure; --play to play it (b goes back a decision)
+  sim <id> --matrix [--play]           a simulation built from a game's payoff table
+  sim --mode basic|live                only basic (fixed choices) or live (an opponent replies)
+  repeat <game> [--rounds N] [--opponent BOT] [--log] [--formats md,json]
+                                       play a payoff table 1 to 50 rounds against a bot
+  setup <game>                         how to set up a game for your own scenario
+
+Records and charts
+  log <game> win|loss|draw|mixed [note]   record a result you played
+  record [game] [--json] [--csv FILE]     show your win and loss records
+  unlog [game]                            remove the most recent logged result
+  chart families|traits|map|records|plays|sim <id> [--out FILE.svg]
+
+Your playbook
+  edit <game>, add-play <game>, new, disable <game>, enable <game>, check
+
+Tools for other programs
+  tools                                list the tool schemas (other programs can call them)
+  tool <name> '<json>'                 run one tool with JSON arguments
+
+Other
+  guide [section]                      the strategy and influence guide
+  menu                                 the full-screen menu
+  theme [name | set <role> <colour> | reset]   change colours: classic, ocean, forest, contrast, sunset, midnight, rose, matrix, paper, claude-dark, claude-light, plain, mono
+  version                              print the version
+
+Run with no arguments to start the interactive session. In the session, type / to see every
+command, and use the arrow keys to move through lists.

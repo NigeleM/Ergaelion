@@ -1,0 +1,211 @@
+[
+  {
+    "id": "cults-coercive-groups",
+    "name": "Coercive Groups and Cults",
+    "category": "Repeated, information control and exit costs",
+    "summary": "Some groups make leaving very costly, control what members learn, and raise commitment over time. The game is lopsided: the group controls information and exit costs, while the member and their family often know less than they need to. Protecting people means keeping exit cheap, information open and outside relationships intact.",
+    "how_it_works": "Coercive groups tend to use escalating commitment, isolation from outside contacts, unverifiable claims and emotional or financial dependence. Each step raises the cost of leaving, so a person can be drawn in gradually. Outside contact, verifiable information and an easy exit path break that pattern.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "commitment": "yes",
+      "communication": "no"
+    },
+    "domains": [
+      "society",
+      "everyday"
+    ],
+    "examples": [
+      "A recruit being asked to give up contact with family before joining",
+      "A member asked to hand over money or property to the group",
+      "A family trying to reach someone who has become isolated in a group"
+    ],
+    "matrix": {
+      "rows": [
+        "Stay",
+        "Leave"
+      ],
+      "cols": [
+        "Loosen control",
+        "Tighten control"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "For prospective members: keep outside relationships and independent advice; be wary of any demand to cut them off.",
+      "For prospective members: test claims against independent evidence, and set time limits on commitments and money you will not give.",
+      "For prospective members: agree in advance on a trusted person you can call to leave; a pre-planned exit is far easier than one improvised under pressure.",
+      "For families: avoid ultimatums and confrontations that confirm the group's story; keep communication open and warm, and offer concrete help.",
+      "For families: consult a specialist familiar with coercive groups, and take safety concerns seriously and urgently.",
+      "For former members: support groups and peer contact reduce isolation and rebuild independent judgement."
+    ],
+    "pitfalls": [
+      "Arguing doctrine with a committed member; this usually strengthens the group's hold.",
+      "Cutting off contact entirely, which removes the one connection the member may still rely on."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a member stays or leaves; the group loosens or tightens control)"
+  },
+  {
+    "id": "whistleblowing",
+    "name": "Whistleblowing and Reporting Wrongdoing",
+    "category": "Sequential, information and retaliation risk",
+    "summary": "An insider knows about wrongdoing that the organisation would prefer to hide. Reporting carries a personal risk of retaliation, while staying silent lets the wrongdoing continue. Good documentation and the right channel change the calculation.",
+    "how_it_works": "The organisation's response depends on whether it expects the report to be credible, supported, and likely to be acted on. Credible evidence and legal protection raise the cost of retaliation for the organisation and lower the cost of reporting for the insider.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "yes",
+      "communication": "yes"
+    },
+    "domains": [
+      "work",
+      "society",
+      "government"
+    ],
+    "examples": [
+      "An employee finding falsified safety records",
+      "A staff member aware of harassment being covered up",
+      "A public servant seeing misuse of funds"
+    ],
+    "matrix": {
+      "rows": [
+        "Report",
+        "Stay silent"
+      ],
+      "cols": [
+        "Firm corrects",
+        "Firm covers up"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            3
+          ],
+          [
+            -1,
+            -2
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Document carefully and privately: dates, facts and copies you are allowed to keep, without taking confidential material you should not hold.",
+      "Find out what legal protections apply to you before reporting, and seek advice from a lawyer or a protected reporting body.",
+      "Use the formal internal channel if it is credible; use an external regulator or authority if it is not, or if retaliation is likely.",
+      "Keep a record of your report and any retaliation, so the matter can be proven later.",
+      "Plan support: a trusted colleague, a union or an advocacy organisation can reduce isolation and risk."
+    ],
+    "pitfalls": [
+      "Reporting only in conversation, with no record.",
+      "Making accusations you cannot support, which can expose you to legal risk even when you are right."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the employee reports or stays silent; the firm corrects or covers up)"
+  },
+  {
+    "id": "plea-bargaining",
+    "name": "Plea Bargaining and Legal Settlement",
+    "category": "Sequential, bargaining under uncertainty",
+    "summary": "A prosecutor offers a reduced charge or sentence in exchange for a guilty plea. Both sides compare the certainty of the deal with the risk of trial, and the outcome depends mostly on the strength of the evidence and the cost of delay.",
+    "how_it_works": "The defendant weighs the expected sentence after trial, including the chance of acquittal, against the offer. The prosecutor weighs the cost and risk of trial against the value of a certain conviction. Information about evidence and the other side's constraints drives the deal.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "enforcement": "yes",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "society",
+      "government"
+    ],
+    "examples": [
+      "Deciding whether to accept a reduced charge before trial",
+      "A prosecutor deciding whether to offer a deal in a weak case",
+      "A civil dispute settled before a court date"
+    ],
+    "matrix": {
+      "rows": [
+        "Confess",
+        "Stay silent"
+      ],
+      "cols": [
+        "Confess",
+        "Stay silent"
+      ],
+      "payoffs": [
+        [
+          [
+            -5,
+            -5
+          ],
+          [
+            0,
+            -10
+          ]
+        ],
+        [
+          [
+            -10,
+            0
+          ],
+          [
+            -1,
+            -1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Get a realistic estimate of trial outcomes from a lawyer who has seen the evidence, not just a hope or a fear.",
+      "Compare the offer with the expected value of trial, including the costs of time, money and the risk of a harsher sentence.",
+      "Ask what happens to the offer if you wait; deals often change as the trial date approaches.",
+      "Do not accept a plea to something you did not do unless the legal advice clearly supports it; the consequences follow you."
+    ],
+    "pitfalls": [
+      "Rejecting a fair offer out of pride when the evidence is strong.",
+      "Accepting a deal without understanding the lasting consequences of the conviction."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (payoffs are negative years in prison)"
+  }
+]

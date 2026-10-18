@@ -1,0 +1,1509 @@
+[
+  {
+    "id": "prisoners-dilemma",
+    "name": "Prisoner's Dilemma",
+    "category": "Simultaneous, non-zero-sum",
+    "summary": "Each player is tempted to defect, yet both do better if both cooperate. Defection is dominant in a one-shot game, so the outcome is worse for everyone.",
+    "how_it_works": "Each player picks Cooperate or Defect without seeing the other's choice. Defecting pays more whatever the other does, but mutual defection leaves both worse off than mutual cooperation.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "payoff": "mixed",
+      "enforcement": "no"
+    },
+    "domains": [
+      "business",
+      "military",
+      "politics",
+      "everyday"
+    ],
+    "examples": [
+      "Two firms deciding whether to cut prices",
+      "Two countries deciding whether to arm",
+      "Two partners deciding whether to shirk on a joint project"
+    ],
+    "matrix": {
+      "rows": [
+        "Cooperate",
+        "Defect"
+      ],
+      "cols": [
+        "Cooperate",
+        "Defect"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        [
+          [
+            5,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "If the game is truly one-shot, defection is dominant. Do not expect cooperation to appear on its own.",
+      "Change the structure, not the choice: add binding contracts, penalties, or escrow so that defecting costs more than it gains.",
+      "If the relationship can be made repeated, switch to the repeated-game playbook.",
+      "Reduce the payoff for defecting: verification, public commitments, and reputational costs all help."
+    ],
+    "pitfalls": [
+      "Assuming the other side is cooperative because you are.",
+      "Treating an ongoing relationship as one-shot."
+    ]
+  },
+  {
+    "id": "repeated-prisoners-dilemma",
+    "name": "Repeated Prisoner's Dilemma",
+    "category": "Repeated, non-zero-sum",
+    "summary": "When the same players meet again and the future matters, cooperation can be sustained by the threat of future punishment (the folk theorem).",
+    "how_it_works": "Each round is a Prisoner's Dilemma, but the game continues. Tit-for-Tat cooperates first, then copies the opponent's last move. Cooperation holds when players value the future enough.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "payoff": "mixed",
+      "information": "perfect"
+    },
+    "domains": [
+      "business",
+      "politics",
+      "everyday",
+      "military"
+    ],
+    "examples": [
+      "Suppliers keeping prices stable over years",
+      "Neighbours sharing a common resource",
+      "Two countries maintaining an arms-control truce"
+    ],
+    "matrix": {
+      "rows": [
+        "Cooperate",
+        "Defect"
+      ],
+      "cols": [
+        "Cooperate",
+        "Defect"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        [
+          [
+            5,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Start cooperative, then reciprocate: cooperate when they cooperate, retaliate when they defect.",
+      "Forgive occasionally after a punishment so one mistake does not lock in endless retaliation (generous Tit-for-Tat).",
+      "Make the future valuable: extend the relationship and raise the cost of ending it.",
+      "Be transparent so that retaliation is read as a response, not a provocation.",
+      "Beware the known last round: cooperation unravels near a fixed end date, so keep the future open."
+    ],
+    "pitfalls": [
+      "Defecting first to test the other side, which often starts a costly cycle.",
+      "Ignoring that misread actions can trigger retaliation nobody intended."
+    ],
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the one-shot prisoner's dilemma that the repeated game is built from)"
+  },
+  {
+    "id": "stag-hunt",
+    "name": "Stag Hunt",
+    "category": "Simultaneous, coordination",
+    "summary": "Both players do best by cooperating on a risky joint action, but either can take a safe, lower-payoff option. Both outcomes are equilibria; the question is which one will happen.",
+    "how_it_works": "Hunting stag needs both players. Hunting hare can be done alone. If the other side hunts hare, your stag hunt yields nothing.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "payoff": "common-interest",
+      "communication": "yes"
+    },
+    "domains": [
+      "work",
+      "business",
+      "politics",
+      "everyday"
+    ],
+    "examples": [
+      "A team deciding whether to commit to an ambitious shared project",
+      "Firms deciding whether to adopt a common standard",
+      "Allies deciding whether to join a costly joint operation"
+    ],
+    "matrix": {
+      "rows": [
+        "Stag",
+        "Hare"
+      ],
+      "cols": [
+        "Stag",
+        "Hare"
+      ],
+      "payoffs": [
+        [
+          [
+            4,
+            4
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Compare the two equilibria: the risk-dominant one is the safer choice. If you doubt the other side, play safe.",
+      "Build trust before committing: communicate and make a credible pledge.",
+      "Start with small, reversible joint steps that show the other side is committed.",
+      "Make the good outcome cheaper to reach: pre-commit resources and share the cost of the risky action."
+    ],
+    "pitfalls": [
+      "Assuming the best outcome for everyone will happen just because it is best.",
+      "Dropping cooperation at the first failure without diagnosing why it failed."
+    ]
+  },
+  {
+    "id": "chicken",
+    "name": "Chicken (Hawk-Dove)",
+    "category": "Simultaneous, anti-coordination",
+    "summary": "Each player prefers to hold firm while the other yields, but mutual firmness is disastrous. A credible commitment not to yield often wins.",
+    "how_it_works": "Two cars drive at each other. Whoever swerves loses face. If neither swerves, both crash. Mixing randomly between the two options carries a high chance of disaster.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "payoff": "mixed",
+      "commitment": "yes"
+    },
+    "domains": [
+      "military",
+      "politics",
+      "business",
+      "games"
+    ],
+    "examples": [
+      "A standoff between two armed states over a disputed border",
+      "A strike where neither union nor management wants to be first to concede",
+      "Two rival firms in a price standoff"
+    ],
+    "matrix": {
+      "rows": [
+        "Swerve",
+        "Straight"
+      ],
+      "cols": [
+        "Swerve",
+        "Straight"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Make your commitment visible and irreversible, for example by removing your own option to swerve.",
+      "If the other side has credibly committed, yield: a crash costs more than backing down.",
+      "Avoid random brinkmanship. Mixing produces high-variance disasters.",
+      "Look for a third move, such as a signal, a delay, or a side-payment, that changes the payoffs."
+    ],
+    "pitfalls": [
+      "Bluffing a commitment the other side can call.",
+      "Failing to tell a threat you can keep from one you cannot."
+    ]
+  },
+  {
+    "id": "battle-of-the-sexes",
+    "name": "Battle of the Sexes",
+    "category": "Simultaneous, coordination with conflict",
+    "summary": "Both players want to coordinate, but they disagree about which joint outcome is best. The challenge is agreeing on a focal point.",
+    "how_it_works": "There are two equilibria, each favouring one player. Without communication, players can miscoordinate and both lose.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "payoff": "mixed",
+      "communication": "yes"
+    },
+    "domains": [
+      "everyday",
+      "business",
+      "work",
+      "politics"
+    ],
+    "examples": [
+      "A couple choosing between two evening plans",
+      "Two firms choosing between two incompatible technical standards",
+      "Two departments picking a shared meeting time"
+    ],
+    "matrix": {
+      "rows": [
+        "Opera",
+        "Football"
+      ],
+      "cols": [
+        "Opera",
+        "Football"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Find a focal point both sides would accept, such as alternating turns.",
+      "Communicate before the decision and make a visible commitment.",
+      "Trade concessions in another dimension to move the outcome toward your preference.",
+      "If you cannot communicate, randomise in proportion to how much you prefer your option."
+    ],
+    "pitfalls": [
+      "Assuming the other side will accept the same compromise you would.",
+      "Waiting for perfect agreement and missing the coordination window."
+    ]
+  },
+  {
+    "id": "zero-sum-games",
+    "name": "Zero-Sum Games",
+    "category": "Simultaneous, strictly competitive",
+    "summary": "One player's gain is exactly the other's loss. The safe approach is maximin: maximise your worst-case payoff. The best play is often a randomised mix that cannot be exploited.",
+    "how_it_works": "If a pure saddle point exists, playing it is optimal. Otherwise, each player mixes over actions so the opponent cannot predict them. The minimax theorem guarantees a value for the game.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "payoff": "zero-sum",
+      "information": "perfect"
+    },
+    "domains": [
+      "games",
+      "military",
+      "business"
+    ],
+    "examples": [
+      "Matching pennies",
+      "A penalty kick: shooter versus goalkeeper",
+      "Head-to-head security allocation between attacker and defender"
+    ],
+    "matrix": {
+      "rows": [
+        "Heads",
+        "Tails"
+      ],
+      "cols": [
+        "Heads",
+        "Tails"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Compute your maximin (the best worst case) and play it.",
+      "If there is no saddle point, randomise with the equilibrium probabilities. Any predictable pattern will be exploited.",
+      "Track the opponent's tendencies, but exploit them only when the signal is strong, since unpredictability protects you.",
+      "Assume opponents adapt to fixed patterns."
+    ],
+    "pitfalls": [
+      "Trying to outguess an opponent who is simply playing maximin.",
+      "Overweighting the most likely outcome and ignoring tail risk."
+    ]
+  },
+  {
+    "id": "inspection-game",
+    "name": "Inspection Game",
+    "category": "Simultaneous, mixed-strategy enforcement",
+    "summary": "An inspector wants to catch violations and a potential violator wants to break the rules. Neither can be fully predictable, so the equilibrium is a random inspection schedule.",
+    "how_it_works": "If inspections are always on, violators comply. If they are never on, violators cheat. The inspector randomises so the violator is indifferent, and the violator randomises so the inspector is indifferent. In the reference matrix, the inspector inspects 40% of the time and the violator complies 80% of the time.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "payoff": "mixed",
+      "enforcement": "yes",
+      "information": "imperfect"
+    },
+    "domains": [
+      "business",
+      "politics",
+      "military",
+      "work"
+    ],
+    "examples": [
+      "Tax audits",
+      "Food-safety inspections",
+      "Border or port checks"
+    ],
+    "matrix": {
+      "rows": [
+        "Inspect",
+        "Don't inspect"
+      ],
+      "cols": [
+        "Comply",
+        "Violate"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            0
+          ],
+          [
+            2,
+            -3
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            -2,
+            2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Randomise inspection timing and targets so violators cannot predict the cycle.",
+      "Set the inspection rate so that cheating and complying pay the violator the same. That is the indifference point.",
+      "If inspections are expensive, raise the penalty instead. A larger penalty deters at lower cost.",
+      "If you are the potential violator, assume inspections are random and calculate the expected penalty."
+    ],
+    "pitfalls": [
+      "Publishing an inspection calendar.",
+      "Inspecting only where violations are expected, which makes the schedule predictable."
+    ]
+  },
+  {
+    "id": "public-goods",
+    "name": "Public Goods Game",
+    "category": "Many players, social dilemma",
+    "summary": "Each person gains more by free-riding on others' contributions, but the group does best if everyone contributes. Without enforcement, contributions unravel.",
+    "how_it_works": "Each contribution produces a benefit shared by all, but the contributor keeps only a fraction of it. Contributing nothing is therefore dominant in a one-shot game. Punishing non-contributors can restore cooperation.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "payoff": "mixed",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "work",
+      "politics",
+      "business",
+      "everyday"
+    ],
+    "examples": [
+      "Team projects where credit is shared",
+      "Club dues or shared household funding",
+      "Burden-sharing inside a military coalition"
+    ],
+    "matrix": {
+      "rows": [
+        "Contribute",
+        "Free-ride"
+      ],
+      "cols": [
+        "Others contribute",
+        "Others free-ride"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Make contributions visible. Visibility and reciprocity raise contributions.",
+      "Introduce graduated sanctions: punish free-riders at a cost low enough to be credible.",
+      "Use conditional cooperation: contribute if most others do, and say so publicly.",
+      "Set a clear, enforceable rule, such as an assessed share, instead of relying on goodwill."
+    ],
+    "pitfalls": [
+      "Assuming everyone contributes equally once free-riding is visible.",
+      "Punishing without a clear rule, which invites retaliation."
+    ]
+  },
+  {
+    "id": "tragedy-of-the-commons",
+    "name": "Tragedy of the Commons",
+    "category": "Many players, shared resource",
+    "summary": "Individuals rationally overuse a shared resource because they capture the benefit while the cost of depletion is spread across everyone. Clear rules and local monitoring usually solve it.",
+    "how_it_works": "Each user's gain from extra use is private, while the cost of depletion is shared. Overuse is the individual best response unless others restrain themselves.",
+    "traits": {
+      "players": "many",
+      "interaction": "repeated",
+      "payoff": "mixed",
+      "enforcement": "no"
+    },
+    "domains": [
+      "environment",
+      "economy",
+      "everyday",
+      "politics"
+    ],
+    "examples": [
+      "Overfishing a shared fishery",
+      "Shared pasture overgrazing",
+      "Shared office or building resources"
+    ],
+    "matrix": {
+      "rows": [
+        "Restrain",
+        "Exploit"
+      ],
+      "cols": [
+        "Restrain",
+        "Exploit"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Define who may use the resource and how much, with clear boundaries.",
+      "Monitor use locally, ideally by the users themselves.",
+      "Use graduated sanctions that escalate with repeated violations.",
+      "Provide cheap conflict-resolution channels and let users organise themselves (Ostrom's design principles)."
+    ],
+    "pitfalls": [
+      "Assuming a resource is free because nobody owns it.",
+      "Relying on a single central regulator that lacks local information."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two herders; exploiting the shared pasture gains you more, and hurts both)"
+  },
+  {
+    "id": "ultimatum-game",
+    "name": "Ultimatum Game",
+    "category": "Sequential bargaining",
+    "summary": "One player proposes how to split a sum and the other accepts or rejects. Rejection leaves both with nothing. Pure self-interest predicts tiny offers, but real responders reject unfair ones.",
+    "how_it_works": "The subgame-perfect prediction is to propose the smallest amount the responder would accept. In experiments, offers near 40-50% are common, and offers below roughly 20-30% are often rejected.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "work",
+      "business",
+      "politics",
+      "everyday"
+    ],
+    "examples": [
+      "Splitting a bonus pool with a colleague",
+      "Dividing the value of a deal between two parties",
+      "A take-it-or-leave-it price offer"
+    ],
+    "matrix": {
+      "rows": [
+        "Offer 50/50",
+        "Offer 80/20"
+      ],
+      "cols": [
+        "Accept any offer",
+        "Reject offers below 50"
+      ],
+      "payoffs": [
+        [
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        [
+          [
+            8,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As proposer: offer a split the other side sees as fair, not the minimum. A lowball risks losing everything.",
+      "As responder: weigh what accepting gains against the signal rejection sends. A credible reputation for rejecting unfair deals can pay off in repeat dealings.",
+      "Consider reputation: fair offers and firm rejections both build trust or deterrence over time.",
+      "Use an outside option. If you have a credible alternative, the other side's threat to walk away is weaker."
+    ],
+    "pitfalls": [
+      "Assuming every responder is purely selfish.",
+      "Ignoring that a take-it-or-leave-it framing can damage a long-term relationship."
+    ]
+  },
+  {
+    "id": "rubinstein-bargaining",
+    "name": "Rubinstein Bargaining",
+    "category": "Sequential bargaining, alternating offers",
+    "summary": "Players alternate offers over a pie, and each round of delay costs something. The outcome depends on relative patience and outside options, not on who is 'right'.",
+    "how_it_works": "With discount factors d1 and d2 (how much each side values a round of delay), the first proposer's share in the unique subgame-perfect equilibrium is (1 - d2) / (1 - d1 * d2). The more patient party gets more, and the first-mover advantage shrinks as both sides become patient.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "work",
+      "business",
+      "politics",
+      "everyday"
+    ],
+    "examples": [
+      "Negotiating a multi-round contract with alternating proposals",
+      "Coalition talks where each round of delay has a cost",
+      "Settling a dispute through back-and-forth offers"
+    ],
+    "matrix": {
+      "rows": [
+        "Offer a fair split",
+        "Offer a greedy split"
+      ],
+      "cols": [
+        "Accept",
+        "Reject"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Estimate your patience compared with theirs. The more patient side should hold out for a larger share.",
+      "Improve your outside option before bargaining. It moves the split more than rhetoric does.",
+      "Make the cost of delay visible to them, so they feel the time pressure too.",
+      "Anchor with a reasonable first offer, then concede in small, decreasing steps to signal you are near your limit."
+    ],
+    "pitfalls": [
+      "Overestimating the advantage of making the first offer.",
+      "Mistaking your own impatience for leverage."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "centipede-game",
+    "name": "Centipede Game",
+    "category": "Sequential, perfect information",
+    "summary": "Players take turns either taking a growing pot or passing it on. Backward induction says the first player should take immediately, but real players often pass because they expect cooperation and reputation matters.",
+    "how_it_works": "Each pass increases the total pot and the exposure at the end. Reasoning backward gives 'take now', but a small chance that the other player is cooperative makes passing worthwhile for a while.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "no"
+    },
+    "domains": [
+      "business",
+      "work",
+      "everyday",
+      "politics"
+    ],
+    "examples": [
+      "A sequence of escalating deal offers where either side can walk away",
+      "Trust-building in a partnership with growing stakes",
+      "Successive investment rounds between two parties"
+    ],
+    "matrix": {
+      "rows": [
+        "Stop now",
+        "Continue"
+      ],
+      "cols": [
+        "Opponent continues",
+        "Opponent stops"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Reason backward: where would a purely rational opponent take the pot, and when?",
+      "Estimate the chance that the other side is cooperative. Passing early is cheap if they are.",
+      "Build a reputation for passing when it pays over repeated dealings.",
+      "Take the pot once your expected gain from passing falls below what you can secure now."
+    ],
+    "pitfalls": [
+      "Waiting too long and being exploited at the end.",
+      "Assuming the other side will always reason backward."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "trust-game",
+    "name": "Trust Game",
+    "category": "Sequential, investment and reciprocity",
+    "summary": "An investor sends money that grows in transit, and a trustee decides how much to return. Trust can pay for both, but a purely self-interested trustee returns nothing in a one-shot game.",
+    "how_it_works": "The subgame-perfect prediction is zero investment. Experiments show more trust and reciprocity than predicted, especially when players interact repeatedly and reputation is visible.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no"
+    },
+    "domains": [
+      "business",
+      "politics",
+      "work",
+      "everyday"
+    ],
+    "examples": [
+      "Advancing money to a new supplier",
+      "Handing over a project to a contractor before payment",
+      "Sharing sensitive information with a partner"
+    ],
+    "matrix": {
+      "rows": [
+        "Trust",
+        "Keep"
+      ],
+      "cols": [
+        "Reciprocate",
+        "Keep"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As investor: start with a small test amount and increase it as returns prove trustworthy.",
+      "As trustee: reciprocating builds reputation and future investment, which often beats one-shot defection.",
+      "Make returns visible and verifiable. Transparency raises trust.",
+      "For large stakes, add a contract, escrow, or staged payments."
+    ],
+    "pitfalls": [
+      "Investing everything at once.",
+      "Treating one reciprocal return as proof of long-term trustworthiness."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the investor trusts or keeps; the trustee repays or keeps the money)"
+  },
+  {
+    "id": "entry-deterrence",
+    "name": "Entry Deterrence",
+    "category": "Sequential, commitment",
+    "summary": "A potential entrant decides whether to enter a market, and the incumbent decides whether to fight or accommodate. A threat to fight only works if it is credible, which usually requires a costly commitment made in advance.",
+    "how_it_works": "Backward induction: once the entrant is in, accommodating is better for the incumbent, so a bare threat is not credible. Irreversible investments such as capacity or long-term contracts make the threat credible.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "commitment": "yes"
+    },
+    "domains": [
+      "business",
+      "military",
+      "politics",
+      "games"
+    ],
+    "examples": [
+      "A new airline deciding whether to enter a route",
+      "A rival state deciding whether to challenge a territorial claim",
+      "A startup entering a market with an established incumbent"
+    ],
+    "matrix": {
+      "rows": [
+        "Enter",
+        "Stay out"
+      ],
+      "cols": [
+        "Incumbent fights",
+        "Incumbent accommodates"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Incumbents: make the threat credible before entry, through capacity, long-term contracts, or sunk investment. A bare promise is not enough.",
+      "Entrants: test the threat by asking whether the incumbent would really fight once you have entered.",
+      "If the incumbent cannot commit, consider differentiation or a niche entry.",
+      "Price below the point where fighting is clearly profitable, so you do not provoke a costly response."
+    ],
+    "pitfalls": [
+      "Bluffing a threat the other side can call.",
+      "Letting a threat go unused when it was needed, which destroys future credibility."
+    ]
+  },
+  {
+    "id": "stackelberg-leadership",
+    "name": "Stackelberg Leadership",
+    "category": "Sequential, first-mover advantage",
+    "summary": "A leader commits to an action first and the follower responds. Moving first can be an advantage if the commitment is credible and the follower cannot undo it.",
+    "how_it_works": "The leader anticipates the follower's best response and chooses the outcome that is best for them given it. Being first helps only when the leader's move is observable and binding.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "commitment": "yes"
+    },
+    "domains": [
+      "business",
+      "military",
+      "politics"
+    ],
+    "examples": [
+      "A firm announcing a large capacity investment before rivals decide",
+      "A government announcing a policy before the opposition responds",
+      "A military deploying forces before an adversary picks a response"
+    ],
+    "matrix": {
+      "rows": [
+        "Produce 1",
+        "Produce 2",
+        "Produce 3"
+      ],
+      "cols": [
+        "Produce 1",
+        "Produce 2",
+        "Produce 3"
+      ],
+      "payoffs": [
+        [
+          [
+            8,
+            8
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            6,
+            18
+          ]
+        ],
+        [
+          [
+            14,
+            7
+          ],
+          [
+            12,
+            12
+          ],
+          [
+            10,
+            15
+          ]
+        ],
+        [
+          [
+            18,
+            6
+          ],
+          [
+            15,
+            10
+          ],
+          [
+            12,
+            12
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "If you can move first credibly (announce, invest, pre-commit), do so. The follower will adjust to your choice.",
+      "If you are the follower, anticipate the leader's move and respond to the outcome that is best for you, not to what they said.",
+      "Do not commit to an action that hurts you if the follower can simply ignore it.",
+      "Make your commitment visible, verifiable, and costly to reverse."
+    ],
+    "pitfalls": [
+      "Announcing a leadership move you cannot keep.",
+      "Overestimating the first-mover advantage when the follower can retaliate."
+    ],
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (simultaneous quantity choice with price 10 minus total output; the standard Cournot form, restricted to 1 to 3 units)"
+  },
+  {
+    "id": "cournot-competition",
+    "name": "Cournot Competition",
+    "category": "Simultaneous, quantity competition",
+    "summary": "Firms choose output at the same time. Each firm's best choice depends on the other's output. The equilibrium output is above the monopoly level and profits are below it.",
+    "how_it_works": "Each firm maximises profit given its rival's quantity. The Nash equilibrium sits between monopoly and perfect competition. Repeated competition can support tacit collusion.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "payoff": "mixed",
+      "communication": "no"
+    },
+    "domains": [
+      "business",
+      "economy"
+    ],
+    "examples": [
+      "Two producers choosing how much to supply to a shared market",
+      "Two airlines choosing seat capacity on a route",
+      "Two utilities choosing output in a regional market"
+    ],
+    "matrix": {
+      "rows": [
+        "Produce high",
+        "Produce moderate"
+      ],
+      "cols": [
+        "Produce high",
+        "Produce moderate"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Estimate the rival's best response and choose the quantity that maximises your profit given it.",
+      "Expand capacity only when the cost is recoverable. Large capacity can credibly commit you to high output.",
+      "In a repeated market, consider tacit collusion. It is sustained by the threat of punishment (see the repeated-game entry).",
+      "Watch for signals: public capacity announcements reduce uncertainty and can make tacit coordination easier."
+    ],
+    "pitfalls": [
+      "Ignoring that the rival adapts.",
+      "Starting a price war that hurts you more than the rival."
+    ]
+  },
+  {
+    "id": "sealed-bid-auctions",
+    "name": "Sealed-Bid Auctions",
+    "category": "Auctions, private information",
+    "summary": "Bidders submit private bids and the highest wins. In a first-price auction, bidders shade below their value. In a second-price (Vickrey) auction, bidding your true value is dominant.",
+    "how_it_works": "In a first-price auction you pay your own bid, so you bid less than your value to keep a margin. In a second-price auction you pay the second-highest bid, so bidding your true value is weakly dominant. In common-value auctions, the winner's curse means the winner is often the one who overestimated.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "zero-sum"
+    },
+    "domains": [
+      "business",
+      "economy",
+      "games"
+    ],
+    "examples": [
+      "Selling a government spectrum licence",
+      "Bidding for a contract on a construction job",
+      "Buying an item of uncertain quality at auction"
+    ],
+    "strategies": [
+      "First-price: shade your bid below your value. The amount depends on the number of rivals and their likely values.",
+      "Second-price: bid your true value. Strategic bidding gives you nothing.",
+      "Common value (for example, oil rights of unknown worth): discount your estimate for the winner's curse.",
+      "Never bid above your value to win. Overpaying is the only way to lose money by winning."
+    ],
+    "pitfalls": [
+      "Winning and overpaying (the winner's curse).",
+      "Forgetting that the auction rules determine the optimal strategy."
+    ],
+    "matrix": {
+      "rows": [
+        "Bid 2",
+        "Bid 4",
+        "Bid 6"
+      ],
+      "cols": [
+        "Bid 2",
+        "Bid 4",
+        "Bid 6"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -2
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            -2
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (first-price sealed bid; values 6 and 4; ties split the surplus)"
+  },
+  {
+    "id": "war-of-attrition",
+    "name": "War of Attrition",
+    "category": "Simultaneous, timing contest",
+    "summary": "Two players compete to be the last to concede. Staying in costs time or resources, and the first to give up loses. Outcomes depend on each side's cost of waiting and what its commitment signals.",
+    "how_it_works": "Each player stays in while the expected value of winning exceeds the cost of waiting. Asymmetric costs, and information about the other side's resolve, determine who concedes first.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "zero-sum"
+    },
+    "domains": [
+      "military",
+      "business",
+      "politics",
+      "work"
+    ],
+    "examples": [
+      "A strike where both sides wait out the other",
+      "Two firms outlasting each other in a price or market-share fight",
+      "A standoff in which both parties keep investing in a dispute"
+    ],
+    "matrix": {
+      "rows": [
+        "Stay in",
+        "Concede"
+      ],
+      "cols": [
+        "Rival stays in",
+        "Rival concedes"
+      ],
+      "payoffs": [
+        [
+          [
+            -2,
+            -2
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Compare the cost of waiting per period with the value of winning. Concede when waiting costs more than the prize.",
+      "Make costs visible and sunk early. Investment commits you and signals resolve, which can deter the other side.",
+      "Look for the other side's cost of waiting. If they are more exposed, increase pressure on them.",
+      "Offer a face-saving exit to avoid a mutual loss."
+    ],
+    "pitfalls": [
+      "Escalating because of past investment (the sunk-cost fallacy).",
+      "Mistaking the other side's bluff for resolve."
+    ]
+  },
+  {
+    "id": "colonel-blotto",
+    "name": "Colonel Blotto",
+    "category": "Simultaneous, multi-front allocation",
+    "summary": "Two players divide limited forces across several battlefields. Each battlefield goes to the side with more force there, and the winner is whoever takes more battlefields.",
+    "how_it_works": "Concentrating force on a few fronts wins those fronts but leaves others open. Equilibria typically involve randomised allocations so the opponent cannot target you.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum"
+    },
+    "domains": [
+      "military",
+      "games",
+      "politics",
+      "business"
+    ],
+    "examples": [
+      "Allocating a campaign budget across several electoral districts",
+      "Distributing a sales force across regional markets",
+      "Deploying air defence across several cities"
+    ],
+    "strategies": [
+      "Do not spread evenly across every front. An even split can be out-concentrated on the fronts that matter.",
+      "Win the fronts you can, by concentrating enough to beat the opponent's likely allocation there.",
+      "Randomise your allocation within a plausible range so the opponent cannot target you.",
+      "Pick the fronts that matter most, or that are cheapest to win, and reinforce them."
+    ],
+    "pitfalls": [
+      "Predicting that the opponent will spread evenly.",
+      "Ignoring total resource constraints."
+    ],
+    "matrix": {
+      "rows": [
+        "3 then 0",
+        "2 then 1",
+        "1 then 2",
+        "0 then 3"
+      ],
+      "cols": [
+        "2 then 0",
+        "1 then 1",
+        "0 then 2"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (you have three troops and the rival two, across two battlefields; the stronger force wins each field)"
+  },
+  {
+    "id": "signaling-game",
+    "name": "Signaling Game",
+    "category": "Sequential, private information",
+    "summary": "One player knows something the other does not, such as quality or ability. The informed player can send a signal and the other player infers the hidden type from it. Signals work only if they are costly enough to separate the types.",
+    "how_it_works": "A cheap signal is copied by everyone and is worthless. A costly signal that is more expensive for low types can separate them (a separating equilibrium). Cheap talk alone is often ignored.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "communication": "yes",
+      "payoff": "mixed"
+    },
+    "domains": [
+      "work",
+      "business",
+      "politics",
+      "everyday"
+    ],
+    "examples": [
+      "A job candidate proving ability to an employer",
+      "A seller of a used car signalling quality",
+      "A party proving its seriousness to voters"
+    ],
+    "matrix": {
+      "rows": [
+        "Get the credential",
+        "Skip it"
+      ],
+      "cols": [
+        "Pay high wage",
+        "Pay low wage"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As the informed party: send signals that are costly for those lacking your quality, such as credentials, warranties, or a track record.",
+      "As the uninformed party: screen by offering choices that different types will sort themselves into.",
+      "Discount cheap talk. Promises that cost nothing carry little information.",
+      "Verify claims where you can. Third-party verification beats self-description."
+    ],
+    "pitfalls": [
+      "Paying for a signal that does not actually separate the types.",
+      "Assuming a signal is credible just because it is expensive, without checking it."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a worker signals ability with a credential; the employer pays a high or low wage)"
+  },
+  {
+    "id": "principal-agent",
+    "name": "Principal-Agent (Incentives)",
+    "category": "Sequential, moral hazard",
+    "summary": "A principal hires an agent whose effort is hidden. The principal must design incentives so the agent's own interests align with the principal's goal.",
+    "how_it_works": "Incentive compatibility: the agent's payoff should be highest when they choose the effort the principal wants. Performance pay, monitoring, and clawbacks shift the agent's choices.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "work",
+      "business",
+      "politics"
+    ],
+    "examples": [
+      "A company paying a salesperson on commission",
+      "A board setting executive compensation",
+      "A client hiring a contractor on a fixed-fee basis"
+    ],
+    "matrix": {
+      "rows": [
+        "Bonus",
+        "Flat pay"
+      ],
+      "cols": [
+        "Work hard",
+        "Shirk"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Pay for outcomes you can measure, and tie rewards to results the agent actually controls.",
+      "Monitor in proportion to the value at risk. Cheap signals such as reports and audits help.",
+      "Check incentive compatibility: would the agent prefer the effort you want?",
+      "Avoid incentives that reward gaming a single metric. Use several measures."
+    ],
+    "pitfalls": [
+      "Over-weighting one easy-to-measure metric.",
+      "Ignoring that agents respond to the incentive, not to your intentions."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the principal pays a bonus or flat pay; the agent works hard or shirks)"
+  }
+]

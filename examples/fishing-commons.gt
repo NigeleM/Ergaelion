@@ -1,0 +1,12 @@
+title: Shared fishing ground used by five boats
+players: many
+timing: simultaneous
+interaction: repeated
+information: perfect
+payoff: mixed
+communication: yes
+enforcement: no
+commitment: no
+bargaining: no
+domain: environment, economy
+notes: Catch limits are not yet agreed. Every season the stock shrinks.

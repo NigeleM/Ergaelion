@@ -1,0 +1,40 @@
+ERGAELION LICENSE AGREEMENT
+
+Copyright (c) [YEAR] [COPYRIGHT HOLDER]. All rights reserved.
+
+This agreement is between you and the copyright holder. By installing, copying or using Ergaelion (the "Software"), including its programs, game and simulation data, documentation and examples, you agree to these terms. If you do not agree, do not install or use the Software.
+
+1. GRANT
+You may install and use the Software on your own devices for personal, non-commercial purposes. This is a licence to use, not a sale. All rights not granted here are reserved.
+
+2. RESTRICTIONS
+You may not, without the copyright holder's written permission:
+a) copy, redistribute, publish, or host the Software or any part of it, other than the unchanged installers from the official release;
+b) modify the Software, or create a derivative work from it, and distribute the result;
+c) sell, rent, lease, sublicense, or use the Software for commercial services or paid training;
+d) remove or alter copyright notices, licence terms or attributions;
+e) reverse engineer, decompile or disassemble the Software, except where the law expressly allows it despite this restriction.
+
+3. GAME AND SIMULATION CONTENT
+The games, simulations, payoff tables, advice and text in the Software are protected by copyright. Personal use of them is covered by this agreement. Reproducing them in publications or products needs written permission.
+
+4. YOUR OWN CHANGES AND FILES
+Files you create or edit in your own playbook folder remain yours. The Software may read them, but this agreement gives you no rights in the Software itself.
+
+5. THIRD-PARTY SERVICES
+The optional Claude feature sends the text you choose to Anthropic when you ask a question, using your own API key. Anthropic's terms apply to that service. The Software works without it.
+
+6. NO WARRANTY
+The Software is provided "as is", without warranty of any kind, express or implied, including fitness for a particular purpose and non-infringement. Game-theory advice and simulation results are for learning and discussion. They are not legal, financial, medical or other professional advice.
+
+7. LIMITATION OF LIABILITY
+To the maximum extent permitted by law, the copyright holder is not liable for any indirect, incidental, special or consequential damages, or for loss of data, profits or decisions made using the Software. Their total liability is limited to the amount you paid for the Software, if anything.
+
+8. TERMINATION
+This licence ends automatically if you breach it. On termination, stop using the Software and delete all copies.
+
+9. GOVERNING LAW
+[GOVERNING LAW AND JURISDICTION - TO BE COMPLETED]
+
+10. CONTACT
+[CONTACT DETAILS - TO BE COMPLETED]

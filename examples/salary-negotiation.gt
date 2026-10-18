@@ -1,0 +1,12 @@
+title: Salary negotiation with a new employer
+players: two
+timing: sequential
+interaction: one-shot
+information: imperfect
+payoff: mixed
+communication: yes
+enforcement: no
+commitment: no
+bargaining: yes
+domain: work
+notes: I have one competing offer and they have a budget ceiling I do not know.

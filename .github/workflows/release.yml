@@ -1,0 +1,239 @@
+# Tests the program, builds it for Linux, macOS and Windows, signs the macOS and Windows builds when
+# the signing secrets are set, and publishes a GitHub release when a version tag is pushed.
+#
+#   git tag v1.0.0 && git push origin v1.0.0
+#
+# Signing secrets are optional. See docs/RELEASE.md for the list and how to make them.
+
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build the Go program and sync the data
+        run: make build
+      - name: Python tests
+        run: python3 -m unittest discover -s tests
+      - name: Go tests
+        working-directory: goplaybook
+        run: go vet ./... && go test ./...
+
+  build:
+    needs: test
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            goos: linux
+            goarch: amd64
+            ext: ""
+          - os: macos-latest
+            goos: darwin
+            goarch: amd64
+            ext: ""
+          - os: macos-latest
+            goos: darwin
+            goarch: arm64
+            ext: ""
+          - os: windows-latest
+            goos: windows
+            goarch: amd64
+            ext: ".exe"
+    runs-on: ${{ matrix.os }}
+    env:
+      MSYS_NO_PATHCONV: "1"
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+      - name: Sync the data files
+        run: make sync
+      - name: Build
+        working-directory: goplaybook
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          CGO_ENABLED: "0"
+          VERSION: ${{ github.ref_name }}
+        run: go build -trimpath -ldflags "-s -w -X main.version=${VERSION#v}" -o ../dist/Ergaelion-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.ext }} .
+
+      - name: Sign and notarize (macOS)
+        if: matrix.goos == 'darwin' && secrets.MACOS_CERT_P12 != ''
+        env:
+          MACOS_CERT_P12: ${{ secrets.MACOS_CERT_P12 }}
+          MACOS_CERT_PASSWORD: ${{ secrets.MACOS_CERT_PASSWORD }}
+          MACOS_SIGN_IDENTITY: ${{ secrets.MACOS_SIGN_IDENTITY }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_PASSWORD: ${{ secrets.APPLE_APP_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          set -euo pipefail
+          KEYCHAIN="$RUNNER_TEMP/build.keychain"
+          KEYCHAIN_PASSWORD="$(openssl rand -hex 16)"
+          echo "$MACOS_CERT_P12" | base64 --decode > "$RUNNER_TEMP/cert.p12"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security import "$RUNNER_TEMP/cert.p12" -k "$KEYCHAIN" -P "$MACOS_CERT_PASSWORD" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security list-keychains -d user -s "$KEYCHAIN" login.keychain-db
+          BINARY="dist/Ergaelion-${{ matrix.goos }}-${{ matrix.goarch }}"
+          codesign --force --options runtime --timestamp --sign "$MACOS_SIGN_IDENTITY" "$BINARY"
+          ditto -c -k --keepParent "$BINARY" "$BINARY.zip"
+          xcrun notarytool submit "$BINARY.zip" --apple-id "$APPLE_ID" --password "$APPLE_APP_PASSWORD" --team-id "$APPLE_TEAM_ID" --wait
+          rm -f "$RUNNER_TEMP/cert.p12"
+          security delete-keychain "$KEYCHAIN"
+
+      - name: Sign (Windows)
+        if: matrix.goos == 'windows' && secrets.WINDOWS_PFX_BASE64 != ''
+        env:
+          WINDOWS_PFX_BASE64: ${{ secrets.WINDOWS_PFX_BASE64 }}
+          WINDOWS_PFX_PASSWORD: ${{ secrets.WINDOWS_PFX_PASSWORD }}
+        run: |
+          set -euo pipefail
+          echo "$WINDOWS_PFX_BASE64" | base64 --decode > "$RUNNER_TEMP/cert.pfx"
+          SIGNTOOL="$(ls "/c/Program Files (x86)/Windows Kits/10/bin/"*/x64/signtool.exe | sort | tail -n 1)"
+          "$SIGNTOOL" sign /f "$RUNNER_TEMP/cert.pfx" /p "$WINDOWS_PFX_PASSWORD" /fd SHA256 \
+            /tr http://timestamp.digicert.com /td SHA256 "dist/Ergaelion-windows-${{ matrix.goarch }}.exe"
+          rm -f "$RUNNER_TEMP/cert.pfx"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Ergaelion-${{ matrix.goos }}-${{ matrix.goarch }}
+          path: dist/*
+
+  macos-installer:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Ergaelion-darwin-amd64
+          path: dist
+      - uses: actions/download-artifact@v4
+        with:
+          name: Ergaelion-darwin-arm64
+          path: dist
+      - name: Build the installer
+        env:
+          VERSION: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          packaging/macos/build-pkg.sh "${VERSION#v}" \
+            "dist/Ergaelion-darwin-amd64" "dist/Ergaelion-darwin-arm64" "installers" LICENSE.txt
+      - name: Notarize the installer (macOS)
+        if: secrets.APPLE_ID != ''
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_PASSWORD: ${{ secrets.APPLE_APP_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          VERSION: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          PKG="installers/Ergaelion-${VERSION#v}-macos.pkg"
+          xcrun notarytool submit "$PKG" --apple-id "$APPLE_ID" --password "$APPLE_APP_PASSWORD" --team-id "$APPLE_TEAM_ID" --wait
+          xcrun stapler staple "$PKG"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Ergaelion-macos-installer
+          path: installers/*
+
+  windows-installer:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: windows-latest
+    env:
+      MSYS_NO_PATHCONV: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Ergaelion-windows-amd64
+          path: dist
+      - name: Install Inno Setup
+        run: choco install innosetup --no-progress -y
+      - name: Build the installer
+        shell: bash
+        env:
+          VERSION: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          ISCC="$(ls "/c/Program Files (x86)/Inno Setup 6/ISCC.exe" "/c/Program Files/Inno Setup 6/ISCC.exe" 2>/dev/null | head -n 1)"
+          "$ISCC" "/DMyAppVersion=${VERSION#v}" packaging\\windows\\Ergaelion.iss
+      - name: Sign the installer (Windows)
+        if: secrets.WINDOWS_PFX_BASE64 != ''
+        env:
+          WINDOWS_PFX_BASE64: ${{ secrets.WINDOWS_PFX_BASE64 }}
+          WINDOWS_PFX_PASSWORD: ${{ secrets.WINDOWS_PFX_PASSWORD }}
+          VERSION: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          echo "$WINDOWS_PFX_BASE64" | base64 --decode > "$RUNNER_TEMP/cert.pfx"
+          SIGNTOOL="$(ls "/c/Program Files (x86)/Windows Kits/10/bin/"*/x64/signtool.exe | sort | tail -n 1)"
+          "$SIGNTOOL" sign /f "$RUNNER_TEMP/cert.pfx" /p "$WINDOWS_PFX_PASSWORD" /fd SHA256 \
+            /tr http://timestamp.digicert.com /td SHA256 "dist/Ergaelion-${VERSION#v}-windows-setup.exe"
+          rm -f "$RUNNER_TEMP/cert.pfx"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Ergaelion-windows-installer
+          path: dist/Ergaelion-*-windows-setup.exe
+
+  release:
+    needs: [build, macos-installer, windows-installer]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Package the Python source
+        run: zip -r dist/Ergaelion-python-source.zip gtplaybook playbook README.md docs LICENSE.txt -x "*/__pycache__/*"
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" dist/* \
+            --title "Ergaelion ${GITHUB_REF_NAME}" \
+            --generate-notes
+
+  # Keep the newest 10 releases; older release pages are removed (their tags stay).
+  prune-releases:
+    needs: [release]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete releases past the newest 10
+        run: |
+          for tag in $(gh release list --repo "$GITHUB_REPOSITORY" --limit 1000 --json tagName --jq '.[10:][].tagName'); do
+            echo "deleting release $tag (the tag stays)"
+            gh release delete "$tag" --repo "$GITHUB_REPOSITORY" --yes
+          done
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,715 @@
+[
+  {
+    "id": "coalition-formation",
+    "name": "Coalition Formation and Government Building",
+    "category": "Sequential bargaining, legislative coalitions",
+    "summary": "Parties must agree on a government, and the party that proposes the deal has real power. The winning coalition is usually the smallest one that can pass its programme, because every extra member takes a share of the spoils.",
+    "how_it_works": "In the Baron-Ferejohn model, a proposer offers a division of benefits to a minimum winning coalition. Members accept if the offer beats what they expect from waiting. Proposal power, patience and the cost of delay decide the split.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "bargaining": "yes",
+      "communication": "yes"
+    },
+    "domains": [
+      "government",
+      "politics"
+    ],
+    "examples": [
+      "Parties negotiating a governing coalition after an inconclusive election",
+      "Assembling a majority to pass a budget",
+      "Deciding cabinet posts among allied factions"
+    ],
+    "matrix": {
+      "rows": [
+        "Join the coalition",
+        "Go alone"
+      ],
+      "cols": [
+        "Join the coalition",
+        "Go alone"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As proposer: offer just enough to the smallest coalition that passes; overpaying members you do not need wastes resources.",
+      "As a minority party: your value is your ability to join any winning coalition, so keep alternative partners credible.",
+      "Know who is patient. The side that can afford delay usually obtains the better share.",
+      "Lock in agreements with written programmes and clear allocation of posts; unwritten promises are easily reneged on later.",
+      "Watch for a credible threat to form a rival coalition; it sets your floor."
+    ],
+    "pitfalls": [
+      "Accepting a coalition that cannot survive its first contested vote.",
+      "Forming an oversized coalition that splits the spoils so thinly that members defect."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two parties; a coalition pays only if both join)"
+  },
+  {
+    "id": "agenda-setting-voting",
+    "name": "Agenda Setting and Strategic Voting",
+    "category": "Sequential voting, agenda control",
+    "summary": "Who controls the order in which options are voted on can decide the result. Voters may vote for an option they do not prefer, to block a worse outcome, and majorities can cycle with no stable winner.",
+    "how_it_works": "Under pairwise votes in sequence, backward induction predicts the final vote. Voters anticipate it and vote strategically. The agenda setter can exploit cycles by choosing which pairs are compared.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "yes"
+    },
+    "domains": [
+      "government",
+      "politics"
+    ],
+    "examples": [
+      "Committee deciding among three proposals by successive votes",
+      "A party choosing a leader from several candidates",
+      "A council voting on the order of items on a crowded agenda"
+    ],
+    "matrix": {
+      "rows": [
+        "Put reform first",
+        "Put status quo first"
+      ],
+      "cols": [
+        "Support",
+        "Oppose"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As voter: work backward from the final vote and ask what your sincere choice will actually produce.",
+      "If your favourite cannot win, vote for the option that best blocks the worst outcome, rather than wasting the vote.",
+      "As agenda setter: control the order of comparisons; where preferences cycle, the order decides the result.",
+      "As a minority: propose amendments or sequencing that protect your core interests before the vote that matters most."
+    ],
+    "pitfalls": [
+      "Assuming the sincere winner of the first round will carry through the process.",
+      "Ignoring who sets the agenda when the majority's preferences are unstable."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the agenda-setter chooses which motion is voted on first; the voter supports or opposes)"
+  },
+  {
+    "id": "median-voter-spatial-competition",
+    "name": "Median Voter and Spatial Competition",
+    "category": "Simultaneous, competitive positioning",
+    "summary": "Two candidates or parties position themselves on a single scale of opinion. Each tries to win the most voters, which tends to push both toward the centre, unless a voter base or a niche gives reason to stay apart.",
+    "how_it_works": "In a two-party contest with a single dimension and voters who choose the nearest option, the median voter's preference is decisive. Competition then drives both sides toward the middle. Third parties and fixed bases break that pull.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "communication": "yes"
+    },
+    "domains": [
+      "politics",
+      "business",
+      "government"
+    ],
+    "examples": [
+      "Two parties choosing platforms on a left-right scale",
+      "Two shops choosing where on a high street to locate",
+      "Two streaming services choosing which content niche to target"
+    ],
+    "strategies": [
+      "If you are a two-party contender, the centre is the big prize; expect the rival to move toward it as well.",
+      "If you have a committed base, you may gain more by energising it than by moving to the centre; weigh turnout against persuasion.",
+      "Differentiate on issues where you have a credible advantage, rather than matching the rival on everything.",
+      "Watch for a third option that targets the voters both main parties leave out; it can change the outcome."
+    ],
+    "pitfalls": [
+      "Moving to the centre so far that you lose your base's turnout.",
+      "Assuming the rival will stay put when the centre is open."
+    ],
+    "matrix": {
+      "rows": [
+        "Left",
+        "Centre",
+        "Right"
+      ],
+      "cols": [
+        "Left",
+        "Centre",
+        "Right"
+      ],
+      "payoffs": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (three positions, three equal groups of voters; each votes for the nearer candidate)"
+  },
+  {
+    "id": "authoritarian-survival",
+    "name": "Authoritarian Survival (Selectorate Analysis)",
+    "category": "Repeated, regime survival and coalitions",
+    "summary": "Political scientists analyse how autocracies keep power: rulers keep a small winning coalition loyal with private benefits, and must manage the threat of rivals inside their own security forces. Understanding this game helps observers, citizens and opposition predict when a regime is stable and when it is vulnerable.",
+    "how_it_works": "In selectorate theory, the size of the group whose support the ruler needs shapes incentives. A small winning coalition is cheap to keep loyal but depends on a few people, while a large one spreads benefits thin. Regimes survive while the expected cost of defecting exceeds the expected gain for each insider.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "enforcement": "no",
+      "commitment": "no"
+    },
+    "domains": [
+      "government",
+      "politics"
+    ],
+    "examples": [
+      "Analysing why a long-serving leader survives economic crises",
+      "Judging whether elites are likely to keep backing a leader",
+      "Assessing how a regime distributes rents to its supporters"
+    ],
+    "matrix": {
+      "rows": [
+        "Stay loyal",
+        "Defect"
+      ],
+      "cols": [
+        "Reward",
+        "Purge"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -2,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            -2
+          ],
+          [
+            -3,
+            -3
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "For observers: watch the loyalty of the small group whose support keeps the leader in power, not the public mood alone.",
+      "For observers: economic shocks that reduce what the regime can pay its supporters raise the risk of elite defection.",
+      "For citizens and the opposition: the regime's stability depends on insiders expecting it to last. Credible signs that it is weakening change those expectations.",
+      "For citizens and the opposition: broad, peaceful participation makes repression costly and undermines the loyalty the regime relies on.",
+      "Research on regime change emphasises coordination and legitimacy over force. Treat any claim of a quick, predictable outcome with suspicion."
+    ],
+    "pitfalls": [
+      "Assuming a regime is stable because it has survived a long time; tenure can hide fragility.",
+      "Assuming elites will defect because the public is angry; their own calculation of risk matters more."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (an elite stays loyal or defects; the leader rewards or purges)"
+  },
+  {
+    "id": "elite-defection-coordination",
+    "name": "Elite Defection and Coordination",
+    "category": "Simultaneous, threshold coordination",
+    "summary": "Powerful actors inside an institution each decide whether to back a leader, or to break from them. Each is safer acting only if enough others act too, so the outcome depends on what each expects others to do, and on credible signals.",
+    "how_it_works": "Each insider has a threshold: the number of others who must defect before they will defect too. If the thresholds are spread out, a small trigger can cascade; if they are high, the status quo holds. Visible commitment changes beliefs about who will move.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "common-interest",
+      "communication": "no",
+      "enforcement": "no"
+    },
+    "domains": [
+      "government",
+      "politics"
+    ],
+    "examples": [
+      "Cabinet members deciding whether to resign together",
+      "Party officials choosing whether to back a leadership challenge",
+      "Officers deciding whether to stay with an institution in a crisis"
+    ],
+    "matrix": {
+      "rows": [
+        "Defect",
+        "Stay"
+      ],
+      "cols": [
+        "Defect",
+        "Stay"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "For actors inside an institution: waiting for a clear, public focal signal reduces the risk of acting alone and being isolated.",
+      "For actors inside an institution: estimate what happens to you if the move fails, not just what happens if it succeeds.",
+      "For leaders: loyalty that depends on being watched is fragile. Visible, credible reasons to stay committed raise the threshold others need.",
+      "For observers: a sudden public resignation or refusal often reveals that many people had already decided, but were waiting for a signal."
+    ],
+    "pitfalls": [
+      "Acting before the others are visibly committed, and being left exposed.",
+      "Reading silence as support when it may be fear of being seen to disagree."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (defecting pays only if others defect too: a coordination game)"
+  },
+  {
+    "id": "mass-uprising-threshold",
+    "name": "Mass Mobilisation and Preference Falsification",
+    "category": "Simultaneous, threshold cascades",
+    "summary": "People may privately oppose a regime yet publicly comply, because they do not know how many others feel the same. Small visible acts can reveal this, and large changes can happen suddenly when enough people believe enough others will join.",
+    "how_it_works": "Granovetter's threshold model: each person joins a protest once a given number of others have joined. A small change in the early count can trigger a cascade. Preference falsification means public behaviour hides private views, so the true level of opposition is unknown until people move.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "no"
+    },
+    "domains": [
+      "government",
+      "politics",
+      "society"
+    ],
+    "examples": [
+      "A local protest that suddenly grows into a national movement",
+      "Citizens questioning an official line in public for the first time",
+      "A strike spreading from one workplace to a whole sector"
+    ],
+    "matrix": {
+      "rows": [
+        "Join",
+        "Stay home"
+      ],
+      "cols": [
+        "Join",
+        "Stay home"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "For organisers: plan for the early threshold. Visible, peaceful first participation lowers the perceived risk for those who would join later.",
+      "For organisers: broad, inclusive participation makes the movement harder to isolate and harder to portray as a fringe.",
+      "For observers: do not assume that a regime is secure because public opposition is quiet; private opposition can be large.",
+      "For everyone: verify information about turnout and events before acting on it, since rumours can move thresholds in either direction."
+    ],
+    "pitfalls": [
+      "Assuming public compliance equals support.",
+      "Relying on a single dramatic event when sustained participation is what keeps a movement going."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (joining only pays if enough others join: a coordination game)"
+  },
+  {
+    "id": "nonviolent-resistance",
+    "name": "Nonviolent Resistance Campaigns",
+    "category": "Repeated, mass coordination and discipline",
+    "summary": "Political scientists studying civil resistance find that broad nonviolent campaigns have, on average, succeeded more often than violent ones. Success depends on discipline, broad coalitions, and the loyalty of the institutions a regime relies on.",
+    "how_it_works": "A campaign raises the cost of repression by involving many people, who are hard to target and whose participation signals broad support. Violence tends to let a regime justify harsh responses and to narrow participation. Defections by security forces or elites are often the decisive turning point.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "no"
+    },
+    "domains": [
+      "government",
+      "politics",
+      "society"
+    ],
+    "examples": [
+      "A sustained campaign of strikes, boycotts and public demonstrations",
+      "A civic movement building parallel institutions during repression",
+      "A labour and community coalition pressing for political change"
+    ],
+    "matrix": {
+      "rows": [
+        "Persist",
+        "Retreat"
+      ],
+      "cols": [
+        "Accommodate",
+        "Repress"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            0
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Keep the campaign disciplined and nonviolent; this keeps the broadest range of people willing to take part.",
+      "Build a wide coalition, including groups that do not usually join protests, to increase the cost of repression.",
+      "Target the pillars of the regime's power, such as economic cooperation and public legitimacy, rather than individuals.",
+      "Plan for defections: create safe, visible ways for officials and security personnel to step back.",
+      "Expect setbacks and long timelines; treat sustained participation as the goal, not a single event."
+    ],
+    "pitfalls": [
+      "Escalating to violence in a way that gives the regime a justification for mass repression.",
+      "Expecting quick victory; the research suggests campaigns often take a long time."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (protesters persist or retreat; the regime accommodates or represses)"
+  },
+  {
+    "id": "crisis-negotiation",
+    "name": "Crisis Negotiation and Hostage Situations",
+    "category": "Sequential, commitment and communication",
+    "summary": "In a crisis such as a hostage incident, both sides want to avoid disaster but are pressured to make demands and concessions. Communication and time usually help more than ultimatums, and rewarding violence tends to invite more of it.",
+    "how_it_works": "Early ultimatums commit both sides and leave little room to back down. Negotiators buy time, build a channel, and reduce demands step by step. Concessions that reward violence raise the incentive for future crises.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "commitment": "yes"
+    },
+    "domains": [
+      "military",
+      "politics",
+      "everyday",
+      "government"
+    ],
+    "examples": [
+      "A hostage incident in which the captor sets a deadline",
+      "A tense border standoff where neither side wants to escalate",
+      "A workplace confrontation with a threat of harm"
+    ],
+    "matrix": {
+      "rows": [
+        "Concede",
+        "Hold firm"
+      ],
+      "cols": [
+        "Concede",
+        "Hold firm"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            -3,
+            -3
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Open a channel of communication early, through a trained negotiator where possible, and keep it open.",
+      "Buy time. Most crises lose intensity as the situation is slowed down and information improves.",
+      "Break demands into smaller steps and look for things that help the other side save face without rewarding harm.",
+      "Avoid making deadlines you cannot keep; a bluff that is called damages your credibility for everything that follows.",
+      "Use third parties with trust on both sides, and check information before acting on it."
+    ],
+    "pitfalls": [
+      "Making concessions under pressure that teach the other side that threats work.",
+      "Ignoring the other side's need to save face, which can make a settlement impossible."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a chicken-style standoff: holding firm against a concession wins; holding firm against holding firm is a crash)"
+  },
+  {
+    "id": "arms-race-security-dilemma",
+    "name": "Arms Race and Security Dilemma",
+    "category": "Repeated, mutual deterrence",
+    "summary": "Each side builds up its defences for safety, but its rival reads that build-up as a threat and responds in kind. Both end up less secure and poorer, even though neither wanted the race.",
+    "how_it_works": "Defensive moves cannot always be told apart from offensive ones. Each side's security depends on the other's build-up, so the best unilateral choice can lead to a worse joint outcome. Transparency, verification and reciprocal restraint can break the cycle.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "yes",
+      "commitment": "yes"
+    },
+    "domains": [
+      "military",
+      "politics",
+      "government"
+    ],
+    "examples": [
+      "Two states expanding their arsenals in response to each other",
+      "Two companies escalating spending on a feature race",
+      "Two neighbourhoods adding security measures in response to each other"
+    ],
+    "matrix": {
+      "rows": [
+        "Build up",
+        "Restrain"
+      ],
+      "cols": [
+        "Rival builds up",
+        "Rival restrains"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Make defensive capabilities visible and limited, so they reassure rather than threaten.",
+      "Use verification and transparency; a rival that can confirm your restraint is more willing to show its own.",
+      "Adopt tit-for-tat restraint: reciprocate reductions and respond to build-ups proportionately, without an open-ended race.",
+      "Offer a signal of restraint that is costly to fake, such as an inspection regime, rather than a verbal promise alone.",
+      "Measure your own security against the rival's actual capability, not against its rhetoric."
+    ],
+    "pitfalls": [
+      "Assuming a rival's build-up is aimed at you without checking.",
+      "Matching every move so that the race escalates indefinitely."
+    ]
+  },
+  {
+    "id": "asymmetric-insurgency",
+    "name": "Asymmetric Conflict (Insurgency and Counter-Insurgency)",
+    "category": "Repeated, asymmetric strength",
+    "summary": "A strong state faces a weaker armed or political movement. The stronger side can win battles but struggles to win the population, and the weaker side usually wins by surviving and outlasting, rather than by defeating its opponent militarily.",
+    "how_it_works": "The stronger side's advantage in firepower is less useful when the contest is for legitimacy and local support. Heavy force that harms civilians can increase support for the other side. The weaker side's goal is endurance and political cost, not a decisive battle.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "commitment": "no"
+    },
+    "domains": [
+      "military",
+      "politics",
+      "government"
+    ],
+    "examples": [
+      "A state fighting a long-running armed movement in its own territory",
+      "A government facing organised criminal control of a region",
+      "A foreign force operating in a hostile country"
+    ],
+    "matrix": {
+      "rows": [
+        "Hit and run",
+        "Stand and fight"
+      ],
+      "cols": [
+        "Patrol",
+        "Mass search"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            -1,
+            2
+          ],
+          [
+            -2,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "For the stronger side: the decisive contest is for public legitimacy; actions that harm civilians often strengthen the opposing side.",
+      "For the stronger side: the most effective approaches combine security with political, economic and service-based offers.",
+      "For the weaker side: endurance and political cost matter more than battlefield victories; plan for a long timeline.",
+      "For both: information from local communities is the scarce resource, and trust is the mechanism that brings it."
+    ],
+    "pitfalls": [
+      "Measuring success by territory held or casualties inflicted, rather than by the population's support.",
+      "Assuming superior firepower will end the conflict quickly."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (insurgents strike and withdraw or stand and fight; the government patrols or launches a mass search)"
+  }
+]

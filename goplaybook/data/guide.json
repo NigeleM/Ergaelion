@@ -1,0 +1,766 @@
+{
+  "note": "Original principles for strategy, influence and judgement. They are inspired by the broad theme of power and strategy studied in history and political science, and are written for three purposes: using influence ethically, recognising manipulation, and deciding well. They are not a copy of any published book; for a specific book, read the original.",
+  "power": [
+    {
+      "id": 1,
+      "title": "Credibility is the currency",
+      "area": "Credibility",
+      "principle": "A promise carries weight only when it is costly to break or easy to check.",
+      "games": [
+        "deception-cheap-talk",
+        "chicken",
+        "entry-deterrence"
+      ],
+      "defence": "Ask what a promise costs the person who made it. If nothing, weigh it lightly."
+    },
+    {
+      "id": 2,
+      "title": "Reputation compounds",
+      "area": "Credibility",
+      "principle": "Consistent, honest dealing builds leverage that grows with each round.",
+      "games": [
+        "repeated-prisoners-dilemma",
+        "reputation-reviews"
+      ],
+      "defence": "Check a track record before trusting someone with something important."
+    },
+    {
+      "id": 3,
+      "title": "Do not bluff what can be called",
+      "area": "Credibility",
+      "principle": "A bluff works only when the other side cannot cheaply test it.",
+      "games": [
+        "chicken",
+        "poker-bluffing"
+      ],
+      "defence": "Test a bold claim with a small, low-cost request before committing."
+    },
+    {
+      "id": 4,
+      "title": "Make commitments visible",
+      "area": "Credibility",
+      "principle": "Others can rely on you only if they can see what you have committed to.",
+      "games": [
+        "stackelberg-leadership",
+        "alliance-entrapment"
+      ],
+      "defence": "Notice small promises that go unkept. They are early warnings."
+    },
+    {
+      "id": 5,
+      "title": "Overcommitment is a trap",
+      "area": "Credibility",
+      "principle": "Investments made to win a contest can lock you into losing it.",
+      "games": [
+        "dollar-auction-escalation",
+        "war-of-attrition"
+      ],
+      "defence": "Set your walk-away point before you start, and write it down."
+    },
+    {
+      "id": 6,
+      "title": "Be the same across audiences",
+      "area": "Credibility",
+      "principle": "Consistency across different people builds trust; contradiction spreads quickly.",
+      "games": [
+        "repeated-prisoners-dilemma"
+      ],
+      "defence": "Watch for people who tell each audience a different story."
+    },
+    {
+      "id": 7,
+      "title": "Find the information gap",
+      "area": "Information",
+      "principle": "Power often sits where one side knows something the other does not.",
+      "games": [
+        "signaling-game",
+        "lemons-market"
+      ],
+      "defence": "Ask what the other side knows that you do not, and how you could find out."
+    },
+    {
+      "id": 8,
+      "title": "Read what is not said",
+      "area": "Information",
+      "principle": "Silence can be as informative as any statement, especially when disclosure is expected.",
+      "games": [
+        "disclosure-game"
+      ],
+      "defence": "Note what a party avoids saying, and ask why."
+    },
+    {
+      "id": 9,
+      "title": "Corroborate independently",
+      "area": "Information",
+      "principle": "Claims that come from one source, or from sources sharing an origin, are weak evidence.",
+      "games": [
+        "deception-cheap-talk",
+        "analysis-bayesian-updating"
+      ],
+      "defence": "Check important claims with a source that has no stake in the answer."
+    },
+    {
+      "id": 10,
+      "title": "Update on evidence, not on drama",
+      "area": "Information",
+      "principle": "A vivid story moves belief more than its evidence justifies.",
+      "games": [
+        "analysis-bayesian-updating"
+      ],
+      "defence": "Write down your starting view and how strongly each new fact should move it."
+    },
+    {
+      "id": 11,
+      "title": "Distrust false dilemmas",
+      "area": "Information",
+      "principle": "Presenting only two options hides the ones that matter most.",
+      "games": [
+        "ultimatum-game",
+        "chicken"
+      ],
+      "defence": "List at least three options before choosing between any two."
+    },
+    {
+      "id": 12,
+      "title": "The first explanation is the riskiest",
+      "area": "Information",
+      "principle": "The first plausible story tends to stick, even when later evidence contradicts it.",
+      "games": [
+        "analysis-bayesian-updating",
+        "keynes-beauty-contest"
+      ],
+      "defence": "Assign someone to argue the opposite before you act."
+    },
+    {
+      "id": 13,
+      "title": "Crowds reveal what people expect",
+      "area": "Information",
+      "principle": "What others do often reflects what they think others will do, not the underlying facts.",
+      "games": [
+        "keynes-beauty-contest",
+        "herding-cascades"
+      ],
+      "defence": "Form your own view from your own evidence before looking at the crowd."
+    },
+    {
+      "id": 14,
+      "title": "Manufactured urgency shrinks thinking",
+      "area": "Information",
+      "principle": "Deadlines are often created to stop careful comparison.",
+      "games": [
+        "crisis-negotiation",
+        "sealed-bid-auctions"
+      ],
+      "defence": "When a deadline appears, take a short pause and ask who set it and why."
+    },
+    {
+      "id": 15,
+      "title": "Build coalitions before you need them",
+      "area": "Alliances",
+      "principle": "Allies gathered in advance are cheaper and more reliable than allies gathered in a crisis.",
+      "games": [
+        "coalition-formation",
+        "stag-hunt"
+      ],
+      "defence": "Notice when others quietly gather allies against you."
+    },
+    {
+      "id": 16,
+      "title": "Make the cooperative path visible",
+      "area": "Alliances",
+      "principle": "People cooperate more when they can see that others are cooperating.",
+      "games": [
+        "public-goods",
+        "vaccination-free-riding"
+      ],
+      "defence": "Publish contributions and results so that cooperation is seen and rewarded."
+    },
+    {
+      "id": 17,
+      "title": "Give first, then expect return",
+      "area": "Alliances",
+      "principle": "A small, early act of good faith often starts reciprocity.",
+      "games": [
+        "trust-game",
+        "repeated-prisoners-dilemma"
+      ],
+      "defence": "Distinguish reciprocity from a favour that creates a debt you did not agree to."
+    },
+    {
+      "id": 18,
+      "title": "Consensus is built, not announced",
+      "area": "Alliances",
+      "principle": "Decisions stick when the people affected were consulted before the vote.",
+      "games": [
+        "agenda-setting-voting",
+        "veto-players-reform"
+      ],
+      "defence": "Ask who was consulted before a decision that affects you."
+    },
+    {
+      "id": 19,
+      "title": "Limit blank-cheque commitments",
+      "area": "Alliances",
+      "principle": "An unlimited promise to an ally can pull you into conflicts you did not choose.",
+      "games": [
+        "alliance-entrapment"
+      ],
+      "defence": "Agree specific, limited commitments with clear consultation rules."
+    },
+    {
+      "id": 20,
+      "title": "Notice when you are being divided",
+      "area": "Alliances",
+      "principle": "Opponents are weaker together; offering separate deals to each is a common way to split a group.",
+      "games": [
+        "veto-players-reform",
+        "coalition-formation"
+      ],
+      "defence": "Compare the terms offered to each member of a group, and share them openly."
+    },
+    {
+      "id": 21,
+      "title": "Influence through usefulness",
+      "area": "Alliances",
+      "principle": "Influence that rests on real value lasts longer than pressure or favours.",
+      "games": [
+        "lobbying-influence",
+        "travelers-dilemma"
+      ],
+      "defence": "Notice when a favour creates an obligation that was never discussed."
+    },
+    {
+      "id": 22,
+      "title": "Loyalty is tested over time",
+      "area": "Alliances",
+      "principle": "Support is kept by reward and by the expectation that others will stay loyal too.",
+      "games": [
+        "authoritarian-survival",
+        "elite-defection-coordination"
+      ],
+      "defence": "Watch who gains from your loyalty, and whether those gains are shared."
+    },
+    {
+      "id": 23,
+      "title": "Patience is leverage when the other side pays for delay",
+      "area": "Timing",
+      "principle": "The party that can afford to wait usually gets the better share.",
+      "games": [
+        "rubinstein-bargaining",
+        "war-of-attrition"
+      ],
+      "defence": "Know who bears the cost of waiting, and whether it is you."
+    },
+    {
+      "id": 24,
+      "title": "Move first when it commits the other side",
+      "area": "Timing",
+      "principle": "A credible first move can shape the choices left to others.",
+      "games": [
+        "stackelberg-leadership",
+        "entry-deterrence"
+      ],
+      "defence": "Do not rush into irreversible moves before you know what they commit you to."
+    },
+    {
+      "id": 25,
+      "title": "Stop before sunk costs decide for you",
+      "area": "Timing",
+      "principle": "Money or effort already spent should not determine whether to spend more.",
+      "games": [
+        "dollar-auction-escalation",
+        "all-pay-contest"
+      ],
+      "defence": "Ask only what the next unit of effort will buy, not what has been spent."
+    },
+    {
+      "id": 26,
+      "title": "Strike at the weakest point",
+      "area": "Timing",
+      "principle": "A spread-out defence is only as strong as its weakest front.",
+      "games": [
+        "colonel-blotto",
+        "lanchester-combat"
+      ],
+      "defence": "Map your weakest points and reinforce them before they are tested."
+    },
+    {
+      "id": 27,
+      "title": "Concentrate where it decides",
+      "area": "Timing",
+      "principle": "Force or effort concentrated on the decisive point usually beats the same effort spread thin.",
+      "games": [
+        "colonel-blotto",
+        "lanchester-combat"
+      ],
+      "defence": "Identify the one point that decides the outcome, and protect it."
+    },
+    {
+      "id": 28,
+      "title": "Wait for the focal signal when many are watching",
+      "area": "Timing",
+      "principle": "Acting alone is risky; a clear signal lets many people move together.",
+      "games": [
+        "elite-defection-coordination",
+        "mass-uprising-threshold"
+      ],
+      "defence": "Before acting publicly, check whether others are moving too, using reliable information."
+    },
+    {
+      "id": 29,
+      "title": "Set a budget for learning",
+      "area": "Timing",
+      "principle": "Exploring options gathers information, but endless exploration costs the good options you already have.",
+      "games": [
+        "explore-exploit-bandit",
+        "secretary-problem"
+      ],
+      "defence": "Decide in advance how many options to explore before committing."
+    },
+    {
+      "id": 30,
+      "title": "Decide when the information is ripe",
+      "area": "Timing",
+      "principle": "Committing before enough information is risky; waiting too long forfeits the best options.",
+      "games": [
+        "secretary-problem",
+        "intel-warning-problem"
+      ],
+      "defence": "Use a benchmark from your first options to judge the rest."
+    },
+    {
+      "id": 31,
+      "title": "Know your alternative before you negotiate",
+      "area": "Bargaining",
+      "principle": "The strength of your position is the quality of your best option if the deal fails.",
+      "games": [
+        "rubinstein-bargaining",
+        "ultimatum-game"
+      ],
+      "defence": "Never enter a negotiation without knowing your alternative."
+    },
+    {
+      "id": 32,
+      "title": "A fair offer is often the strongest offer",
+      "area": "Bargaining",
+      "principle": "Offers seen as unfair are often rejected, even when rejection costs the rejecter.",
+      "games": [
+        "ultimatum-game",
+        "cake-cutting-fair-division"
+      ],
+      "defence": "Test an offer against what the other side will perceive as fair."
+    },
+    {
+      "id": 33,
+      "title": "Trade what each side values least",
+      "area": "Bargaining",
+      "principle": "Items valued differently by two people can be traded to create value for both.",
+      "games": [
+        "cake-cutting-fair-division"
+      ],
+      "defence": "Ask what each side cares about least, and what it cares about most."
+    },
+    {
+      "id": 34,
+      "title": "Expand the pie before dividing it",
+      "area": "Bargaining",
+      "principle": "Joint gains are usually larger than any split of a fixed amount.",
+      "games": [
+        "prisoners-dilemma",
+        "climate-treaty-public-goods"
+      ],
+      "defence": "Ask what could make the total larger before arguing about shares."
+    },
+    {
+      "id": 35,
+      "title": "Anchor reasonably and concede in steps",
+      "area": "Bargaining",
+      "principle": "A reasonable opening and small, shrinking concessions keep a negotiation moving.",
+      "games": [
+        "rubinstein-bargaining"
+      ],
+      "defence": "Make concessions visibly smaller over time, so the other side sees that you are near your limit."
+    },
+    {
+      "id": 36,
+      "title": "Hold firm on what matters",
+      "area": "Bargaining",
+      "principle": "Concede on details freely, and keep firm on the few points that define your interests.",
+      "games": [
+        "chicken",
+        "crisis-negotiation"
+      ],
+      "defence": "Name your non-negotiables early, so you do not concede them under pressure."
+    },
+    {
+      "id": 37,
+      "title": "Do not reward threats",
+      "area": "Bargaining",
+      "principle": "Paying for a threat teaches the other side that threats work.",
+      "games": [
+        "crisis-negotiation",
+        "ultimatum-game"
+      ],
+      "defence": "Separate a legitimate grievance from a demand made under threat, and address only the grievance."
+    },
+    {
+      "id": 38,
+      "title": "Make the right option the best one for them",
+      "area": "Bargaining",
+      "principle": "Agreements last when the other side's best option is the one you can live with.",
+      "games": [
+        "matching-markets",
+        "stackelberg-leadership"
+      ],
+      "defence": "Ask what the other side's best alternative is, and whether your offer beats it."
+    },
+    {
+      "id": 39,
+      "title": "Price the risk before you bet",
+      "area": "Risk",
+      "principle": "Decisions under uncertainty should weigh the chance and size of loss, not just the hoped-for gain.",
+      "games": [
+        "insurance-moral-hazard",
+        "bank-run"
+      ],
+      "defence": "Write down the worst plausible outcome and whether you could survive it."
+    },
+    {
+      "id": 40,
+      "title": "Guard against being held up",
+      "area": "Risk",
+      "principle": "Investments that work only with one partner give that partner leverage.",
+      "games": [
+        "hold-up"
+      ],
+      "defence": "Protect specific investments with contracts or shared ownership before making them."
+    },
+    {
+      "id": 41,
+      "title": "Avoid single dependence",
+      "area": "Risk",
+      "principle": "Depending on one supplier, source or person creates a single point of failure.",
+      "games": [
+        "hold-up",
+        "bank-run"
+      ],
+      "defence": "Keep at least one realistic alternative for anything critical."
+    },
+    {
+      "id": 42,
+      "title": "Expect responses to incentives",
+      "area": "Risk",
+      "principle": "People respond to what they are rewarded for, which is not always what you intended.",
+      "games": [
+        "principal-agent",
+        "insurance-moral-hazard"
+      ],
+      "defence": "Ask what the incentive rewards, and whether it could be gamed."
+    },
+    {
+      "id": 43,
+      "title": "Discipline beats cleverness over time",
+      "area": "Self-control",
+      "principle": "Steady, rule-based play outlasts clever swings in the long run.",
+      "games": [
+        "poker-bluffing",
+        "chess-minimax"
+      ],
+      "defence": "Set a loss limit and a stopping rule before you start."
+    },
+    {
+      "id": 44,
+      "title": "Keep your strategy private",
+      "area": "Self-control",
+      "principle": "Revealing your plan early gives others the chance to prepare.",
+      "games": [
+        "poker-bluffing",
+        "zero-sum-games"
+      ],
+      "defence": "Share what others need to know, and nothing more."
+    },
+    {
+      "id": 45,
+      "title": "Control your emotional state",
+      "area": "Self-control",
+      "principle": "Anger and fear are easy to exploit and make predictable mistakes.",
+      "games": [
+        "poker-bluffing",
+        "dollar-auction-escalation"
+      ],
+      "defence": "Pause before any important decision made while angry or afraid."
+    },
+    {
+      "id": 46,
+      "title": "Know your own biases",
+      "area": "Self-control",
+      "principle": "The biases that mislead you are the ones others can use against you.",
+      "games": [
+        "keynes-beauty-contest",
+        "analysis-bayesian-updating"
+      ],
+      "defence": "List the two biases you are most prone to, and check for them before each big decision."
+    },
+    {
+      "id": 47,
+      "title": "Fairness builds durable power",
+      "area": "Self-control",
+      "principle": "Power that rests on fair dealing lasts longer than power that rests on fear.",
+      "games": [
+        "ultimatum-game",
+        "repeated-prisoners-dilemma"
+      ],
+      "defence": "Ask whether your gains would survive being seen by everyone affected."
+    },
+    {
+      "id": 48,
+      "title": "Build your own options",
+      "area": "Self-control",
+      "principle": "Having choices is the surest source of power, and the hardest to take away.",
+      "games": [
+        "rubinstein-bargaining",
+        "defending-a-position"
+      ],
+      "defence": "Invest in skills, relationships and savings that give you exits and alternatives."
+    }
+  ],
+  "defend": [
+    {
+      "pattern": "Manufactured urgency",
+      "signs": "A deadline that cannot be checked; pressure not to 'think it over'.",
+      "defence": "Pause for a set period before deciding. Ask who benefits from the deadline.",
+      "games": [
+        "crisis-negotiation",
+        "sealed-bid-auctions"
+      ]
+    },
+    {
+      "pattern": "False scarcity",
+      "signs": "'Only two left', 'this offer ends tonight' with no evidence.",
+      "defence": "Check the claim independently. Real scarcity survives a short wait.",
+      "games": [
+        "sealed-bid-auctions",
+        "lemons-market"
+      ]
+    },
+    {
+      "pattern": "Reciprocity debt",
+      "signs": "A favour given unasked, followed by a larger request.",
+      "defence": "You are not obliged to repay a favour you did not agree to. Say so, kindly.",
+      "games": [
+        "trust-game",
+        "lobbying-influence"
+      ]
+    },
+    {
+      "pattern": "Foot in the door",
+      "signs": "A small request now, a much larger one next, framed as continuous.",
+      "defence": "Evaluate each request on its own terms, not as a step in a sequence.",
+      "games": [
+        "repeated-prisoners-dilemma",
+        "dollar-auction-escalation"
+      ]
+    },
+    {
+      "pattern": "Isolation",
+      "signs": "Being cut off from family, friends or independent advice.",
+      "defence": "Keep outside contacts. Treat pressure to cut them off as a warning sign.",
+      "games": [
+        "cults-coercive-groups"
+      ]
+    },
+    {
+      "pattern": "Gaslighting",
+      "signs": "Being told you misremember what was said, repeatedly.",
+      "defence": "Write down agreements and key conversations. Check them against records.",
+      "games": [
+        "deception-cheap-talk"
+      ]
+    },
+    {
+      "pattern": "Moving goalposts",
+      "signs": "Each time a condition is met, a new one appears.",
+      "defence": "Ask for all conditions in writing before you start.",
+      "games": [
+        "hold-up",
+        "veto-players-reform"
+      ]
+    },
+    {
+      "pattern": "Unverified authority",
+      "signs": "Credentials or titles offered in place of evidence.",
+      "defence": "Ask for the evidence behind the claim, and check it independently.",
+      "games": [
+        "signaling-game",
+        "deception-cheap-talk"
+      ]
+    },
+    {
+      "pattern": "Flattery before a request",
+      "signs": "Unusual praise followed by an ask you were not expecting.",
+      "defence": "Notice the sequence. Decide on the request, not the compliment.",
+      "games": [
+        "trust-game"
+      ]
+    },
+    {
+      "pattern": "False dilemma",
+      "signs": "Only two options presented, both bad.",
+      "defence": "Name at least one more option before choosing.",
+      "games": [
+        "chicken",
+        "ultimatum-game"
+      ]
+    },
+    {
+      "pattern": "Sunk-cost pressure",
+      "signs": "'You have already put so much in; you cannot stop now.'",
+      "defence": "Decide on future costs and benefits only.",
+      "games": [
+        "dollar-auction-escalation",
+        "war-of-attrition"
+      ]
+    },
+    {
+      "pattern": "Divide and rule",
+      "signs": "Separate, different deals offered to each member of a group.",
+      "defence": "Share terms across the group and compare them openly.",
+      "games": [
+        "coalition-formation",
+        "veto-players-reform"
+      ]
+    },
+    {
+      "pattern": "Love-bombing then withdrawal",
+      "signs": "Intense attention and promises early, then coldness when you set a boundary.",
+      "defence": "Judge consistency over weeks, not intensity over days.",
+      "games": [
+        "dating-marriage-market-search"
+      ]
+    },
+    {
+      "pattern": "Obligation and guilt",
+      "signs": "Being made to feel responsible for someone else's difficulty as a lever.",
+      "defence": "Separate sympathy from obligation. Help on your own terms.",
+      "games": [
+        "household-chores-bills"
+      ]
+    },
+    {
+      "pattern": "Social proof",
+      "signs": "'Everyone is doing it' with no way to check.",
+      "defence": "Ask how you would know, and look at what the evidence actually shows.",
+      "games": [
+        "herding-cascades",
+        "mass-uprising-threshold"
+      ]
+    },
+    {
+      "pattern": "Good cop, bad cop",
+      "signs": "One party is harsh while another offers relief, to push you toward the second.",
+      "defence": "Negotiate with the decision-maker, not the messenger, and take time before agreeing.",
+      "games": [
+        "crisis-negotiation",
+        "plea-bargaining"
+      ]
+    },
+    {
+      "pattern": "Selective disclosure",
+      "signs": "Only favourable facts are shared, and the rest is withheld.",
+      "defence": "Ask what is missing, and request the full picture before judging.",
+      "games": [
+        "disclosure-game"
+      ]
+    }
+  ],
+  "research": [
+    {
+      "step": "Frame the question",
+      "detail": "Write the question as something you could be wrong about, and what evidence would settle it."
+    },
+    {
+      "step": "Start with the best sources",
+      "detail": "Prefer systematic reviews, official statistics, primary documents and peer-reviewed work over summaries and commentary."
+    },
+    {
+      "step": "Check base rates",
+      "detail": "Ask how common the outcome is before the evidence arrived. Rare events need strong evidence."
+    },
+    {
+      "step": "Read for design",
+      "detail": "Ask who was studied, how they were chosen, what was compared, and whether results have been replicated."
+    },
+    {
+      "step": "Check conflicts of interest",
+      "detail": "Ask who pays for the work and who gains if it is believed."
+    },
+    {
+      "step": "Triangulate",
+      "detail": "Look for agreement across independent methods and sources, not repetition of one source."
+    },
+    {
+      "step": "Keep a log",
+      "detail": "Record sources, dates, confidence and what would change your mind, so you can see later where you were right or wrong."
+    },
+    {
+      "step": "Revisit",
+      "detail": "Set a date to review the conclusion, and update it when new evidence arrives."
+    }
+  ],
+  "research_starting_points": [
+    "Cialdini, R., Influence: The Psychology of Persuasion (1984): how persuasion works, and how to notice it.",
+    "Kahneman, D., Thinking, Fast and Slow (2011): common judgement errors and how to check for them.",
+    "Tetlock, P. and Gardner, D., Superforecasting (2015): how calibrated forecasters reason and track their accuracy.",
+    "Axelrod, R., The Evolution of Cooperation (1984): how cooperation emerges from repeated interaction.",
+    "Ostrom, E., Governing the Commons (1990): how groups manage shared resources without relying only on markets or states.",
+    "Schelling, T., The Strategy of Conflict (1960): commitment, bargaining and bargaining under threat.",
+    "Machiavelli, N., The Prince (1532, public domain): an early, historically important account of power politics.",
+    "Sun Tzu, The Art of War (public domain): a classic on strategy, preparation and deception in conflict."
+  ],
+  "life": [
+    {
+      "title": "Keep a decision journal",
+      "detail": "For important decisions, write the reasoning, the expected outcome, and the date. Review it later to learn what you get right."
+    },
+    {
+      "title": "Run a pre-mortem",
+      "detail": "Imagine the plan has failed badly, and list the most likely reasons. Plan against those before you start."
+    },
+    {
+      "title": "Sort decisions into reversible and irreversible",
+      "detail": "Decide quickly on reversible choices; take extra care with the ones you cannot undo."
+    },
+    {
+      "title": "Protect your alternatives",
+      "detail": "Savings, skills and relationships give you options. Options are what make you hard to pressure."
+    },
+    {
+      "title": "Set limits in advance",
+      "detail": "Decide your budget, your time limit and your stopping point before you are under pressure."
+    },
+    {
+      "title": "Watch your own biases",
+      "detail": "Notice when you are most sure, most angry, or most tired. Delay big decisions in those states."
+    },
+    {
+      "title": "Treat fairness as strategy",
+      "detail": "Relationships and reputations built on fair dealing are the most reliable source of support when times are hard."
+    },
+    {
+      "title": "Ask for the full picture",
+      "detail": "Before agreeing to anything important, ask what is missing, what it costs, and who benefits."
+    },
+    {
+      "title": "Build friendships through repetition",
+      "detail": "Return to the same recurring setting, such as a class, club or team. Familiarity comes first, then small reciprocal favours, then gradually more openness."
+    },
+    {
+      "title": "Make friends by being reliable and curious",
+      "detail": "Keep small promises, follow up on what people tell you, and ask about them. Trust grows from many small kept commitments."
+    },
+    {
+      "title": "Build allies around shared interests",
+      "detail": "Name a goal you both want. Make commitments specific and limited, keep contributions visible, and help before you need help. Never create obligations people did not agree to."
+    }
+  ]
+}

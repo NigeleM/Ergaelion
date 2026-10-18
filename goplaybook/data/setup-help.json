@@ -1,0 +1,49 @@
+{
+  "traits": {
+    "players": {
+      "two": "You and one counterpart. Name them in the title, for example 'me and my landlord'.",
+      "many": "Three or more players. Either list each player, or model the rest as one group with a shared outcome. Many-player games need the group's total effect spelled out."
+    },
+    "timing": {
+      "simultaneous": "Everyone chooses without seeing the others' choices. Write each side's options down before anyone reveals anything.",
+      "sequential": "Decisions come in turns. Write who moves first, and what each mover can see when they choose."
+    },
+    "interaction": {
+      "one-shot": "The situation happens once. Do not plan on future reciprocity, and say so in the description.",
+      "repeated": "It recurs. Say how many rounds, and how much the future matters to each side. A longer, more valuable future usually supports cooperation."
+    },
+    "information": {
+      "perfect": "Everyone sees the same facts. Include every relevant fact in the description, because nothing is hidden.",
+      "imperfect": "Someone holds private information. Say who knows what, and what each side is guessing about the other."
+    },
+    "payoff": {
+      "zero-sum": "One side's gain is the other's loss, as in a fixed prize or winner-takes-all. The total never changes.",
+      "mixed": "Both can gain or both can lose. Write what each side gains from cooperating and what it gains from competing.",
+      "common-interest": "You want the same outcome. The challenge is coordinating on it, not conflicting over it."
+    },
+    "communication": {
+      "yes": "You can talk before or during the decision. Say what can be promised, and whether promises are binding.",
+      "no": "No talking or signalling is possible. Actions are the only information."
+    },
+    "enforcement": {
+      "yes": "There are binding agreements, penalties or courts. Name the penalty and who can impose it.",
+      "no": "Nothing forces anyone to keep a deal. Agreements rely on trust or self-interest."
+    },
+    "commitment": {
+      "yes": "Someone can commit publicly or irreversibly. Write the commitment mechanism, such as a signed contract or a visible step that cannot be undone.",
+      "no": "Every move can be reversed. Note any reversals that are cheap or expensive."
+    },
+    "bargaining": {
+      "yes": "You are dividing something. State the total, and each side's alternative if no deal is reached (its outside option).",
+      "no": "There is nothing to divide, or the outcome is fixed by the rules."
+    }
+  },
+  "steps": [
+    "1. Title and players: name the situation and who is involved.",
+    "2. Options: list each player's choices, using the game's own options from its playbook.",
+    "3. Payoffs or stakes: say what each outcome is worth to each player. For matrix games, fill in the payoff grid.",
+    "4. Information and timing: say who moves when, and who knows what.",
+    "5. Traits: copy the values in the template file. Change any that do not fit your situation.",
+    "6. Check: run `advise` on your file, and compare with the game's simulation with `sim` if one exists."
+  ]
+}

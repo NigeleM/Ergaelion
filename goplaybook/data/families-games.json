@@ -1,0 +1,831 @@
+[
+  {
+    "id": "rock-paper-scissors",
+    "name": "Rock-Paper-Scissors",
+    "category": "Traditional, simultaneous, zero-sum",
+    "summary": "Two players choose rock, paper or scissors at the same time. Each choice beats one and loses to another, so the only sound strategy is to be unpredictable.",
+    "how_it_works": "The unique equilibrium mixes each option with probability one third. Any pattern in your choices can be exploited, so the goal is to randomise and to notice patterns in the opponent without creating patterns of your own.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "communication": "no"
+    },
+    "domains": [
+      "games"
+    ],
+    "examples": [
+      "Settling a tie-break between two people",
+      "Choosing between options in a quick simultaneous contest",
+      "Penalty-style guessing games with three options"
+    ],
+    "matrix": {
+      "rows": [
+        "Rock",
+        "Paper",
+        "Scissors"
+      ],
+      "cols": [
+        "Rock",
+        "Paper",
+        "Scissors"
+      ],
+      "payoffs": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Randomise evenly: each option one third of the time, and avoid sequences that feel random but repeat.",
+      "Watch for the opponent's biases, such as opening with rock or repeating after a win, and exploit only once the pattern is clear.",
+      "Do not chase the last result: switching to beat the previous winning move is a pattern that a learning opponent will exploit.",
+      "Against a computer, assume it is trying to exploit patterns; play randomly rather than trying to outguess it."
+    ],
+    "pitfalls": [
+      "Repeating a winning move, which a player who saw it will counter.",
+      "Believing human randomness is good randomness; people avoid repeats and under-use some options."
+    ],
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form"
+  },
+  {
+    "id": "tic-tac-toe-minimax",
+    "name": "Tic-Tac-Toe and Perfect Play",
+    "category": "Traditional, sequential, perfect information, zero-sum",
+    "summary": "A small, fully solved game. With perfect play from both sides, the result is a draw, and every losing move can be identified in advance. It is the standard example of how minimax search works.",
+    "how_it_works": "Searching every line of play from any position gives the best move. Opening in a corner or centre and responding correctly keeps the game drawn; mistakes give the opponent a forced win. The game tree is small enough to solve completely.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "communication": "no"
+    },
+    "domains": [
+      "games"
+    ],
+    "examples": [
+      "A simple two-player board game for children",
+      "Teaching minimax search and game trees",
+      "Checking whether a small game is a forced win or a draw"
+    ],
+    "strategies": [
+      "Take the centre first when it is open; it is part of more winning lines than any other square.",
+      "Block an opponent who has two in a row, and take a winning square if you have one.",
+      "Look for forks: a move that creates two threats at once wins against a player who only blocks one.",
+      "Against a perfect player, aim for a draw; against a weaker player, create complex positions with several threats."
+    ],
+    "pitfalls": [
+      "Ignoring a forced win or a threat in favour of an attack that is too slow.",
+      "Playing on autopilot in the opening and missing a fork that the opponent can set up."
+    ],
+    "matrix": {
+      "rows": [
+        "Take the centre",
+        "Take a corner"
+      ],
+      "cols": [
+        "Opponent blocks",
+        "Opponent ignores"
+      ],
+      "payoffs": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            -2,
+            2
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "liars-dice",
+    "name": "Liar's Dice",
+    "category": "Traditional, sequential, imperfect information, bluffing",
+    "summary": "Players roll hidden dice and bid on how many of a given face are showing across everyone's dice. Each bid must be higher than the last, and a player may challenge the previous bid. Success depends on reading probabilities and on bluffing well.",
+    "how_it_works": "Each bid carries information about the bidder's dice, and a challenge tests it. Bluffing has value only when it is unpredictable. Probability of a face across all dice guides when a bid is likely true and when it is a bluff.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "communication": "no"
+    },
+    "domains": [
+      "games"
+    ],
+    "examples": [
+      "A table game with a few players and five dice each",
+      "Estimating whether a bid of six threes is likely with twenty dice",
+      "Deciding whether to challenge a bid that seems too high"
+    ],
+    "matrix": {
+      "rows": [
+        "Bluff",
+        "Bid honestly"
+      ],
+      "cols": [
+        "Call",
+        "Believe"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Estimate the expected count of a face across all dice: each unseen die shows a given face with probability one sixth.",
+      "Challenge when the bid is above the expected count by a clear margin; accept when the bid is within the normal range.",
+      "Bluff occasionally, with a reason: bid high on a face you hold several of, so the bid looks like a strong hand.",
+      "Track who bluffs and who does not; players with consistent habits are easier to read."
+    ],
+    "pitfalls": [
+      "Bidding a number you cannot justify, which a sharp opponent challenges.",
+      "Challenging every bid, which makes you lose dice cheaply."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a simplified bluff against a call: the bluffer wins when the caller believes, and the caller wins when bluffing is called)"
+  },
+  {
+    "id": "all-pay-contest",
+    "name": "All-Pay Contest (Tug of War and Lobbying Races)",
+    "category": "Simultaneous, contest with costly effort",
+    "summary": "Every contestant pays their effort whether or not they win, and the prize goes to the highest effort. Tug of war, lobbying races and litigation arms races follow this pattern, and they often dissipate far more than the prize is worth.",
+    "how_it_works": "Each player chooses an effort level, paying it regardless of outcome. Equilibrium involves randomised effort, and the total spent can exceed the prize when many players compete. Entry and cost structure drive the outcome.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "commitment": "no"
+    },
+    "domains": [
+      "games",
+      "politics",
+      "business",
+      "work"
+    ],
+    "examples": [
+      "Two teams in a tug of war",
+      "Firms spending on lobbying for the same government contract",
+      "Candidates spending heavily on a close race"
+    ],
+    "matrix": {
+      "rows": [
+        "High effort",
+        "Low effort"
+      ],
+      "cols": [
+        "Rival high effort",
+        "Rival low effort"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            -1
+          ],
+          [
+            2,
+            -2
+          ]
+        ],
+        [
+          [
+            -2,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Before entering, compare the prize with the total you would need to spend to win; contests often cost more than the prize.",
+      "Consider whether you can win with less effort through a different route, such as a better proposal or a partner.",
+      "If you have a cost advantage, use it: a higher-cost rival may choose to stop, which lets you win cheaply.",
+      "Make your commitment to a fixed budget visible, so the rival does not assume they can outspend you."
+    ],
+    "pitfalls": [
+      "Spending more than the prize because you have already invested.",
+      "Entering a contest where many well-funded rivals compete, with no edge."
+    ]
+  },
+  {
+    "id": "lanchester-combat",
+    "name": "Lanchester's Laws (Combat Attrition)",
+    "category": "Sequential, attrition and force concentration",
+    "summary": "A model of how forces grind each other down. Under the square law, a force's fighting power grows with the square of its numbers, so concentration of force matters more than the size of the whole. Under the linear law, every unit counts equally.",
+    "how_it_works": "Lanchester's square law applies to aimed fire at range, where each unit can target any enemy, and the force with more units wins with a margin that grows faster than its numerical advantage. Linear laws apply in close, unaimed combat, where units compete for the same targets.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "commitment": "no"
+    },
+    "domains": [
+      "military",
+      "games"
+    ],
+    "examples": [
+      "Two forces engaging at long range with aimed fire",
+      "Two sports teams where each player can reach any opponent",
+      "Competing firms in a fight for a market where each unit is equally effective"
+    ],
+    "matrix": {
+      "rows": [
+        "Concentrate forces",
+        "Spread forces"
+      ],
+      "cols": [
+        "Concentrate forces",
+        "Spread forces"
+      ],
+      "payoffs": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        [
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Concentrate force on a single point, rather than spreading it: under the square law, a concentrated force gains a disproportionate advantage.",
+      "Avoid engaging a larger force in a way that spreads your units across several fronts.",
+      "Choose the type of engagement: aimed, long-range contests favour the larger force, while close, unaimed fights reduce that advantage.",
+      "Preserve reserves: a force that keeps units out of the first engagement can exploit the damage done to the enemy."
+    ],
+    "pitfalls": [
+      "Assuming numbers alone decide the outcome without considering how fighting works.",
+      "Splitting forces to cover every point, which the enemy can defeat in detail."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two forces; concentrating forces wins a battle against a spread force)"
+  },
+  {
+    "id": "secretary-problem",
+    "name": "Secretary Problem (Optimal Stopping)",
+    "category": "Sequential, optimal stopping",
+    "summary": "You interview candidates one at a time and must accept or reject each on the spot, with no recall. The best strategy rejects the first portion of candidates to learn the benchmark, then picks the next one who beats it. This also describes choosing a home, a partner or a job.",
+    "how_it_works": "With n candidates, the optimal rule is to skip about n divided by e (roughly thirty-seven per cent) and then accept the first candidate better than all skipped ones. This gives about a 37 per cent chance of picking the best candidate overall.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "common-interest",
+      "communication": "no"
+    },
+    "domains": [
+      "everyday",
+      "work"
+    ],
+    "examples": [
+      "Choosing a flat after viewing a series of properties",
+      "Hiring one person from a pool of applicants",
+      "Deciding when to stop searching for a partner"
+    ],
+    "matrix": {
+      "rows": [
+        "Accept the candidate now",
+        "Wait for a better one"
+      ],
+      "cols": [
+        "Candidate is good",
+        "Candidate is poor"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Set a learning period: observe about a third of the options without committing, to set a benchmark.",
+      "After the learning period, accept the first option that beats the benchmark, even if you hope for better.",
+      "If the options are not all known in advance or cannot be ranked, use the rule of thumb: decide earlier than your instinct says.",
+      "Accept that you will often not get the very best option; the rule maximises the chance of a very good one."
+    ],
+    "pitfalls": [
+      "Rejecting every option because none is perfect.",
+      "Ignoring the benchmark and taking the first decent option before you have seen enough."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "explore-exploit-bandit",
+    "name": "Explore or Exploit (Multi-Armed Bandit)",
+    "category": "Sequential, learning under uncertainty",
+    "summary": "You choose repeatedly between options whose payoffs are unknown. Trying new options gathers information; using the best known option earns reward now. Balancing these is the core of learning, from restaurants to research and clinical trials.",
+    "how_it_works": "Algorithms such as upper-confidence bounds and Thompson sampling explore uncertain options more when they have been tried less. Over time, reward and information together lead to near-best choices. Early exploration is worth more when there is a long horizon ahead.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "common-interest",
+      "communication": "no"
+    },
+    "domains": [
+      "everyday",
+      "work",
+      "business",
+      "economy"
+    ],
+    "examples": [
+      "Choosing between restaurants you have not tried",
+      "Testing advertising variants while still earning revenue",
+      "Choosing a career path with uncertain returns"
+    ],
+    "matrix": {
+      "rows": [
+        "Explore a new option",
+        "Exploit the known option"
+      ],
+      "cols": [
+        "New option is good",
+        "New option is poor"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Explore more early, when there is a long time to benefit from what you learn, and exploit more as the horizon shortens.",
+      "Give options that have been tried little a fair chance, rather than dismissing them after one bad result.",
+      "Use simple rules that work well in practice: try the option with the best optimistic estimate, or sample in proportion to your belief that each is best.",
+      "Accept that exploration has a cost; plan a budget for it so that it does not crowd out everything else."
+    ],
+    "pitfalls": [
+      "Judging an option on a single result.",
+      "Exploiting a poor option forever because you never tested alternatives."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "team-production-shirking",
+    "name": "Team Production and Shirking",
+    "category": "Repeated, team effort with unobservable individual contribution",
+    "summary": "A team's output depends on everyone's effort, but each member's contribution is hard to see. Each member can shirk while the others carry the output, so teams need monitoring, shared rewards or peer pressure to keep effort up.",
+    "how_it_works": "Alchian and Demsetz argued that team production needs a monitor whose incentives are aligned with the team's output, because without one, everyone is tempted to shirk. The problem is worse when individual effort is invisible and shared rewards are divided equally.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "yes"
+    },
+    "domains": [
+      "work",
+      "business"
+    ],
+    "examples": [
+      "A project team in which only the leader knows who did which task",
+      "A group assignment with one grade for everyone",
+      "A sales team paid as a pool with no individual targets"
+    ],
+    "strategies": [
+      "Make individual contributions visible through clear tasks, deliverables and regular updates.",
+      "Tie a meaningful part of rewards to individual results, not just the team total, so effort is rewarded.",
+      "Set peer review or rotating responsibility so that shirking is noticed by the people who share the output.",
+      "Address shirking early and privately; a team that tolerates it quickly learns that effort is optional."
+    ],
+    "pitfalls": [
+      "Sharing all rewards equally with no link to effort.",
+      "Monitoring so heavily that trust and initiative collapse."
+    ],
+    "matrix": {
+      "rows": [
+        "Work",
+        "Shirk"
+      ],
+      "cols": [
+        "Work",
+        "Shirk"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two workers; shirking gains you more while the other works, and you get nothing when you work alone)"
+  },
+  {
+    "id": "ai-opponent-exploitation",
+    "name": "Playing Against an AI Opponent",
+    "category": "Repeated, against an algorithmic opponent",
+    "summary": "When you play against an AI in a game, the opponent may follow a fixed rule, learn your habits, or play near equilibrium. The best response depends on which kind it is: against a fixed or weak bot, exploit its pattern; against a strong or adaptive one, play close to equilibrium and avoid predictable patterns.",
+    "how_it_works": "A learning AI can identify and counter your habits, so any pattern you repeat will eventually be punished. A fixed-rule AI may have exploitable weaknesses. Equilibrium (mixed) play cannot be exploited on average, but it may leave gains on the table against a weak opponent.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "communication": "no"
+    },
+    "domains": [
+      "games"
+    ],
+    "examples": [
+      "Playing a card or board game against a computer opponent",
+      "Competing in a game where bots set prices or make offers",
+      "Testing a game agent that learns from your choices"
+    ],
+    "matrix": {
+      "rows": [
+        "Exploit its habit",
+        "Play the equilibrium"
+      ],
+      "cols": [
+        "Bot repeats",
+        "Bot adapts"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Observe first: spend a few rounds identifying whether the AI is fixed, adaptive or near-optimal before committing to a plan.",
+      "Against a fixed-rule opponent, find its predictable response and exploit it; this is usually where the largest gains are.",
+      "Against an adaptive opponent, randomise and avoid repeating winning moves, since it will learn to counter them.",
+      "Do not use tools or hidden information that the game rules forbid; exploiting a bot is fair play only within the rules."
+    ],
+    "pitfalls": [
+      "Repeating a strategy that worked a few times against a learning opponent.",
+      "Assuming a computer opponent is perfect when many are simple rule-based bots with clear weaknesses."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "algorithmic-collusion",
+    "name": "Algorithmic Collusion (AI Pricing Agents)",
+    "category": "Repeated, AI versus AI, tacit coordination",
+    "summary": "Pricing algorithms that learn from market outcomes can end up charging high prices together without communicating, because each learns to punish price cuts. This is tacit collusion produced by learning rules, and it raises questions for competition policy.",
+    "how_it_works": "Reinforcement-learning pricing agents experiment, observe rivals' responses, and learn that cutting price triggers retaliation. Over many rounds they settle on supracompetitive prices. Detecting this requires monitoring outcomes rather than messages, since no agreement is ever made.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "no",
+      "enforcement": "no"
+    },
+    "domains": [
+      "business",
+      "economy"
+    ],
+    "examples": [
+      "Two online sellers whose pricing software reacts to each other",
+      "Competing fuel stations with automated repricing tools",
+      "Marketplace algorithms that rise to similar high prices over time"
+    ],
+    "matrix": {
+      "rows": [
+        "Price high",
+        "Price low"
+      ],
+      "cols": [
+        "Price high",
+        "Price low"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        [
+          [
+            5,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "For firms: do not assume that a rival's algorithm will compete aggressively; learning systems may settle on higher prices with no agreement.",
+      "For firms: review what your pricing software is optimising, and check whether it is punishing rivals' price cuts; this is a risk to compliance.",
+      "For regulators: monitor prices and outcomes over time, since the absence of communication does not guarantee competitive behaviour.",
+      "For competitors: a clear, documented differentiation strategy reduces the pull toward a tacit high-price equilibrium."
+    ],
+    "pitfalls": [
+      "Treating the absence of human communication as proof that prices are competitive.",
+      "Deploying learning pricing rules without testing how they respond to rivals."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (one-shot pricing: matching the high price earns 3 each; undercutting earns 5)"
+  },
+  {
+    "id": "ai-self-play-learning",
+    "name": "Self-Play and AI Learning Dynamics",
+    "category": "Repeated, AI versus AI, multi-agent learning",
+    "summary": "Two learning agents improve by playing each other. Their strategies can cycle, drift or converge to an equilibrium, depending on how they learn. Understanding these dynamics matters when AI systems negotiate, compete or cooperate with one another.",
+    "how_it_works": "Self-play can converge to an equilibrium in some games, such as zero-sum ones, but cycle in others, such as rock-paper-scissors-like games. Learners can also converge to an outcome that is stable for them but poor for both. Opponent modelling and exploration rates change the result.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "no"
+    },
+    "domains": [
+      "games",
+      "business",
+      "economy"
+    ],
+    "examples": [
+      "Two game-playing agents training against each other",
+      "Negotiation agents representing different parties",
+      "Competing trading bots reacting to one another"
+    ],
+    "matrix": {
+      "rows": [
+        "Learn to cooperate",
+        "Learn to defect"
+      ],
+      "cols": [
+        "Learn to cooperate",
+        "Learn to defect"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        [
+          [
+            5,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Expect cycling in games with no pure equilibrium: stable convergence needs a method that averages strategies over time.",
+      "Use opponent modelling only when the model is updated; a stale model is exploited by an agent that changes.",
+      "For designers: test learning agents against a diverse set of opponents, not only copies of themselves.",
+      "For designers: monitor outcomes for signs of a stable but harmful equilibrium, such as persistent high prices or failed negotiations."
+    ],
+    "pitfalls": [
+      "Assuming self-play always reaches a good outcome.",
+      "Training against a single opponent type, which produces strategies that fail elsewhere."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "dating-marriage-market-search",
+    "name": "Dating and Partner Search",
+    "category": "Sequential, search with mutual choice",
+    "summary": "Two people look for a partner while meeting candidates one at a time. Each must decide whether to commit, and the other person is making the same choice. Patience, realistic expectations and clear communication decide whether both find good matches.",
+    "how_it_works": "Combines the secretary problem with two-sided choice: a candidate you want may not want you, and offers can be rejected. Stable-matching ideas apply when many people choose at once. A realistic sense of your own market value shapes which offers are reachable.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes"
+    },
+    "domains": [
+      "everyday"
+    ],
+    "examples": [
+      "Deciding whether to commit to someone after a few months",
+      "Choosing whether to approach a highly desirable person",
+      "Balancing a long search against the cost of waiting"
+    ],
+    "matrix": {
+      "rows": [
+        "Accept the first offer",
+        "Keep searching"
+      ],
+      "cols": [
+        "Accept the first offer",
+        "Keep searching"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Communicate what you want early and clearly; mismatched expectations waste the time of both sides.",
+      "Set a realistic benchmark from your experience, and be willing to commit once an option clearly meets it.",
+      "Recognise that the other person is also choosing: a good match may be reachable only if your own offer is credible.",
+      "Do not wait for a perfect option; the search has a cost in time and in chances to build something real."
+    ],
+    "pitfalls": [
+      "Aiming far above what the other person wants and never getting a reply.",
+      "Stopping the search too early because one option seems attractive, without comparing alternatives."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two people search for a partner; a match is only certain if both accept)"
+  }
+]

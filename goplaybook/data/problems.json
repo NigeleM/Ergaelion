@@ -1,0 +1,498 @@
+[
+  {
+    "area": "Work",
+    "problems": [
+      {
+        "problem": "A teammate is not pulling their weight",
+        "games": [
+          "team-production-shirking",
+          "principal-agent",
+          "public-goods"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Hiring the right person from unclear applicants",
+        "games": [
+          "hiring-screening",
+          "signaling-game",
+          "lemons-market"
+        ],
+        "sims": [
+          "salary-negotiation"
+        ]
+      },
+      {
+        "problem": "Deciding whether to put someone on a plan or let them go",
+        "games": [
+          "firing-and-performance",
+          "principal-agent",
+          "promotion-tournament"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Competing for one promotion",
+        "games": [
+          "promotion-tournament",
+          "all-pay-contest",
+          "defending-a-position"
+        ],
+        "sims": []
+      }
+    ]
+  },
+  {
+    "area": "Business",
+    "problems": [
+      {
+        "problem": "A price war with a competitor",
+        "games": [
+          "bertrand-price-war",
+          "cournot-competition",
+          "stackelberg-leadership"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Entering a market an incumbent guards",
+        "games": [
+          "entry-deterrence",
+          "stackelberg-leadership",
+          "war-of-attrition"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Buying or selling when quality cannot be checked",
+        "games": [
+          "lemons-market",
+          "reputation-reviews",
+          "insurance-moral-hazard"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Bidding for a contract",
+        "games": [
+          "sealed-bid-auctions",
+          "dollar-auction-escalation",
+          "travelers-dilemma"
+        ],
+        "sims": [
+          "sealed-bid-auction"
+        ]
+      },
+      {
+        "problem": "Investing in a relationship that depends on one partner",
+        "games": [
+          "hold-up",
+          "trust-game",
+          "centipede-game"
+        ],
+        "sims": []
+      }
+    ]
+  },
+  {
+    "area": "Life",
+    "problems": [
+      {
+        "problem": "Choosing among many options over time (a flat, a job, a partner)",
+        "games": [
+          "secretary-problem",
+          "dating-marriage-market-search",
+          "explore-exploit-bandit"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Sharing chores or bills at home",
+        "games": [
+          "household-chores-bills",
+          "cake-cutting-fair-division"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Shared health, such as vaccination",
+        "games": [
+          "vaccination-free-riding",
+          "public-goods"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Deciding whether to follow the crowd",
+        "games": [
+          "herding-cascades",
+          "keynes-beauty-contest"
+        ],
+        "sims": []
+      }
+    ]
+  },
+  {
+    "area": "Government",
+    "problems": [
+      {
+        "problem": "Forming a coalition after an election",
+        "games": [
+          "coalition-formation",
+          "agenda-setting-voting",
+          "veto-players-reform"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Winning a vote or positioning for voters",
+        "games": [
+          "median-voter-spatial-competition",
+          "agenda-setting-voting",
+          "lobbying-influence"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Insiders deciding whether to back a leader",
+        "games": [
+          "elite-defection-coordination",
+          "authoritarian-survival",
+          "mass-uprising-threshold"
+        ],
+        "sims": [
+          "regime-survival"
+        ]
+      },
+      {
+        "problem": "A movement wants to change a government peacefully",
+        "games": [
+          "nonviolent-resistance",
+          "mass-uprising-threshold",
+          "crisis-negotiation"
+        ],
+        "sims": [
+          "nonviolent-campaign"
+        ]
+      }
+    ]
+  },
+  {
+    "area": "War and security",
+    "problems": [
+      {
+        "problem": "A standoff over a border or a commitment",
+        "games": [
+          "chicken",
+          "crisis-negotiation",
+          "arms-race-security-dilemma"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Deciding where to concentrate forces",
+        "games": [
+          "colonel-blotto",
+          "lanchester-combat",
+          "search-game-hide-and-seek"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "An ally drawn into someone else's fight",
+        "games": [
+          "alliance-entrapment",
+          "chicken",
+          "war-of-attrition"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Who backs down first in a long dispute",
+        "games": [
+          "war-of-attrition",
+          "all-pay-contest",
+          "dollar-auction-escalation"
+        ],
+        "sims": []
+      }
+    ]
+  },
+  {
+    "area": "Society",
+    "problems": [
+      {
+        "problem": "Someone is drawn into a coercive group",
+        "games": [
+          "cults-coercive-groups"
+        ],
+        "sims": [
+          "cult-exit-decision"
+        ]
+      },
+      {
+        "problem": "Reporting wrongdoing at work",
+        "games": [
+          "whistleblowing",
+          "principal-agent",
+          "plea-bargaining"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Settling a legal dispute",
+        "games": [
+          "plea-bargaining",
+          "rubinstein-bargaining",
+          "ultimatum-game"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Following rumours or viral trends",
+        "games": [
+          "herding-cascades",
+          "bank-run",
+          "mass-uprising-threshold"
+        ],
+        "sims": []
+      }
+    ]
+  },
+  {
+    "area": "Negotiation",
+    "problems": [
+      {
+        "problem": "Splitting something fairly",
+        "games": [
+          "cake-cutting-fair-division",
+          "ultimatum-game",
+          "rubinstein-bargaining"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Negotiating a salary",
+        "games": [
+          "rubinstein-bargaining",
+          "ultimatum-game",
+          "hiring-screening"
+        ],
+        "sims": [
+          "salary-negotiation"
+        ]
+      },
+      {
+        "problem": "Negotiating when time pressure matters",
+        "games": [
+          "rubinstein-bargaining",
+          "war-of-attrition",
+          "centipede-game"
+        ],
+        "sims": []
+      }
+    ]
+  },
+  {
+    "area": "Public goods",
+    "problems": [
+      {
+        "problem": "A shared fishery or commons",
+        "games": [
+          "tragedy-of-the-commons",
+          "public-goods",
+          "climate-treaty-public-goods"
+        ],
+        "sims": [
+          "commons-two-seasons"
+        ]
+      },
+      {
+        "problem": "A global agreement on emissions",
+        "games": [
+          "climate-treaty-public-goods",
+          "public-goods",
+          "prisoners-dilemma"
+        ],
+        "sims": []
+      }
+    ]
+  },
+  {
+    "area": "Games and AI",
+    "problems": [
+      {
+        "problem": "Playing a game against a bot",
+        "games": [
+          "ai-opponent-exploitation",
+          "rock-paper-scissors",
+          "liars-dice"
+        ],
+        "sims": [
+          "vs-tit-for-tat"
+        ]
+      },
+      {
+        "problem": "Two AI systems competing on prices",
+        "games": [
+          "algorithmic-collusion",
+          "bertrand-price-war",
+          "ai-self-play-learning"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Bluffing and reading opponents",
+        "games": [
+          "poker-bluffing",
+          "liars-dice"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Knowing when to stop escalating",
+        "games": [
+          "dollar-auction-escalation",
+          "war-of-attrition"
+        ],
+        "sims": []
+      }
+    ]
+  },
+  {
+    "area": "Intelligence",
+    "problems": [
+      {
+        "problem": "Deciding whether a warning is credible",
+        "games": [
+          "intel-warning-problem",
+          "deception-cheap-talk",
+          "analysis-bayesian-updating"
+        ],
+        "sims": [
+          "intel-warning-problem"
+        ]
+      },
+      {
+        "problem": "Judging how far new evidence should change a view",
+        "games": [
+          "analysis-bayesian-updating",
+          "intel-warning-problem"
+        ],
+        "sims": [
+          "analysis-bayesian-updating"
+        ]
+      },
+      {
+        "problem": "Deciding whether to disclose evidence or keep it private",
+        "games": [
+          "disclosure-game",
+          "information-sharing-alliance"
+        ],
+        "sims": [
+          "disclosure-game"
+        ]
+      },
+      {
+        "problem": "Sharing information with a partner who may not reciprocate",
+        "games": [
+          "information-sharing-alliance",
+          "disclosure-game",
+          "prisoners-dilemma"
+        ],
+        "sims": [
+          "information-sharing-alliance"
+        ]
+      },
+      {
+        "problem": "Checking sensitive access without false accusations",
+        "games": [
+          "double-agent-counterintelligence",
+          "inspection-game"
+        ],
+        "sims": [
+          "double-agent-counterintelligence"
+        ]
+      }
+    ]
+  },
+  {
+    "area": "Pandemic and disaster",
+    "problems": [
+      {
+        "problem": "Deciding when to tighten or relax restrictions in an outbreak",
+        "games": [
+          "pandemic-quarantine-game",
+          "testing-contact-tracing"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Stocking for a shortage without starting a panic",
+        "games": [
+          "emergency-supply-hoarding",
+          "disaster-preparedness-investment"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Paying for a rare disaster that may never come",
+        "games": [
+          "disaster-preparedness-investment",
+          "insurance-moral-hazard"
+        ],
+        "sims": []
+      }
+    ]
+  },
+  {
+    "area": "Crisis and deterrence",
+    "problems": [
+      {
+        "problem": "Escalating a crisis without losing a way down",
+        "games": [
+          "crisis-escalation-ladder",
+          "chicken"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Deterring a rival that has nuclear weapons",
+        "games": [
+          "nuclear-deterrence-second-strike",
+          "arms-race-security-dilemma"
+        ],
+        "sims": []
+      }
+    ]
+  },
+  {
+    "area": "Advanced strategy",
+    "problems": [
+      {
+        "problem": "Designing fair rules that make honesty the best policy",
+        "games": [
+          "vcg-mechanism-design",
+          "sealed-bid-auctions"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Splitting the gains of a joint venture fairly",
+        "games": [
+          "shapley-value-sharing",
+          "cake-cutting-fair-division"
+        ],
+        "sims": []
+      },
+      {
+        "problem": "Choosing what to disclose to shape a decision",
+        "games": [
+          "bayesian-persuasion",
+          "disclosure-game"
+        ],
+        "sims": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,1150 @@
+[
+  {
+    "id": "pandemic-quarantine-game",
+    "name": "Pandemic: Quarantine Versus Economy",
+    "category": "Repeated, public health and economic trade-off",
+    "summary": "Each person and each government balances restrictions that slow an outbreak against the economic and personal cost of restrictions. Compliance depends on trust and on how fairly the burden is shared.",
+    "how_it_works": "Restrictions reduce transmission for everyone, so each person gains from others' restraint while bearing the cost of their own. Compliance falls when restrictions look unfair, last too long, or lack clear reasons. Timely relaxation and clear criteria sustain compliance.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "environment",
+      "government",
+      "everyday"
+    ],
+    "examples": [
+      "A city deciding when to tighten or relax restrictions",
+      "A household deciding how strictly to follow shared rules",
+      "A government weighing support for workers against spread"
+    ],
+    "matrix": {
+      "rows": [
+        "Strict restrictions",
+        "Relax early"
+      ],
+      "cols": [
+        "Comply",
+        "Defy"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -2,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            -2
+          ],
+          [
+            -1,
+            -1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Publish clear criteria for tightening and relaxing restrictions, so people can plan and trust the rules.",
+      "Share the burden fairly, with support for those who lose income; unfair burdens reduce compliance.",
+      "Relax on schedule when the criteria are met, to keep credibility for future measures.",
+      "Track compliance and adjust messaging where it falls, instead of only adding penalties."
+    ],
+    "pitfalls": [
+      "Restrictions with no end date or criteria, which erode compliance over time.",
+      "Relaxing before criteria are met, which can cause a resurgence and lost trust."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (government sets strict or relaxed rules; the public complies or defies)"
+  },
+  {
+    "id": "testing-contact-tracing",
+    "name": "Testing and Contact Tracing",
+    "category": "Sequential, information and privacy trade-off",
+    "summary": "Testing and tracing find infections early, but they require information about people's contacts and movements. Participation depends on how much people trust that the information will be used fairly.",
+    "how_it_works": "Early detection cuts chains of transmission, which benefits everyone. But people who fear misuse of their data, or fear the consequences of a positive result, may avoid testing. Clear rules on data use and support for those who test positive raise participation.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "environment",
+      "government",
+      "everyday"
+    ],
+    "examples": [
+      "A public health team deciding how much to invest in testing",
+      "A person deciding whether to share contacts after a positive test",
+      "A company deciding whether to test staff regularly"
+    ],
+    "matrix": {
+      "rows": [
+        "Join testing",
+        "Stay out"
+      ],
+      "cols": [
+        "Privacy-safe tracing",
+        "Data-heavy tracing"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Limit data collected to what is needed, and say how long it is kept and who sees it.",
+      "Support people who test positive, such as paid sick leave, so the cost of testing is not a reason to hide.",
+      "Make testing easy and free at the point of use, which raises participation.",
+      "Publish how the system performed, so people can judge whether it works."
+    ],
+    "pitfalls": [
+      "Collecting broad data without clear limits, which reduces trust and participation.",
+      "Punishing positive results, which teaches people to avoid testing."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (people join testing or stay out; the government traces with privacy safeguards or heavy data use)"
+  },
+  {
+    "id": "emergency-supply-hoarding",
+    "name": "Emergency Supplies: Hoarding Versus Sharing",
+    "category": "Simultaneous, scarcity and self-fulfilling expectations",
+    "summary": "When people fear shortages, they buy more than they need, which creates the shortage they feared. Each person's hoarding looks sensible alone but harms everyone together.",
+    "how_it_works": "If each person expects scarcity, buying a large stock is individually rational. The total demand spike empties shelves, confirming the expectation. Clear information about supply and fair rationing break the cycle.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes"
+    },
+    "domains": [
+      "environment",
+      "economy",
+      "everyday"
+    ],
+    "examples": [
+      "Shoppers buying stock during a supply scare",
+      "A community sharing generators after a storm",
+      "A firm deciding how much stock to hold for a crisis"
+    ],
+    "matrix": {
+      "rows": [
+        "Buy realistically",
+        "Hoard"
+      ],
+      "cols": [
+        "Buy realistically",
+        "Hoard"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Buy for a realistic period, not the maximum, so supplies remain for others.",
+      "Check information on supply from reliable sources, since rumours drive panic buying.",
+      "Support fair rationing rules, which protect people who cannot stockpile.",
+      "Share surplus with neighbours in a way that is visible and fair."
+    ],
+    "pitfalls": [
+      "Assuming shortages will last, based only on the sight of empty shelves.",
+      "Hoarding in a way that causes others to do the same."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (hoarding gains you stock while the other buys realistically)"
+  },
+  {
+    "id": "disaster-preparedness-investment",
+    "name": "Disaster Preparedness (Rare Events)",
+    "category": "Sequential, investment against rare risks",
+    "summary": "Preparing for a rare disaster costs money every year, but the benefit appears only when the disaster strikes. People and governments often underinvest, and shared defences are left to others.",
+    "how_it_works": "Preparation is a public good when defences protect a whole community, and a private cost when it protects one household. Each person prefers that others pay for shared defences. Expected-loss estimates, shared funding and insurance help align incentives.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "no"
+    },
+    "domains": [
+      "environment",
+      "government",
+      "everyday"
+    ],
+    "examples": [
+      "A household deciding whether to store water and supplies",
+      "A town deciding whether to build a flood defence",
+      "A government setting aside funds for a rare emergency"
+    ],
+    "matrix": {
+      "rows": [
+        "Invest in defences",
+        "Skip"
+      ],
+      "cols": [
+        "Invest in defences",
+        "Skip"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -1,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Estimate expected losses, not just the chance of a disaster, when deciding how much to invest.",
+      "Share the cost of community defences, so no one is left to free-ride.",
+      "Use insurance or reserve funds to spread the cost over time.",
+      "Review preparedness after each near-miss, while attention is high."
+    ],
+    "pitfalls": [
+      "Underinvesting because the last disaster was long ago.",
+      "Expecting others to pay for shared defences that you also benefit from."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (shared defences are a public good: you pay, the neighbour benefits)"
+  },
+  {
+    "id": "nuclear-deterrence-second-strike",
+    "name": "Nuclear Deterrence and Second Strike",
+    "category": "Simultaneous, mutual deterrence",
+    "summary": "Two nuclear-armed states deter each other because each can absorb a first strike and still retaliate. Stability depends on survivable forces, clear communication, and avoiding moves that look like preparation for a first strike.",
+    "how_it_works": "A first strike is attractive only if it can disarm the other side's retaliatory forces. When both sides have survivable second-strike capability, the first strike is pointless, and stability follows. Vulnerable forces and ambiguous moves create pressure to act first.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "commitment": "yes",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "military",
+      "politics",
+      "government"
+    ],
+    "examples": [
+      "Two states maintaining survivable arsenals",
+      "Analysing whether a new weapon system undermines stability",
+      "Designing verification for arms-control limits"
+    ],
+    "matrix": {
+      "rows": [
+        "Maintain second strike",
+        "Pre-emptive build-up"
+      ],
+      "cols": [
+        "Rival maintains",
+        "Rival pre-empts"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            -3,
+            -3
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Maintain survivable retaliatory forces, so a first strike cannot be worth the attempt.",
+      "Communicate capabilities and intentions clearly, to reduce misreading of ambiguous moves.",
+      "Use verification and transparency measures that both sides can check.",
+      "Avoid moves that look like preparation for a first strike, even when they are defensive."
+    ],
+    "pitfalls": [
+      "Developing capabilities that threaten the other side's survivable forces, which invites pre-emption.",
+      "Relying on ambiguity as a deterrent, which can produce miscalculation in a crisis."
+    ]
+  },
+  {
+    "id": "crisis-escalation-ladder",
+    "name": "Crisis Escalation Ladder",
+    "category": "Sequential, escalation control under commitment",
+    "summary": "In a crisis, each side takes steps up or down a ladder of responses. Each step signals resolve, but it also raises the risk that the other side will escalate further. The aim is to show resolve while keeping a way down.",
+    "how_it_works": "Escalation signals commitment, but when both sides climb, neither can easily back down without losing face. Off-ramps, such as partial concessions or private channels, let each side de-escalate without appearing weak.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "commitment": "yes",
+      "communication": "yes"
+    },
+    "domains": [
+      "military",
+      "politics",
+      "government"
+    ],
+    "examples": [
+      "A border standoff with military exercises on both sides",
+      "Two firms in a public dispute escalating legal action",
+      "A diplomatic crisis following a disputed incident"
+    ],
+    "matrix": {
+      "rows": [
+        "Escalate",
+        "De-escalate"
+      ],
+      "cols": [
+        "Rival escalates",
+        "Rival de-escalates"
+      ],
+      "payoffs": [
+        [
+          [
+            -3,
+            -3
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        [
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Match escalation proportionately rather than exceeding the other side's last step.",
+      "Keep a visible off-ramp, such as a private channel or a face-saving concession.",
+      "Communicate your reading of the situation directly, so misreading does not drive escalation.",
+      "Separate the signal of resolve from the step itself; a firm statement can replace a further move."
+    ],
+    "pitfalls": [
+      "Escalating faster than the other side, which raises the chance of accidents.",
+      "Closing every off-ramp to look strong, which makes de-escalation impossible."
+    ]
+  },
+  {
+    "id": "siege-and-logistics",
+    "name": "Siege and Supply Lines",
+    "category": "Sequential, attrition and logistics",
+    "summary": "A besieging force must hold its position while its supply lines are stretched. A defender must keep its supplies flowing. The side that can sustain its supply for longer usually decides the contest.",
+    "how_it_works": "Each day of a siege consumes supplies on both sides. The attacker must keep long supply lines open, which the defender may attack. The outcome depends on who runs out first and on whether either side can break the other's lines.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "commitment": "no"
+    },
+    "domains": [
+      "military",
+      "games"
+    ],
+    "examples": [
+      "A long siege of a fortified city",
+      "A supply convoy crossing a contested area",
+      "A business keeping supplies flowing during a supplier dispute"
+    ],
+    "matrix": {
+      "rows": [
+        "Besiege",
+        "Assault"
+      ],
+      "cols": [
+        "Hold",
+        "Sortie"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Count supplies on both sides before committing; the side that runs out first usually loses.",
+      "Protect your own supply lines before attacking the other side's.",
+      "Look for ways to shorten your own line or lengthen the enemy's, rather than trying to win by direct assault.",
+      "If you are the defender, conserve supplies and wait for the attacker's lines to weaken."
+    ],
+    "pitfalls": [
+      "Starting a siege you cannot sustain.",
+      "Ignoring that the other side can also cut your supply lines."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (besiegers wait or assault; the defenders hold or sortie)"
+  },
+  {
+    "id": "surprise-and-reconnaissance",
+    "name": "Surprise and Reconnaissance",
+    "category": "Simultaneous, information and surprise",
+    "summary": "Acting by surprise can change the outcome, but surprise depends on what the other side expects. Gathering information before acting reduces uncertainty, while being observed while gathering it gives the other side warning.",
+    "how_it_works": "Surprise works when the other side's expectations are wrong. Reconnaissance reduces uncertainty but can reveal intent. The attacker must balance the value of information against the risk that the other side notices and adjusts.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "communication": "no"
+    },
+    "domains": [
+      "military",
+      "business",
+      "games"
+    ],
+    "examples": [
+      "Deciding whether to scout a position before an attack",
+      "A competitor preparing a product launch in secret",
+      "A chess player deciding whether a quiet move hides a threat"
+    ],
+    "matrix": {
+      "rows": [
+        "Strike A",
+        "Strike B"
+      ],
+      "cols": [
+        "Guard A",
+        "Guard B"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Gather information in ways that do not signal intent, such as routine activity.",
+      "Surprise is most effective where the other side's expectations are most mistaken; check where those expectations come from.",
+      "Prepare a fallback, since surprise can fail.",
+      "If you are defending, vary routines so the other side cannot easily predict your state."
+    ],
+    "pitfalls": [
+      "Scouting so openly that the other side prepares.",
+      "Assuming that surprise will succeed without checking what the other side expects."
+    ],
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the attacker wins if the defender guards the other target)"
+  },
+  {
+    "id": "vcg-mechanism-design",
+    "name": "Mechanism Design: Truthful Auctions",
+    "category": "Single-shot, mechanism design",
+    "summary": "A designer sets the rules of an auction or allocation so that each participant's best strategy is to report their true value. Good design makes honesty the winning move rather than relying on trust.",
+    "how_it_works": "In a Vickrey (second-price) auction, the winner pays the second-highest bid, so bidding your true value is a dominant strategy. Generalisations, such as the Vickrey-Clarke-Groves mechanism, extend this to many items and to decisions that affect everyone.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "yes",
+      "communication": "no"
+    },
+    "domains": [
+      "economy",
+      "business",
+      "government"
+    ],
+    "examples": [
+      "Selling items where bidders' values are private",
+      "Allocating a shared resource among several users",
+      "Designing a fair procurement process"
+    ],
+    "matrix": {
+      "rows": [
+        "Bid 3",
+        "Bid 4",
+        "Bid 5",
+        "Bid 6"
+      ],
+      "cols": [
+        "Bid 3",
+        "Bid 4",
+        "Bid 5",
+        "Bid 6"
+      ],
+      "payoffs": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -1
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As designer: choose rules where truthful reporting is the best strategy for every participant.",
+      "As participant in a truthful mechanism: bid or report your true value; strategic misreporting does not help.",
+      "Check that the rules do not depend on information the designer cannot verify.",
+      "Test the mechanism for ways a group could coordinate to game it."
+    ],
+    "pitfalls": [
+      "Assuming a rule is truthful when it rewards misreporting.",
+      "Ignoring collusion among bidders, which some truthful mechanisms do not prevent."
+    ],
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (second-price sealed-bid auction with values 6 and 4; bidding your true value is weakly dominant)"
+  },
+  {
+    "id": "bayesian-persuasion",
+    "name": "Bayesian Persuasion: Choosing What to Reveal",
+    "category": "Sequential, information design",
+    "summary": "A sender knows more than a receiver and chooses what information to reveal. Clever disclosure can shape what the receiver believes and does, even when every statement is true.",
+    "how_it_works": "The sender designs an information structure, choosing signals that change the receiver's beliefs. The receiver updates rationally. The sender gains by choosing signals that move the receiver to the decision the sender prefers, which is why honest disclosure is not always the sender's best option.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes"
+    },
+    "domains": [
+      "business",
+      "politics",
+      "government"
+    ],
+    "examples": [
+      "A regulator deciding what test results to publish",
+      "A company choosing how to present product data",
+      "An analyst deciding how to present uncertain findings to a decision-maker"
+    ],
+    "matrix": {
+      "rows": [
+        "Reveal fully",
+        "Conceal"
+      ],
+      "cols": [
+        "Act",
+        "Hold"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As receiver: ask how the information was chosen and what was left out, since selective truths can mislead.",
+      "As sender: disclose in ways that remain fair and checkable, because selective disclosure is discovered and damages trust.",
+      "Compare the signal with the base rate, so a striking statistic is not read out of context.",
+      "Use independent review of what was disclosed to check for selection bias."
+    ],
+    "pitfalls": [
+      "Trusting every true statement without checking what was omitted.",
+      "Using selective disclosure to mislead, which is manipulation and ultimately costs credibility."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the informed sender reveals or conceals; the receiver acts or holds)"
+  },
+  {
+    "id": "shapley-value-sharing",
+    "name": "Sharing Gains in a Coalition (Shapley Value)",
+    "category": "Cooperative, coalition payoffs",
+    "summary": "Several parties form a coalition that produces a joint gain. The Shapley value divides the gain by averaging each party's contribution across all the orders in which parties could join. It is one fair way to split a shared prize.",
+    "how_it_works": "For each possible order of joining, a party's marginal contribution is what the coalition gains when it joins. The Shapley value averages these contributions. It rewards parties who add value to many coalitions and is the unique division meeting several fairness axioms.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "common-interest",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "business",
+      "economy",
+      "government"
+    ],
+    "examples": [
+      "Partners in a joint venture dividing profits",
+      "Parties forming a governing coalition and dividing posts",
+      "Firms sharing the cost and benefit of a common infrastructure"
+    ],
+    "matrix": {
+      "rows": [
+        "Form the coalition",
+        "Go alone"
+      ],
+      "cols": [
+        "Partner joins",
+        "Partner goes alone"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Estimate each party's contribution to the total, not only what it asks for.",
+      "Use the average over possible joining orders as a fair benchmark for a split.",
+      "Check whether any sub-group could do better alone; if so, the split is unstable.",
+      "Agree the method in advance, so disputes are about measurement, not about who gets what."
+    ],
+    "pitfalls": [
+      "Dividing by claimed rather than actual contribution.",
+      "Ignoring that a party's value depends on which other parties are present."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "voting-paradoxes",
+    "name": "Voting Paradoxes (Condorcet and Arrow)",
+    "category": "Simultaneous, social choice",
+    "summary": "Majority preferences can cycle: A beats B, B beats C, and C beats A. Arrow's theorem shows that no voting rule satisfies all reasonable fairness conditions, so every system involves trade-offs.",
+    "how_it_works": "With three or more options, pairwise majorities can form a cycle, so there may be no majority winner. Different voting rules pick different winners from the same preferences. Arrow proved that no rule meets every fairness requirement at once.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "yes"
+    },
+    "domains": [
+      "politics",
+      "government",
+      "society"
+    ],
+    "examples": [
+      "A committee choosing among three candidates",
+      "A group deciding a shared activity",
+      "An election with several parties and no clear majority"
+    ],
+    "matrix": {
+      "rows": [
+        "Vote for A first",
+        "Vote for B first"
+      ],
+      "cols": [
+        "Ranking one",
+        "Ranking two"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            -1
+          ]
+        ],
+        [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Check whether a majority winner exists before relying on a vote; a cycle means the result depends on the voting rule.",
+      "Choose a voting method deliberately, and state its trade-offs.",
+      "Use runoffs or ranked ballots where the stakes call for broad acceptance.",
+      "Expect strategic voting, since voters can change outcomes by how they vote."
+    ],
+    "pitfalls": [
+      "Assuming a majority result is the only fair result when preferences cycle.",
+      "Choosing the voting rule after seeing how it would decide a particular outcome."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "subgame-perfection-threats",
+    "name": "Credible Threats (Subgame Perfection)",
+    "category": "Sequential, credibility of threats",
+    "summary": "A threat is credible only if carrying it out would be in the threatener's interest when the time comes. Subgame perfection rules out threats that would be irrational to carry out.",
+    "how_it_works": "Solve the game backward. At each point, the player chooses what is best given what follows. A threat that the threatener would not want to carry out at that point is not credible, and the other side can ignore it.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "commitment": "yes"
+    },
+    "domains": [
+      "business",
+      "military",
+      "politics"
+    ],
+    "examples": [
+      "A firm threatening a price war against a new entrant",
+      "A party threatening to leave a coalition",
+      "A country threatening sanctions after a violation"
+    ],
+    "matrix": {
+      "rows": [
+        "Stay out",
+        "Enter"
+      ],
+      "cols": [
+        "Fight",
+        "Accommodate"
+      ],
+      "payoffs": [
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Solve backward: ask whether you would actually carry out the threat once the other side has moved.",
+      "Make a threat credible by binding yourself in advance, such as a costly commitment.",
+      "If the other side's threat is not credible, call it out calmly and offer an alternative path.",
+      "Replace an empty threat with a clear, proportionate consequence you are willing to apply."
+    ],
+    "pitfalls": [
+      "Making threats you would not carry out, which others learn to ignore.",
+      "Treating every threat as credible without working through what follows."
+    ],
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the standard textbook entry game: a threat to fight is not credible if accommodating pays more)"
+  },
+  {
+    "id": "folk-theorem-cooperation",
+    "name": "Folk Theorem: Sustaining Cooperation",
+    "category": "Repeated, sustaining cooperation",
+    "summary": "In a repeated game where the future matters enough, almost any outcome that beats each side's worst outcome can be sustained as an equilibrium, because deviation can be punished. Cooperation is therefore possible, but not automatic.",
+    "how_it_works": "Players support cooperation with threats to punish defection in future rounds. The threat works only if players care enough about the future, and if the punishment is severe enough to deter deviation. The folk theorem says which outcomes can be sustained.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "yes"
+    },
+    "domains": [
+      "business",
+      "economy",
+      "everyday"
+    ],
+    "examples": [
+      "Two firms keeping prices stable over years",
+      "Neighbours sharing a resource without formal rules",
+      "Partners in an ongoing collaboration"
+    ],
+    "matrix": {
+      "rows": [
+        "Cooperate",
+        "Defect"
+      ],
+      "cols": [
+        "Cooperate",
+        "Defect"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        [
+          [
+            5,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Make the future valuable to both sides; cooperation is sustainable only when the shadow of the future is long.",
+      "Agree a punishment for defection in advance, and make it proportionate and clear.",
+      "Include a path back to cooperation after punishment, so one mistake does not end the relationship.",
+      "Watch for short horizons, such as an approaching end date, which unravel cooperation."
+    ],
+    "pitfalls": [
+      "Expecting cooperation to last with no future, such as a fixed end date.",
+      "Setting punishments so severe that any mistake ends cooperation for good."
+    ],
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the one-shot prisoner's dilemma whose repetition sustains cooperation; the folk theorem depends on patience)"
+  },
+  {
+    "id": "contract-incentives-incomplete",
+    "name": "Incomplete Contracts and Incentives",
+    "category": "Sequential, contracts with unforeseen events",
+    "summary": "No contract can list every future event. Parties must decide who has control over unforeseen decisions, and how to share the gains from investments, so that each has the incentive to invest and to act well.",
+    "how_it_works": "Because contracts are incomplete, the owner of an asset controls decisions that were not written down. Ownership affects incentives to invest. Clear rights over unforeseen decisions and shared gains from investment align incentives.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "yes",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "business",
+      "work",
+      "economy"
+    ],
+    "examples": [
+      "A supplier and buyer sharing an asset that needs future decisions",
+      "A franchise agreement with unforeseen market changes",
+      "A partnership deciding who controls a shared project"
+    ],
+    "matrix": {
+      "rows": [
+        "Specify in contract",
+        "Leave open"
+      ],
+      "cols": [
+        "Invest",
+        "Hold back"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Agree who controls decisions the contract does not cover, and why that party is the right one.",
+      "Share the gains from specific investments, so each side benefits from investing.",
+      "Use clear review points where the contract can be renegotiated fairly.",
+      "Write down the things you care most about, even if the contract cannot cover everything."
+    ],
+    "pitfalls": [
+      "Assuming a detailed contract covers every future case.",
+      "Giving control to the party whose investment matters least."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the buyer specifies terms or leaves them open; the supplier invests or holds back)"
+  },
+  {
+    "id": "global-games-coordination",
+    "name": "Global Games (Coordination Under Noisy Information)",
+    "category": "Simultaneous, coordination with private signals",
+    "summary": "When everyone has a slightly different private signal about the fundamentals, coordination becomes unique and predictable: each person acts based on their own signal and what they think others will do, and a threshold emerges.",
+    "how_it_works": "Carlsson and van Damme showed that with small private noise, multiple equilibria in coordination games collapse into a single threshold equilibrium. Each person attacks, invests, or runs when their signal is below a threshold, which depends on how strongly others' actions depend on fundamentals.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "common-interest",
+      "communication": "no"
+    },
+    "domains": [
+      "economy",
+      "business",
+      "government"
+    ],
+    "examples": [
+      "Investors deciding whether to keep funding a project",
+      "Depositors deciding whether to withdraw",
+      "Citizens deciding whether to take a shared action"
+    ],
+    "matrix": {
+      "rows": [
+        "Invest",
+        "Hold"
+      ],
+      "cols": [
+        "Invest",
+        "Hold"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Estimate the threshold: how strong must the fundamentals be before others act together?",
+      "Use your own signal carefully; noise is what turns a multiple-equilibrium problem into a predictable one.",
+      "Watch whether public information is shifting the threshold, since public signals can dominate private ones.",
+      "Expect coordination to fail when the fundamentals are near the threshold."
+    ],
+    "pitfalls": [
+      "Assuming everyone will coordinate when the fundamentals are only moderately good.",
+      "Overreacting to public announcements that move the threshold without changing fundamentals."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (investors coordinate when fundamentals are strong; a threshold decides)"
+  }
+]

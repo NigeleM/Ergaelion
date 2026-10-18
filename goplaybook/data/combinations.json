@@ -1,0 +1,142 @@
+[
+  {
+    "id": "hidden-threat-deception",
+    "name": "Hidden threat and deception (trojan horse)",
+    "phrases": ["trojan horse", "hidden threat", "disguised", "decoy", "false flag", "deception campaign", "looks harmless", "gift that hides", "sleeper", "fake front", "misdirection"],
+    "games": ["deception-cheap-talk", "double-agent-counterintelligence", "beliefs-after-surprise", "inspection-game", "surprise-and-reconnaissance"],
+    "combined": "A trojan horse works because the defender judges the carrier by its appearance. Analyse it as a deception game: the offence wants to look harmless, the defender wants to tell real from disguised. Ask what signal the carrier sends, what a real and a disguised carrier would each do, and what checks separate them.",
+    "steps": [
+      "Work out what the defender can verify and what it can only assume trust in.",
+      "Require costly or hard-to-fake evidence before trusting a carrier, such as independent checks rather than appearances.",
+      "Use inspection in layers, and sample at random, so a disguise cannot predict which checks come.",
+      "Update belief after each surprise: an unexpected move is evidence, not noise."
+    ],
+    "watch_outs": ["Trusting a sender because the message is convincing rather than verified.", "Relying on one check that a disguise can be built to pass."]
+  },
+  {
+    "id": "deception-and-surprise-campaign",
+    "name": "Deception and surprise in a military campaign",
+    "phrases": ["surprise attack", "deception operation", "feint", "where will they strike", "reconnaissance", "order of battle", "misleading signals", "bluff the enemy"],
+    "games": ["surprise-and-reconnaissance", "deception-cheap-talk", "intel-warning-problem", "colonel-blotto", "signaling-game"],
+    "combined": "Analyse this as a matching game plus a signalling game. Each side guesses where the other will commit, while the signals it sends are partly designed to mislead. The defender should spread its attention, weigh warnings by their source, and avoid over-reacting to one signal.",
+    "steps": [
+      "Spread attention across the likely points rather than guessing a single one, since a predictable guard is easy to bypass.",
+      "Judge each warning by the source, its track record and the cost of sending it.",
+      "Plan for the surprise you least expect, and keep reserves that can move to the threatened point.",
+      "Compare what the other side gains from each signal before deciding how much to believe it."
+    ],
+    "watch_outs": ["Treating every warning as equally credible.", "Concentrating all forces on the single most likely point."]
+  },
+  {
+    "id": "siege-and-blockade",
+    "name": "Siege, blockade and attrition",
+    "phrases": ["siege", "blockade", "starve", "supply lines", "encircled", "war of attrition", "long war"],
+    "games": ["siege-and-logistics", "war-of-attrition", "lanchester-combat", "all-pay-contest"],
+    "combined": "A siege is a war of attrition over supplies. Whoever runs out of stock, morale or money first loses, and concentration of force matters more than numbers spread thin.",
+    "steps": [
+      "Count supplies on both sides, not only forces, since the side that runs out first is the one that concedes.",
+      "Keep supply lines protected and redundant, so one break does not decide the outcome.",
+      "Concentrate force where it changes the outcome, rather than spreading it evenly.",
+      "Compare the cost of waiting with the value of what is at stake before committing further."
+    ],
+    "watch_outs": ["Spending heavily to hold a position whose cost now exceeds its value.", "Ignoring the humanitarian and reputational cost of a siege."]
+  },
+  {
+    "id": "nuclear-crisis-escalation",
+    "name": "Nuclear crisis and escalation control",
+    "phrases": ["nuclear", "escalate", "escalation", "brinkmanship", "nuclear rival", "second strike", "crisis with a nuclear power"],
+    "games": ["crisis-escalation-ladder", "nuclear-deterrence-second-strike", "crisis-negotiation", "chicken", "subgame-perfection-threats"],
+    "combined": "A nuclear crisis combines a chicken game (who backs down first) with deterrence (a threat must be credible to work) and negotiation (channels that lower the stakes). Credibility depends on the ability to retaliate, not on bluster.",
+    "steps": [
+      "Keep channels of communication open, so each side can signal and check intentions.",
+      "Make threats credible through second-strike capability and clear, limited responses, not vague threats.",
+      "Offer ways out that save face, so backing down is not the only option.",
+      "Reason backwards from the worst outcome to check whether each escalation step is one either side can afford."
+    ],
+    "watch_outs": ["Rhetoric that commits you to a response you would not carry out.", "Escalating in steps that each look small but add up to disaster."]
+  },
+  {
+    "id": "insurgency-and-legitimacy",
+    "name": "Insurgency, counter-insurgency and legitimacy",
+    "phrases": ["insurgency", "insurgents", "guerrilla", "counter-insurgency", "rebels", "uprising", "legitimacy", "protest movement"],
+    "games": ["asymmetric-insurgency", "nonviolent-resistance", "mass-uprising-threshold", "authoritarian-survival", "elite-defection-coordination"],
+    "combined": "Insurgency turns on whether the population supports one side. Force alone rarely decides it. Coordination thresholds, elite loyalty and legitimacy decide when support tips.",
+    "steps": [
+      "Measure support by what people do, not by what they say, and watch where it is growing.",
+      "Reduce the costs that push neutral people toward the other side, rather than only adding force.",
+      "Watch the loyalty of those who enforce the rules, since their defection changes the outcome.",
+      "Plan for the threshold: small changes can cause sudden shifts once a tipping point is reached."
+    ],
+    "watch_outs": ["Measuring only the fighters rather than the wider population.", "Repression that creates new supporters faster than it removes old ones."]
+  },
+  {
+    "id": "pandemic-and-supply-shock",
+    "name": "Pandemic response with supply shortages",
+    "phrases": ["pandemic response", "outbreak and shortage", "vaccine rollout", "panic buying", "lockdown and supplies", "health crisis and economy"],
+    "games": ["pandemic-quarantine-game", "emergency-supply-hoarding", "testing-contact-tracing", "vaccination-free-riding", "supply-chain-bullwhip"],
+    "combined": "A pandemic with a supply shock couples a public-goods problem (everyone benefits from others' restraint) with a coordination problem (panic buying). Clear rules, shared information and fair burdens sustain the response.",
+    "steps": [
+      "Publish clear criteria for restrictions and their relaxation, so people can plan.",
+      "Share real stock and demand figures, so buying reflects need rather than fear.",
+      "Share the burden fairly, with support for people who lose income.",
+      "Test and trace with transparent rules that protect privacy."
+    ],
+    "watch_outs": ["Restrictions with no end date, which erode compliance.", "Relaxing before the criteria are met, which can cause a resurgence."]
+  },
+  {
+    "id": "election-and-influence",
+    "name": "Election campaign with persuasion and coalitions",
+    "phrases": ["campaign", "election strategy", "swing voters", "persuade voters", "coalition talks", "polling"],
+    "games": ["median-voter-spatial-competition", "bayesian-persuasion", "agenda-setting-voting", "coalition-formation", "lobbying-influence"],
+    "combined": "A campaign chooses a platform (median voter), decides what evidence to reveal (persuasion), and must build a coalition that can pass policy (agenda setting and coalitions).",
+    "steps": [
+      "Position close to the centre of the voters you need, without abandoning your base.",
+      "Reveal evidence that is accurate and checkable, since exaggeration is quickly exposed.",
+      "Check the agenda: the order of votes can decide an outcome even when the majority is clear.",
+      "Count the partners you need and what each wants in return."
+    ],
+    "watch_outs": ["Misleading claims that cost credibility when checked.", "Ignoring the order in which proposals are voted on."]
+  },
+  {
+    "id": "merger-and-hostile-partner",
+    "name": "Negotiating with a hostile or dependent partner",
+    "phrases": ["merger", "hostile takeover", "partner won't budge", "joint venture", "buyout", "depend on them", "locked in"],
+    "games": ["rubinstein-bargaining", "hold-up", "shapley-value-sharing", "signaling-game", "contract-incentives-incomplete"],
+    "combined": "A merger or partnership is a bargaining game with sunk investment. Once one side has invested in the relationship, the other can hold it up, so contracts and fair sharing of the gains matter as much as the price.",
+    "steps": [
+      "Know your outside option before you talk, since the better it is the stronger your position.",
+      "Write contracts for foreseeable disputes, so a hold-up is less likely to pay.",
+      "Share the gains by contribution, and say how the split is calculated.",
+      "Signal in ways that cost something, because cheap talk does not persuade a careful partner."
+    ],
+    "watch_outs": ["Investing heavily before the terms are clear.", "Demanding a larger share than the partnership can carry."]
+  },
+  {
+    "id": "insider-risk-and-detection",
+    "name": "Insider risk and detection in an organisation",
+    "phrases": ["insider", "insider threat", "employee misconduct", "security breach", "leak", "wrongdoing inside", "fraud"],
+    "games": ["principal-agent", "inspection-game", "whistleblowing", "cyber-defence-allocation", "team-production-shirking"],
+    "combined": "An insider threat is a principal-agent problem with inspection. The organisation cannot watch everyone all the time, so it sets incentives, checks where the risk is highest, and makes reporting safe.",
+    "steps": [
+      "Protect the most critical systems and information first, rather than spreading checks evenly.",
+      "Set incentives that reward reporting, and protect people who raise concerns.",
+      "Use random, unpredictable checks, so inspection deters without being fully predictable.",
+      "Review access and roles regularly, so one person cannot control a critical process alone."
+    ],
+    "watch_outs": ["Monitoring that is so heavy it destroys trust and drives problems out of sight.", "Punishing whistleblowers, which removes the early warning you need."]
+  },
+  {
+    "id": "trade-war-and-deal",
+    "name": "Trade dispute with retaliation and a deal",
+    "phrases": ["trade war", "trade dispute", "import tariffs", "sanctions", "embargo", "export ban"],
+    "games": ["tariff-war-trade-deal", "entry-deterrence", "reputation-reviews", "folk-theorem-cooperation", "cournot-competition"],
+    "combined": "A trade dispute is a prisoners-dilemma that repeats, so each move is a signal about future moves. A credible deal with clear enforcement can end the cycle; retaliation sustains it.",
+    "steps": [
+      "Offer deals with checkable terms and a clear enforcement route.",
+      "Calculate the cost of retaliation to your own side before answering a tariff.",
+      "Keep talks open, so the next move can be a deal rather than a further escalation.",
+      "Protect long-run trade ties, since repeated trade rewards cooperation."
+    ],
+    "watch_outs": ["Starting a tariff war to look strong, which usually hurts both sides.", "A deal that cannot be enforced and so lasts only until the first breach."]
+  }
+]

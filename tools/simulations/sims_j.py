@@ -1,0 +1,57 @@
+"""Everyday and planning cases for the added games (basic mode). Simplified decision analyses that show
+how the choices change outcomes, using the same structure as the payoff tables.
+"""
+
+from build_core import B, C, O, R, S
+
+SIMS = [
+    S("choosing-a-shop-site", "Choosing a Site for a New Shop",
+      ["Business and markets", "Life games", "Economics and finance"],
+      "You are opening a shop on a street where a rival already trades. Customers use the nearest shop, so location decides who gets most of them. The choices are where to open, whether to copy the rival's spot, and how to stand apart once you are there.",
+      [R("Round 1. Where do you open?",
+         O("Choose a spot away from the rival, where few customers are left unserved", 2, "A less contested spot can capture customers the rival does not reach.",
+           C("Customers:", B(0.6, "Find the new shop convenient", 2, "Being close to the people you serve matters most."),
+             B(0.4, "Mostly stay with the rival", 0, "Habit keeps some customers where they are."))),
+         O("Open right next to the rival", -1, "Next to a rival you split the same customers and compete on price.",
+           C("Customers:", B(0.5, "Split between you", 0, "Neither side gains much."),
+             B(0.5, "Drift to the bigger rival", -2, "The rival's larger range wins the close contest."))),
+         O("Wait and see before deciding", -1, "Waiting can cost you the best spots while others take them.")),
+       R("Round 2. Customers come in steadily. How do you keep them?",
+         O("Offer something the rival does not, such as a niche product or service", 2, "A difference reduces head-to-head price competition."),
+         O("Cut prices to undercut the rival", -1, "Price cuts can start a race in which both lose margin."),
+         O("Copy every product the rival sells", 0, "Copying keeps you in the fight but brings no edge.")),
+       ],
+      4, 2, ("The shop found a spot and a niche that the rival did not serve.", "The shop held its customers with some competition.", "The shop lost customers to a rival it had crowded.")),
+
+    S("braess-shortcut-decision", "Taking a New Shortcut at Rush Hour",
+      ["Public goods and environment", "Life games", "Government and politics"],
+      "A new link road opens as a shortcut across town. It is faster when you are almost alone on it, but if many drivers use it, the shortcut jams. The choices are whether to take the shortcut, whether to check conditions first, and what the city should do when the shortcut is crowded.",
+      [R("Round 1. The new shortcut is open. Which route do you take?",
+         O("Take the old route unless the shortcut is clearly free", 1, "Checking conditions before switching avoids joining a jam."),
+         O("Take the shortcut every day", -1, "When many people do the same, the shortcut slows everyone, including you.",
+           C("Other drivers:", B(0.6, "Also take it", -2, "Shared use turns the shortcut into a jam."),
+             B(0.4, "Mostly keep the old route", 1, "A quiet shortcut really is faster."))),
+         O("Take whichever route the app says is fastest", 0, "An app that sends everyone to one route can create the jam it predicts.")),
+       R("Round 2. The city asks for a view on the new link. What do you suggest?",
+         O("Test the whole network first and charge or time the link if needed", 2, "Measuring the whole network reveals jams that single trips miss."),
+         O("Build more shortcut links to spread the traffic", -2, "More links can add more congestion, as the shortcut itself showed."),
+         O("Leave the link as it is and see what happens", -1, "Without measurement, the city may not notice the jam until it is entrenched.")),
+       ],
+      4, 2, ("Drivers kept clear of the jam and the network was measured.", "Traffic was mixed, with some jams on the shortcut.", "The shortcut jammed and the whole network slowed.")),
+
+    S("busy-night-bar-choice", "Choosing a Bar on a Busy Night",
+      ["Society and groups", "Life games", "Economics and finance"],
+      "Friends are deciding where to go on a busy night. Two bars are nearly as good, and everyone wants the quieter one. Going where most people go means waiting in a crowd. The choices are which bar to pick, whether to check before going, and how to decide as a group.",
+      [R("Round 1. Everyone is leaning towards the popular bar. What do you suggest?",
+         O("Suggest the quieter bar, and check the crowd first", 2, "Checking and picking the less popular option avoids the crowd."),
+         O("Go where everyone is going", -1, "The popular bar is crowded, so the popular choice loses.",
+           C("The crowd:", B(0.7, "Fills the bar and the wait is long", -2, "A crowded bar is a poor night out."),
+             B(0.3, "Is quieter than expected", 1, "Sometimes the crowd thins out."))),
+         O("Say nothing and let the group decide", 0, "Without a plan, the group often drifts to the crowd.")),
+       R("Round 2. The quieter bar is full too. What now?",
+         O("Pick a third place by a rule everyone agrees to", 2, "An agreed rule spreads the group out and avoids the crowd."),
+         O("Stay where you are and wait", -1, "Waiting for a table can cost the whole evening."),
+         O("Split the group between the two bars", 1, "Splitting can work if everyone agrees and checks in.")),
+       ],
+      4, 2, ("The group avoided the crowd and had a good night.", "The night was fine, with a wait somewhere.", "The group waited in a crowd and the evening was lost.")),
+]

@@ -1,0 +1,841 @@
+[
+  {
+    "id": "hiring-screening",
+    "name": "Hiring and Screening",
+    "category": "Sequential, signalling and screening",
+    "summary": "An employer must pick a candidate whose ability it cannot see directly. Candidates know more about themselves than the employer does, so signals like credentials and track record carry the weight.",
+    "how_it_works": "Candidates of high and low ability apply. Interviews, references and work samples are imperfect signals. Costly or verifiable signals separate strong candidates from weak ones, while cheap claims are ignored or copied by everyone.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "work",
+      "business"
+    ],
+    "examples": [
+      "Choosing between two finalists with similar CVs",
+      "Deciding whether to hire a candidate with no references",
+      "A startup hiring its first engineer"
+    ],
+    "matrix": {
+      "rows": [
+        "Screen first",
+        "Hire untested"
+      ],
+      "cols": [
+        "Qualified",
+        "Unqualified"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            -1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As employer: rely on verifiable signals (work samples, trial projects, structured tasks) rather than charisma or self-description.",
+      "As employer: use the same questions and scoring for every candidate so that ability, not interviewer mood, drives the decision.",
+      "As candidate: offer proof that is hard to fake, such as a portfolio, a paid trial, or a reference who has seen your work directly.",
+      "As candidate: do not over-claim. Strong candidates benefit from being specific and checkable; vague superlatives signal the opposite.",
+      "Keep a backup option. Your bargaining position at the offer stage depends mostly on your alternatives."
+    ],
+    "pitfalls": [
+      "Hiring on a signal that everyone can copy, such as a famous employer name, without checking the underlying skill.",
+      "Letting a single impressive interview override a pattern in the evidence."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the employer screens or hires untested; the candidate is qualified or not)"
+  },
+  {
+    "id": "firing-and-performance",
+    "name": "Firing and Performance Management",
+    "category": "Sequential, principal-agent with legal limits",
+    "summary": "A manager wants good performance from an employee whose effort is hard to observe, and must sometimes end the employment. Fair, documented process protects both the organisation and the person.",
+    "how_it_works": "Performance is only partly observable, so incentives, feedback and documentation do the work. Dismissal is costly and risky when process is weak, because the employee can contest it, and the rest of the team learns what happens.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "yes",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "work",
+      "business"
+    ],
+    "examples": [
+      "A team lead deciding whether to put an underperformer on a plan",
+      "Deciding how to handle a persistent attendance problem",
+      "Restructuring a team where one role is no longer needed"
+    ],
+    "matrix": {
+      "rows": [
+        "Support and keep",
+        "Fire"
+      ],
+      "cols": [
+        "Improve",
+        "Stay static"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            -1,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Set specific, measurable expectations in writing before any decision, and review them on a schedule.",
+      "Give feedback early and specifically; most performance problems are cheaper to fix in the first month than the last.",
+      "Document facts and dates, not impressions. Records are what make a decision defensible and fair.",
+      "Follow your organisation's process and the applicable employment law exactly. Shortcuts create legal and reputational risk for everyone.",
+      "Consider an improvement plan with a clear end date before termination, so the outcome is known to be fair if it comes."
+    ],
+    "pitfalls": [
+      "Acting on a single incident without a documented pattern.",
+      "Retaliating against someone who raised a complaint, which is both unfair and often unlawful."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the manager keeps and supports, or fires; the employee improves or not)"
+  },
+  {
+    "id": "promotion-tournament",
+    "name": "Promotion Tournaments",
+    "category": "Many players, rank-order competition",
+    "summary": "When a single promotion goes to the best of several people, the contest itself motivates effort, but it can also encourage sabotage, hoarding and short-term politics.",
+    "how_it_works": "Each candidate chooses how much effort to put in, knowing that only the top performer wins. The prize motivates effort, but a competitor's gain is your loss, so helping colleagues can look costly.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "enforcement": "no"
+    },
+    "domains": [
+      "work",
+      "business"
+    ],
+    "examples": [
+      "Two or three people competing for one senior role",
+      "Sales staff competing for a single regional leadership post",
+      "Academic colleagues competing for one tenure-track position"
+    ],
+    "matrix": {
+      "rows": [
+        "High effort",
+        "Low effort"
+      ],
+      "cols": [
+        "High effort",
+        "Low effort"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "If you are a candidate, build a visible record of results and make your contribution to shared goals explicit.",
+      "If you are the manager, reward collaboration explicitly, or the tournament will reward hoarding and quiet sabotage.",
+      "Judge by criteria stated in advance and share them. Secret criteria fuel suspicion and leak into team behaviour.",
+      "If the competition is too intense to keep people cooperating, consider several smaller prizes or a team goal alongside individual ones."
+    ],
+    "pitfalls": [
+      "Assuming the strongest performer wins: visibility and politics often matter more than effort.",
+      "Ignoring the damage to trust that a winner-take-all contest does after it ends."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two employees compete for one promotion; high effort against low effort wins it)"
+  },
+  {
+    "id": "defending-a-position",
+    "name": "Defending a Position",
+    "category": "Sequential, incumbent versus challenger",
+    "summary": "An incumbent holds a role, market share, territory or post that a challenger wants. The incumbent can reinforce what matters most, and the challenger must decide whether the fight is worth its cost.",
+    "how_it_works": "The incumbent has information and existing resources; the challenger must commit before it knows how strong the defence is. Credible reinforcement of key points deters attack, while spreading resources thin invites an attack where the defence is weakest.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "commitment": "yes"
+    },
+    "domains": [
+      "work",
+      "business",
+      "military",
+      "politics"
+    ],
+    "examples": [
+      "An executive defending a role against an internal rival",
+      "A market leader facing a new entrant in its core segment",
+      "A party leader defending a seat against a strong challenger"
+    ],
+    "matrix": {
+      "rows": [
+        "Attack",
+        "Hold"
+      ],
+      "cols": [
+        "Reinforce",
+        "Withdraw"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            1
+          ],
+          [
+            2,
+            -2
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Identify the few positions that matter most and reinforce them, rather than defending everything evenly.",
+      "Make your strength visible and credible in advance. A challenger who believes you are strong will often not attack.",
+      "As challenger, look for the weakest point rather than the strongest, and commit only after checking what the defence can really do.",
+      "Keep a reserve. A defender that has spent everything cannot respond to a second attack.",
+      "Build alliances: supporters raise the cost of an attack and make the challenge harder to coordinate."
+    ],
+    "pitfalls": [
+      "Defending a symbol instead of the thing that actually provides your advantage.",
+      "Overestimating the value of holding a position that is no longer worth its cost."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the attacker attacks or holds; the defender reinforces or withdraws)"
+  },
+  {
+    "id": "hold-up",
+    "name": "Hold-Up and Relationship-Specific Investment",
+    "category": "Sequential, investment and bargaining",
+    "summary": "One party invests in something that only works with its partner. The partner can then demand better terms, because the investor is now locked in. Anticipating this, the investor may underinvest.",
+    "how_it_works": "After an investment is made, its value depends on the partner, so the partner can extract more. Foreseeing that, the investor invests less than would be efficient. Contracts, shared ownership and staged payments reduce the problem.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "business",
+      "work"
+    ],
+    "examples": [
+      "A supplier building a custom production line for one buyer",
+      "A contractor adapting software to a single client's systems",
+      "A company moving its offices next to one key partner"
+    ],
+    "matrix": {
+      "rows": [
+        "Invest",
+        "Do not invest"
+      ],
+      "cols": [
+        "Supplier shares fairly",
+        "Supplier holds up"
+      ],
+      "payoffs": [
+        [
+          [
+            4,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Before investing, agree on price, scope and remedies in a contract that covers the specific investment.",
+      "Stage payments so that each side's exposure stays limited while trust builds.",
+      "Share ownership or control of the specific asset, so neither side can hold the other up by threat alone.",
+      "Make the relationship longer-term and visible; the expectation of future business reduces opportunism.",
+      "If you are the one being asked to invest, price the lock-in into your terms rather than hoping goodwill protects you."
+    ],
+    "pitfalls": [
+      "Investing heavily in one partner with no contract or exit clause.",
+      "Trying to hold up a partner who can walk away and find another customer."
+    ]
+  },
+  {
+    "id": "lemons-market",
+    "name": "Lemons Market (Asymmetric Quality)",
+    "category": "Sequential, adverse selection",
+    "summary": "Sellers know the quality of what they sell and buyers do not. Buyers offer an average price, which drives good sellers out, leaving a market of poor quality. Signals and guarantees can rescue it.",
+    "how_it_works": "If buyers cannot tell quality, they will pay only the average. High-quality sellers who would accept a fair price for good goods leave, so the average falls further. Without a way to signal quality, the market can shrink or collapse.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "business",
+      "economy"
+    ],
+    "examples": [
+      "Used cars sold by private owners",
+      "Freelance services sold by unknown providers",
+      "Insurance applicants who know their health better than the insurer"
+    ],
+    "matrix": {
+      "rows": [
+        "Pay high price",
+        "Pay low price"
+      ],
+      "cols": [
+        "Sell good",
+        "Sell bad"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            2
+          ],
+          [
+            -2,
+            3
+          ]
+        ],
+        [
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As seller of good quality: offer a warranty, inspection report or third-party certification that costs more for poor sellers to imitate.",
+      "As buyer: pay for verification and use return rights; do not assume the average price is fair.",
+      "Build a track record through repeated honest dealing, which is a signal that becomes more credible over time.",
+      "Use independent rating or certification bodies where they exist, and check that they are themselves credible."
+    ],
+    "pitfalls": [
+      "Relying on a seller's own assurances, which are cheap to make.",
+      "Assuming a market can be fixed by price alone when quality is the real uncertainty."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (buyers pay high or low; sellers offer good or bad goods)"
+  },
+  {
+    "id": "bertrand-price-war",
+    "name": "Bertrand Price Competition",
+    "category": "Simultaneous, price competition",
+    "summary": "Firms selling near-identical products compete on price. Undercutting is tempting, and without differentiation or capacity limits, price can fall to cost.",
+    "how_it_works": "If products are identical and buyers pick the cheapest, each firm can gain by undercutting slightly. The equilibrium price approaches marginal cost. Differentiation and capacity limits break this logic.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "no"
+    },
+    "domains": [
+      "business",
+      "economy"
+    ],
+    "examples": [
+      "Two petrol stations on the same road",
+      "Two airlines on a route with identical fares",
+      "Generic products sold by competing manufacturers"
+    ],
+    "matrix": {
+      "rows": [
+        "Hold high price",
+        "Cut price"
+      ],
+      "cols": [
+        "Hold high price",
+        "Cut price"
+      ],
+      "payoffs": [
+        [
+          [
+            4,
+            4
+          ],
+          [
+            0,
+            6
+          ]
+        ],
+        [
+          [
+            6,
+            0
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Differentiate on something buyers value that a competitor cannot copy quickly: service, speed, location or brand trust.",
+      "Limit capacity so that undercutting cannot win you the whole market; a price cut then gains you little.",
+      "In a repeated market, avoid starting a price war. A price cut that is matched immediately usually costs both firms.",
+      "Watch for a rival's cut and decide quickly whether to match it, since delay lets the rival win customers."
+    ],
+    "pitfalls": [
+      "Cutting price to win volume when the rival can match it at once.",
+      "Competing on price in a market where your costs are higher than the rival's."
+    ]
+  },
+  {
+    "id": "reputation-reviews",
+    "name": "Reputation Systems and Reviews",
+    "category": "Repeated, reputation and signalling",
+    "summary": "Buyers rate sellers after each transaction. Good ratings reward quality over time, but ratings are only useful when they are honest, and both sides face incentives to game them.",
+    "how_it_works": "A seller who builds a good record earns more future business, which gives reason to deliver quality. Buyers who leave honest feedback help the system; those who leave none or biased reviews weaken it.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "business",
+      "everyday"
+    ],
+    "examples": [
+      "Choosing a freelancer from a platform with many reviews",
+      "Deciding whether to trust a new seller on a marketplace",
+      "Leaving a review after a service dispute"
+    ],
+    "matrix": {
+      "rows": [
+        "Deliver quality",
+        "Cut corners"
+      ],
+      "cols": [
+        "Review honestly",
+        "Skip review"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            -2
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As seller: deliver consistently, respond to problems quickly, and let the record build; reputation is slow to earn and fast to lose.",
+      "As buyer: read the pattern of reviews, not just the average, and be wary of a sudden burst of perfect ratings.",
+      "As buyer: leave honest feedback, since the system is only as good as the reviews it collects.",
+      "Never manufacture or trade reviews. Fake ratings corrupt the signal for everyone, including you, and platforms penalise them."
+    ],
+    "pitfalls": [
+      "Judging a seller on a few early reviews from a small sample.",
+      "Gaming ratings in a way that is discovered, which destroys trust permanently."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a seller delivers quality or cuts corners; a buyer reviews honestly or does not review)"
+  },
+  {
+    "id": "matching-markets",
+    "name": "Matching Markets (Jobs, Schools, Dating)",
+    "category": "Simultaneous, stable matching",
+    "summary": "Two sides with preferences must be matched: students and schools, workers and employers, people looking for partners. The outcome depends on whether anyone prefers to leave their assigned match for someone they would rather have.",
+    "how_it_works": "In deferred-acceptance matching, each proposer applies to its most-preferred option first and holds offers provisionally. Under that procedure, honestly ranking your true preferences is the best strategy for the proposing side.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes"
+    },
+    "domains": [
+      "everyday",
+      "work"
+    ],
+    "examples": [
+      "Students ranking schools in a centralised admissions system",
+      "Applicants and employers in a graduate-placement match",
+      "Two people deciding whether to pursue a relationship"
+    ],
+    "matrix": {
+      "rows": [
+        "Propose to top choice",
+        "Propose to second choice"
+      ],
+      "cols": [
+        "Accept",
+        "Reject"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Rank options by your true preference when the mechanism uses deferred acceptance; gaming the list rarely helps.",
+      "Apply to a realistic set: include your best option, a good match, and at least one safe option you would accept.",
+      "Judge your own market value honestly. Aiming far above what the other side wants wastes time and offers.",
+      "Communicate early and clearly about what you want, to avoid wasting both sides' time on mismatched expectations."
+    ],
+    "pitfalls": [
+      "Assuming you must ration your applications to avoid rejections in mechanisms where honest ranking is safe.",
+      "Waiting for a dream option and losing a good match that will not come again."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a proposer and a receiver match when both agree)"
+  },
+  {
+    "id": "bank-run",
+    "name": "Bank Run (Coordination Failure)",
+    "category": "Simultaneous, coordination with panic",
+    "summary": "A bank can pay depositors only if most do not withdraw at once. Each depositor is safer withdrawing early if others do, so a rumour can cause a run even when the bank is sound.",
+    "how_it_works": "There are two equilibria: everyone waits (the bank survives) or everyone withdraws (the bank fails). Expectations choose which one happens, so credible public reassurance and deposit insurance change the outcome.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "common-interest",
+      "communication": "yes",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "economy",
+      "business"
+    ],
+    "examples": [
+      "Depositors queuing outside a bank after a rumour",
+      "Investors rushing to sell a fund on bad news about another fund",
+      "Creditors demanding repayment from a firm that is temporarily short of cash"
+    ],
+    "matrix": {
+      "rows": [
+        "Wait",
+        "Withdraw early"
+      ],
+      "cols": [
+        "Wait",
+        "Withdraw early"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As depositor: check the fundamentals and whether reassurance from a credible authority exists before acting on a rumour.",
+      "As institution: communicate clearly and early, and make deposit insurance or a lender of last resort visible.",
+      "As regulator: a credible backstop removes the reason for the run, so it is rarely used but very valuable.",
+      "Do not spread unverified rumours; they are the coordination device that turns a sound institution into a failed one."
+    ],
+    "pitfalls": [
+      "Assuming a run is always a sign of insolvency.",
+      "Staying silent during a rumour, which lets expectations settle on the bad equilibrium."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (waiting pays 2 if the other depositor waits, and 0 if they withdraw)"
+  },
+  {
+    "id": "herding-cascades",
+    "name": "Herding and Information Cascades",
+    "category": "Sequential, social learning",
+    "summary": "People decide one after another, and each can see earlier choices. After a few early choices, rational people may copy the crowd even against their own private information, so the group can lock onto a wrong answer.",
+    "how_it_works": "Each person weighs their private signal against what the observed choices reveal. Once the evidence from earlier choices outweighs one private signal, copying becomes rational, and the cascade stops individual information from spreading.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "no"
+    },
+    "domains": [
+      "economy",
+      "everyday",
+      "politics"
+    ],
+    "examples": [
+      "Investors piling into a stock after a few early buyers",
+      "Restaurant choice based on which tables are full",
+      "Voters following early polls in a primary"
+    ],
+    "matrix": {
+      "rows": [
+        "Follow the crowd",
+        "Decide privately"
+      ],
+      "cols": [
+        "Follow the crowd",
+        "Decide privately"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Make your private information count: when your own evidence is strong, act on it even if the crowd disagrees.",
+      "Seek independent sources, since copying the crowd gives you no new information once a cascade has started.",
+      "If you are first or early, be transparent about how confident you are; your choice shapes everyone who follows.",
+      "Be suspicious of a sudden consensus with little public evidence behind it."
+    ],
+    "pitfalls": [
+      "Treating a crowd's behaviour as proof of quality.",
+      "Following early movers in a market where their choices reveal little about the underlying facts."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two agents with private information; following pays when others follow)"
+  },
+  {
+    "id": "travelers-dilemma",
+    "name": "Traveler's Dilemma",
+    "category": "Simultaneous, claims and undercutting",
+    "summary": "Two travellers each claim a value for a lost bag, and the airline pays the lower claim, with a bonus to the honest claimant. The logic says undercut by one unit, but experiments show people claim high and reward the honest.",
+    "how_it_works": "Undercutting the other by a small amount is always tempting, which pushes both claims down toward the minimum. The equilibrium is the lowest claim, yet the game is famous for real people claiming far higher.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "no"
+    },
+    "domains": [
+      "business",
+      "everyday"
+    ],
+    "examples": [
+      "Two people claiming a shared loss from an insurer",
+      "Two vendors pricing a bundled service the buyer checks",
+      "Two hotel guests reporting the value of a damaged item"
+    ],
+    "matrix": {
+      "rows": [
+        "Claim 2",
+        "Claim 3",
+        "Claim 4"
+      ],
+      "cols": [
+        "Claim 2",
+        "Claim 3",
+        "Claim 4"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "If you are the one who knows the true value, claim it honestly; the logic of undercutting assumes the other side will race to the bottom.",
+      "If the rules reward a small undercut, expect the other side to be tempted, and do not start a race you can see is pointless.",
+      "Where the claim can be checked, honesty is safest: a reputation for accurate claims pays over repeated dealings.",
+      "Read the reward structure carefully. A large penalty for undercutting changes the equilibrium completely."
+    ],
+    "pitfalls": [
+      "Assuming others will undercut you by the maximum amount.",
+      "Choosing a claim far below the true value to win a small edge."
+    ],
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (a shortened version: claims 2 to 4, reward and penalty 2)"
+  }
+]

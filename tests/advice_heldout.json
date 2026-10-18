@@ -1,0 +1,14 @@
+[
+  {"text": "our two firms have to pick a price for next season without knowing what the other will charge", "expect": ["bertrand-price-war", "cournot-competition"]},
+  {"text": "I am selling my old car and the buyer keeps trying to push the price down", "expect": ["nash-bargaining-demands", "rubinstein-bargaining", "ultimatum-game"]},
+  {"text": "the government and the opposition both want the reform but disagree on the details", "expect": ["veto-players-reform", "agenda-setting-voting", "coalition-formation", "battle-of-the-sexes"]},
+  {"text": "we are two friends who must decide where to go, I prefer the cinema and they prefer the beach", "expect": ["battle-of-the-sexes"]},
+  {"text": "a patient might lie about symptoms to get a better deal from the insurance company", "expect": ["insurance-moral-hazard", "lemons-market", "deception-cheap-talk"]},
+  {"text": "a city wants to limit how much water each farm takes from the river", "expect": ["tragedy-of-the-commons", "climate-treaty-public-goods"]},
+  {"text": "each team member can slack off on the project and the boss cannot tell who worked hardest", "expect": ["team-production-shirking", "principal-agent"]},
+  {"text": "we want to fix the thermostat price for the whole neighbourhood so everyone joins in", "expect": ["global-games-coordination", "standards-war-network-effects", "public-goods", "vaccination-free-riding"]},
+  {"text": "the two sides keep raising the stakes in the border dispute to see who backs off first", "expect": ["war-of-attrition", "chicken", "crisis-escalation-ladder"]},
+  {"text": "I want to sell my house and buyers have different guesses about its true value", "expect": ["sealed-bid-auctions", "lemons-market", "vcg-mechanism-design"]},
+  {"text": "a bank must decide whether to lend to people who may not repay, and it cannot see their finances", "expect": ["lemons-market", "principal-agent", "hiring-screening"]},
+  {"text": "the company will keep working with its contractors for many years and wants them to stay honest", "expect": ["repeated-prisoners-dilemma", "folk-theorem-cooperation", "reputation-reviews"]}
+]

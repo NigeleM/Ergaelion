@@ -1,0 +1,1044 @@
+[
+  {
+    "id": "matching-pennies",
+    "name": "Matching Pennies",
+    "category": "Simultaneous, mixed strategies, zero-sum",
+    "summary": "Two players show heads or tails at the same time. One wins when the coins match, the other when they differ. No fixed choice is safe, so the only stable play is to randomise.",
+    "how_it_works": "Each player's best reply depends on the other's choice, so any pure choice can be exploited. The equilibrium is a 50-50 mix: a predictable player loses to someone who notices the pattern, while an unpredictable one cannot be beaten on average.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "communication": "no",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "no"
+    },
+    "domains": [
+      "games"
+    ],
+    "examples": [
+      "Two goalkeepers and strikers choosing a corner",
+      "A tax inspector choosing which returns to audit",
+      "Two players guessing each other's move in a card game"
+    ],
+    "strategies": [
+      "Randomise your choice with equal odds, so the other player cannot predict you.",
+      "Avoid patterns: a habit such as always choosing heads is found and exploited.",
+      "Track the other player's choices to confirm they are not following a pattern of their own."
+    ],
+    "pitfalls": [
+      "Following a feeling or a streak, which is easy for a skilled opponent to read.",
+      "Assuming a long run of heads makes tails more likely next, or the reverse."
+    ],
+    "matrix": {
+      "rows": [
+        "Heads",
+        "Tails"
+      ],
+      "cols": [
+        "Heads",
+        "Tails"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the first player wins when the coins differ; the second wins when they match)"
+  },
+  {
+    "id": "penalty-kicks-and-serves",
+    "name": "Penalty Kicks and Serve Direction",
+    "category": "Simultaneous, mixed strategies, zero-sum",
+    "summary": "A striker and a goalkeeper, or a server and a returner, choose a direction at the same time. Sport shows the same logic as Matching Pennies: a predictable choice is easy to defend against.",
+    "how_it_works": "The striker scores when the keeper dives the other way. The keeper saves when they guess the same side. In equilibrium, both mix their directions so that the other cannot gain by favouring one side.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "communication": "no",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "no"
+    },
+    "domains": [
+      "everyday",
+      "games"
+    ],
+    "examples": [
+      "A penalty taker choosing where to aim",
+      "A tennis server choosing wide or down the middle",
+      "A goalkeeper deciding when to commit to a dive"
+    ],
+    "strategies": [
+      "Mix your directions, and vary them so the opponent cannot learn a habit.",
+      "Watch for a tell in the run-up, and only use it when it is real.",
+      "Remember that a successful choice this time may be expected next time."
+    ],
+    "pitfalls": [
+      "Always going to your strong side, which a good keeper or returner learns quickly.",
+      "Overthinking the choice: a random mix is often better than a clever but predictable one."
+    ],
+    "matrix": {
+      "rows": [
+        "Shoot left",
+        "Shoot right"
+      ],
+      "cols": [
+        "Dive left",
+        "Dive right"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the striker scores when the keeper dives the other way)"
+  },
+  {
+    "id": "dictator-game",
+    "name": "Dictator Game: Fairness Without a Reply",
+    "category": "Sequential, fairness and reputation",
+    "summary": "One person decides how to split a sum with another person, who has no say. It shows how much people share when nothing forces them to, and how much of that sharing depends on being seen.",
+    "how_it_works": "With no reply allowed, a purely self-interested dictator keeps everything. Many people still share some, and the amount shrinks when the split is private and grows when others are watching. Reputation and social norms, not the payoff alone, shape the choice.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "no",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "no"
+    },
+    "domains": [
+      "games",
+      "society"
+    ],
+    "examples": [
+      "Splitting a bonus between a manager's team members who cannot respond",
+      "Donating part of a windfall to someone who asked for nothing",
+      "Dividing a shared cost when only one person decides"
+    ],
+    "strategies": [
+      "Share fairly when your choice is seen, because reputation is a real return.",
+      "Recognise that the other person's options matter: a fair offer costs little and builds trust.",
+      "Do not expect fairness from someone with no reason to show it."
+    ],
+    "pitfalls": [
+      "Assuming a private choice will always be fair, which the research does not support.",
+      "Taking everything when no one can object, and then being surprised when trust falls."
+    ],
+    "matrix": {
+      "rows": [
+        "Split evenly",
+        "Keep everything"
+      ],
+      "cols": [
+        "Observed",
+        "Unobserved"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            5,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the dictator's payoff falls when the choice is seen and keeping everything is judged badly)"
+  },
+  {
+    "id": "braess-paradox-traffic",
+    "name": "Braess's Paradox: When a Shortcut Slows Everyone",
+    "category": "Simultaneous, congestion",
+    "summary": "Drivers choose between a slow old route and a new shortcut. Adding the shortcut can make everyone's trip slower, because each driver's choice adds congestion for the others.",
+    "how_it_works": "A shortcut is fast when a driver uses it alone, but when most drivers use it, it jams. Each driver's own best choice can leave everyone worse off than before the shortcut was built. Planners should measure the whole network, not only each new link.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "no",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "no"
+    },
+    "domains": [
+      "everyday",
+      "government",
+      "environment"
+    ],
+    "examples": [
+      "A new road link that makes the whole city slower at rush hour",
+      "A new cycle path that draws so many riders it congests the crossing",
+      "A new app-based route that sends everyone down the same side street"
+    ],
+    "strategies": [
+      "Check how the choice changes for everyone, not just for yourself.",
+      "Use a shortcut when few others take it, and avoid it when it is crowded.",
+      "For planners: test the whole network before building a new link, and price or time the link if needed."
+    ],
+    "pitfalls": [
+      "Judging a new route only by its speed when empty, which ignores the jam it creates.",
+      "Assuming that more capacity always reduces congestion."
+    ],
+    "matrix": {
+      "rows": [
+        "Old route",
+        "Shortcut"
+      ],
+      "cols": [
+        "Old route",
+        "Shortcut"
+      ],
+      "payoffs": [
+        [
+          [
+            -4,
+            -4
+          ],
+          [
+            -4,
+            -2
+          ]
+        ],
+        [
+          [
+            -2,
+            -4
+          ],
+          [
+            -6,
+            -6
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two drivers; a driver takes 2 minutes on the shortcut alone, 6 if both use it, and 4 on the old route; payoffs are minus minutes)"
+  },
+  {
+    "id": "nash-bargaining-demands",
+    "name": "Nash Bargaining: Dividing a Fixed Prize",
+    "category": "Simultaneous, bargaining over a fixed prize",
+    "summary": "Two parties each name a share of a fixed prize. If the shares add up to the whole, both get what they asked for. If they claim too much, both get nothing. The question is how to ask for enough without asking for too much.",
+    "how_it_works": "Demanding more improves your share only if the other side still agrees. The equal split is the natural focal point, and it is the solution Nash proposed for bargaining between equals. Greedy demands risk getting nothing.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "work",
+      "business",
+      "everyday"
+    ],
+    "examples": [
+      "Two departments dividing a fixed budget",
+      "Two partners splitting the profit of a shared project",
+      "A seller and buyer dividing the gain from a trade"
+    ],
+    "strategies": [
+      "Name a fair share that the other side can accept without losing face.",
+      "Anchor on a reasoned split, such as the equal share, and explain the reasons.",
+      "Know your fallback: a deal that is slightly worse is often better than none."
+    ],
+    "pitfalls": [
+      "Demanding far more than a fair share, which can leave both sides with nothing.",
+      "Ignoring what the other side needs, which makes a good-looking demand unreachable."
+    ],
+    "matrix": {
+      "rows": [
+        "Demand 4",
+        "Demand 5",
+        "Demand 6"
+      ],
+      "cols": [
+        "Demand 4",
+        "Demand 5",
+        "Demand 6"
+      ],
+      "payoffs": [
+        [
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        [
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            6,
+            4
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the discrete Nash demand game; the equal split is the bargaining solution)"
+  },
+  {
+    "id": "minority-game-crowds",
+    "name": "Minority Game: Choosing the Less Crowded Option",
+    "category": "Simultaneous, anti-coordination with crowds",
+    "summary": "Players each pick one of two places. Those who end up in the less crowded place win, and the crowd loses. Being right means being different from most people, which makes the crowd's behaviour hard to predict.",
+    "how_it_works": "When everyone copies the popular choice, the popular choice becomes crowded and loses. Stable outcomes split the players, and that split can only come from differences in what people expect. The simple two-player form shows the logic: going to different places wins for both.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "no",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "no"
+    },
+    "domains": [
+      "society",
+      "economy"
+    ],
+    "examples": [
+      "Choosing which bar or restaurant to go to on a busy night",
+      "Picking a time to travel so as to avoid the rush",
+      "Deciding which stock or trend to follow when everyone is watching the same one"
+    ],
+    "strategies": [
+      "Ask what most people will choose, then think about whether they will all choose it.",
+      "Pick a less popular option when the popular one is likely to be crowded.",
+      "Use a rule rather than a guess, and test it over several rounds."
+    ],
+    "pitfalls": [
+      "Following the crowd into a crowded option, which is the most common mistake.",
+      "Assuming everyone will be contrarian, which turns the minority into the new crowd."
+    ],
+    "matrix": {
+      "rows": [
+        "Bar A",
+        "Bar B"
+      ],
+      "cols": [
+        "Bar A",
+        "Bar B"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            -1
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two players; the one in the less crowded place wins, and both in the same place lose)"
+  },
+  {
+    "id": "hotelling-shop-location",
+    "name": "Hotelling: Where to Open a Shop",
+    "category": "Simultaneous, spatial competition",
+    "summary": "Two shops choose where to locate along a street where customers are spread evenly. Each customer uses the nearer shop, so both shops tend to move towards the middle, where they compete for the same people.",
+    "how_it_works": "A shop gains customers by moving closer to its rival, until the two sit side by side in the middle. Only the centre is a stable place to be, which is why similar products and services often look alike. Differentiation is the only escape from head-to-head competition.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "communication": "no",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "no"
+    },
+    "domains": [
+      "business",
+      "everyday"
+    ],
+    "examples": [
+      "Two coffee shops choosing sites on the same high street",
+      "Two petrol stations picking corners of the same junction",
+      "Two schools or clinics deciding where to set up in a town"
+    ],
+    "strategies": [
+      "Look at where the customers are, not only where the rival is.",
+      "Differentiate: a different product or a niche can avoid the centre's crowding.",
+      "Watch the rival's move, because a copy may be cheaper than a new idea."
+    ],
+    "pitfalls": [
+      "Crowding into the centre out of habit, where the fight is hardest.",
+      "Ignoring the customers at the edges, who may be the ones no one else is serving."
+    ],
+    "matrix": {
+      "rows": [
+        "Open at 2",
+        "Open at 5",
+        "Open at 8"
+      ],
+      "cols": [
+        "Open at 2",
+        "Open at 5",
+        "Open at 8"
+      ],
+      "payoffs": [
+        [
+          [
+            11,
+            11
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            11,
+            11
+          ]
+        ],
+        [
+          [
+            14,
+            8
+          ],
+          [
+            11,
+            11
+          ],
+          [
+            14,
+            8
+          ]
+        ],
+        [
+          [
+            11,
+            11
+          ],
+          [
+            8,
+            14
+          ],
+          [
+            11,
+            11
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (customers 0 to 10 use the nearer shop; ties split, and payoffs count customers doubled)"
+  },
+  {
+    "id": "tariff-war-trade-deal",
+    "name": "Tariff War and Trade Deals",
+    "category": "Simultaneous, trade and retaliation",
+    "summary": "Two countries decide whether to keep trade open, impose tariffs, or offer a trade deal. Each tariff can win a short advantage, but when both impose them, both lose. A credible deal often leaves both better off.",
+    "how_it_works": "Imposing a tariff while the other side keeps trade open gains a short-term edge. The other side's retaliation then leaves both worse off. Deals work when each side can trust the other to keep them, and when the cost of breaking them is clear.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "yes",
+      "commitment": "yes",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "government",
+      "economy",
+      "business"
+    ],
+    "examples": [
+      "Two countries deciding whether to raise tariffs on each other's exports",
+      "Two companies in different markets deciding whether to restrict imports",
+      "A trade negotiation between a large and a small partner"
+    ],
+    "strategies": [
+      "Offer a deal with clear, checkable terms, so both sides can see what they receive.",
+      "Plan for retaliation before imposing a tariff, and count its cost to your own side.",
+      "Keep the channel open after a dispute, so the next move can be a deal."
+    ],
+    "pitfalls": [
+      "Starting a tariff war to look strong, which usually hurts both economies.",
+      "Making a deal that cannot be enforced, so it lasts only until the first breach."
+    ],
+    "matrix": {
+      "rows": [
+        "Keep trade open",
+        "Impose tariffs",
+        "Offer a deal"
+      ],
+      "cols": [
+        "Keep trade open",
+        "Impose tariffs",
+        "Offer a deal"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a tariff gains a short edge over an open partner; mutual tariffs hurt both; a deal pays both best)"
+  },
+  {
+    "id": "cyber-defence-allocation",
+    "name": "Cyber Defence: Protecting the Critical Systems",
+    "category": "Simultaneous, defence allocation under attack",
+    "summary": "A defender chooses where to put protection effort across its systems. An attacker chooses which system to target. This is a planning game for the defender's side: it shows why protecting the most critical systems first usually beats spreading effort thinly.",
+    "how_it_works": "Protection works best on the systems that matter most. When effort is spread thinly, the weakest point is the one that fails. The model is a planning tool for defenders and does not describe how any attack is carried out.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "no",
+      "enforcement": "no",
+      "commitment": "yes",
+      "bargaining": "no"
+    },
+    "domains": [
+      "military",
+      "business"
+    ],
+    "examples": [
+      "An organisation deciding which systems to harden first",
+      "A hospital deciding which records and equipment get the most protection",
+      "A city planning backup systems for its utilities"
+    ],
+    "strategies": [
+      "Rank your systems by what they would cost to lose, and protect the top ones first.",
+      "Assume the weakest point will be found, and remove it before anything else.",
+      "Practise recovery, so that a failure at one point does not stop the whole organisation."
+    ],
+    "pitfalls": [
+      "Spreading protection evenly, which leaves the most valuable system exposed.",
+      "Treating protection as a one-time purchase rather than a plan that is reviewed."
+    ],
+    "matrix": {
+      "rows": [
+        "Harden the critical systems",
+        "Spread effort thinly"
+      ],
+      "cols": [
+        "Target critical systems",
+        "Target weakest systems"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            -2
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            -3,
+            3
+          ],
+          [
+            -1,
+            1
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (defender's side only: payoffs are protection values, and the attacker's gain is the defender's loss)"
+  },
+  {
+    "id": "supply-chain-bullwhip",
+    "name": "Supply Chain: Shortage and the Bullwhip Effect",
+    "category": "Simultaneous, coordination under shortage",
+    "summary": "A supplier decides how much stock to hold, and a retailer decides how to order. When each side orders ahead out of fear, small changes in demand grow into large swings, and everyone loses.",
+    "how_it_works": "Ordering just in time works while both sides trust the demand figures. When the retailer orders ahead to be safe, the supplier sees a spike and holds more stock, which wastes money. Sharing sales data and agreeing on forecasts removes most of the swing.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "common-interest",
+      "communication": "yes",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "business",
+      "economy",
+      "work"
+    ],
+    "examples": [
+      "A shop ordering extra stock after a short rise in sales",
+      "A manufacturer holding spare parts after a supplier shortage",
+      "A school or hospital ordering supplies in a panic during a shortage"
+    ],
+    "strategies": [
+      "Share real sales data with the supplier, so that orders reflect demand and not fear.",
+      "Agree on a forecast and a buffer that both sides can see and check.",
+      "Order steadily when the signal is unclear, and avoid large one-off orders."
+    ],
+    "pitfalls": [
+      "Ordering far above demand after a shortage, which creates the next glut.",
+      "Hiding stock or plans from the other side, which makes both sides guess."
+    ],
+    "matrix": {
+      "rows": [
+        "Keep stock lean",
+        "Hold a safety buffer"
+      ],
+      "cols": [
+        "Order just in time",
+        "Order ahead to be safe"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the supplier and retailer share the value of steady orders; panic ordering wastes stock)"
+  },
+  {
+    "id": "parent-teen-curfew-trust",
+    "name": "Parent and Teen: Curfews and Trust",
+    "category": "Simultaneous, family rules and trust",
+    "summary": "A parent sets a curfew, and a teenager decides whether to keep it. Clear, agreed rules that come with trust tend to be kept better than rules that are simply imposed. The game is for healthy, respectful family decisions, not for control.",
+    "how_it_works": "A rule the teenager helped to agree is usually kept. A rule that is imposed and enforced harshly often leads to hidden breaches, which damage trust. Each round is a chance to review and adjust the rule, so the relationship builds on what has worked.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "everyday",
+      "society"
+    ],
+    "examples": [
+      "Agreeing a weekday curfew that is reviewed after a month",
+      "Deciding how late a teenager can stay out at a weekend event",
+      "Setting screen time rules that both sides explain and review"
+    ],
+    "strategies": [
+      "Agree the rule together, and explain the reason for it.",
+      "Review the rule on a set date, and adjust it when it is not working.",
+      "Respond to a breach calmly, and ask what happened before deciding the consequence."
+    ],
+    "pitfalls": [
+      "Using control in place of agreement, which tends to drive problems out of sight.",
+      "Changing the rule after each breach, so the teenager cannot tell what is expected."
+    ],
+    "matrix": {
+      "rows": [
+        "Strict curfew",
+        "Flexible curfew"
+      ],
+      "cols": [
+        "Follow the curfew",
+        "Test the limit"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            2
+          ],
+          [
+            -1,
+            -1
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            -2,
+            -1
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (parent's and teenager's wellbeing; trust and agreement pay both)"
+  },
+  {
+    "id": "traffic-signal-correlated",
+    "name": "Traffic Signal: Correlated Equilibrium",
+    "category": "Simultaneous, coordination with a shared signal",
+    "summary": "Two drivers approach a crossing with the same trusted signal. The signal suggests who should go and who should wait. Following a shared, trusted recommendation can do better for both than any plan worked out alone.",
+    "how_it_works": "A correlated equilibrium is a shared recommendation that neither player wants to disobey, given the other follows it too. A traffic light is the everyday example: each driver gains from following the signal, and the signal makes the outcome fairer and safer than a mixed guess.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "yes",
+      "commitment": "no",
+      "bargaining": "no"
+    },
+    "domains": [
+      "games",
+      "everyday"
+    ],
+    "examples": [
+      "Two cars approaching a junction controlled by a light",
+      "Two parties agreeing to use a shared, neutral referee to decide turns",
+      "Two teams taking turns on a shared resource according to a published rota"
+    ],
+    "strategies": [
+      "Set up a signal that both sides trust, and that neither controls alone.",
+      "Follow the recommendation when the other side is likely to follow it too.",
+      "Check that the signal is fair, so that the same rule applies to everyone."
+    ],
+    "pitfalls": [
+      "Following a signal you do not trust, which breaks down the whole arrangement.",
+      "Ignoring the signal when the other side is following it, which causes a crash."
+    ],
+    "matrix": {
+      "rows": [
+        "Swerve",
+        "Dare"
+      ],
+      "cols": [
+        "Swerve",
+        "Dare"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the standard Chicken payoffs; a shared signal can recommend which driver goes)"
+  },
+  {
+    "id": "kin-selection-helping-relatives",
+    "name": "Kin Selection: Helping Relatives",
+    "category": "Simultaneous, evolution of altruism",
+    "summary": "Two relatives each decide whether to help the other at a personal cost. Because they share genes, help that costs one of them a little can gain the other a lot. The game shows why helping can spread among relatives even when it looks like a loss to the helper.",
+    "how_it_works": "Once each player counts the relative's payoff at the degree of relatedness, helping becomes the better choice. This is Hamilton's rule in a simple form: help when the benefit to the relative, weighted by relatedness, outweighs the cost to yourself. Outside a family, the same help would not be favoured.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "no",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "no"
+    },
+    "domains": [
+      "games",
+      "environment"
+    ],
+    "examples": [
+      "Siblings sharing food or care when one has more than the other",
+      "Animals alarm-calling to warn relatives of a predator",
+      "A family pooling money to help a younger relative into work"
+    ],
+    "strategies": [
+      "Count the benefit to a relative as part of your own gain, weighted by how closely related you are.",
+      "Compare the cost of helping with the benefit to others, not only to yourself.",
+      "Do not assume the same help is worth it between strangers, where relatedness is absent."
+    ],
+    "pitfalls": [
+      "Treating kin and strangers the same way, which misreads why help spreads.",
+      "Assuming help is always rewarded in the same round, when its return may come later."
+    ],
+    "matrix": {
+      "rows": [
+        "Help the relative",
+        "Keep to yourself"
+      ],
+      "cols": [
+        "Relative helps",
+        "Relative keeps"
+      ],
+      "payoffs": [
+        [
+          [
+            6,
+            6
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (inclusive fitness with relatedness one-half; helping costs 2 and gives the relative 6)"
+  },
+  {
+    "id": "beliefs-after-surprise",
+    "name": "Beliefs After a Surprise (Perfect Bayesian Equilibrium)",
+    "category": "Sequential, beliefs and updating after surprises",
+    "summary": "A sender knows whether they are strong or weak and chooses whether to send a costly signal. The receiver must update their belief about the sender, then decide whether to trust the signal. Equilibrium needs beliefs that are consistent with what each side does, including after a surprise.",
+    "how_it_works": "A perfect Bayesian equilibrium pairs each player's strategy with beliefs that update by Bayes' rule from what they observe. When a move is unexpected, the receiver's belief about it decides the answer. A costly signal can be believed because a weak sender could not afford to copy it.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "no",
+      "commitment": "no",
+      "bargaining": "no"
+    },
+    "domains": [
+      "games",
+      "government",
+      "business"
+    ],
+    "examples": [
+      "A company deciding whether to trust a new supplier's certificate",
+      "A candidate's costly pledge that is believed only if it is hard to fake",
+      "A new employer's offer that a candidate must decide to believe"
+    ],
+    "strategies": [
+      "Ask what each type of player would gain by sending the signal, and whether a weak one could copy it.",
+      "Update your belief by how likely each type is to have acted this way.",
+      "Treat an unexpected move as information, not as noise."
+    ],
+    "pitfalls": [
+      "Believing cheap talk that costs the sender nothing to make.",
+      "Ignoring surprise moves, which often carry the most information."
+    ],
+    "matrix": {
+      "rows": [
+        "Send the costly signal",
+        "Stay quiet"
+      ],
+      "cols": [
+        "Trust the signal",
+        "Ignore the signal"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a strong sender gains from a signal the receiver trusts; a weak sender could not afford to copy it)"
+  }
+]

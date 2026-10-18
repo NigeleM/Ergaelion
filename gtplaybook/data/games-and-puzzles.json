@@ -1,0 +1,295 @@
+[
+  {
+    "id": "poker-bluffing",
+    "name": "Poker and Bluffing",
+    "category": "Sequential, imperfect information, zero-sum",
+    "summary": "Players hold private cards and bet. Bluffing works only if it is unpredictable and sometimes made, so the game is about mixing strategies and reading opponents, not about guessing outcomes.",
+    "how_it_works": "Betting with strong and weak hands must be balanced so that the opponent cannot profit by always calling or folding. Equilibrium play bluffs at a frequency that makes the opponent indifferent. Position and pot odds decide when calling is worth it.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "communication": "no"
+    },
+    "domains": [
+      "games"
+    ],
+    "examples": [
+      "A heads-up hand where a large bet could be a bluff",
+      "Deciding whether to call a bet with a marginal hand",
+      "Choosing how often to bluff in a given spot"
+    ],
+    "matrix": {
+      "rows": [
+        "Bet with a bluff",
+        "Check with a weak hand"
+      ],
+      "cols": [
+        "Call",
+        "Fold"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            -1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Mix your play: a predictable pattern is exploited, so vary bet sizes and lines with similar hands.",
+      "Compare the price of a call with your chance of winning (pot odds) before deciding; fold when the price is too high.",
+      "Exploit clear tendencies only after you have enough evidence; overreacting to small samples loses money.",
+      "Play from a position of information advantage, acting after opponents when you can.",
+      "Set a loss limit and stop when it is reached. A losing session is a bad time to chase."
+    ],
+    "pitfalls": [
+      "Bluffing too often against opponents who call readily.",
+      "Chasing losses, which turns a balanced strategy into a predictable one."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a simplified bluffing game: a bet is called or folded to)"
+  },
+  {
+    "id": "chess-minimax",
+    "name": "Chess and Minimax Search",
+    "category": "Sequential, perfect information, zero-sum",
+    "summary": "Both players see the full position and alternate moves. The best play can in principle be found by looking ahead, but in practice players use principles and calculation to choose moves that keep their options open.",
+    "how_it_works": "Minimax assumes each player picks the move that is best for them against the opponent's best reply, searched to some depth. Chess is too large to solve fully, so good play combines pruned search, evaluation of positions, and rules of thumb.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "communication": "no"
+    },
+    "domains": [
+      "games"
+    ],
+    "examples": [
+      "Choosing between two candidate moves in the middlegame",
+      "Deciding whether to trade pieces when ahead",
+      "Calculating a forcing sequence in a sharp position"
+    ],
+    "matrix": {
+      "rows": [
+        "Attack",
+        "Develop"
+      ],
+      "cols": [
+        "Opponent defends",
+        "Opponent counterattacks"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Before each move, check your opponent's forcing replies: checks, captures and threats, then choose the move that stays safe.",
+      "Look for forcing lines that win material or position; they limit the opponent's options more than quiet moves do.",
+      "Prefer positions where your pieces are active and your king is safe, rather than grabbing material that loosens your defence.",
+      "Count carefully in endgames; many games are decided by a tempo or a pawn race.",
+      "Manage your clock: spend time on critical positions, and play simple moves when the outcome is clear."
+    ],
+    "pitfalls": [
+      "Calculating only your own attack and missing the opponent's reply.",
+      "Grabbing material without checking what it allows the opponent to do."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "keynes-beauty-contest",
+    "name": "Guess-the-Average (Keynes Beauty Contest)",
+    "category": "Simultaneous, level-k reasoning",
+    "summary": "Each player picks a number and the one closest to a fraction of the group's average wins. Pure logic leads to zero, but real players stop at different depths of reasoning, so the winning move depends on predicting how others think.",
+    "how_it_works": "If everyone reasons once, they pick a third of the mid-point; if they reason twice, a ninth, and so on. Each extra level of reasoning assumes others have reasoned one level less. The equilibrium is zero, but the best response depends on the crowd you expect.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "communication": "no"
+    },
+    "domains": [
+      "games",
+      "economy"
+    ],
+    "examples": [
+      "A group guessing two-thirds of the average of all guesses",
+      "Investors trying to predict what others will expect next",
+      "Traders reasoning about what others think the market will do"
+    ],
+    "matrix": {
+      "rows": [
+        "Guess 1",
+        "Guess 2",
+        "Guess 3"
+      ],
+      "cols": [
+        "Guess 1",
+        "Guess 2",
+        "Guess 3"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Estimate the typical depth of reasoning in your group; if most people are shallow thinkers, choose slightly below their likely average.",
+      "If everyone is perfectly rational, the answer is zero; if you are not sure, expect a mix and aim near the typical answer, not the extreme.",
+      "In markets, ask what others expect others to expect; prices often reflect that second-order guess rather than fundamentals.",
+      "Test your model against past results from the same group, if you have them."
+    ],
+    "pitfalls": [
+      "Assuming everyone thinks as deeply as you do.",
+      "Choosing zero when the crowd is shallow, which places you far from the winning number."
+    ],
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (two players guess 1, 2 or 3; the guess nearest two thirds of the average wins 2, a tie gives 1 each)"
+  },
+  {
+    "id": "dollar-auction-escalation",
+    "name": "Dollar Auction and Escalation Traps",
+    "category": "Sequential, sunk-cost escalation",
+    "summary": "A dollar is auctioned, with the highest bidder paying their bid but the second-highest bidder also paying theirs. Both bidders can end up paying far more than the prize, because each is trapped by what they have already spent.",
+    "how_it_works": "Once a bidder has bid, dropping out means losing that bid, so staying in seems rational. Both can keep bidding up. The same escalation trap appears in price wars, litigation and long conflicts where past costs drive future choices.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "commitment": "yes"
+    },
+    "domains": [
+      "games",
+      "business",
+      "military"
+    ],
+    "examples": [
+      "Two litigants spending more on a case than the claim is worth",
+      "Two firms in a price war that both lose money",
+      "Two rivals bidding up the price of a contract they cannot afford"
+    ],
+    "matrix": {
+      "rows": [
+        "Stop bidding",
+        "Raise"
+      ],
+      "cols": [
+        "Stop bidding",
+        "Raise"
+      ],
+      "payoffs": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            -2,
+            -2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Set your maximum price or spending limit before the contest starts, and stick to it.",
+      "Recognise sunk costs: what you have already spent should not decide whether you spend more.",
+      "Ask whether walking away now is better than the expected cost of continuing; often it is.",
+      "If you are the one who can stop first, make the exit visible and credible so the other side does not keep escalating."
+    ],
+    "pitfalls": [
+      "Escalating because you have already invested, which is the classic sunk-cost error.",
+      "Assuming the rival will stop first without any signal."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two bidders each stop or raise; raising against a stopper wins, and escalation can cost both)"
+  }
+]

@@ -1,0 +1,818 @@
+[
+  {
+    "id": "nim",
+    "name": "Nim (Combinatorial Game)",
+    "category": "Sequential, perfect information, zero-sum",
+    "summary": "Players take turns removing objects from piles, and whoever takes the last object (or is forced to leave none) wins. It has a complete winning strategy that depends only on the binary structure of the pile sizes.",
+    "how_it_works": "Compute the nim-sum (the XOR of pile sizes). A position with nim-sum zero is lost for the player to move against perfect play; otherwise a move exists that restores zero. This is the Sprague-Grundy theory applied to impartial games.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "communication": "no"
+    },
+    "domains": [
+      "games"
+    ],
+    "examples": [
+      "Three piles of stones, taking any number from one pile per turn",
+      "Dividing a board into two independent sub-games",
+      "Analysing any impartial game that splits into separate parts"
+    ],
+    "matrix": {
+      "rows": [
+        "Leave an even pile count",
+        "Leave an odd pile count"
+      ],
+      "cols": [
+        "Opponent leaves even",
+        "Opponent leaves odd"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            -1
+          ]
+        ],
+        [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Compute the nim-sum of the pile sizes. If it is zero, you are losing against perfect play; make the move that keeps the position as hard as possible for the opponent.",
+      "If the nim-sum is non-zero, find a pile where reducing it makes the total zero, and take the right number of objects from it.",
+      "Recognise independent sub-games: their values combine by nim-sum, which lets you analyse large positions piece by piece.",
+      "Against an opponent who makes random moves, keep the nim-sum non-zero and let their errors decide the game."
+    ],
+    "pitfalls": [
+      "Relying on intuition about piles of equal size rather than the binary structure.",
+      "Forgetting the rule about who takes the last object; the misère version reverses the strategy."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+  },
+  {
+    "id": "cake-cutting-fair-division",
+    "name": "Cake Cutting and Fair Division",
+    "category": "Sequential, fairness and envy",
+    "summary": "Two or more people must divide a shared resource so that each believes they got a fair share. Simple procedures can produce outcomes that every party prefers to the alternatives, without anyone needing to trust the others.",
+    "how_it_works": "The classic I-cut-you-choose procedure gives each party at least half by their own valuation. With more parties, procedures such as the last-diminisher method keep fairness, though the number of cuts grows. Envy-free outcomes are the goal.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "everyday",
+      "business",
+      "politics"
+    ],
+    "examples": [
+      "Two siblings dividing an inheritance with unequal attachments",
+      "Partners dividing assets when splitting a business",
+      "Parties sharing a resource such as land or airtime"
+    ],
+    "matrix": {
+      "rows": [
+        "Cut evenly",
+        "Cut unevenly"
+      ],
+      "cols": [
+        "Take the larger piece",
+        "Take the smaller piece"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Use I-cut-you-choose: one person divides, the other chooses. The divider has every reason to make fair halves.",
+      "Value the items yourself before negotiating; knowing your own valuation is the basis for any fair claim.",
+      "With several people, use a procedure that everyone can check, rather than a single arbiter whose fairness is disputed.",
+      "Check the final division for envy: if anyone would prefer another person's share, look for a trade that fixes it."
+    ],
+    "pitfalls": [
+      "Revealing your valuation before the division procedure starts.",
+      "Accepting a division you cannot check, when a simple, verifiable procedure was available."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (one player cuts the cake; the other chooses the piece)"
+  },
+  {
+    "id": "search-game-hide-and-seek",
+    "name": "Search Game (Hide and Seek)",
+    "category": "Simultaneous, mixed strategies, zero-sum",
+    "summary": "One player hides a target among several locations and the other searches. Searching a location finds the target only if it is there, so both sides mix their choices, and the searcher's cost of covering each location matters.",
+    "how_it_works": "The hider randomises to make the searcher indifferent between locations, and the searcher randomises to keep the hider's options equally bad. Costs and values of each location set the probabilities. Patrols and inspections follow the same logic.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "zero-sum",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "military",
+      "games",
+      "business"
+    ],
+    "examples": [
+      "A patrol deciding which sites to check on a random route",
+      "A seeker looking for a lost object in several possible places",
+      "Border or port checks targeting containers at random"
+    ],
+    "matrix": {
+      "rows": [
+        "Hide in A",
+        "Hide in B"
+      ],
+      "cols": [
+        "Search A",
+        "Search B"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As searcher: vary your route and timing; a predictable schedule is exploited by anyone who observes it.",
+      "As searcher: weight your search toward high-value or high-probability locations, but keep enough coverage that the hider cannot safely use the rest.",
+      "As hider: choose places the searcher is least likely to check, and avoid patterns that reveal your choice.",
+      "Model the expected value of searching each location: cost against probability times the value of finding the target."
+    ],
+    "pitfalls": [
+      "Searching the most obvious place every time.",
+      "Hiding in the same place twice, which an opponent who has learned from the first search will exploit."
+    ],
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the hider wins if the searcher does not look where it hides)"
+  },
+  {
+    "id": "ess-hawk-dove-population",
+    "name": "Evolutionarily Stable Strategies (Population Games)",
+    "category": "Repeated, population dynamics",
+    "summary": "In a population where individuals meet at random and their success depends on their strategy, a strategy is evolutionarily stable if no small group of mutants can do better against it. It explains animal conflict and some social norms without anyone choosing consciously.",
+    "how_it_works": "In the Hawk-Dove game, hawks fight aggressively and doves display. A stable mix of hawks and doves emerges where the payoffs for each type are equal. The population settles at the mix where no strategy can invade.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "no",
+      "enforcement": "no"
+    },
+    "domains": [
+      "games",
+      "society",
+      "economy"
+    ],
+    "examples": [
+      "Animals contesting a food source",
+      "Drivers deciding whether to yield at a junction, when repeated",
+      "Business competitors choosing between aggressive and cooperative tactics"
+    ],
+    "strategies": [
+      "Ask whether your strategy can be invaded: if a rare mutant strategy does better against the common one, the common one is not stable.",
+      "Expect stable mixed populations, rather than a single winning type, when the costs of conflict are high.",
+      "Use this reasoning to predict how a norm will hold: it persists if deviants do worse than conformists.",
+      "Do not assume the stable outcome is the best for everyone; evolution stabilises strategies, not welfare."
+    ],
+    "pitfalls": [
+      "Assuming the strongest individual type will take over the population.",
+      "Confusing an evolutionarily stable strategy with the socially best one."
+    ],
+    "matrix": {
+      "rows": [
+        "Hawk",
+        "Dove"
+      ],
+      "cols": [
+        "Hawk",
+        "Dove"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            -1
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (value 2, cost 4, so Hawk against Hawk scores (2 - 4) / 2)"
+  },
+  {
+    "id": "vaccination-free-riding",
+    "name": "Vaccination and Herd Immunity (Free-Riding)",
+    "category": "Simultaneous, public health externality",
+    "summary": "Each person can benefit from others' vaccination without being vaccinated, because when enough people are protected, the disease cannot spread. The individual temptation to skip the vaccine can erode the protection the group depends on.",
+    "how_it_works": "Vaccination protects the individual and reduces spread for everyone, so private and social benefits differ. When uptake is high enough, the risk of skipping is low for each person, which encourages free-riding if others are reliable. Trust and information about risks shape the choice.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "everyday",
+      "society",
+      "economy"
+    ],
+    "examples": [
+      "A community deciding whether to vaccinate children against a preventable disease",
+      "Workers deciding whether to take a shared health precaution",
+      "Parents weighing a vaccine against rare side effects"
+    ],
+    "matrix": {
+      "rows": [
+        "Vaccinate",
+        "Skip"
+      ],
+      "cols": [
+        "Others vaccinate",
+        "Others skip"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Use reliable, specific information about the actual risks and side effects; misinformation pushes choices toward free-riding.",
+      "Make vaccination convenient and visible, and track uptake so people can see that protection is widely shared.",
+      "Where the benefit is shared, consider incentives or requirements, since private choices alone may not reach the protective level.",
+      "Trust is the coordination device here: transparent public health communication keeps uptake high."
+    ],
+    "pitfalls": [
+      "Assuming high uptake will continue without maintaining trust and access.",
+      "Treating a rare side effect as a reason to ignore the much larger benefit."
+    ]
+  },
+  {
+    "id": "climate-treaty-public-goods",
+    "name": "International Climate Treaty (Global Public Good)",
+    "category": "Repeated, many players, international public goods",
+    "summary": "Countries benefit from emission reductions by others while bearing the costs of their own. Treaties succeed when they make participation stable, which usually requires side-payments, monitoring and conditional commitments.",
+    "how_it_works": "Each country has an incentive to free-ride on others' abatement, so voluntary agreements tend to be small or weak. Coalitions can be stabilised by transfers, linkage to other issues, and rules that penalise leaving. Repeated interaction and reputation support compliance.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "no"
+    },
+    "domains": [
+      "environment",
+      "politics",
+      "economy"
+    ],
+    "examples": [
+      "A set of countries negotiating emission targets",
+      "Neighbours sharing a river that both want to protect",
+      "Companies in a sector agreeing to a voluntary standard"
+    ],
+    "matrix": {
+      "rows": [
+        "Cut emissions",
+        "Do not cut"
+      ],
+      "cols": [
+        "Other cuts",
+        "Other does not cut"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        [
+          [
+            4,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Design side-payments or technology transfers so that the costs of joining fall on those who gain least from acting alone.",
+      "Use conditional commitments: each party agrees to act if enough others do, which makes cooperation worth joining.",
+      "Build monitoring and transparent reporting, so that compliance is observable and cheating is detectable.",
+      "Link the agreement to other issues where the parties have shared interests, such as trade or security, to add stakes."
+    ],
+    "pitfalls": [
+      "Assuming a large, voluntary agreement will hold without penalties or incentives.",
+      "Setting targets that everyone can agree to on paper but that no one has the means to meet."
+    ]
+  },
+  {
+    "id": "standards-war-network-effects",
+    "name": "Standards War and Network Effects",
+    "category": "Sequential, coordination with conflict",
+    "summary": "When a product becomes more valuable as more people use it, rival firms compete to set the standard. Winning the market can matter more than having the best technology, and early choices lock in whole ecosystems.",
+    "how_it_works": "Users prefer the standard their peers use. Firms benefit from being compatible with the leader and from keeping their own standard exclusive. The result is a coordination game in which early adoption, alliances and pre-announcements decide the winner.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "common-interest",
+      "communication": "yes",
+      "commitment": "yes"
+    },
+    "domains": [
+      "business",
+      "economy"
+    ],
+    "examples": [
+      "Competing video or file formats with incompatible designs",
+      "Platform ecosystems where app developers pick one system",
+      "Two firms proposing rival industry standards"
+    ],
+    "matrix": {
+      "rows": [
+        "Adopt standard A",
+        "Adopt standard B"
+      ],
+      "cols": [
+        "Adopt standard A",
+        "Adopt standard B"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Build alliances early: a standard with committed partners wins more users than a better standard with none.",
+      "Consider openness: licensing or open standards can widen adoption even when they give up some control.",
+      "Pre-announce and commit to a roadmap, so buyers and developers can plan around your standard.",
+      "Offer bridges, such as converters or compatibility layers, to lower switching costs for users of the rival."
+    ],
+    "pitfalls": [
+      "Assuming superior technology wins by default.",
+      "Locking users in so tightly that they quickly look for alternatives."
+    ]
+  },
+  {
+    "id": "insurance-moral-hazard",
+    "name": "Insurance and Moral Hazard",
+    "category": "Sequential, hidden action",
+    "summary": "An insurer cannot observe how careful the insured person is, so full coverage can reduce the insured's care. Deductibles, monitoring and contract design realign incentives while keeping protection in place.",
+    "how_it_works": "Once insured, the person bears less of the cost of an accident, so they take fewer precautions. The insurer anticipates this and prices accordingly. Sharing part of the loss keeps the insured's incentives aligned with prevention.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "yes",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "business",
+      "economy"
+    ],
+    "examples": [
+      "Car insurance with and without an excess",
+      "Business insurance against theft from a premises",
+      "Health cover that changes how often people seek care"
+    ],
+    "matrix": {
+      "rows": [
+        "Careful",
+        "Careless"
+      ],
+      "cols": [
+        "Audit",
+        "Trust"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            -2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "As insurer: use deductibles or co-payments so that the insured keeps some stake in preventing losses.",
+      "As insurer: reward verified precautions with lower premiums, and check claims against evidence.",
+      "As insured: understand which precautions the policy expects; sticking to them protects your claim and your premium.",
+      "Read the exclusions and conditions before a loss, not after; they are where moral hazard is most often policed."
+    ],
+    "pitfalls": [
+      "Setting premiums without any link to the insured's behaviour.",
+      "Treating a claim as cheap to make: fraudulent claims damage the whole market."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (insured person takes care or not; the insurer audits or trusts)"
+  },
+  {
+    "id": "household-chores-bills",
+    "name": "Household Chores and Shared Bills",
+    "category": "Repeated, everyday cooperation",
+    "summary": "Housemates or partners share tasks and costs that are easy to avoid. Without clear rules and visible records, one person often ends up doing more, and resentment grows. A simple system of fair shares and visible tallies keeps cooperation going.",
+    "how_it_works": "Everyone gains from a clean kitchen, but each person would rather someone else cleans. The tendency to free-ride is strongest when no one can see who did what. Repeated interaction makes reciprocity and visibility effective.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "perfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "no"
+    },
+    "domains": [
+      "everyday"
+    ],
+    "examples": [
+      "Roommates dividing cleaning and grocery shopping",
+      "A couple splitting household admin and bills",
+      "A shared office kitchen with no cleaning schedule"
+    ],
+    "matrix": {
+      "rows": [
+        "Do your share",
+        "Free-ride"
+      ],
+      "cols": [
+        "Do your share",
+        "Free-ride"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Agree on clear tasks and a rotation, written down where everyone can see it.",
+      "Split shared bills by a simple rule, such as proportional to income or equal, and settle on a fixed schedule.",
+      "Keep a visible tally of contributions; people adjust their behaviour when they can see imbalance.",
+      "Raise imbalances early and calmly, before resentment hardens into a reason to stop cooperating."
+    ],
+    "pitfalls": [
+      "Assuming everyone notices the work that goes unseen.",
+      "Using vague agreements that let each person interpret their share favourably."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two housemates; free-riding saves effort at the other's expense)"
+  },
+  {
+    "id": "alliance-entrapment",
+    "name": "Alliance Commitments and Entrapment",
+    "category": "Sequential, commitment and alliance dynamics",
+    "summary": "Allies make commitments that can drag them into conflicts they did not want, while the other side may test whether those commitments are real. Clear, limited commitments deter attacks; vague or unlimited ones invite both entrapment and abandonment.",
+    "how_it_works": "A commitment is credible when the ally expects to be seen as reliable. Ambiguity can deter an aggressor but may leave an ally uncertain, while an unlimited blank cheque can pull a state into a dispute that does not serve its interests.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "commitment": "yes"
+    },
+    "domains": [
+      "military",
+      "politics"
+    ],
+    "examples": [
+      "A state promising support to a smaller partner in a regional dispute",
+      "A business partner committed to a joint venture that now looks risky",
+      "A junior partner in a coalition pulled into the other party's fight"
+    ],
+    "matrix": {
+      "rows": [
+        "Support",
+        "Withdraw"
+      ],
+      "cols": [
+        "Commit",
+        "Abandon"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Define your commitments clearly and limit them to what you can actually deliver; vague or unlimited promises invite testing.",
+      "Set consultation rules with allies before crises, so that escalation decisions are made together.",
+      "As the smaller partner: seek assurances that are specific, and avoid actions that pull your ally into conflicts you did not agree to.",
+      "Watch for signals that a commitment is wavering; the other side will read them and act on them."
+    ],
+    "pitfalls": [
+      "Issuing a blank cheque that restricts your own future choices.",
+      "Assuming a vague promise will be honoured when the time comes."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (an ally supports or withdraws; the patron commits or abandons)"
+  },
+  {
+    "id": "veto-players-reform",
+    "name": "Policy Reform with Veto Players",
+    "category": "Sequential, multi-stage approval",
+    "summary": "Reform needs the agreement of several actors who each can block it. The more veto players there are, and the further apart their preferences, the harder change becomes. Packaging, sequencing and compensation can make reform possible.",
+    "how_it_works": "Each veto player compares the reform with the status quo. Packages that give each player something they value can win support that a single, narrow proposal would not. Sequencing spreads costs and benefits over time to build coalitions.",
+    "traits": {
+      "players": "many",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "bargaining": "yes",
+      "enforcement": "yes",
+      "commitment": "yes"
+    },
+    "domains": [
+      "government",
+      "politics"
+    ],
+    "examples": [
+      "A reform bill that needs approval from several committees and parties",
+      "A company restructuring that needs several departments to agree",
+      "A regional agreement with multiple governments as signatories"
+    ],
+    "matrix": {
+      "rows": [
+        "Propose a large reform",
+        "Propose a small reform"
+      ],
+      "cols": [
+        "Accept",
+        "Block"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Map the veto players and their preferences before proposing; know who can block and who can be persuaded.",
+      "Package the reform with side-payments that give each veto player something they value.",
+      "Sequence the reform so that early steps build support for later ones, and so that losses are spread over time.",
+      "Include compensation or safeguards for those who lose, which reduces the incentive to block."
+    ],
+    "pitfalls": [
+      "Presenting a reform as all-or-nothing when a smaller first step could build the coalition.",
+      "Ignoring a veto player until the final vote, when they have the most leverage."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reformer proposes a large or small change; a veto player accepts or blocks)"
+  },
+  {
+    "id": "lobbying-influence",
+    "name": "Lobbying and Political Influence",
+    "category": "Simultaneous, influence and information",
+    "summary": "Interest groups try to shape decisions by providing information, support and resources to decision-makers. Credible information and long-run reputation matter more than one-off persuasion, and transparency decides whether influence is trusted.",
+    "how_it_works": "A decision-maker values accurate information and support, and discounts claims that serve only the sender. Groups that build a reputation for honest information gain influence over time; those that mislead lose it, and rivals often challenge them.",
+    "traits": {
+      "players": "many",
+      "timing": "simultaneous",
+      "interaction": "repeated",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "communication": "yes",
+      "enforcement": "yes"
+    },
+    "domains": [
+      "politics",
+      "government",
+      "business"
+    ],
+    "examples": [
+      "An industry group submitting evidence to a regulator",
+      "A charity seeking support from legislators for a policy",
+      "Two rival interest groups presenting opposing data"
+    ],
+    "matrix": {
+      "rows": [
+        "Lobby",
+        "Do not lobby"
+      ],
+      "cols": [
+        "Accommodate",
+        "Resist"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            2
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Provide accurate, checkable information; a decision-maker who catches one false claim discounts everything you say.",
+      "Make your interests and affiliations transparent, so that your evidence is judged on its merits.",
+      "Build coalitions with groups that share an interest, which is more persuasive than a single voice.",
+      "Engage early and repeatedly rather than only at the final decision point."
+    ],
+    "pitfalls": [
+      "Overstating evidence to win a single decision, which costs future credibility.",
+      "Using hidden funding or astroturfing, which is discovered and damages the cause."
+    ],
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a firm lobbies or not; the regulator accommodates or resists)"
+  }
+]
