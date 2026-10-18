@@ -79,8 +79,9 @@ jobs:
         run: go build -trimpath -ldflags "-s -w -X main.version=${VERSION#v}" -o ../dist/Ergaelion-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.ext }} .
 
       - name: Sign and notarize (macOS)
-        if: matrix.goos == 'darwin' && secrets.MACOS_CERT_P12 != ''
+        if: matrix.goos == 'darwin' && env.SIGNED == 'true'
         env:
+          SIGNED: ${{ secrets.MACOS_CERT_P12 != '' }}
           MACOS_CERT_P12: ${{ secrets.MACOS_CERT_P12 }}
           MACOS_CERT_PASSWORD: ${{ secrets.MACOS_CERT_PASSWORD }}
           MACOS_SIGN_IDENTITY: ${{ secrets.MACOS_SIGN_IDENTITY }}
@@ -106,8 +107,9 @@ jobs:
           security delete-keychain "$KEYCHAIN"
 
       - name: Sign (Windows)
-        if: matrix.goos == 'windows' && secrets.WINDOWS_PFX_BASE64 != ''
+        if: matrix.goos == 'windows' && env.SIGNED == 'true'
         env:
+          SIGNED: ${{ secrets.WINDOWS_PFX_BASE64 != '' }}
           WINDOWS_PFX_BASE64: ${{ secrets.WINDOWS_PFX_BASE64 }}
           WINDOWS_PFX_PASSWORD: ${{ secrets.WINDOWS_PFX_PASSWORD }}
         run: |
@@ -145,8 +147,9 @@ jobs:
           packaging/macos/build-pkg.sh "${VERSION#v}" \
             "dist/Ergaelion-darwin-amd64" "dist/Ergaelion-darwin-arm64" "installers" LICENSE.txt
       - name: Notarize the installer (macOS)
-        if: secrets.APPLE_ID != ''
+        if: env.SIGNED == 'true'
         env:
+          SIGNED: ${{ secrets.APPLE_ID != '' }}
           APPLE_ID: ${{ secrets.APPLE_ID }}
           APPLE_APP_PASSWORD: ${{ secrets.APPLE_APP_PASSWORD }}
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
@@ -184,8 +187,9 @@ jobs:
           ISCC="$(ls "/c/Program Files (x86)/Inno Setup 6/ISCC.exe" "/c/Program Files/Inno Setup 6/ISCC.exe" 2>/dev/null | head -n 1)"
           "$ISCC" "/DMyAppVersion=${VERSION#v}" packaging\\windows\\Ergaelion.iss
       - name: Sign the installer (Windows)
-        if: secrets.WINDOWS_PFX_BASE64 != ''
+        if: env.SIGNED == 'true'
         env:
+          SIGNED: ${{ secrets.WINDOWS_PFX_BASE64 != '' }}
           WINDOWS_PFX_BASE64: ${{ secrets.WINDOWS_PFX_BASE64 }}
           WINDOWS_PFX_PASSWORD: ${{ secrets.WINDOWS_PFX_PASSWORD }}
           VERSION: ${{ github.ref_name }}
