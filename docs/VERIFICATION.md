@@ -11,7 +11,7 @@ Each simulation records its evidence in `gtplaybook/data/simulations.json`:
 | --- | --- | --- |
 | ultimatum-game | Oosterbeek, Sloof and van de Kuilen (2003 working paper; meta-analysis of 75 results) | Average offer 40.4%, average rejection 16.2%. Offers of 10% and 20% are outside the studied range; rejection set to 40%, the highest study average. |
 | repeated-ultimatum-live | Same | As above. |
-| repeated-prisoners-dilemma-live | Dal Bó and Fréchette (2007 working paper; AER 2011) | First-round cooperation set to 30%, within their 10%–85% range; lower when the game is not expected to continue. The game has three fixed rounds. |
+| repeated-prisoners-dilemma-live | Dal Bó and Fréchette (2011), AER; their data from the stratEst R package, analysed in `docs/research/dalbo2011_rates.py` | Partner cooperation measured by the previous round's profile: 98% after mutual cooperation, 40% after you cooperated and they defected, 37% after you defected and they cooperated, 9%/4% after mutual defection. First period 42%. The game has three fixed rounds, so this is an approximation. |
 | repeated-public-goods-live | Fischbacher and Gächter (2009 discussion paper; AER 2010) | 55% conditional cooperators, 23% free riders. Decline over rounds not modelled. |
 | repeated-trust-game-live | Johnson and Mislin (2011 meta-analysis of 84 replications) | Average sent about 51%; average returned about 37% of the amount available. Trustee odds set as approximations. |
 | nim | Bouton (1901) | Corrected: piles 1, 2, 2 have nim-sum 1, not 2. |

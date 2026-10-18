@@ -515769,13 +515769,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.7,
-            0.3
+            0.98,
+            0.02
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.98,
+          0.02
         ]
       },
       "n10": {
@@ -515805,13 +515805,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.98,
+            0.02
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.98,
+          0.02
         ]
       },
       "n12": {
@@ -515893,13 +515893,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.4,
+          0.6
         ]
       },
       "n4": {
@@ -515919,13 +515919,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.7,
-            0.3
+            0.98,
+            0.02
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.98,
+          0.02
         ]
       },
       "n20": {
@@ -515971,13 +515971,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.7,
-            0.3
+            0.37,
+            0.63
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.37,
+          0.63
         ]
       },
       "n25": {
@@ -516007,13 +516007,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.37,
+            0.63
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.37,
+          0.63
         ]
       },
       "n27": {
@@ -516059,13 +516059,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.4,
-            0.6
+            0.09,
+            0.91
           ]
         },
         "default": [
-          0.4,
-          0.6
+          0.09,
+          0.91
         ]
       },
       "n32": {
@@ -516095,13 +516095,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.04,
+            0.96
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.04,
+          0.96
         ]
       },
       "n19": {
@@ -516121,13 +516121,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.98,
+            0.02
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.98,
+          0.02
         ]
       },
       "n34": {
@@ -516189,13 +516189,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.7,
-            0.3
+            0.98,
+            0.02
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.98,
+          0.02
         ]
       },
       "n41": {
@@ -516225,13 +516225,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.98,
+            0.02
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.98,
+          0.02
         ]
       },
       "n43": {
@@ -516313,13 +516313,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.4,
+          0.6
         ]
       },
       "n35": {
@@ -516391,13 +516391,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.7,
-            0.3
+            0.37,
+            0.63
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.37,
+          0.63
         ]
       },
       "n56": {
@@ -516427,13 +516427,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.37,
+            0.63
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.37,
+          0.63
         ]
       },
       "n58": {
@@ -516479,13 +516479,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.4,
-            0.6
+            0.09,
+            0.91
           ]
         },
         "default": [
-          0.4,
-          0.6
+          0.09,
+          0.91
         ]
       },
       "n63": {
@@ -516515,13 +516515,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.04,
+            0.96
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.04,
+          0.96
         ]
       },
       "n50": {
@@ -516541,13 +516541,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.4,
+          0.6
         ]
       },
       "n2": {
@@ -516567,13 +516567,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.3,
-            0.7
+            0.42,
+            0.58
           ]
         },
         "default": [
-          0.3,
-          0.7
+          0.42,
+          0.58
         ]
       },
       "n66": {
@@ -516635,13 +516635,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.7,
-            0.3
+            0.98,
+            0.02
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.98,
+          0.02
         ]
       },
       "n73": {
@@ -516671,13 +516671,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.98,
+            0.02
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.98,
+          0.02
         ]
       },
       "n75": {
@@ -516759,13 +516759,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.4,
+          0.6
         ]
       },
       "n67": {
@@ -516785,13 +516785,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.7,
-            0.3
+            0.37,
+            0.63
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.37,
+          0.63
         ]
       },
       "n83": {
@@ -516837,13 +516837,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.7,
-            0.3
+            0.37,
+            0.63
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.37,
+          0.63
         ]
       },
       "n88": {
@@ -516873,13 +516873,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.37,
+            0.63
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.37,
+          0.63
         ]
       },
       "n90": {
@@ -516925,13 +516925,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.4,
-            0.6
+            0.09,
+            0.91
           ]
         },
         "default": [
-          0.4,
-          0.6
+          0.09,
+          0.91
         ]
       },
       "n95": {
@@ -516961,13 +516961,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.04,
+            0.96
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.04,
+          0.96
         ]
       },
       "n82": {
@@ -516987,13 +516987,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.37,
+            0.63
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.37,
+          0.63
         ]
       },
       "n97": {
@@ -517055,13 +517055,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.7,
-            0.3
+            0.98,
+            0.02
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.98,
+          0.02
         ]
       },
       "n104": {
@@ -517091,13 +517091,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.98,
+            0.02
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.98,
+          0.02
         ]
       },
       "n106": {
@@ -517179,13 +517179,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.4,
+            0.6
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.4,
+          0.6
         ]
       },
       "n98": {
@@ -517205,13 +517205,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.4,
-            0.6
+            0.09,
+            0.91
           ]
         },
         "default": [
-          0.4,
-          0.6
+          0.09,
+          0.91
         ]
       },
       "n114": {
@@ -517257,13 +517257,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.7,
-            0.3
+            0.37,
+            0.63
           ]
         },
         "default": [
-          0.7,
-          0.3
+          0.37,
+          0.63
         ]
       },
       "n119": {
@@ -517293,13 +517293,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.37,
+            0.63
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.37,
+          0.63
         ]
       },
       "n121": {
@@ -517345,13 +517345,13 @@
         ],
         "policy": {
           "Cooperate": [
-            0.4,
-            0.6
+            0.09,
+            0.91
           ]
         },
         "default": [
-          0.4,
-          0.6
+          0.09,
+          0.91
         ]
       },
       "n126": {
@@ -517381,13 +517381,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.04,
+            0.96
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.04,
+          0.96
         ]
       },
       "n113": {
@@ -517407,13 +517407,13 @@
         ],
         "policy": {
           "Defect": [
-            0.2,
-            0.8
+            0.04,
+            0.96
           ]
         },
         "default": [
-          0.2,
-          0.8
+          0.04,
+          0.96
         ]
       },
       "n65": {
@@ -517433,19 +517433,19 @@
         ],
         "policy": {
           "Defect": [
-            0.3,
-            0.7
+            0.42,
+            0.58
           ]
         },
         "default": [
-          0.3,
-          0.7
+          0.42,
+          0.58
         ]
       }
     },
     "sources": [
-      "Dal Bó and Fréchette (2007 working paper; American Economic Review 2011). Cooperation is lower when the game is not expected to continue: first-round cooperation in repeated games was 9.8% to 85%, depending on the continuation probability and the payoff (Table 5).",
-      "This game has three fixed rounds, so the finite-game prediction is defection, and the odds are set low. First-round partner cooperation is 30%; after your cooperation it is 70% if they cooperated last round and 40% if not; after your defection it is 20%. Those last values are estimates."
+      "Dal Bó and Fréchette (2011), American Economic Review 101(1), data from the stratEst R package (data.DF2011, 7,358 observations). Partner cooperation is 42% in the first period, and 98%, 40%, 37%, 9% or 4% after the previous profiles (cc, cd, dc, dd, with the last one depending on your move). Reproduce with docs/research/dalbo2011_rates.py.",
+      "The data come from infinite-horizon games with varying continuation probabilities; this game has three fixed rounds. The partner's rates are measured, but applying them to a fixed three-round game is an approximation."
     ],
     "evidence": "partly sourced: see sources"
   },
