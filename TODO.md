@@ -6,4 +6,5 @@
 - [ ] Licence: have a lawyer review `LICENSE.txt`, and fill in the year, copyright holder, governing law and contact.
 - [ ] Installers: test the `.pkg` on a clean Mac, and the setup `.exe` on a clean Windows machine (install, PATH, uninstall).
 - [x] Packaging: "write: Permission denied" warnings from pkgbuild on this Mac are harmless: they go to stderr, the exit code is 0, and the package is complete.
+- [ ] App icon: add the Ergaelion icon to the macOS installer (`.icns`) and the Windows installer (`.ico`), and the Start menu and Apps list entries.
 - [ ] Git: set up the repository as `NigeleM/Ergaelion` and push with short commit messages.
