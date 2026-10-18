@@ -525674,8 +525674,8 @@
       },
       "n88": {
         "type": "end",
-        "outcome": "draw",
-        "text": "After 3 rounds your score is 0. A mixed market with a truce on price. Path: you Hold price / they Matches the cut, you Hold price / they Matches the cut, you Hold price / they Matches the cut."
+        "outcome": "failure",
+        "text": "After 3 rounds your score is 0. The price war cut both your margins. Path: you Hold price / they Matches the cut, you Hold price / they Matches the cut, you Hold price / they Matches the cut."
       },
       "n89": {
         "type": "end",
@@ -540283,8 +540283,8 @@
       },
       "n127": {
         "type": "end",
-        "outcome": "draw",
-        "text": "After 3 rounds your score is 0. Some customers left, some stayed. Path: you Hold prices / they Customers switch, you Hold prices / they Customers switch, you Hold prices / they Customers switch."
+        "outcome": "failure",
+        "text": "After 3 rounds your score is 0. Customers drifted away and your sales fell. Path: you Hold prices / they Customers switch, you Hold prices / they Customers switch, you Hold prices / they Customers switch."
       },
       "n125": {
         "type": "opponent",
@@ -542703,8 +542703,8 @@
       },
       "n46": {
         "type": "end",
-        "outcome": "draw",
-        "text": "After 3 rounds your score is 0. The project got done, with uneven effort. Path: you Work hard / they Eases off, you Work hard / they Eases off, you Work hard / they Eases off."
+        "outcome": "failure",
+        "text": "After 3 rounds your score is 0. The project stalled as effort dropped away. Path: you Work hard / they Eases off, you Work hard / they Eases off, you Work hard / they Eases off."
       },
       "n44": {
         "type": "opponent",
@@ -553275,8 +553275,8 @@
       },
       "n46": {
         "type": "end",
-        "outcome": "draw",
-        "text": "After 3 rounds your score is 0. A fragile truce on price. Path: you Keep the agreed price / they Undercuts back, you Keep the agreed price / they Undercuts back, you Keep the agreed price / they Undercuts back."
+        "outcome": "failure",
+        "text": "After 3 rounds your score is 0. The price war wiped out the margins. Path: you Keep the agreed price / they Undercuts back, you Keep the agreed price / they Undercuts back, you Keep the agreed price / they Undercuts back."
       },
       "n44": {
         "type": "opponent",
