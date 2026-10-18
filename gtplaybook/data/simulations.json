@@ -15560,13 +15560,13 @@
         "prompt": "The responder:",
         "branches": [
           {
-            "p": 0.5,
+            "p": 0.6,
             "label": "Accepts",
             "next": "n11",
             "why": "The responder accepts a modest share."
           },
           {
-            "p": 0.5,
+            "p": 0.4,
             "label": "Rejects",
             "next": "n15",
             "why": "The responder punishes unfairness."
@@ -15650,13 +15650,13 @@
         "prompt": "The responder:",
         "branches": [
           {
-            "p": 0.5,
+            "p": 0.6,
             "label": "Accepts",
             "next": "n20",
             "why": "The responder accepts a low offer."
           },
           {
-            "p": 0.5,
+            "p": 0.4,
             "label": "Rejects",
             "next": "n24",
             "why": "The lowball is rejected."
@@ -15738,8 +15738,8 @@
     },
     "mode": "basic",
     "sources": [
-      "Oosterbeek, Sloof and van de Kuilen (2004), meta-analysis: average offer about 40%, about 16% of offers rejected overall.",
-      "Very low offers (under about 20%) are rejected about half the time in secondary summaries of the experiments; the 10/90 branch uses 50%."
+      "Oosterbeek, Sloof and van de Kuilen, meta-analysis of 37 papers and 75 results (2003 working paper): offers average 40.4% of the pie (range 26-58%); rejection averages 16.2% (range 0-40%).",
+      "Offers of 20% and 10% are below the range in that meta-analysis. Both use 40% rejection, the highest average rejection any study reported. This is an extrapolation."
     ]
   },
   {
@@ -520800,8 +520800,8 @@
       }
     },
     "sources": [
-      "Oosterbeek, Sloof and van de Kuilen (2004), meta-analysis: average offer about 40%, about 16% of offers rejected overall.",
-      "Very low offers (under about 20%) are rejected about half the time in secondary summaries of the experiments; the 10/90 branch uses 50%."
+      "Oosterbeek, Sloof and van de Kuilen (2003 working paper): offers average 40.4% of the pie; rejection averages 16.2%, rising when offers are small.",
+      "Here greedy offers (80/20) are rejected 40% of the time, rising to 70% after an earlier greedy rejection; fair offers (50/50) are rejected 10% of the time. These are estimates within the meta-analysis range, with the 20% offer extrapolated as above."
     ]
   },
   {
@@ -524329,8 +524329,8 @@
       }
     },
     "sources": [
-      "Fischbacher, Gächter and Fehr (2001): about half of people are conditional cooperators and about a third are free riders.",
-      "Fischbacher and Gächter (2010), American Economic Review: contributions fall over rounds. Odds here are fixed per round, so the decline is not modelled."
+      "Fischbacher and Gächter (2009 discussion paper, American Economic Review 2010): 55% conditional cooperators, 23% free riders, 12% triangle contributors, 10% unclassifiable. Contributions decline over rounds.",
+      "Odds here are fixed per round, so the decline is not modelled. The conditional-cooperator share sets the reply odds."
     ]
   },
   {
