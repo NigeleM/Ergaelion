@@ -515338,7 +515338,10 @@
         "text": "You sell less, but at a margin you can keep."
       }
     },
-    "evidence": "estimate: the chances are the author's, not measured"
+    "evidence": "estimate: the chances are the author's, not measured",
+    "sources": [
+      "Dufwenberg and Gneezy (2000), International Journal of Industrial Organization: with two sellers prices stay above cost; with three or four they move toward cost after learning. Qualitative only; the odds here are estimates."
+    ]
   },
   {
     "id": "landlord-rent-increase",
@@ -528028,7 +528031,10 @@
         ]
       }
     },
-    "evidence": "estimate: the chances are the author's, not measured"
+    "evidence": "estimate: the chances are the author's, not measured",
+    "sources": [
+      "Battalio, Samuelson and Van Huyck (2001), Econometrica: play often starts on the payoff-dominant outcome and drifts toward the risk-dominant one. Qualitative only; the odds here are estimates."
+    ]
   },
   {
     "id": "repeated-war-of-attrition-live",
@@ -565030,6 +565036,9 @@
         ]
       }
     },
-    "evidence": "estimate: the chances are the author's, not measured"
+    "evidence": "estimate: the chances are the author's, not measured",
+    "sources": [
+      "Ostrom, Walker and Gardner (1992), American Political Science Review: without communication, participants overharvest; communication improves outcomes. Qualitative only; the odds here are estimates."
+    ]
   }
 ]

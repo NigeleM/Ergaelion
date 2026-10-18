@@ -22,6 +22,14 @@ Each simulation records its evidence in `gtplaybook/data/simulations.json`:
 | bertrand-price-war | Bertrand (1883) | Price competition with identical products. Consistent. |
 | tic-tac-toe-minimax | Solved game | Perfect play is a draw. Consistent. |
 
+## Qualitative support only (odds still estimates)
+
+- repeated-stag-hunt-live: Battalio, Samuelson and Van Huyck (2001), Econometrica. Early play on the payoff-dominant outcome, drifting toward risk dominance.
+- price-war-with-competitor: Dufwenberg and Gneezy (2000), International Journal of Industrial Organization. Prices stay above cost with two sellers.
+- repeated-fishery-quota-live: Ostrom, Walker and Gardner (1992), American Political Science Review. Overharvesting without communication.
+
+Full texts were not reachable, so no numbers from these papers are used.
+
 ## Not yet checked
 
 - Berg, Dickhaut and McCabe (1995): the original paper is paywalled.
