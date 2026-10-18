@@ -30,6 +30,10 @@ Each simulation records its evidence in `gtplaybook/data/simulations.json`:
 
 Full texts were not reachable, so no numbers from these papers are used.
 
+## Reasoned from game logic (no measured data)
+
+The 24 generated repeated games without measured data now label their chances as `reasoned`. The other side picks each reply with weight exp(payoff) on that game's own payoffs (quantal response, lambda 1). Victory thresholds were set so the best plan wins close to half the time, on a grid of whole points, so some games land at 60-86%. These are logical baselines, not measured behaviour.
+
 ## Not yet checked
 
 - Berg, Dickhaut and McCabe (1995): the original paper is paywalled.
