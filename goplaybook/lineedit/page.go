@@ -40,7 +40,7 @@ func (e *Editor) pageLoop(text string, force bool) {
 	fmt.Fprint(e.out, "\x1b[?1049h")
 	defer fmt.Fprint(e.out, "\x1b[?1049l")
 
-	top, maxTop := 0, len(lines)-height
+	top, maxTop := 0, max(len(lines)-height, 0)
 	draw := func() {
 		fmt.Fprint(e.out, "\x1b[H\x1b[J")
 		for i := top; i < top+height && i < len(lines); i++ {
