@@ -643,15 +643,9 @@ def _run_menu(session, back_quits):
         elif key == "menu_engine":
             _menu_engine(session)
         elif key == "menu_advise":
-            _clear()
-            text = input(t("ask_situation") + ": ").strip()
-            if text:
-                _captured_view(session, f"advise -d {_quote(text)}")
+            _ask_and_show(session, t("ask_situation") + ": ", lambda text: f"advise -d {_quote(text)}")
         elif key == "menu_solve":
-            _clear()
-            text = input(t("ask_matrix") + ": ").strip()
-            if text:
-                _captured_view(session, f"solve {_quote(text)}")
+            _ask_and_show(session, t("ask_matrix") + ": ", lambda text: f"solve {_quote(text)}")
         elif key == "menu_areas":
             _menu_families(session)
         elif key == "menu_guide":
@@ -666,6 +660,18 @@ def _run_menu(session, back_quits):
             _menu_theme(session)
         elif key == "menu_quit":
             return True
+
+
+def _ask_and_show(session, prompt, build_line):
+    """Ask a question, show the answer full screen, then offer to try again before the menu returns."""
+    while True:
+        _clear()
+        text = input(prompt).strip()
+        if not text:
+            return
+        _captured_view(session, build_line(text))
+        if input(t("try_again") + ": ").strip().lower() not in ("t", "try", "y", "yes"):
+            return
 
 
 def _run_menu_typed(session):

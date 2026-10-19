@@ -133,15 +133,9 @@ func runMenuWith(s *session, backQuits bool) bool {
 		case "menu_engine":
 			menuEngine(s)
 		case "menu_advise":
-			clearScreen()
-			if text := askLine(t("ask_situation") + ": "); text != "" {
-				runView(s, "advise -d "+quoteArg(text))
-			}
+			askAndShow(s, t("ask_situation")+": ", func(text string) string { return "advise -d " + quoteArg(text) })
 		case "menu_solve":
-			clearScreen()
-			if text := askLine(t("ask_matrix") + ": "); text != "" {
-				runView(s, "solve "+quoteArg(text))
-			}
+			askAndShow(s, t("ask_matrix")+": ", func(text string) string { return "solve " + quoteArg(text) })
 		case "menu_areas":
 			menuFamilies(s)
 		case "menu_guide":
@@ -568,6 +562,23 @@ func runMenuTyped(s *session) bool {
 		}
 		if _, err := s.command(line); err != nil {
 			fmt.Println(red("✗ " + err.Error()))
+		}
+	}
+}
+
+// askAndShow asks a question, shows the answer full screen, then offers to try again before the menu returns.
+func askAndShow(s *session, prompt string, buildLine func(string) string) {
+	for {
+		clearScreen()
+		text := askLine(prompt)
+		if text == "" {
+			return
+		}
+		runView(s, buildLine(text))
+		switch strings.ToLower(askLine(t("try_again") + ": ")) {
+		case "t", "try", "y", "yes":
+		default:
+			return
 		}
 	}
 }

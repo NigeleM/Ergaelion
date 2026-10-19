@@ -43,6 +43,7 @@ CATALOG = {
     "menu_engine": "Play an engine",
     "detail_engine": "Play a computer opponent that adapts to you as you play. Board games, rock-paper-scissors and military games. Enter to play.",
     "pick_engine": "Choose an engine game",
+    "try_again": "Type t to try again, or press Enter for the main menu",
     "menu_advise": "Advise on a situation",
     "menu_solve": "Solve a payoff matrix",
     "menu_areas": "Families, problems and areas",
