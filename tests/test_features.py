@@ -286,6 +286,21 @@ class AdviceAccuracyTests(unittest.TestCase):
         self.assertIn("Nothing in 'zxq wvu' matched", out.getvalue())
 
 
+class DominanceExplanationTests(unittest.TestCase):
+    def test_dominated_row_is_explained_with_the_numbers(self):
+        from fractions import Fraction
+
+        from gtplaybook.cli import dominance_reason
+
+        matrix = [[(Fraction(3), Fraction(3)), (Fraction(0), Fraction(5))],
+                  [(Fraction(5), Fraction(0)), (Fraction(1), Fraction(1))]]
+        text = dominance_reason(matrix, ["R1", "R2"], ["C1", "C2"], "row", 0)
+        self.assertEqual(text, "R1 is strictly dominated by R2: whatever they play, R2 pays you more. "
+                               "If they play C1, R2 gives you 5 and R1 gives you 3. "
+                               "If they play C2, R2 gives you 1 and R1 gives you 0.")
+        self.assertIsNone(dominance_reason(matrix, ["R1", "R2"], ["C1", "C2"], "row", 1))
+
+
 class ModelTests(unittest.TestCase):
     def test_noisy_opponent_moves_toward_best_response_as_lambda_grows(self):
         from gtplaybook.matrix_sim import matrix_simulation
@@ -681,6 +696,8 @@ class GoPythonParityTests(unittest.TestCase):
         ["theme", "ocean"],
         ["theme", "set", "bad", "magenta"],
         ["theme", "reset"],
+        ["solve", "1,-1 -1,1; -1,1 1,-1"],
+        ["solve", "4,4 1,5 0,3; 5,1 3,3 0,0; 3,0 0,3 2,2"],
         ["solve", "3,3 0,5; 5,0 1,1", "--json"],
         ["record", "--json"],
         ["show", "bank-run"],

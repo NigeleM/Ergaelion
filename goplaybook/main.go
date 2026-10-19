@@ -276,7 +276,7 @@ func cmdShow(args []string, games []Game) error {
 	}
 	if g.Matrix != nil {
 		fmt.Println("\n" + heading(t("reference_matrix")))
-		printGrid(g.Matrix.Rows, g.Matrix.Cols, intsToCells(g.Matrix.Payoffs))
+		printGrid(g.Matrix.Rows, g.Matrix.Cols, intsToCells(g.Matrix.Payoffs), nil, nil, nil)
 		if note := g.MatrixNote; note != "" {
 			fmt.Println(dim(paragraph(note)))
 		}
@@ -509,9 +509,11 @@ func cmdSolve(args []string) error {
 		fmt.Println(string(data))
 		return nil
 	}
+	analysis := Analyse(m)
 	fmt.Println("\n" + heading(t("payoff_matrix")))
-	printGrid(rows, cols, ratCells(m))
-	printSolution(Analyse(m), rows, cols, m)
+	printGrid(rows, cols, ratCells(m), analysis.Equilibria,
+		droppedSet(analysis.Eliminated, "row"), droppedSet(analysis.Eliminated, "col"))
+	printSolution(analysis, rows, cols, m)
 	if len(m) <= 4 && len(m[0]) <= 4 {
 		fmt.Println("\n" + heading(t("every_equilibrium")))
 		eqs := SupportEquilibria(m)
@@ -561,6 +563,9 @@ func printSolution(res Analysis, rows, cols []string, m Matrix) {
 			fmt.Println(bullet(fmt.Sprintf("strictly dominated, can be dropped: %s (you)", rows[e.Index]), "•"))
 		} else {
 			fmt.Println(bullet(fmt.Sprintf("strictly dominated, can be dropped: %s (them)", cols[e.Index]), "•"))
+		}
+		if reason := dominanceReason(m, rows, cols, e.Player, e.Index); reason != "" {
+			fmt.Println(dim(paragraph(reason)))
 		}
 	}
 	fmt.Println(bullet(fmt.Sprintf("after dominance: you %s, them %s", strings.Join(pick(rows, res.SurvivingRows), ", "), strings.Join(pick(cols, res.SurvivingCols), ", ")), "•"))
@@ -753,7 +758,8 @@ func formatTraits(traits map[string]string) string {
 	return strings.Join(parts, ", ")
 }
 
-func printGrid(rows, cols []string, payoffs [][][2]string) {
+// printGrid draws the payoff grid. Pure equilibria are green; strategies removed by dominance are dimmed.
+func printGrid(rows, cols []string, payoffs [][][2]string, equilibria [][2]int, droppedRows, droppedCols map[int]bool) {
 	labelW := 0
 	for _, r := range rows {
 		if len(r) > labelW {
@@ -768,18 +774,103 @@ func printGrid(rows, cols []string, payoffs [][][2]string) {
 		}
 	}
 	fmt.Print(strings.Repeat(" ", labelW))
-	for _, c := range cols {
-		fmt.Print(cell(c, colW, bold))
+	for j, c := range cols {
+		styler := bold
+		if droppedCols[j] {
+			styler = dim
+		}
+		fmt.Print(cell(c, colW, styler))
 	}
 	fmt.Println()
 	for i, r := range rows {
-		fmt.Print(cell(r, labelW, bold))
-		for _, c := range payoffs[i] {
-			fmt.Print(cell(fmt.Sprintf("(%s, %s)", c[0], c[1]), colW, plain))
+		labelStyler := bold
+		if droppedRows[i] {
+			labelStyler = dim
+		}
+		fmt.Print(cell(r, labelW, labelStyler))
+		for j, c := range payoffs[i] {
+			styler := plain
+			isEquilibrium := false
+			for _, eq := range equilibria {
+				if eq[0] == i && eq[1] == j {
+					isEquilibrium = true
+				}
+			}
+			if isEquilibrium {
+				styler = good
+			} else if droppedRows[i] || droppedCols[j] {
+				styler = dim
+			}
+			fmt.Print(cell(fmt.Sprintf("(%s, %s)", c[0], c[1]), colW, styler))
 		}
 		fmt.Println()
 	}
 	fmt.Println(dim("  " + t("each_cell")))
+	if len(equilibria) > 0 || len(droppedRows) > 0 || len(droppedCols) > 0 {
+		fmt.Println(dim("  " + t("grid_key")))
+	}
+}
+
+// droppedSet is the set of strategy indexes removed for one player by dominance.
+func droppedSet(eliminated []Elimination, player string) map[int]bool {
+	dropped := map[int]bool{}
+	for _, e := range eliminated {
+		if e.Player == player {
+			dropped[e.Index] = true
+		}
+	}
+	return dropped
+}
+
+// dominanceReason explains why a strategy is strictly dominated, using the whole grid.
+// It returns "" when only the steps before it show the dominance.
+func dominanceReason(m Matrix, rows, cols []string, player string, index int) string {
+	if player == "row" {
+		for k := range rows {
+			if k == index {
+				continue
+			}
+			dominates := true
+			for j := range cols {
+				if m[k][j].Row.Cmp(m[index][j].Row) <= 0 {
+					dominates = false
+					break
+				}
+			}
+			if dominates {
+				var cases []string
+				for j := range cols {
+					cases = append(cases, fmt.Sprintf("If they play %s, %s gives you %s and %s gives you %s.",
+						cols[j], rows[k], m[k][j].Row.RatString(), rows[index], m[index][j].Row.RatString()))
+				}
+				return fmt.Sprintf("%s is strictly dominated by %s: whatever they play, %s pays you more. %s",
+					rows[index], rows[k], rows[k], strings.Join(cases, " "))
+			}
+		}
+		return ""
+	}
+	for k := range cols {
+		if k == index {
+			continue
+		}
+		dominates := true
+		for i := range rows {
+			if m[i][k].Col.Cmp(m[i][index].Col) <= 0 {
+				dominates = false
+				break
+			}
+		}
+		if dominates {
+			var cases []string
+			for i := range rows {
+				cases = append(cases, fmt.Sprintf("If you play %s, %s gives them %s and %s gives them %s.",
+					rows[i], cols[k], m[i][k].Col.RatString(), cols[index], m[i][index].Col.RatString()))
+			}
+			return fmt.Sprintf("%s is strictly dominated by %s: whatever you play, %s pays them more. %s",
+				cols[index], cols[k], cols[k], strings.Join(cases, " "))
+		}
+	}
+	return ""
 }
 
 // cell pads plain text to a column width, then applies the style, so ANSI codes

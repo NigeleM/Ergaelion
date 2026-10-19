@@ -12,6 +12,7 @@ CATALOG = {
     "menu_theme": "Look and colours",
     "pick_theme": "Choose a colour theme",
     "each_cell": "Each cell is (your payoff, their payoff).",
+    "grid_key": "Green: pure equilibrium. Dimmed: removed by dominance, so no one should play it.",
     "menu_repeat": "Repeated play against a bot",
     "detail_repeat": "Play a payoff table for 1 to 50 rounds against a bot that remembers the game. Your results can go into your records.",
     "pick_repeat": "Choose a game to repeat",

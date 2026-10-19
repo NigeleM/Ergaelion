@@ -34,7 +34,7 @@ from .repeat import DESCRIPTIONS, MAX_ROUNDS, OPPONENTS, best_fixed_plan, check_
 from .setup_guide import guide_text, load_help, scenario_template
 from .sim import load_state, save_state
 from .sim import endings, find_simulation, load_simulations, play, solve, trace
-from .ui import ROLES, THEMES, accent, bad, bold, box, cell, dim, good, green, heading, load_theme, mid, red, parse_colour, reset_theme, save_theme, current_theme
+from .ui import ROLES, THEMES, accent, bad, bold, box, cell, dim, good, green, heading, load_theme, mid, plain, red, parse_colour, reset_theme, save_theme, current_theme
 
 WIDTH = 88
 VERSION = "1.0.0"
@@ -79,14 +79,26 @@ def new_scenario():
 
 # ---- shared pieces: grids, scenarios, advice --------------------------------
 
-def print_grid(rows, cols, payoffs):
+def print_grid(rows, cols, payoffs, equilibria=(), dropped_rows=(), dropped_cols=()):
+    """The payoff grid. Pure equilibria are green; strategies removed by dominance are dimmed."""
     label_w = max(len(name) for name in rows) + 2
     col_w = max(max(len(name) for name in cols) + 2, 12)
-    print(" " * label_w + "".join(cell(name, col_w, bold) for name in cols))
-    for name, row in zip(rows, payoffs):
-        cells = "".join(cell(f"({a}, {b})", col_w) for a, b in row)
-        print(cell(name, label_w, bold) + cells)
+    headers = "".join(cell(name, col_w, dim if j in dropped_cols else bold) for j, name in enumerate(cols))
+    print(" " * label_w + headers)
+    for i, (name, row) in enumerate(zip(rows, payoffs)):
+        cells = ""
+        for j, (a, b) in enumerate(row):
+            if (i, j) in equilibria:
+                styler = good
+            elif i in dropped_rows or j in dropped_cols:
+                styler = dim
+            else:
+                styler = plain
+            cells += cell(f"({a}, {b})", col_w, styler)
+        print(cell(name, label_w, dim if i in dropped_rows else bold) + cells)
     print(dim("  " + t("each_cell")))
+    if equilibria or dropped_rows or dropped_cols:
+        print(dim("  " + t("grid_key")))
 
 
 def action_names(text, count, prefix):
@@ -250,11 +262,31 @@ def recommendation(result, rows, cols):
     return f"No equilibrium here: play maximin ({', '.join(rows[i] for i in indices)}) to guarantee at least {value}."
 
 
+def dominance_reason(matrix, rows, cols, player, index):
+    """Why a strategy is strictly dominated, using the whole grid. None when only the steps above show it."""
+    if player == "row":
+        for k in range(len(rows)):
+            if k != index and all(matrix[k][j][0] > matrix[index][j][0] for j in range(len(cols))):
+                cases = " ".join(f"If they play {cols[j]}, {rows[k]} gives you {matrix[k][j][0]} and "
+                                 f"{rows[index]} gives you {matrix[index][j][0]}." for j in range(len(cols)))
+                return f"{rows[index]} is strictly dominated by {rows[k]}: whatever they play, {rows[k]} pays you more. {cases}"
+    else:
+        for k in range(len(cols)):
+            if k != index and all(matrix[i][k][1] > matrix[i][index][1] for i in range(len(rows))):
+                cases = " ".join(f"If you play {rows[i]}, {cols[k]} gives them {matrix[i][k][1]} and "
+                                 f"{cols[index]} gives them {matrix[i][index][1]}." for i in range(len(rows)))
+                return f"{cols[index]} is strictly dominated by {cols[k]}: whatever you play, {cols[k]} pays them more. {cases}"
+    return None
+
+
 def print_solution(result, rows, cols, matrix):
     print("\n" + heading(t("analysis")))
     for player, index in result["eliminated"]:
         name, owner = (rows[index], "you") if player == "row" else (cols[index], "them")
         print(bullet(f"strictly dominated, can be dropped: {name} ({owner})"))
+        reason = dominance_reason(matrix, rows, cols, player, index)
+        if reason:
+            print(dim(paragraph(reason)))
     surviving_rows = [rows[i] for i in result["surviving_rows"]]
     surviving_cols = [cols[j] for j in result["surviving_cols"]]
     print(bullet(f"after dominance: you {', '.join(surviving_rows)}, them {', '.join(surviving_cols)}"))
@@ -429,9 +461,13 @@ def cmd_solve(args, games):
     if args.json:
         print(json.dumps(solve_json(matrix, rows, cols), indent=2, ensure_ascii=False, sort_keys=True))
         return 0
+    result = solver.analyse(matrix)
     print("\n" + heading(t("payoff_matrix")))
-    print_grid(rows, cols, [[(str(a), str(b)) for a, b in row] for row in matrix])
-    print_solution(solver.analyse(matrix), rows, cols, matrix)
+    print_grid(rows, cols, [[(str(a), str(b)) for a, b in row] for row in matrix],
+               equilibria=set(map(tuple, result["equilibria"])),
+               dropped_rows={i for player, i in result["eliminated"] if player == "row"},
+               dropped_cols={j for player, j in result["eliminated"] if player == "col"})
+    print_solution(result, rows, cols, matrix)
     if len(matrix) <= 4 and len(matrix[0]) <= 4:
         equilibria = solver.support_equilibria(matrix)
         print("\n" + heading(t("every_equilibrium")))

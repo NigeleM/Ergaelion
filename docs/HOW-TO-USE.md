@@ -58,6 +58,8 @@ Write the matrix with rows separated by `;` and each cell as `yours,theirs`:
 
 You get the dominated strategies, the surviving strategies, the maximin values, and every equilibrium. For JSON, add `--json`.
 
+Read the grid first. The pure equilibrium is green. Strategies removed by dominance are dimmed, because no sensible player chooses them. Under the analysis, each dominated strategy has a sentence that shows the numbers. For example, R1 is dominated when R2 pays you more whichever column they choose: 5 against 3 if they play C1, and 1 against 0 if they play C2.
+
 ## 5. Play a simulation
 
 List the simulations, then look at one:
