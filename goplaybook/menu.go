@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 
 	"goplaybook/lineedit"
@@ -11,12 +12,13 @@ import (
 // The main menu. Each entry opens its own full-screen list, with a description of the highlighted
 // item. Results open full screen too, and q returns to the list that was open.
 
-var menuKeys = []string{"menu_games", "menu_simulations", "menu_advise", "menu_solve", "menu_areas",
+var menuKeys = []string{"menu_games", "menu_simulations", "menu_engine", "menu_advise", "menu_solve", "menu_areas",
 	"menu_guide", "menu_records", "menu_repeat", "menu_claude", "menu_theme", "menu_quit"}
 
 var menuDetails = map[string]string{
-	"menu_games": "detail_games", "menu_simulations": "detail_simulations", "menu_advise": "detail_advise",
-	"menu_solve": "detail_solve", "menu_areas": "detail_areas", "menu_guide": "detail_guide",
+	"menu_games": "detail_games", "menu_simulations": "detail_simulations", "menu_engine": "detail_engine",
+	"menu_advise": "detail_advise",
+	"menu_solve":  "detail_solve", "menu_areas": "detail_areas", "menu_guide": "detail_guide",
 	"menu_records": "detail_records", "menu_repeat": "detail_repeat",
 	"menu_theme": "detail_theme", "menu_command": "detail_command", "menu_claude": "detail_claude",
 	"menu_quit": "detail_quit",
@@ -128,6 +130,8 @@ func runMenuWith(s *session, backQuits bool) bool {
 			menuGames(s)
 		case "menu_simulations":
 			menuSimulations(s)
+		case "menu_engine":
+			menuEngine(s)
 		case "menu_advise":
 			clearScreen()
 			if text := askLine(t("ask_situation") + ": "); text != "" {
@@ -198,6 +202,25 @@ func menuSimulations(s *session) {
 	}
 }
 
+// menuEngine lists the engine games. Enter plays the one you pick.
+func menuEngine(s *session) {
+	games, err := loadEngineGames()
+	if err != nil {
+		return
+	}
+	items := make([]lineedit.Item, len(games))
+	for i, g := range games {
+		items[i] = lineedit.Item{Label: g.Name, Detail: g.Summary}
+	}
+	for {
+		idx, _ := lineEditor().Pick(heading(t("pick_engine")), items, nil)
+		if idx < 0 || idx == lineedit.ErrNotTerminal {
+			return
+		}
+		runPlain(s, "engine "+quoteArg(games[idx].ID))
+	}
+}
+
 func menuFamilies(s *session) {
 	areas, err := LoadAreas()
 	if err != nil {
@@ -217,8 +240,66 @@ func menuFamilies(s *session) {
 			runView(s, "problems")
 			continue
 		}
-		runView(s, "areas "+quoteArg(areas[idx].Family))
+		menuFamilyGames(s, areas[idx])
 	}
+}
+
+// menuFamilyGames lists every game in a family. Each game can be played or simulated;
+// games without their own simulation use their payoff table.
+func menuFamilyGames(s *session, family Family) {
+	sims, err := LoadSimulations()
+	if err != nil {
+		return
+	}
+	hasSim := map[string]bool{}
+	for _, sim := range sims {
+		hasSim[sim.ID] = true
+	}
+	byID := map[string]Game{}
+	for _, g := range s.games {
+		byID[g.ID] = g
+	}
+	var ids []string
+	var items []lineedit.Item
+	for _, sd := range family.Subdomains {
+		for _, id := range sd.Games {
+			g, ok := byID[id]
+			if !ok {
+				continue
+			}
+			ids = append(ids, id)
+			items = append(items, lineedit.Item{Label: g.Name, Detail: sd.Name + ". " + g.Summary})
+		}
+	}
+	extra := map[string]string{"s": t("simulate"), "p": t("play"), "a": t("family_overview")}
+	for {
+		idx, key := lineEditor().Pick(heading(family.Family), items, extra)
+		if idx < 0 || idx == lineedit.ErrNotTerminal {
+			return
+		}
+		switch key {
+		case "s":
+			runView(s, simCommand(ids[idx], hasSim[ids[idx]], false))
+		case "p":
+			runPlain(s, simCommand(ids[idx], hasSim[ids[idx]], true))
+		case "a":
+			runView(s, "areas "+quoteArg(family.Family))
+		default:
+			runView(s, "show "+quoteArg(ids[idx]))
+		}
+	}
+}
+
+// simCommand is the sim line for a game: its own simulation when it has one, else its payoff table.
+func simCommand(id string, hasSim, play bool) string {
+	line := "sim " + quoteArg(id)
+	if !hasSim {
+		line += " --matrix"
+	}
+	if play {
+		line += " --play"
+	}
+	return line
 }
 
 func menuGuide(s *session) {
@@ -403,18 +484,22 @@ func runMenuTyped(s *session) bool {
 		if choice == "" || choice == "0" || choice == "b" {
 			return false
 		}
-		if choice == "11" {
+		key := ""
+		if n, err := strconv.Atoi(choice); err == nil && n >= 1 && n <= len(menuKeys) {
+			key = menuKeys[n-1]
+		}
+		if key == "menu_quit" {
 			return true
 		}
 		line := ""
-		switch choice {
-		case "1":
+		switch key {
+		case "menu_games":
 			if text := askLine(t("ask_game") + ": "); text != "" {
 				line = "show " + quoteArg(text)
 			} else {
 				line = "list"
 			}
-		case "2":
+		case "menu_simulations":
 			if text := askLine(t("ask_sim") + ": "); text == "" {
 				line = "sim"
 			} else {
@@ -425,21 +510,27 @@ func runMenuTyped(s *session) bool {
 					"4": "sim " + quoteArg(text) + " --matrix --play",
 				}[askLine(t("ask_sim_mode")+": ")]
 			}
-		case "3":
+		case "menu_engine":
+			if text := askLine(t("pick_engine") + ": "); text != "" {
+				line = "engine " + quoteArg(text)
+			} else {
+				line = "engine"
+			}
+		case "menu_advise":
 			if text := askLine(t("ask_situation") + ": "); text != "" {
 				line = "advise -d " + quoteArg(text)
 			}
-		case "4":
+		case "menu_solve":
 			if text := askLine(t("ask_matrix") + ": "); text != "" {
 				line = "solve " + quoteArg(text)
 			}
-		case "5":
+		case "menu_areas":
 			if text := askLine(t("ask_query") + ": "); text != "" {
 				line = "problems " + quoteArg(text)
 			} else {
 				line = "areas"
 			}
-		case "6":
+		case "menu_guide":
 			mode := askLine(t("ask_guide") + ": ")
 			if mode == "1" {
 				line = strings.TrimSpace("guide " + askLine(t("ask_guide_section")+": "))
@@ -448,9 +539,9 @@ func runMenuTyped(s *session) bool {
 					line = "setup " + quoteArg(text)
 				}
 			}
-		case "7":
+		case "menu_records":
 			line = map[string]string{"1": "record", "2": "chart records", "3": "chart plays"}[askLine(t("ask_records")+": ")]
-		case "8":
+		case "menu_repeat":
 			text := askLine(t("ask_game") + ": ")
 			rounds := askLine(t("ask_rounds") + " [10]: ")
 			if rounds == "" {
@@ -460,13 +551,13 @@ func runMenuTyped(s *session) bool {
 			if text != "" && bot != "" {
 				line = "repeat " + quoteArg(text) + " --rounds " + rounds + " --opponent " + bot + " --log"
 			}
-		case "9":
+		case "menu_claude":
 			if text := askLine(t("ask_claude_question") + ": "); text != "" {
 				line = "claude ask " + quoteArg(text)
 			} else {
 				line = "claude status"
 			}
-		case "10":
+		case "menu_theme":
 			if name := askLine(t("pick_theme") + " (" + strings.Join(themeNames, ", ") + "): "); name != "" {
 				line = "theme " + name
 			}

@@ -189,6 +189,8 @@ func (s *session) command(line string) (quit bool, err error) {
 		return false, cmdAddPlay(args, s.games)
 	case "sim":
 		return false, cmdSim(args, s.games)
+	case "engine":
+		return false, cmdEngine(args, s.games)
 	case "setup":
 		return false, cmdSetup(args, s.games)
 	case "guide":

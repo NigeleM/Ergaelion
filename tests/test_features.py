@@ -738,6 +738,31 @@ class GoPythonParityTests(unittest.TestCase):
             self.assertEqual(ansi.sub("", py.stdout), ansi.sub("", go.stdout), " ".join(args))
 
 
+    def test_engine_games_play_the_same_in_both_versions(self):
+        import os
+        import re
+        import subprocess
+
+        ansi = re.compile(r"\x1b\[[0-9;]*m")
+        env = dict(os.environ, PLAYBOOK_HOME=tempfile.mkdtemp())
+        scripts = {
+            "tic-tac-toe": "h\n5\nx\n1\n9\n3\n7\n2\n4\nq\n",
+            "nim": "h\n2 3\nxx\n1 1\n3 1\nh\n2 2\n1 1\n2 1\n3 1\nq\n",
+            "connect-four": "h\n4\n4\n4\n4\n4\n4\n4\n9\n3\nq\n",
+            "rock-paper-scissors": "p\n" * 25 + "q\n",
+            "colonel-blotto": "2 2 2\n6 0 0\nx\n1 2 3\n0 3 3\n4 1 1\n2 2 2\n1 1 1\n",
+            "border-patrol": "2\n" * 14 + "q\n",
+        }
+        for game, script in scripts.items():
+            outputs = []
+            for binary in (ROOT / "playbook", ROOT / "bin" / "Ergaelion"):
+                done = subprocess.run([str(binary), "engine", game], input=script, capture_output=True, text=True,
+                                      env=env, timeout=60)
+                outputs.append(ansi.sub("", done.stdout))
+            self.assertEqual(outputs[0], outputs[1], game)
+            self.assertIn("Hint:" if game in ("tic-tac-toe", "nim", "connect-four") else "Round", outputs[0])
+
+
 @unittest.skipUnless(go_binary_runs(), "Go binary missing or built for another system; run make build")
 class GoLineEditingTests(unittest.TestCase):
     """The Go session's own line editor: Tab completion and arrow-key history, in a real terminal."""
@@ -793,14 +818,14 @@ class GoLineEditingTests(unittest.TestCase):
 
 
 class MenuTests(unittest.TestCase):
-    def test_typed_menu_quits_on_eleven_and_lists_ask_claude(self):
+    def test_typed_menu_quits_on_its_last_number_and_lists_ask_claude(self):
         from unittest import mock
 
         from gtplaybook import repl
 
         self.assertIn("menu_claude", repl.MENU_ITEMS)
-        self.assertEqual(repl.MENU_ITEMS.index("menu_quit") + 1, 11)
-        with mock.patch("builtins.input", side_effect=["11"]), mock.patch("sys.stdout"):
+        quit_number = str(repl.MENU_ITEMS.index("menu_quit") + 1)
+        with mock.patch("builtins.input", side_effect=[quit_number]), mock.patch("sys.stdout"):
             self.assertTrue(repl._run_menu_typed(repl.Session(load_games())))
 
     def test_zero_in_the_typed_menu_goes_to_the_command_prompt(self):
@@ -990,6 +1015,70 @@ class ClaudeTests(unittest.TestCase):
     def test_long_text_is_clipped(self):
         long = "x" * (self.claude.MAX_QUESTION + 500)
         self.assertLessEqual(len(self.claude.build_prompt(long, [])), self.claude.MAX_QUESTION + 40)
+
+
+class EngineTests(unittest.TestCase):
+    """The computer opponents in engine games. They must never lose a game they can always win."""
+
+    def test_tic_tac_toe_engine_never_loses_to_random_play(self):
+        import random
+
+        from gtplaybook import engine
+
+        rng = random.Random(1)
+        for _ in range(300):
+            board = " " * 9
+            while True:
+                empty = [i for i, cell in enumerate(board) if cell == " "]
+                i = rng.choice(empty)
+                board = board[:i] + "X" + board[i + 1:]
+                if engine.ttt_winner(board) or " " not in board:
+                    break
+                j = engine.ttt_best(board, "O")
+                board = board[:j] + "O" + board[j + 1:]
+                if engine.ttt_winner(board) or " " not in board:
+                    break
+            self.assertNotEqual(engine.ttt_winner(board), "X")
+        self.assertEqual(engine.ttt_value(" " * 9), 0)
+
+    def test_nim_engine_wins_from_every_winning_position(self):
+        import random
+
+        from gtplaybook import engine
+
+        for a in range(6):
+            for b in range(6):
+                for c in range(6):
+                    piles = (a, b, c)
+                    if not engine.nim_wins(piles):
+                        continue
+                    rng = random.Random(a * 36 + b * 6 + c)
+                    while True:
+                        i, take = engine.nim_best(piles)
+                        piles = piles[:i] + (piles[i] - take,) + piles[i + 1:]
+                        if not any(piles):
+                            break
+                        i, take = rng.choice(engine.nim_options(piles))
+                        piles = piles[:i] + (piles[i] - take,) + piles[i + 1:]
+                        if not any(piles):
+                            self.fail(f"engine lost from {(a, b, c)}")
+
+    def test_pattern_engine_beats_a_player_who_repeats(self):
+        from gtplaybook import engine
+
+        self.assertEqual(engine.rps_engine_move([]), "paper")
+        self.assertEqual(engine.rps_engine_move(["rock", "rock", "paper"]), "paper")
+        self.assertEqual(engine.patrol_engine_gate([]), 0)
+        self.assertEqual(engine.patrol_engine_gate([2, 2, 0]), 2)
+
+    def test_engine_list_and_unknown_game(self):
+        from gtplaybook import engine
+
+        ids = [game["id"] for game in engine.engine_games()]
+        self.assertEqual(ids, ["tic-tac-toe", "nim", "connect-four", "rock-paper-scissors", "colonel-blotto",
+                               "border-patrol"])
+        with self.assertRaises(ValueError):
+            engine.find_engine_game(engine.engine_games(), "no-such-game")
 
 
 if __name__ == "__main__":

@@ -21,12 +21,12 @@ from shlex import quote
 VERSION = cli.VERSION
 
 # Commands that reuse the subcommand parser and handlers.
-DELEGATED = {"list", "show", "solve", "new", "template", "areas", "log", "record", "edit", "add-play", "sim", "problems", "setup", "guide", "chart", "disable", "enable", "check", "unlog", "theme", "repeat", "keywords"}
+DELEGATED = {"list", "show", "solve", "new", "template", "areas", "log", "record", "edit", "add-play", "sim", "engine", "problems", "setup", "guide", "chart", "disable", "enable", "check", "unlog", "theme", "repeat", "keywords"}
 
 
 COMMANDS = sorted(
     ["/" + name for name in ("list", "show", "advise", "set", "unset", "scenario", "clear", "solve", "new", "template",
-                             "areas", "log", "record", "edit", "add-play", "sim", "problems", "setup", "guide", "chart",
+                             "areas", "log", "record", "edit", "add-play", "sim", "engine", "problems", "setup", "guide", "chart",
                              "disable", "enable", "check", "unlog", "theme", "repeat", "keywords", "claude", "menu", "cls", "help", "quit")]
 )
 
@@ -349,7 +349,7 @@ def print_help():
     print("\n" + dim("Or just type a situation in plain English. The playbook matches it to games and gives the rules to play."))
 
 
-MENU_ITEMS = ["menu_games", "menu_simulations", "menu_advise", "menu_solve", "menu_areas", "menu_guide",
+MENU_ITEMS = ["menu_games", "menu_simulations", "menu_engine", "menu_advise", "menu_solve", "menu_areas", "menu_guide",
               "menu_records", "menu_repeat", "menu_claude", "menu_theme", "menu_quit"]
 
 
@@ -361,7 +361,8 @@ def print_menu():
 
 
 MENU_DETAILS = {
-    "menu_games": "detail_games", "menu_simulations": "detail_simulations", "menu_advise": "detail_advise",
+    "menu_games": "detail_games", "menu_simulations": "detail_simulations", "menu_engine": "detail_engine",
+    "menu_advise": "detail_advise",
     "menu_solve": "detail_solve", "menu_areas": "detail_areas", "menu_guide": "detail_guide",
     "menu_records": "detail_records", "menu_repeat": "detail_repeat",
     "menu_theme": "detail_theme", "menu_claude": "detail_claude",
@@ -431,6 +432,19 @@ def _menu_simulations(session):
             _captured_view(session, f"sim {_quote(sims[index]['id'])}")
 
 
+def _menu_engine(session):
+    """The engine games: you play a computer opponent that adapts as you play."""
+    from .engine import engine_games
+
+    games = engine_games()
+    items = [(game["name"], game["summary"]) for game in games]
+    while True:
+        index, _ = lineedit.pick(heading(t("pick_engine")), items)
+        if index < 0:
+            return
+        _plain(session, f"engine {_quote(games[index]['id'])}")
+
+
 def _menu_families(session):
     areas = load_areas()
     items = [(area["family"], area["summary"]) for area in areas]
@@ -441,7 +455,42 @@ def _menu_families(session):
         if key == "p":
             _captured_view(session, "problems")
         else:
-            _captured_view(session, f"areas {_quote(areas[index]['family'])}")
+            _menu_family_games(session, areas[index])
+
+
+def _menu_family_games(session, family):
+    """List every game in a family. Each game can be played or simulated; games without
+    their own simulation use their payoff table."""
+    from .sim import load_simulations
+
+    has_sim = {sim["id"] for sim in load_simulations()}
+    by_id = {game["id"]: game for game in session.games}
+    ids, items = [], []
+    for sub in family["subdomains"]:
+        for game_id in sub["games"]:
+            if game_id in by_id:
+                ids.append(game_id)
+                items.append((by_id[game_id]["name"], sub["name"] + ". " + by_id[game_id]["summary"]))
+    extra = {"s": t("simulate"), "p": t("play"), "a": t("family_overview")}
+    while True:
+        index, key = lineedit.pick(heading(family["family"]), items, extra)
+        if index < 0:
+            return
+        game_id = ids[index]
+        if key == "s":
+            _captured_view(session, _sim_line(game_id, game_id in has_sim, False))
+        elif key == "p":
+            _plain(session, _sim_line(game_id, game_id in has_sim, True))
+        elif key == "a":
+            _captured_view(session, f"areas {_quote(family['family'])}")
+        else:
+            _captured_view(session, f"show {_quote(game_id)}")
+
+
+def _sim_line(game_id, has_sim, play):
+    """The sim command for a game: its own simulation when it has one, else its payoff table."""
+    line = f"sim {_quote(game_id)}" + ("" if has_sim else " --matrix")
+    return line + (" --play" if play else "")
 
 
 def _menu_guide(session):
@@ -591,6 +640,8 @@ def _run_menu(session, back_quits):
             _menu_games(session)
         elif key == "menu_simulations":
             _menu_simulations(session)
+        elif key == "menu_engine":
+            _menu_engine(session)
         elif key == "menu_advise":
             _clear()
             text = input(t("ask_situation") + ": ").strip()
@@ -633,13 +684,14 @@ def _run_menu_typed(session):
             choice = input(accent("\u276f ") + t("menu_prompt") + ": ").strip()
         if choice in ("", "0", "b", "back"):
             return False
-        if choice == "11":
+        key = MENU_ITEMS[int(choice) - 1] if choice.isdigit() and 0 < int(choice) <= len(MENU_ITEMS) else ""
+        if key == "menu_quit":
             return True
         line = None
-        if choice == "1":
+        if key == "menu_games":
             text = input(t("ask_game") + ": ").strip()
             line = f"show {quote(text)}" if text else "list"
-        elif choice == "2":
+        elif key == "menu_simulations":
             text = input(t("ask_sim") + ": ").strip()
             if not text:
                 line = "sim"
@@ -647,16 +699,19 @@ def _run_menu_typed(session):
                 mode = input(t("ask_sim_mode") + ": ").strip()
                 line = {"1": f"sim {quote(text)}", "2": f"sim {quote(text)} --play",
                         "3": f"sim {quote(text)} --matrix", "4": f"sim {quote(text)} --matrix --play"}.get(mode)
-        elif choice == "3":
+        elif key == "menu_engine":
+            text = input(t("pick_engine") + ": ").strip()
+            line = f"engine {quote(text)}" if text else "engine"
+        elif key == "menu_advise":
             text = input(t("ask_situation") + ": ").strip()
             line = f"advise -d {quote(text)}" if text else None
-        elif choice == "4":
+        elif key == "menu_solve":
             text = input(t("ask_matrix") + ": ").strip()
             line = f"solve {quote(text)}" if text else None
-        elif choice == "5":
+        elif key == "menu_areas":
             text = input(t("ask_query") + ": ").strip()
             line = f"problems {quote(text)}" if text else "areas"
-        elif choice == "6":
+        elif key == "menu_guide":
             mode = input(t("ask_guide") + ": ").strip()
             if mode == "1":
                 section = input(t("ask_guide_section") + ": ").strip()
@@ -664,20 +719,20 @@ def _run_menu_typed(session):
             elif mode == "2":
                 text = input(t("ask_game") + ": ").strip()
                 line = f"setup {quote(text)}" if text else None
-        elif choice == "7":
+        elif key == "menu_records":
             mode = input(t("ask_records") + ": ").strip()
             line = {"1": "record", "2": "chart records", "3": "chart plays"}.get(mode)
-        elif choice == "8":
+        elif key == "menu_repeat":
             from .repeat import OPPONENTS
 
             text = input(t("ask_game") + ": ").strip()
             rounds = input(t("ask_rounds") + " [10]: ").strip() or "10"
             bot = input(t("pick_bot") + " (" + ", ".join(OPPONENTS) + "): ").strip().lower()
             line = f"repeat {quote(text)} --rounds {rounds} --opponent {bot} --log" if text and bot else None
-        elif choice == "9":
+        elif key == "menu_claude":
             text = input(t("ask_claude_question") + ": ").strip()
             line = f"claude ask {quote(text)}" if text else "claude status"
-        elif choice == "10":
+        elif key == "menu_theme":
             name = input(t("pick_theme") + " (" + ", ".join(THEME_DETAILS) + "): ").strip().lower()
             line = f"theme {name}" if name else None
         if line is None:

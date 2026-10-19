@@ -381,6 +381,9 @@ def page(text):
             out.flush()
 
 
+_remembered = {}  # the row last highlighted in each list, by title, so a menu reopens on the same row
+
+
 def pick(title, items, extra=None):
     """A full-screen list with a description of the highlighted item.
 
@@ -396,12 +399,15 @@ def pick(title, items, extra=None):
     for key in sorted(extra):
         hint += f"  {key} {extra[key]}"
     selected, top = 0, 0
+    if _remembered.get(title, 0) < len(items):
+        selected = _remembered.get(title, 0)
 
     def list_rows():
         return max(terminal_rows() - 9 - title.count("\n"), 3)
 
     def draw():
         nonlocal top
+        _remembered[title] = selected
         rows = list_rows()
         if selected < top:
             top = selected

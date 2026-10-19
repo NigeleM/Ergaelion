@@ -1,0 +1,50 @@
+[
+  {
+    "id": "tic-tac-toe",
+    "name": "Tic-Tac-Toe vs Minimax Engine",
+    "kind": "board",
+    "summary": "The engine searches every line of play. Against it, the best you can get is a draw.",
+    "rules": "You are X and move first. Enter the number of an empty square (1 to 9). Three in a row wins.",
+    "engine": "Minimax search over the whole game. It never misses a win or a block."
+  },
+  {
+    "id": "nim",
+    "name": "Nim vs Perfect Engine",
+    "kind": "board",
+    "summary": "Three piles of objects. The engine solves the game exactly and plays perfectly.",
+    "rules": "Take any number of objects from one pile. Whoever takes the last object wins. You go first.",
+    "engine": "Exact search of every position. If it can win, it does."
+  },
+  {
+    "id": "connect-four",
+    "name": "Connect Four vs Search Engine",
+    "kind": "board",
+    "summary": "Drop discs into seven columns. The engine looks four moves ahead and blocks your threats.",
+    "rules": "You are X and move first. Enter a column (1 to 7). Four of your discs in a line wins.",
+    "engine": "Alpha-beta search four moves deep, with a score for threats and centre control."
+  },
+  {
+    "id": "rock-paper-scissors",
+    "name": "Rock-Paper-Scissors vs Pattern Engine",
+    "kind": "matrix",
+    "summary": "Twenty rounds. The engine learns which move you favour and plays to beat it.",
+    "rules": "Choose rock, paper or scissors each round (r, p or s). The engine chooses without seeing your choice in that round.",
+    "engine": "Predicts your most common move so far and plays the move that beats it."
+  },
+  {
+    "id": "colonel-blotto",
+    "name": "Colonel Blotto vs Adaptive Commander",
+    "kind": "military",
+    "summary": "Split six units across three fronts. A front goes to the side with more units there.",
+    "rules": "Each round, send three whole numbers that add up to 6, for example 2 2 2. You win a round by taking more fronts than the engine. The commander sends its units without seeing yours in that round.",
+    "engine": "Chooses the split that does best against your past splits, so repeating a split gets punished."
+  },
+  {
+    "id": "border-patrol",
+    "name": "Border Patrol vs Adaptive Guard",
+    "kind": "military",
+    "summary": "You try to slip past one of three gates. The guard watches one gate each round.",
+    "rules": "Each round, pick a gate (1, 2 or 3). You get through if the guard is watching another gate. Twelve rounds: get through more than six times to win.",
+    "engine": "Guards the gate you have used most often, so a player who favours one gate is caught."
+  }
+]

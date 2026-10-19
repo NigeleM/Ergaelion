@@ -27,6 +27,8 @@ from .scenario import DOMAIN_WORDS, TEMPLATE, describe, normalise, parse_scenari
 from . import keywords
 from .i18n import t
 from .exporter import ask_formats, parse_formats, write_game, write_repeat, write_run
+from .engine import engine_games, find_engine_game
+from .engine import play as play_engine
 from .matrix_sim import matrix_simulation
 from .repeat import DESCRIPTIONS, MAX_ROUNDS, OPPONENTS, best_fixed_plan, check_rounds, outcome_for_log, play_repeated
 from .setup_guide import guide_text, load_help, scenario_template
@@ -519,6 +521,27 @@ def cmd_areas(args, games):
     print("\n" + heading(t("learn_more")))
     for ref in family["learn"]:
         print(bullet(ref))
+    return 0
+
+
+def _ask_line(prompt):
+    """A line from the player, or None at the end of input."""
+    try:
+        return input(prompt)
+    except EOFError:
+        return None
+
+
+def cmd_engine(args, games):
+    available = engine_games()
+    if not args.name:
+        print()
+        for game in available:
+            print(cell(game["id"], 22, bold) + cell(game["name"], 46) + dim(game["summary"]))
+        print(dim("\nRun 'engine <id>' to play one, e.g. 'engine nim'."))
+        return 0
+    game = find_engine_game(available, " ".join(args.name))
+    play_engine(game, ask=_ask_line, say=print)
     return 0
 
 
@@ -1121,6 +1144,7 @@ HANDLERS = {
     "edit": cmd_edit,
     "add-play": cmd_add_play,
     "sim": cmd_sim,
+    "engine": cmd_engine,
     "problems": cmd_problems,
     "setup": cmd_setup,
     "guide": cmd_guide,
@@ -1234,6 +1258,9 @@ def build_parser():
 
     problems = sub.add_parser("problems", help="find the best games for a problem, with scenarios")
     problems.add_argument("query", nargs="*", help="a problem or an area, e.g. work; omit to list all")
+
+    engine_parser = sub.add_parser("engine", help="play a computer opponent that adapts to you")
+    engine_parser.add_argument("name", nargs="*", help="engine game id, e.g. nim; omit to list them")
 
     sim = sub.add_parser("sim", help="simulations: paths to victory and failure, or play one")
     sim.add_argument("id", nargs="?", help="simulation id or name; omit to list them")

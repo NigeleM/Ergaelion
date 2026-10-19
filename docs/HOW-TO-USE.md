@@ -119,6 +119,22 @@ To record the result in your records, add `--log`:
 ./playbook repeat prisoners-dilemma --rounds 10 --opponent grim --log
 ```
 
+## 6b. Play an engine game
+
+```sh
+./playbook engine nim
+```
+
+`engine` lists the games. In each one the engine chooses its move as you play:
+
+- **Tic-tac-toe** and **Connect Four** use search. The engine never misses a win or a block. Type `h` for the best move for you.
+- **Nim** is solved exactly. Type `h` to see whether you are winning, and which move keeps you winning.
+- **Rock-paper-scissors** predicts the move you have played most often and plays the move that beats it.
+- **Colonel Blotto** (military): send three numbers that add up to 6, one per front. The commander picks the split that did best against your past splits.
+- **Border Patrol** (military): pick one of three gates each round. The guard watches the gate you have used most, so vary your choices.
+
+Type `q` to leave a game. The menu also has **Play an engine**, which lists the games.
+
 ## 7. Record your results
 
 ```sh

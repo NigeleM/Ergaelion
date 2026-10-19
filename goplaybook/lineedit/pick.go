@@ -12,6 +12,9 @@ type Item struct {
 	Detail string
 }
 
+// remembered holds the row last highlighted in each list, by title, so a menu reopens on the same row.
+var remembered = map[string]int{}
+
 // Pick shows a full-screen list. The highlighted item's detail appears below the list, and long lists
 // scroll. Enter returns the highlighted item. q or Escape returns -1. Each key in extra (with its
 // label) returns that key along with the item. Off a terminal it returns ErrNotTerminal.
@@ -38,7 +41,11 @@ func (e *Editor) Pick(title string, items []Item, extra map[string]string) (int,
 	}
 
 	selected, top := 0, 0
+	if last, ok := remembered[title]; ok && last < len(items) {
+		selected = last
+	}
 	draw := func() {
+		remembered[title] = selected
 		listRows := TerminalRows(e.file) - 9 - strings.Count(title, "\n")
 		if listRows < 3 {
 			listRows = 3

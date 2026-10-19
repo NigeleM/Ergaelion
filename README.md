@@ -5,6 +5,7 @@ A terminal tool that identifies the game behind a situation, explains how it wor
 - **110 games** across 17 families, each with how it works, its strategies, its pitfalls and, for all 110 of them, a payoff table (exact, or labelled as a simplified model).
 - **174 simulations**: 133 basic (fixed choices you can read and play) and 41 live (an opponent replies to each move, and remembers earlier rounds in the repeated games). Chances are estimates unless a simulation names its sources. They include family, parent-child, relationship, workplace, war and military cases.
 - **Repeated play** against six bots, from 1 to 50 rounds.
+- **Engine games**: six games against a computer opponent that searches or adapts as you play. Tic-tac-toe, Nim, Connect Four, rock-paper-scissors, and two military games: Colonel Blotto and Border Patrol. Each one has a hint (`h`) for the board games.
 - **Keyword search**, so a short description finds the games that fit it.
 - **Colour themes** you can change: classic, ocean, forest, contrast, sunset, midnight, rose, matrix, paper, Claude dark and light, plain (ASCII box edges) and mono.
 - **Export** of games, runs, records and charts to Markdown, JSON, CSV and SVG.

@@ -97,6 +97,8 @@ func run(args []string, games []Game) int {
 		err = cmdAddPlay(args[1:], games)
 	case "sim":
 		err = cmdSim(args[1:], games)
+	case "engine":
+		err = cmdEngine(args[1:], games)
 	case "setup":
 		err = cmdSetup(args[1:], games)
 	case "guide":

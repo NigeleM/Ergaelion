@@ -15,7 +15,7 @@ from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 AREAS_FILE = "areas.json"
-NON_GAME_FILES = (AREAS_FILE, "simulations.json", "problems.json", "setup-help.json", "guide.json", "keywords.json", "tools.json", "help.txt", "combinations.json")
+NON_GAME_FILES = (AREAS_FILE, "simulations.json", "problems.json", "setup-help.json", "guide.json", "keywords.json", "tools.json", "help.txt", "combinations.json", "engine-games.json")
 
 # Every trait a scenario or game can declare, and its allowed values.
 TRAITS = {
