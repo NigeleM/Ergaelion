@@ -18,7 +18,7 @@ type session struct {
 // situation; lines starting with '/' are commands.
 // slashCommands are the words Tab completes after a '/'.
 var slashCommands = []string{"/list", "/show", "/advise", "/set", "/unset", "/scenario", "/clear", "/solve", "/new",
-	"/template", "/areas", "/log", "/record", "/edit", "/add-play", "/sim", "/problems", "/setup", "/guide", "/chart",
+	"/template", "/areas", "/topics", "/log", "/record", "/edit", "/add-play", "/sim", "/problems", "/setup", "/guide", "/chart",
 	"/disable", "/enable", "/check", "/unlog", "/theme", "/repeat", "/keywords", "/claude", "/menu", "/cls", "/help", "/quit"}
 
 // setupLineEditing loads history from the playbook home and sets up Tab completion.
@@ -179,6 +179,8 @@ func (s *session) command(line string) (quit bool, err error) {
 		return true, nil
 	case "areas":
 		return false, cmdAreas(args, s.games)
+	case "topics":
+		return false, cmdTopics(args, s.games)
 	case "log":
 		return false, cmdLog(args, s.games)
 	case "record":

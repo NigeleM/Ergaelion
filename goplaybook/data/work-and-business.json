@@ -341,7 +341,8 @@
     "pitfalls": [
       "Investing heavily in one partner with no contract or exit clause.",
       "Trying to hold up a partner who can walk away and find another customer."
-    ]
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "lemons-market",
@@ -409,7 +410,10 @@
       "Relying on a seller's own assurances, which are cheap to make.",
       "Assuming a market can be fixed by price alone when quality is the real uncertainty."
     ],
-    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (buyers pay high or low; sellers offer good or bad goods)"
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (buyers pay high or low; sellers offer good or bad goods)",
+    "sources": [
+      "Checked: Akerlof, The Market for Lemons: Quality Uncertainty and the Market Mechanism, Quarterly Journal of Economics 84 (1970): 488-500"
+    ]
   },
   {
     "id": "bertrand-price-war",
@@ -475,7 +479,11 @@
     "pitfalls": [
       "Cutting price to win volume when the rival can match it at once.",
       "Competing on price in a market where your costs are higher than the rival's."
-    ]
+    ],
+    "sources": [
+      "Checked: Bertrand, review of Walras and Cournot, Journal des Savants 67 (1883): 499-508"
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "reputation-reviews",

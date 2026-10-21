@@ -6,6 +6,7 @@ Find and understand
   list [--domain D] [--search TEXT]    list games (optionally by domain or search)
   show <game> [--formats md,json]      explain a game: how it works, its payoff table, how to play
   areas [family]                       the areas of game theory and what to read
+  topics [topic]                       the games by topic: business, military, politics and more
   problems [query]                     practice problems with answers
   keywords <words>                     say which games and areas your words point to
   advise -d "sentence" [--set k=v]     match a plain-English situation to games, combined advice and scenarios

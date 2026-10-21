@@ -134,6 +134,9 @@ To record the result in your records, add `--log`:
 - **Rock-paper-scissors** predicts the move you have played most often and plays the move that beats it.
 - **Colonel Blotto** (military): send three numbers that add up to 6, one per front. The commander picks the split that did best against your past splits.
 - **Border Patrol** (military): pick one of three gates each round. The guard watches the gate you have used most, so vary your choices.
+- **Ultimatum**: enter how many of ten coins the engine gets. It accepts any offer of at least 3, and a refusal leaves you both with nothing. Type `h` for the least it accepts.
+- **Guess Two Thirds**: guess a number from 0 to 100. The target is two thirds of the average of your guess and the engine's. The engine forecasts your average and guesses two thirds of it. Type `h` for a guess that lands on the target.
+- **Matching Pennies**: call heads or tails. The engine's coin is the opposite of the call you make most often, so vary your calls.
 
 Type `q` to leave a game. The menu also has **Play an engine**, which lists the games.
 

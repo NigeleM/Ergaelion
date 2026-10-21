@@ -339,7 +339,8 @@
     "pitfalls": [
       "Developing capabilities that threaten the other side's survivable forces, which invites pre-emption.",
       "Relying on ambiguity as a deterrent, which can produce miscalculation in a crisis."
-    ]
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "crisis-escalation-ladder",
@@ -407,7 +408,8 @@
     "pitfalls": [
       "Escalating faster than the other side, which raises the chance of accidents.",
       "Closing every off-ramp to look strong, which makes de-escalation impossible."
-    ]
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "siege-and-logistics",

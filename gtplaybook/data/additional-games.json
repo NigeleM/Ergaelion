@@ -65,7 +65,10 @@
         ]
       ]
     },
-    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the first player wins when the coins differ; the second wins when they match)"
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the first player wins when the coins differ; the second wins when they match)",
+    "sources": [
+      "From memory: von Neumann and Morgenstern, Theory of Games and Economic Behavior (1944)"
+    ]
   },
   {
     "id": "penalty-kicks-and-serves",
@@ -203,7 +206,10 @@
         ]
       ]
     },
-    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the dictator's payoff falls when the choice is seen and keeping everything is judged badly)"
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the dictator's payoff falls when the choice is seen and keeping everything is judged badly)",
+    "sources": [
+      "Checked: Kahneman, Knetsch and Thaler, Fairness and the Assumptions of Economics, Journal of Business 59 (1986): S285-S300"
+    ]
   },
   {
     "id": "braess-paradox-traffic",
@@ -273,7 +279,10 @@
         ]
       ]
     },
-    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two drivers; a driver takes 2 minutes on the shortcut alone, 6 if both use it, and 4 on the old route; payoffs are minus minutes)"
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two drivers; a driver takes 2 minutes on the shortcut alone, 6 if both use it, and 4 on the old route; payoffs are minus minutes)",
+    "sources": [
+      "Checked: Braess, Über ein Paradoxon aus der Verkehrsplanung, Unternehmensforschung 12 (1968): 258-268"
+    ]
   },
   {
     "id": "nash-bargaining-demands",
@@ -367,7 +376,10 @@
         ]
       ]
     },
-    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the discrete Nash demand game; the equal split is the bargaining solution)"
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the discrete Nash demand game; the equal split is the bargaining solution)",
+    "sources": [
+      "Checked: Nash, The Bargaining Problem, Econometrica 18 (1950): 155-162"
+    ]
   },
   {
     "id": "minority-game-crowds",
@@ -529,7 +541,10 @@
         ]
       ]
     },
-    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (customers 0 to 10 use the nearer shop; ties split, and payoffs count customers doubled)"
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (customers 0 to 10 use the nearer shop; ties split, and payoffs count customers doubled)",
+    "sources": [
+      "Checked: Hotelling, Stability in Competition, Economic Journal 39 (1929): 41-57"
+    ]
   },
   {
     "id": "tariff-war-trade-deal",

@@ -1,0 +1,1072 @@
+[
+  {
+    "id": "hume-two-oarsmen",
+    "name": "Hume's Two Oarsmen",
+    "category": "Simultaneous, coordination, convention and cooperation",
+    "summary": "Hume imagined two people in a boat who must row together to make progress. Rowing together is best for both, but rowing alone wastes effort, so cooperation depends on a shared understanding.",
+    "how_it_works": "Each oarsman rows now or waits. If both row together, the boat moves and both gain. If one rows alone, the effort is wasted and the rower loses. If both wait, nothing happens. Hume's point is that the convention of rowing together is not a promise made in advance; it grows from repeated experience of what works for both.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "common-interest",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": [
+      "society",
+      "everyday",
+      "games"
+    ],
+    "examples": [
+      "Two neighbours who must lift a heavy table together and need one to start",
+      "Two colleagues who must agree on a shared way of working without a formal rule"
+    ],
+    "matrix": {
+      "rows": [
+        "Row now",
+        "Wait"
+      ],
+      "cols": [
+        "Row now",
+        "Wait"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Start with a small joint action, so both see that rowing together works.",
+      "Agree a signal, such as a count, so both start at the same moment.",
+      "Build the convention over repeated tasks, so it becomes the expected way of acting."
+    ],
+    "pitfalls": [
+      "Rowing alone on a hunch that the other will follow, which wastes effort.",
+      "Waiting for a formal agreement that never comes, when a simple shared signal would do."
+    ],
+    "matrix_note": "simplified: a common-interest coordination form chosen to show Hume's point; the numbers are illustrative",
+    "sources": [
+      "Checked: Hume, A Treatise of Human Nature (1740), Book III, Part II (on convention; the two oarsmen example)"
+    ]
+  },
+  {
+    "id": "rawls-veil-of-ignorance-split",
+    "name": "Rawls's Veil of Ignorance: Proposing a Split",
+    "category": "Simultaneous, fairness, bargaining",
+    "summary": "A proposer offers a split of a shared gain, and a responder accepts or rejects it. Without a veil of ignorance, a greedy proposal can be accepted, which is what the table shows.",
+    "how_it_works": "The proposer offers an equal or a greedy split. The responder accepts or rejects. Under the table as written, the greedy split is accepted, and it is the stable outcome. Rawls's point is that a fair rule is chosen behind a veil, where no one knows their own position. Behind the veil, the equal split is what each would choose, so the same table gives a different answer.",
+    "traits": {
+      "players": "two",
+      "timing": "sequential",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "yes",
+      "bargaining": "yes"
+    },
+    "domains": [
+      "society",
+      "government",
+      "everyday"
+    ],
+    "examples": [
+      "Two heirs dividing an estate where neither knows who will be more needy later",
+      "A group choosing how to share a windfall before anyone knows their own circumstances"
+    ],
+    "matrix": {
+      "rows": [
+        "Propose an equal split",
+        "Propose a greedy split"
+      ],
+      "cols": [
+        "Accept",
+        "Reject"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Agree the division rule before the gain is known, so no one is bargaining from a position of strength.",
+      "Use a rule such as equal shares by default, with an exception only when everyone agrees.",
+      "If you are the responder, look past the offer to the rule that would apply to everyone."
+    ],
+    "pitfalls": [
+      "Accepting a greedy split because rejection leaves you with nothing, which lets the rule be set by the stronger side.",
+      "Treating the table as the whole story, when the veil changes what is fair."
+    ],
+    "matrix_note": "simplified: an ultimatum-style fairness form with chosen payoffs; the veil is described in the text, not built into the table",
+    "sources": [
+      "From memory: Rawls, A Theory of Justice (1971), the chapter on the original position and the veil of ignorance"
+    ]
+  },
+  {
+    "id": "kant-universal-promise",
+    "name": "Kant's Universal Law and Promise-Keeping",
+    "category": "Simultaneous, ethics, universalisability",
+    "summary": "Kant asked whether a rule could be willed as a universal law. Promise-keeping works only if most people keep promises, so a rule of breaking promises undermines itself once everyone follows it.",
+    "how_it_works": "You keep your promise or break it, and others keep theirs or break theirs. If all keep promises, trust and cooperation pay. Breaking a promise gains when others keep theirs, and loses when others break theirs. The only stable outcome is universal promise-breaking, which Kant would say shows the rule cannot be universalised.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "yes"
+    },
+    "domains": [
+      "society",
+      "everyday",
+      "business"
+    ],
+    "examples": [
+      "A worker deciding whether to keep a verbal promise to a colleague who keeps theirs",
+      "A supplier deciding whether to keep a delivery date when the buyer keeps its payments on time"
+    ],
+    "matrix": {
+      "rows": [
+        "Keep the promise",
+        "Break the promise"
+      ],
+      "cols": [
+        "Others keep theirs",
+        "Others break theirs"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Keep promises that are small and checkable first, so trust is built on evidence.",
+      "Write down commitments, so both sides can see what was promised and when.",
+      "Reward keeping promises publicly, which makes it the expected behaviour."
+    ],
+    "pitfalls": [
+      "Breaking a promise because others seem to, which spreads the habit.",
+      "Assuming a verbal promise will be remembered without a record."
+    ],
+    "matrix_note": "simplified: a stylised promise form chosen to show the universalisability argument; the numbers are illustrative",
+    "sources": [
+      "From memory: Kant, Groundwork of the Metaphysics of Morals (1785), the second section (the formula of universal law)"
+    ]
+  },
+  {
+    "id": "pascal-wager-against-nature",
+    "name": "Pascal's Wager: A Decision Against Nature",
+    "category": "Simultaneous, decision under uncertainty, game against nature",
+    "summary": "Pascal argued that believing in God is the wise choice whatever the truth, because the possible gain is so large. It is a decision against nature rather than a contest, but it is often taught as a game.",
+    "how_it_works": "You believe or do not believe, and the world is one of two states. Belief costs a little if the state is empty and gains a great deal if it is true. The second player, nature, does not gain from your choice. The table shows the structure of Pascal's argument, and its critics point out that it depends on the values chosen for each state.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": [
+      "society",
+      "everyday"
+    ],
+    "examples": [
+      "Choosing whether to take out insurance against an event that may never happen",
+      "Deciding whether to prepare for a rare but severe risk, such as a flood"
+    ],
+    "matrix": {
+      "rows": [
+        "Believe",
+        "Do not believe"
+      ],
+      "cols": [
+        "The state is true",
+        "The state is false"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          [
+            -3,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Check whether the payoffs are honest: the argument depends on the size of the gain and the chance it is real.",
+      "Treat the decision as one about risk, and compare it with other choices that cost the same.",
+      "If the payoffs are unknown, look for a choice that does well in every state rather than one that bets on one."
+    ],
+    "pitfalls": [
+      "Accepting the wager without questioning the size of the gain, which the argument assumes.",
+      "Treating a decision against nature as if the other side is choosing against you."
+    ],
+    "matrix_note": "simplified: a decision against nature shown as a table; the second player does not choose or gain from your choice, and the values are chosen to show the argument",
+    "sources": [
+      "From memory: Pascal, Pensées (1670), the section on the wager"
+    ]
+  },
+  {
+    "id": "hegel-recognition-struggle",
+    "name": "Hegel's Struggle for Recognition",
+    "category": "Simultaneous, conflict, recognition and status",
+    "summary": "Hegel described two people who each want recognition from the other. Fighting for it is costly, and yielding means accepting an unequal status. Each would rather the other yield.",
+    "how_it_works": "Each side fights or yields. If one fights and the other yields, the fighter gains recognition and the yielder loses it. If both fight, both are badly hurt. If both yield, neither gains. The stable outcomes have one side yielding, so the struggle is decided by who is more willing to risk the fight. Hegel's point is that recognition is built through this contest, not given freely.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": [
+      "society",
+      "politics",
+      "games"
+    ],
+    "examples": [
+      "Two rivals for a respected role who each want the other to back down first",
+      "Two countries in a dispute over status who each wait for the other to concede"
+    ],
+    "matrix": {
+      "rows": [
+        "Fight for recognition",
+        "Yield"
+      ],
+      "cols": [
+        "Fight for recognition",
+        "Yield"
+      ],
+      "payoffs": [
+        [
+          [
+            -2,
+            -2
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Make your claim in terms the other side can accept, which reduces the need for a fight.",
+      "Offer a formal recognition that costs the other little, such as a title or a shared role.",
+      "Recognise the other side's standing early, so the contest does not start."
+    ],
+    "pitfalls": [
+      "Fighting for status that would be given through a fair process anyway.",
+      "Yielding without a recognised role, which can leave the relationship permanently unequal."
+    ],
+    "matrix_note": "simplified: a status contest with chosen payoffs; the two pure outcomes show that one side yields, and the numbers are not measured",
+    "sources": [
+      "From memory: Hegel, Phenomenology of Spirit (1807), the section on lordship and bondage"
+    ]
+  },
+  {
+    "id": "hobbes-covenant-without-sword",
+    "name": "Hobbes: Covenants Without a Sword",
+    "category": "Simultaneous, social contract, state of nature",
+    "summary": "Hobbes argued that without a common power to enforce agreements, people break them, and life is 'solitary, poor, nasty, brutish, and short'. A covenant kept by one side alone is exploited by the other.",
+    "how_it_works": "Each side keeps the covenant or breaks it. Keeping while the other breaks leaves you exploited. If both break, both are worse off than if both kept it, but each still prefers to break once the other has. The only stable outcome is mutual breaking, which is Hobbes's case for a sovereign who can enforce covenants.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": [
+      "society",
+      "government",
+      "politics"
+    ],
+    "examples": [
+      "Two villages sharing a river with no court to settle disputes",
+      "Two armed groups agreeing a truce with no way to punish a breach"
+    ],
+    "matrix": {
+      "rows": [
+        "Keep the covenant",
+        "Break it"
+      ],
+      "cols": [
+        "Keep the covenant",
+        "Break it"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            -1
+          ],
+          [
+            -2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            -2
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Pair the agreement with a shared monitor, so breaches become visible.",
+      "Agree a penalty that both sides can apply, to make breaking costly.",
+      "Build a third party, such as a court or mediator, that can enforce the covenant."
+    ],
+    "pitfalls": [
+      "Keeping a covenant alone while the other side breaks it, which invites exploitation.",
+      "Assuming a verbal promise is enough when neither side can be punished for breaking it."
+    ],
+    "matrix_note": "simplified: a prisoner's-dilemma form chosen to show the need for enforcement; the numbers are illustrative, not measured",
+    "sources": [
+      "From memory: Hobbes, Leviathan (1651), chapter 13 (the state of nature)"
+    ]
+  },
+  {
+    "id": "hobbes-covenant-with-sovereign",
+    "name": "Hobbes: Covenants With a Sovereign",
+    "category": "Simultaneous, social contract, enforcement",
+    "summary": "With a sovereign who punishes breakers, keeping the covenant can be a stable outcome. This version of the covenant shows what changes when a common power exists.",
+    "how_it_works": "Each side keeps or breaks the covenant, and the sovereign's punishment changes what breaking is worth. Mutual keeping is stable, and mutual breaking is also stable, so the game becomes a coordination problem. Hobbes's answer is that the sovereign's standing presence makes keeping the expected choice.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "common-interest",
+      "enforcement": "yes",
+      "communication": "no"
+    },
+    "domains": [
+      "society",
+      "government",
+      "politics"
+    ],
+    "examples": [
+      "Two merchants trading under a court that enforces contracts",
+      "Two neighbours sharing a road where a local authority fines blockages"
+    ],
+    "matrix": {
+      "rows": [
+        "Keep the covenant",
+        "Break it"
+      ],
+      "cols": [
+        "Keep the covenant",
+        "Break it"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Make the enforcer's rule public, so both sides know the consequence of breaking.",
+      "Enforce early and in small steps, which keeps breaking expensive.",
+      "Check that the enforcer is trusted by both sides, since its authority is what holds the covenant."
+    ],
+    "pitfalls": [
+      "Assuming enforcement works without a trusted, impartial enforcer.",
+      "Enforcing only against one side, which breaks the covenant from the other direction."
+    ],
+    "matrix_note": "simplified: a coordination form with enforcement chosen to show the contrast with the version without a sovereign; the numbers are not measured",
+    "sources": [
+      "From memory: Hobbes, Leviathan (1651), chapter 17 (the commonwealth and the sovereign)"
+    ]
+  },
+  {
+    "id": "payoff-vs-risk-dominance",
+    "name": "Payoff Dominance Versus Risk Dominance",
+    "category": "Simultaneous, coordination, rationality and risk",
+    "summary": "Two equilibria can differ in two ways: one pays more if both play it, and the other is safer if you are unsure what the other will do. Philosophers and economists disagree about which one rational players should choose.",
+    "how_it_works": "Each side chooses option A or B. If both choose A, both get the best payoff. If both choose B, both get a lower but safer payoff. The solver finds two stable outcomes, and both are reached when each side expects the other to match. The question is whether to aim for the best outcome or the one with less risk.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "common-interest",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": [
+      "society",
+      "games",
+      "everyday"
+    ],
+    "examples": [
+      "Two drivers choosing between a fast route that needs both to cooperate and a slow route that is always safe",
+      "Two colleagues agreeing on an ambitious shared standard, or a simpler one that both can reach"
+    ],
+    "matrix": {
+      "rows": [
+        "Option A",
+        "Option B"
+      ],
+      "cols": [
+        "Option A",
+        "Option B"
+      ],
+      "payoffs": [
+        [
+          [
+            4,
+            4
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Aim for the payoff-dominant option only when you can signal your choice in advance.",
+      "Choose the safer option when you cannot confirm what the other side will do.",
+      "Use a discussion to align expectations, which can make the best outcome the expected one."
+    ],
+    "pitfalls": [
+      "Assuming the best outcome will be reached just because it is the best.",
+      "Settling for the safe option when a clear signal would have secured the better one."
+    ],
+    "matrix_note": "simplified: a stylised coordination form with two equilibria, one better and one safer; the numbers are illustrative",
+    "sources": [
+      "Checked: Harsanyi and Selten, A General Theory of Equilibrium Selection in Games (MIT Press, 1988)"
+    ]
+  },
+  {
+    "id": "locke-property-claims",
+    "name": "Locke: Claiming Shared Land",
+    "category": "Simultaneous, property, claims and yielding",
+    "summary": "Locke argued that property arises when people mix their labour with resources. Two neighbours who both claim a plot must decide whether to press the claim or yield, and conflict is costly for both.",
+    "how_it_works": "Each neighbour claims the plot or yields. A claim that goes unchallenged pays the claimant. If both claim, both lose time and money in dispute. If both yield, the plot goes unused. The stable outcomes have one neighbour claiming and the other yielding, so the outcome depends on who is more willing to press the claim.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": [
+      "society",
+      "everyday",
+      "economy"
+    ],
+    "examples": [
+      "Two farmers who each think a field boundary is theirs",
+      "Two families with an old claim to the same plot of land"
+    ],
+    "matrix": {
+      "rows": [
+        "Claim the plot",
+        "Yield"
+      ],
+      "cols": [
+        "Claim the plot",
+        "Yield"
+      ],
+      "payoffs": [
+        [
+          [
+            -1,
+            -1
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Agree a boundary survey before either side builds, so the claim is settled by evidence.",
+      "Use a mediator or a registered title rather than a contest of force.",
+      "If you yield, get a written agreement that the plot stays yours in future."
+    ],
+    "pitfalls": [
+      "Building on disputed land, which turns the claim into a costly conflict.",
+      "Yielding without a record, which weakens your claim later."
+    ],
+    "matrix_note": "simplified: a property dispute form chosen to show the claim and yield choice; the numbers are not measured values or costs",
+    "sources": [
+      "From memory: Locke, Second Treatise of Government (1689), chapter 5 (of property)"
+    ]
+  },
+  {
+    "id": "machiavelli-fear-or-love",
+    "name": "Machiavelli: Fear or Love",
+    "category": "Simultaneous, power, legitimacy and rebellion",
+    "summary": "Machiavelli asked whether a ruler is safer loved or feared. The table shows a feared ruler who provokes rebellion, which is worse for both sides than the ruler being loved.",
+    "how_it_works": "The ruler seeks to be loved or feared, and the subjects obey or rebel. A loved ruler whose subjects obey does well for both. Fear that makes subjects obey can work, but the table shows fear provoking rebellion, the only stable outcome. Machiavelli's advice is that a ruler who is feared must avoid being hated, which the game makes concrete.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "yes"
+    },
+    "domains": [
+      "politics",
+      "government"
+    ],
+    "examples": [
+      "A new head of an organisation choosing between being admired and being obeyed",
+      "A governor deciding whether to rule through popularity or through fear of penalties"
+    ],
+    "matrix": {
+      "rows": [
+        "Be loved",
+        "Be feared"
+      ],
+      "cols": [
+        "Subjects obey",
+        "Subjects rebel"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            1
+          ],
+          [
+            -2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            -2
+          ],
+          [
+            -1,
+            -1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Earn obedience through fair treatment, which keeps the ruler loved and subjects willing.",
+      "If fear is needed, use it sparingly and avoid the appearance of cruelty, since hatred invites rebellion.",
+      "Give subjects a channel for grievances, so discontent is not left to build up."
+    ],
+    "pitfalls": [
+      "Relying on fear alone, which can turn obedience into rebellion.",
+      "Assuming a loved ruler never needs to act firmly, when some order must be kept."
+    ],
+    "matrix_note": "simplified: a stylised rebellion form chosen to show Machiavelli's contrast; the numbers are illustrative",
+    "sources": [
+      "Checked: Machiavelli, The Prince (1532), chapter 17 (Concerning cruelty and clemency, and whether it is better to be loved than feared)"
+    ]
+  },
+  {
+    "id": "mill-tolerance-of-opinion",
+    "name": "Mill: Tolerance of Opinion",
+    "category": "Simultaneous, liberty, speech and tolerance",
+    "summary": "Mill argued that society should tolerate unpopular opinions, because even a false view can sharpen the truth. Suppressing speech is tempting, but tolerance lets truth and error be tested against each other.",
+    "how_it_works": "A speaker voices an opinion or stays silent, and the audience tolerates or suppresses it. Speaking under tolerance is the best outcome for both, because debate improves understanding. If the audience suppresses an opinion, speakers stay silent and no one learns. The stable outcomes are mutual tolerance and mutual silence.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "yes"
+    },
+    "domains": [
+      "society",
+      "everyday",
+      "government"
+    ],
+    "examples": [
+      "A student speaking against a popular view in a seminar",
+      "A local newspaper printing an unpopular opinion column"
+    ],
+    "matrix": {
+      "rows": [
+        "Speak",
+        "Stay silent"
+      ],
+      "cols": [
+        "Audience tolerates",
+        "Audience suppresses"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -2,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Argue against the view, not the person, which keeps the debate open.",
+      "Protect unpopular speakers from punishment, so that silence is not the rational choice.",
+      "Answer a wrong opinion with evidence in public, rather than suppressing it."
+    ],
+    "pitfalls": [
+      "Suppressing a view because it is wrong, which removes the chance to show it is.",
+      "Staying silent for fear of the crowd, which leaves the debate one-sided."
+    ],
+    "matrix_note": "simplified: a speech-and-suppression form chosen to show Mill's argument; the numbers are illustrative",
+    "sources": [
+      "From memory: Mill, On Liberty (1859), chapter 2 (of the liberty of thought and discussion)"
+    ]
+  },
+  {
+    "id": "nozick-taking-by-force",
+    "name": "Nozick: Entitlement or Taking by Force",
+    "category": "Simultaneous, entitlement, property and force",
+    "summary": "Nozick argued that holdings are just when acquired and transferred by just means, so a transfer should be honoured. Taking by force breaks that entitlement, and it leaves both sides worse off in a dispute.",
+    "how_it_works": "One side respects the other's entitlement or takes by force, and the other side respects or resists. If one takes by force while the other respects, the taker gains. If both take by force, both suffer. Two stable outcomes exist: one side respects while the other takes, so the outcome depends on who is willing to use force.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": [
+      "society",
+      "government"
+    ],
+    "examples": [
+      "Two neighbours with a disputed inheritance, one of whom threatens to take the land",
+      "Two parties to a contract, where one simply refuses to honour a transfer"
+    ],
+    "matrix": {
+      "rows": [
+        "Respect the entitlement",
+        "Take by force"
+      ],
+      "cols": [
+        "Respect the entitlement",
+        "Take by force"
+      ],
+      "payoffs": [
+        [
+          [
+            -2,
+            -2
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Settle disputes through a court or an agreed arbiter, which keeps entitlements in force.",
+      "Document transfers, so that the entitlement is clear to both sides.",
+      "If you are the weaker party, seek a legal remedy rather than resisting by force."
+    ],
+    "pitfalls": [
+      "Taking by force because the other side seems weak, which can start a costly conflict.",
+      "Assuming a past transfer was unjust without checking its history."
+    ],
+    "matrix_note": "simplified: an entitlement-and-force form chosen to show Nozick's point; the numbers are illustrative",
+    "sources": [
+      "Checked: Nozick, Anarchy, State, and Utopia (1974), chapter 7 (Distributive Justice)"
+    ]
+  },
+  {
+    "id": "reciprocity-giving-first",
+    "name": "Reciprocity: Giving First",
+    "category": "Simultaneous, reciprocity, gift and return",
+    "summary": "Gifts create obligations, and reciprocity is a basic norm in many societies. Giving first can start a relationship of trust, but if the other side never returns the gift, the giver loses.",
+    "how_it_works": "One side gives first or waits, and the other returns or keeps. Giving and returning is best for both. Giving alone is a loss, and waiting when the other side waits gives nothing. The two stable outcomes are mutual giving and mutual waiting, so the first giver takes a risk that starts the cycle.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "common-interest",
+      "enforcement": "no",
+      "communication": "yes"
+    },
+    "domains": [
+      "society",
+      "everyday",
+      "business"
+    ],
+    "examples": [
+      "A neighbour who lends a ladder and expects the favour returned",
+      "A supplier who offers a discount before the buyer has committed"
+    ],
+    "matrix": {
+      "rows": [
+        "Give first",
+        "Wait"
+      ],
+      "cols": [
+        "Return the favour",
+        "Keep the gain"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -2,
+            0
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Give something small first, so the return is easy and the relationship grows.",
+      "Return favours promptly, so reciprocity becomes a visible norm.",
+      "Watch for a pattern of never returning favours, and reduce future giving to that partner."
+    ],
+    "pitfalls": [
+      "Giving a large gift that creates an obligation the other side cannot repay.",
+      "Waiting indefinitely for the other side to give first."
+    ],
+    "matrix_note": "simplified: a reciprocity form with two stable outcomes, chosen to show the risk of the first gift; the numbers are illustrative",
+    "sources": [
+      "Checked: Mauss, Essai sur le don, L'Année sociologique (1925)"
+    ]
+  },
+  {
+    "id": "aristotle-golden-mean",
+    "name": "Aristotle: The Golden Mean",
+    "category": "Simultaneous, virtue, moderation between extremes",
+    "summary": "Aristotle held that virtue lies in a mean between excess and deficiency, such as generosity between stinginess and wastefulness. The table shows the moderate choice as the stable one for both sides.",
+    "how_it_works": "Each side gives too little, a moderate amount, or too much. Moderation matches the other side's moderation and pays most for both. Too little or too much leaves the other side worse off, so the stable outcome is the mean on both sides, the one the virtuous person chooses.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "common-interest",
+      "enforcement": "no",
+      "communication": "yes"
+    },
+    "domains": [
+      "society",
+      "everyday"
+    ],
+    "examples": [
+      "Two friends deciding how much to lend each other, neither too little nor too much",
+      "Two colleagues settling how much time to spend on a shared task"
+    ],
+    "matrix": {
+      "rows": [
+        "Too little",
+        "The mean",
+        "Too much"
+      ],
+      "cols": [
+        "Too little",
+        "The mean",
+        "Too much"
+      ],
+      "payoffs": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            -1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Aim for the moderate choice that fits the situation, not a fixed rule.",
+      "Adjust your giving to what the other side gives, which tends to find the mean.",
+      "Judge excess and deficiency by their effect on the relationship, not by how they feel."
+    ],
+    "pitfalls": [
+      "Taking the mean as a compromise that splits the difference, rather than the right amount for the case.",
+      "Giving too little out of caution, which the other side will read as stinginess."
+    ],
+    "matrix_note": "simplified: a three-level form chosen to show the mean as the stable choice; the numbers are illustrative",
+    "sources": [
+      "From memory: Aristotle, Nicomachean Ethics, Book II (on the mean)"
+    ]
+  },
+  {
+    "id": "spinoza-mutual-aid",
+    "name": "Spinoza: Mutual Aid From Self-Interest",
+    "category": "Simultaneous, rationality, self-interest and cooperation",
+    "summary": "Spinoza argued that reason leads people to help each other, because mutual aid serves their own interest. The table shows helping as a stable outcome, though not the only one.",
+    "how_it_works": "Each person helps or keeps to themselves. If both help, both gain, and it is the best outcome. If one helps alone, the helper bears a cost. If both keep to themselves, neither gains. The solver finds two pure outcomes, mutual help and mutual neglect, and a mixed one, so reason must also be backed by trust.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "common-interest",
+      "enforcement": "no",
+      "communication": "yes"
+    },
+    "domains": [
+      "society",
+      "everyday"
+    ],
+    "examples": [
+      "Two neighbours who agree to watch each other's homes while away",
+      "Two colleagues who share knowledge rather than hoarding it"
+    ],
+    "matrix": {
+      "rows": [
+        "Help",
+        "Keep to yourself"
+      ],
+      "cols": [
+        "Help",
+        "Keep to yourself"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Start with a small favour, so the other side sees that helping pays.",
+      "Build a record of help, which makes mutual aid the expected choice.",
+      "Make the terms of help explicit, so neither side has to guess."
+    ],
+    "pitfalls": [
+      "Assuming reason alone will make others help, when trust must be built.",
+      "Helping without any return, which teaches others that help is free to take."
+    ],
+    "matrix_note": "simplified: a mutual-aid form with two pure outcomes and a mixed one, chosen to show Spinoza's point; the numbers are illustrative",
+    "sources": [
+      "From memory: Spinoza, Ethics (1677), Part IV (of human bondage and the power of reason)"
+    ]
+  }
+]

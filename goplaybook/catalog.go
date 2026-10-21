@@ -18,7 +18,7 @@ import (
 var dataFS embed.FS
 
 // nonGameFiles are data files that are not lists of games.
-var nonGameFiles = map[string]bool{"areas.json": true, "simulations.json": true, "problems.json": true, "setup-help.json": true, "guide.json": true, "keywords.json": true, "tools.json": true, "combinations.json": true, "engine-games.json": true}
+var nonGameFiles = map[string]bool{"areas.json": true, "topics.json": true, "simulations.json": true, "problems.json": true, "setup-help.json": true, "guide.json": true, "keywords.json": true, "tools.json": true, "combinations.json": true, "engine-games.json": true}
 
 // Traits lists every trait a scenario or game can declare, in display order.
 var Traits = []string{"players", "timing", "interaction", "information", "payoff", "communication", "enforcement", "commitment", "bargaining"}
@@ -60,6 +60,7 @@ type Game struct {
 	MatrixUnavailable string            `json:"matrix_unavailable"`
 	Strategies        []string          `json:"strategies"`
 	Pitfalls          []string          `json:"pitfalls"`
+	Sources           []string          `json:"sources"`
 }
 
 // PlaybookHome is $PLAYBOOK_HOME if set, otherwise ~/.playbook. Overlays live here.

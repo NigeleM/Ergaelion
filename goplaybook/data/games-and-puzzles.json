@@ -290,6 +290,9 @@
       "Escalating because you have already invested, which is the classic sunk-cost error.",
       "Assuming the rival will stop first without any signal."
     ],
-    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two bidders each stop or raise; raising against a stopper wins, and escalation can cost both)"
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two bidders each stop or raise; raising against a stopper wins, and escalation can cost both)",
+    "sources": [
+      "Checked: Shubik, The Dollar Auction Game: A Paradox in Noncooperative Behavior and Escalation, Journal of Conflict Resolution 15 (1971): 109-111"
+    ]
   }
 ]

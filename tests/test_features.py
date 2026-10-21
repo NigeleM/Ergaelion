@@ -10,9 +10,46 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from gtplaybook import record  # noqa: E402
-from gtplaybook.catalog import find_game, load_areas, load_games, save_overlay  # noqa: E402
+from gtplaybook.catalog import find_game, load_areas, load_games, load_topics, save_overlay  # noqa: E402
 from gtplaybook.catalog import DATA_DIR
 from gtplaybook.sim import endings, load_simulations, solve, trace  # noqa: E402
+
+
+class VerificationNoteTests(unittest.TestCase):
+    """Every game card tells the reader to verify claims in the original work."""
+
+    def test_every_game_card_ends_with_the_verification_note(self):
+        from gtplaybook.i18n import t
+        note = t("verify_note")
+        for game in load_games():
+            import io
+            import contextlib
+            from gtplaybook import cli
+            buffer = io.StringIO()
+            with contextlib.redirect_stdout(buffer):
+                cli.cmd_show(type("Args", (), {"game": game["id"], "formats": None})(), load_games())
+            self.assertIn(note, buffer.getvalue(), game["id"])
+
+
+class SimulationCatalogueTests(unittest.TestCase):
+    """The simulations file is the source of truth for entries no script generates. Losing one is a silent loss."""
+
+    def test_rebuilding_the_simulations_reproduces_the_data_file(self):
+        import json
+        import subprocess
+        import tempfile
+
+        out = Path(tempfile.mkdtemp()) / "simulations.json"
+        subprocess.run([sys.executable, str(ROOT / "tools" / "simulations" / "build_all.py"), str(out)],
+                       check=True, capture_output=True)
+        self.assertEqual(json.loads(out.read_text(encoding="utf-8")),
+                         json.loads((ROOT / "gtplaybook" / "data" / "simulations.json").read_text(encoding="utf-8")))
+
+    def test_simulation_count_and_known_json_only_entries_are_kept(self):
+        ids = {sim["id"] for sim in load_simulations()}
+        self.assertGreaterEqual(len(ids), 237)
+        for kept in ("ambush-on-the-road", "repeated-cartel-live", "salary-talk-with-manager", "naval-blockade"):
+            self.assertIn(kept, ids)
 
 
 class CatalogCoverageTests(unittest.TestCase):
@@ -23,6 +60,15 @@ class CatalogCoverageTests(unittest.TestCase):
         listed = {g for fam in load_areas() for sd in fam["subdomains"] for g in sd["games"]}
         for game in load_games():
             self.assertIn(game["id"], listed)
+
+    def test_every_game_is_in_a_topic_and_every_topic_has_games(self):
+        topics = {topic["id"] for topic in load_topics()}
+        games = load_games()
+        for game in games:
+            self.assertTrue(game["domains"], game["id"])
+            self.assertTrue(set(game["domains"]) <= topics, game["id"])
+        for topic in topics:
+            self.assertTrue(any(topic in game["domains"] for game in games), topic)
 
 
 class SimulationTests(unittest.TestCase):
@@ -687,6 +733,7 @@ class TerminalAndParityTests(unittest.TestCase):
 class GoPythonParityTests(unittest.TestCase):
     CASES = [
         ["problems", "work"], ["sim", "--family", "war"], ["guide", "power", "48"], ["areas", "war"],
+        ["topics"], ["topics", "military"], ["topics", "everyday life"],
         ["list", "--domain", "military"], ["setup", "chicken"], ["sim"],
         ["solve", "3,3 0,5; 5,0 1,1"],
         ["solve", "2,1 0,0; 0,0 1,2", "--rows", "Opera,Football", "--cols", "Opera,Football"],
@@ -769,6 +816,9 @@ class GoPythonParityTests(unittest.TestCase):
             "rock-paper-scissors": "p\n" * 25 + "q\n",
             "colonel-blotto": "2 2 2\n6 0 0\nx\n1 2 3\n0 3 3\n4 1 1\n2 2 2\n1 1 1\n",
             "border-patrol": "2\n" * 14 + "q\n",
+            "ultimatum": "x\n11\nh\n2\n3\n10\nq\n",
+            "beauty-contest": "h\n20\n50\nq\n",
+            "matching-pennies": "h\nt\nh\nq\n",
         }
         for game, script in scripts.items():
             outputs = []
@@ -777,7 +827,8 @@ class GoPythonParityTests(unittest.TestCase):
                                       env=env, timeout=60)
                 outputs.append(ansi.sub("", done.stdout))
             self.assertEqual(outputs[0], outputs[1], game)
-            self.assertIn("Hint:" if game in ("tic-tac-toe", "nim", "connect-four") else "Round", outputs[0])
+            self.assertIn("Hint:" if game in ("tic-tac-toe", "nim", "connect-four", "ultimatum", "beauty-contest")
+                          else "Round", outputs[0])
 
 
 @unittest.skipUnless(go_binary_runs(), "Go binary missing or built for another system; run make build")
@@ -1088,12 +1139,114 @@ class EngineTests(unittest.TestCase):
         self.assertEqual(engine.patrol_engine_gate([]), 0)
         self.assertEqual(engine.patrol_engine_gate([2, 2, 0]), 2)
 
+    def test_beauty_engine_forecasts_two_thirds_of_your_average(self):
+        from gtplaybook import engine
+
+        self.assertEqual(engine.beauty_engine_guess([]), 33)
+        self.assertEqual(engine.beauty_engine_guess([20]), 13)
+        self.assertEqual(engine.beauty_engine_guess([20, 50]), 23)
+
+    def test_half_the_engine_guess_is_on_the_target_when_it_is_even(self):
+        from gtplaybook import engine
+
+        for engine_guess in range(0, engine.BEAUTY_TOP + 1, 2):
+            self.assertEqual(engine.beauty_target(engine_guess // 2, engine_guess), engine_guess // 2)
+
+    def test_matching_pennies_engine_shows_against_your_most_common_call(self):
+        from gtplaybook import engine
+
+        self.assertEqual(engine.penny_engine_coin([]), "t")
+        self.assertEqual(engine.penny_engine_coin(["h", "h", "t"]), "t")
+        self.assertEqual(engine.penny_engine_coin(["t", "t", "h"]), "h")
+
+    def test_ultimatum_engine_accepts_from_three_coins(self):
+        from gtplaybook import engine
+
+        self.assertFalse(engine.ultimatum_accepts(2))
+        self.assertTrue(engine.ultimatum_accepts(3))
+
+    def test_every_duel_engine_names_a_game_with_a_payoff_table(self):
+        from gtplaybook import engine
+
+        catalog = {game["id"]: game for game in load_games()}
+        duels = [game for game in engine.engine_games() if game.get("kind") == "duel"]
+        self.assertGreaterEqual(len(duels), 40)
+        for game in duels:
+            self.assertIn(game["game"], catalog, game["id"])
+            self.assertTrue(catalog[game["game"]].get("matrix"), game["id"])
+            self.assertIn(game["policy"], ("learner", "reactive", "exploiter", "mirror"), game["id"])
+            self.assertGreater(game["rounds"], 0, game["id"])
+
+    def test_duel_learner_answers_your_most_common_row(self):
+        from gtplaybook import engine
+
+        matrix = {"rows": ["a", "b"], "cols": ["x", "y"],
+                  "payoffs": [[[0, 3], [2, 0]], [[0, 0], [1, 5]]]}
+        self.assertEqual(engine.duel_engine_col(matrix, [], "learner"), 0)
+        self.assertEqual(engine.duel_engine_col(matrix, [0, 0, 1], "learner"), 0)
+        self.assertEqual(engine.duel_engine_col(matrix, [1, 1, 1], "learner"), 1)
+        self.assertEqual(engine.duel_engine_col(matrix, [1, 1, 0], "learner"), 1)
+        self.assertEqual(engine.duel_best_row(matrix, 1), 0)
+
+    def test_duel_exploiter_plays_the_reply_to_your_likely_next_row(self):
+        from gtplaybook import engine
+
+        matrix = {"rows": ["a", "b"], "cols": ["x", "y"],
+                  "payoffs": [[[0, 3], [2, 0]], [[0, 0], [1, 5]]]}
+        self.assertEqual(engine.duel_predicted_row(matrix, []), 0)
+        # After a you tend to play b, so after the last a the expected row is b.
+        self.assertEqual(engine.duel_predicted_row(matrix, [0, 1, 0, 1, 0]), 1)
+        self.assertEqual(engine.duel_engine_col(matrix, [0, 1, 0, 1, 0], "exploiter"), 1)
+        self.assertEqual(engine.duel_engine_col(matrix, [], "exploiter"), 0)
+
+    def test_duel_mirror_answers_your_last_row_with_the_same_number(self):
+        from gtplaybook import engine
+
+        matrix = {"rows": ["cooperate", "defect"], "cols": ["cooperate", "defect"],
+                  "payoffs": [[[3, 3], [0, 5]], [[5, 0], [1, 1]]]}
+        self.assertEqual(engine.duel_engine_col(matrix, [], "mirror"), 0)
+        self.assertEqual(engine.duel_engine_col(matrix, [0, 1], "mirror"), 1)
+        self.assertEqual(engine.duel_engine_col(matrix, [1, 0], "mirror"), 0)
+
+    def test_duel_reactive_answers_your_last_row(self):
+        from gtplaybook import engine
+
+        matrix = {"rows": ["a", "b"], "cols": ["x", "y"],
+                  "payoffs": [[[0, 3], [2, 0]], [[0, 0], [1, 5]]]}
+        self.assertEqual(engine.duel_engine_col(matrix, [], "reactive"), 0)
+        self.assertEqual(engine.duel_engine_col(matrix, [0], "reactive"), 0)
+        self.assertEqual(engine.duel_engine_col(matrix, [0, 1], "reactive"), 1)
+
+    def test_every_duel_engine_plays_the_same_in_both_versions(self):
+        import os
+        import re
+        import subprocess
+
+        from gtplaybook import engine
+
+        ansi = re.compile(r"\x1b\[[0-9;]*m")
+        env = dict(os.environ, PLAYBOOK_HOME=tempfile.mkdtemp())
+        for game in engine.engine_games():
+            if game.get("kind") != "duel":
+                continue
+            script = "h\n" + "1\n" * game["rounds"] + "q\n"
+            outputs = []
+            for binary in (ROOT / "playbook", ROOT / "bin" / "Ergaelion"):
+                done = subprocess.run([str(binary), "engine", game["id"]], input=script, capture_output=True,
+                                      text=True, env=env, timeout=60)
+                outputs.append(ansi.sub("", done.stdout))
+            self.assertEqual(outputs[0], outputs[1], game["id"])
+            self.assertIn("Hint:", outputs[0], game["id"])
+            self.assertIn("Final score", outputs[0], game["id"])
+
     def test_engine_list_and_unknown_game(self):
         from gtplaybook import engine
 
         ids = [game["id"] for game in engine.engine_games()]
-        self.assertEqual(ids, ["tic-tac-toe", "nim", "connect-four", "rock-paper-scissors", "colonel-blotto",
-                               "border-patrol"])
+        self.assertEqual(ids[:9], ["tic-tac-toe", "nim", "connect-four", "rock-paper-scissors", "colonel-blotto",
+                                   "border-patrol", "ultimatum", "beauty-contest", "matching-pennies"])
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertGreaterEqual(len(ids), 50)
         with self.assertRaises(ValueError):
             engine.find_engine_game(engine.engine_games(), "no-such-game")
 

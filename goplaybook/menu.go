@@ -13,12 +13,12 @@ import (
 // item. Results open full screen too, and q returns to the list that was open.
 
 var menuKeys = []string{"menu_games", "menu_simulations", "menu_engine", "menu_advise", "menu_solve", "menu_areas",
-	"menu_guide", "menu_records", "menu_repeat", "menu_claude", "menu_theme", "menu_quit"}
+	"menu_topics", "menu_guide", "menu_records", "menu_repeat", "menu_claude", "menu_theme", "menu_quit"}
 
 var menuDetails = map[string]string{
 	"menu_games": "detail_games", "menu_simulations": "detail_simulations", "menu_engine": "detail_engine",
 	"menu_advise": "detail_advise",
-	"menu_solve":  "detail_solve", "menu_areas": "detail_areas", "menu_guide": "detail_guide",
+	"menu_solve":  "detail_solve", "menu_areas": "detail_areas", "menu_topics": "detail_topics", "menu_guide": "detail_guide",
 	"menu_records": "detail_records", "menu_repeat": "detail_repeat",
 	"menu_theme": "detail_theme", "menu_command": "detail_command", "menu_claude": "detail_claude",
 	"menu_quit": "detail_quit",
@@ -138,6 +138,8 @@ func runMenuWith(s *session, backQuits bool) bool {
 			askAndShow(s, t("ask_matrix")+": ", func(text string) string { return "solve " + quoteArg(text) })
 		case "menu_areas":
 			menuFamilies(s)
+		case "menu_topics":
+			menuTopics(s)
 		case "menu_guide":
 			menuGuide(s)
 		case "menu_records":
@@ -235,6 +237,62 @@ func menuFamilies(s *session) {
 			continue
 		}
 		menuFamilyGames(s, areas[idx])
+	}
+}
+
+// menuTopics lists the topics. Each one opens its games, which can be played or simulated.
+func menuTopics(s *session) {
+	topics, err := LoadTopics()
+	if err != nil {
+		return
+	}
+	items := make([]lineedit.Item, len(topics))
+	for i, topic := range topics {
+		items[i] = lineedit.Item{Label: topic.Name, Detail: topic.Summary}
+	}
+	for {
+		idx, _ := lineEditor().Pick(heading(t("pick_topic")), items, nil)
+		if idx < 0 || idx == lineedit.ErrNotTerminal {
+			return
+		}
+		menuTopicGames(s, topics[idx])
+	}
+}
+
+// menuTopicGames lists the games in a topic, each with its place in the families.
+func menuTopicGames(s *session, topic Topic) {
+	sims, err := LoadSimulations()
+	if err != nil {
+		return
+	}
+	hasSim := map[string]bool{}
+	for _, sim := range sims {
+		hasSim[sim.ID] = true
+	}
+	places, err := gameLocations()
+	if err != nil {
+		return
+	}
+	games := topicGames(s.games, topic.ID)
+	items := make([]lineedit.Item, len(games))
+	for i, g := range games {
+		items[i] = lineedit.Item{Label: g.Name, Detail: places[g.ID] + ". " + g.Summary}
+	}
+	extra := map[string]string{"s": t("simulate"), "p": t("play")}
+	for {
+		idx, key := lineEditor().Pick(heading(topic.Name), items, extra)
+		if idx < 0 || idx == lineedit.ErrNotTerminal {
+			return
+		}
+		id := games[idx].ID
+		switch key {
+		case "s":
+			runView(s, simCommand(id, hasSim[id], false))
+		case "p":
+			runPlain(s, simCommand(id, hasSim[id], true))
+		default:
+			runView(s, "show "+quoteArg(id))
+		}
 	}
 }
 
@@ -523,6 +581,12 @@ func runMenuTyped(s *session) bool {
 				line = "problems " + quoteArg(text)
 			} else {
 				line = "areas"
+			}
+		case "menu_topics":
+			if text := askLine(t("ask_topic") + ": "); text != "" {
+				line = "topics " + quoteArg(text)
+			} else {
+				line = "topics"
 			}
 		case "menu_guide":
 			mode := askLine(t("ask_guide") + ": ")

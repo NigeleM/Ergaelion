@@ -87,6 +87,8 @@ func run(args []string, games []Game) int {
 		err = cmdNew(args[1:], games)
 	case "areas":
 		err = cmdAreas(args[1:], games)
+	case "topics":
+		err = cmdTopics(args[1:], games)
 	case "log":
 		err = cmdLog(args[1:], games)
 	case "record":
@@ -294,6 +296,13 @@ func cmdShow(args []string, games []Game) error {
 			fmt.Println(bullet(p, "•"))
 		}
 	}
+	if len(g.Sources) > 0 {
+		fmt.Println("\n" + heading(t("sources")))
+		for _, s := range g.Sources {
+			fmt.Println(bullet(s, "•"))
+		}
+	}
+	fmt.Println("\n" + dim(t("verify_note")))
 	if formats != "" {
 		chosen, err := parseFormats(formats)
 		if err != nil {

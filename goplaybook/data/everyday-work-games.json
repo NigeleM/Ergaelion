@@ -1,0 +1,119 @@
+[
+  {
+    "id": "wage-offer-and-strike",
+    "name": "Wage Offer and Strike",
+    "category": "Simultaneous, bargaining, labour relations",
+    "summary": "An employer chooses a wage and workers decide whether to accept it or strike. A strike hurts both sides, so the question is whether a low offer will be accepted.",
+    "how_it_works": "The employer offers a high or a low wage. Workers accept, or refuse and strike. A high wage is accepted, and a low wage is accepted too, because a strike costs workers more than the lower pay. The stable outcome is a low wage that workers accept, which is better for the employer than a high one.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": ["work", "economy"],
+    "examples": [
+      "An employer deciding on a pay rise while a union weighs whether to take the offer",
+      "A company setting pay for a skilled team that could walk out before a deadline"
+    ],
+    "matrix": {
+      "rows": ["Offer a high wage", "Offer a low wage"],
+      "cols": ["Accept", "Strike"],
+      "payoffs": [
+        [[2, 2], [0, 1]],
+        [[3, 1], [-1, 0]]
+      ]
+    },
+    "strategies": [
+      "Before making an offer, find out what the team needs, and make the offer clear and fair enough to be accepted.",
+      "Use a pay review with a dated schedule, so workers see the wage path and do not have to strike to be heard.",
+      "If you are a worker, price the cost of a strike honestly before deciding; a credible threat is more effective than an actual strike."
+    ],
+    "pitfalls": [
+      "Offering the lowest wage, which can lead to a strike that costs the employer more than the pay saved.",
+      "Striking when the offer is already close to fair, which spends goodwill for little gain."
+    ],
+    "matrix_note": "simplified: illustrative numbers chosen to show the bargaining structure; they are not measured wages or strike costs"
+  },
+  {
+    "id": "landlord-repair-and-rent",
+    "name": "Landlord Repairs and Tenant Rent",
+    "category": "Simultaneous, trust, long-term relationship",
+    "summary": "A landlord can make a repair or delay it, and a tenant can pay the rent or withhold it. Trust in both directions gives the best result, but either side can gain by breaking it.",
+    "how_it_works": "Each side chooses. If the landlord repairs and the tenant pays, both are satisfied. If the landlord delays and the tenant withholds rent, both are worse off than the trust outcome but the landlord saves the repair cost. The game has two stable outcomes: mutual trust and mutual breakdown, so the path that is expected matters.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": ["everyday", "economy"],
+    "examples": [
+      "A tenant deciding whether to withhold rent until a broken boiler is fixed",
+      "A landlord deciding whether to put off a repair while the tenant is behind on rent"
+    ],
+    "matrix": {
+      "rows": ["Repair", "Delay the repair"],
+      "cols": ["Pay the rent", "Withhold rent"],
+      "payoffs": [
+        [[1, 2], [0, 0]],
+        [[0, 1], [2, 1]]
+      ]
+    },
+    "strategies": [
+      "Agree a repair date in writing and pay into an escrow account until it is done, so both sides have a fair path.",
+      "Start with a small, visible repair, so the tenant sees good faith before the rent is due.",
+      "Use the deposit or a mediator rather than a unilateral withholding, which is hard to undo."
+    ],
+    "pitfalls": [
+      "Withholding rent before giving the landlord a written notice, which can lead to eviction.",
+      "Delaying repairs in the hope the tenant will leave, which can lead to a deadlock and legal costs."
+    ],
+    "matrix_note": "simplified: a coordination game with two stable outcomes, chosen to show trust and breakdown; the numbers are not measured"
+  },
+  {
+    "id": "code-review-effort",
+    "name": "Code Review Effort",
+    "category": "Simultaneous, effort, incentives",
+    "summary": "A developer can submit careful work or rush it, and a reviewer can review thoroughly or skim. Careful work is costly, and skimming is cheap, so quality can slip without anyone deciding to lower it.",
+    "how_it_works": "The developer submits careful or quick work. The reviewer checks thoroughly or skims. Quick work is cheaper for the developer, and a skimmed review is cheaper for the reviewer. Each side's best reply to the other is the cheap option, so the stable outcome is quick work with a skimmed review, which is worse for the team than careful work with a careful check.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "imperfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": ["work", "business"],
+    "examples": [
+      "A developer and a reviewer on a team with a tight release date",
+      "An analyst preparing a report while a manager checks only the summary"
+    ],
+    "matrix": {
+      "rows": ["Careful work", "Quick work"],
+      "cols": ["Thorough review", "Skim the review"],
+      "payoffs": [
+        [[2, 2], [0, 3]],
+        [[1, 0], [3, 1]]
+      ]
+    },
+    "strategies": [
+      "Agree a short checklist for both sides, so a review has a clear and inexpensive standard.",
+      "Rotate reviewers and sample a few reviews in depth, which makes skimming risky.",
+      "Reward careful reviews with recognition, so thorough review is not a loss for the reviewer."
+    ],
+    "pitfalls": [
+      "Rewarding speed alone, which makes quick work and skimmed review the stable outcome.",
+      "Assuming the reviewer will catch every error, when a skimmed review misses most of them."
+    ],
+    "matrix_note": "simplified: illustrative numbers chosen to show the incentive to cut effort; they are not measured productivity or review times"
+  }
+]

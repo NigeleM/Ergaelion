@@ -22,7 +22,7 @@ import copy
 import json
 
 from . import record
-from .catalog import DATA_DIR, NON_GAME_FILES, TRAITS, check_overlays, find_game, load_areas, load_games, playbook_home, save_overlay, set_disabled
+from .catalog import DATA_DIR, NON_GAME_FILES, TRAITS, check_overlays, find_game, load_areas, load_games, load_topics, playbook_home, save_overlay, set_disabled
 from .scenario import DOMAIN_WORDS, TEMPLATE, describe, normalise, parse_scenario
 from . import keywords
 from .i18n import t
@@ -369,6 +369,11 @@ def cmd_show(args, games):
         print("\n" + heading(t("pitfalls")))
         for pitfall in game["pitfalls"]:
             print(bullet(pitfall))
+    if game.get("sources"):
+        print("\n" + heading(t("sources")))
+        for source in game["sources"]:
+            print(bullet(source))
+    print("\n" + dim(t("verify_note")))
     formats = getattr(args, "formats", None)
     if formats:
         folder, written = write_game(game, parse_formats(formats))
@@ -528,6 +533,50 @@ def record_line(game_id):
     return record.format_record(counts)
 
 
+def topic_games(games, topic_id):
+    """The games that belong to a topic, by name."""
+    return sorted((game for game in games if topic_id in game["domains"]), key=lambda game: game["name"])
+
+
+def game_locations():
+    """Each game's family and sub-domain, for showing where a game sits in the families."""
+    places = {}
+    for family in load_areas():
+        for sub in family["subdomains"]:
+            for game_id in sub["games"]:
+                places.setdefault(game_id, f"{family['family']}: {sub['name']}")
+    return places
+
+
+def cmd_topics(args, games):
+    topics = load_topics()
+    name = " ".join(args.name).lower()
+    if not name:
+        print()
+        for topic in topics:
+            count = len(topic_games(games, topic["id"]))
+            print(bold(topic["name"]) + "  " + dim(f"{count} games"))
+            print(dim(paragraph(topic["summary"])))
+        print(dim("\nRun 'topics <topic>' for its games, e.g. 'topics military'."))
+        return 0
+    exact = [item for item in topics if name in (item["id"], item["name"].lower())]
+    partial = [item for item in topics if name in item["id"] or name in item["name"].lower()]
+    matches = exact or partial
+    if not matches:
+        raise ValueError(f"no topic matches '{name}'. Run 'topics' to list them.")
+    if len(matches) > 1:
+        raise ValueError(f"'{name}' is ambiguous: " + ", ".join(item["name"] for item in matches))
+    topic = matches[0]
+    places = game_locations()
+    print("\n" + bold(topic["name"]))
+    print(dim(paragraph(topic["summary"])))
+    print()
+    for game in topic_games(games, topic["id"]):
+        print(bullet(f"{game['name']}  {dim(places.get(game['id'], game['id']))}"))
+    print(dim("\nRun 'show <game>' for any of them, or 'topics' for the other topics."))
+    return 0
+
+
 def cmd_areas(args, games):
     families = load_areas()
     name = " ".join(args.name).lower()
@@ -577,7 +626,7 @@ def cmd_engine(args, games):
         print(dim("\nRun 'engine <id>' to play one, e.g. 'engine nim'."))
         return 0
     game = find_engine_game(available, " ".join(args.name))
-    play_engine(game, ask=_ask_line, say=print)
+    play_engine(game, ask=_ask_line, say=print, catalog=games)
     return 0
 
 
@@ -1175,6 +1224,7 @@ HANDLERS = {
     "new": cmd_new,
     "template": cmd_template,
     "areas": cmd_areas,
+    "topics": cmd_topics,
     "log": cmd_log,
     "record": cmd_record,
     "edit": cmd_edit,
@@ -1235,6 +1285,9 @@ def build_parser():
 
     areas = sub.add_parser("areas", help="browse game families, sub-domains and reading lists")
     areas.add_argument("name", nargs="*", help="family name or part of it, e.g. war")
+
+    topics = sub.add_parser("topics", help="browse the games by topic, such as business or military")
+    topics.add_argument("name", nargs="*", help="topic name or part of it, e.g. military")
 
     log = sub.add_parser("log", help="record the outcome of a game you played")
     log.add_argument("game", help="game id or name")

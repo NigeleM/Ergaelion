@@ -13,14 +13,18 @@
         "games": [
           "prisoners-dilemma",
           "repeated-prisoners-dilemma",
-          "dictator-game"
+          "dictator-game",
+          "hobbes-covenant-without-sword",
+          "spinoza-mutual-aid"
         ]
       },
       {
         "name": "Coordination",
         "games": [
           "stag-hunt",
-          "battle-of-the-sexes"
+          "battle-of-the-sexes",
+          "hume-two-oarsmen",
+          "payoff-vs-risk-dominance"
         ]
       },
       {
@@ -28,7 +32,8 @@
         "games": [
           "chicken",
           "entry-deterrence",
-          "stackelberg-leadership"
+          "stackelberg-leadership",
+          "hegel-recognition-struggle"
         ]
       },
       {
@@ -85,7 +90,8 @@
       {
         "name": "Guessing and reasoning",
         "games": [
-          "keynes-beauty-contest"
+          "keynes-beauty-contest",
+          "basketball-foul-end-game"
         ]
       }
     ]
@@ -105,7 +111,9 @@
           "secretary-problem",
           "explore-exploit-bandit",
           "dating-marriage-market-search",
-          "matching-markets"
+          "matching-markets",
+          "dating-first-message",
+          "pascal-wager-against-nature"
         ]
       },
       {
@@ -113,7 +121,8 @@
         "games": [
           "household-chores-bills",
           "cake-cutting-fair-division",
-          "parent-teen-curfew-trust"
+          "parent-teen-curfew-trust",
+          "landlord-repair-and-rent"
         ]
       },
       {
@@ -193,20 +202,23 @@
           "firing-and-performance",
           "principal-agent",
           "promotion-tournament",
-          "team-production-shirking"
+          "team-production-shirking",
+          "code-review-effort"
         ]
       },
       {
         "name": "Position and power",
         "games": [
-          "defending-a-position"
+          "defending-a-position",
+          "wage-offer-and-strike"
         ]
       },
       {
         "name": "Contracts and partnerships",
         "games": [
           "hold-up",
-          "insurance-moral-hazard"
+          "insurance-moral-hazard",
+          "relationship-investment-holdup"
         ]
       }
     ]
@@ -227,20 +239,30 @@
         "games": [
           "coalition-formation",
           "veto-players-reform",
-          "agenda-setting-voting"
+          "agenda-setting-voting",
+          "filibuster-standoff",
+          "coalition-confidence-vote"
         ]
       },
       {
         "name": "Elections and voting",
         "games": [
           "median-voter-spatial-competition",
-          "all-pay-contest"
+          "all-pay-contest",
+          "negative-campaign-ads",
+          "gerrymander-arms-race",
+          "referendum-turnout-threshold",
+          "primary-moderate-or-extreme",
+          "third-party-spoiler",
+          "debate-attendance-frontrunner",
+          "vote-buying-secret-ballot"
         ]
       },
       {
         "name": "Lobbying and influence",
         "games": [
-          "lobbying-influence"
+          "lobbying-influence",
+          "press-leak-to-journalist"
         ]
       },
       {
@@ -249,14 +271,18 @@
           "authoritarian-survival",
           "elite-defection-coordination",
           "mass-uprising-threshold",
-          "nonviolent-resistance"
+          "nonviolent-resistance",
+          "machiavelli-fear-or-love"
         ]
       },
       {
         "name": "Global cooperation",
         "games": [
           "climate-treaty-public-goods",
-          "tariff-war-trade-deal"
+          "tariff-war-trade-deal",
+          "sanctions-and-evasion",
+          "ceasefire-or-break",
+          "international-aid-conditionality"
         ]
       }
     ]
@@ -279,27 +305,33 @@
       {
         "name": "Ethics and reporting",
         "games": [
-          "whistleblowing"
+          "whistleblowing",
+          "mill-tolerance-of-opinion"
         ]
       },
       {
         "name": "Law and settlement",
         "games": [
-          "plea-bargaining"
+          "plea-bargaining",
+          "hobbes-covenant-with-sovereign"
         ]
       },
       {
         "name": "Social learning",
         "games": [
           "herding-cascades",
-          "minority-game-crowds"
+          "minority-game-crowds",
+          "shared-norm-convention",
+          "bystander-intervention",
+          "reciprocity-giving-first"
         ]
       },
       {
         "name": "Shared resources",
         "games": [
           "tragedy-of-the-commons",
-          "public-goods"
+          "public-goods",
+          "norm-enforcement-free-riders"
         ]
       }
     ]
@@ -320,7 +352,11 @@
           "cournot-competition",
           "stackelberg-leadership",
           "entry-deterrence",
-          "hotelling-shop-location"
+          "hotelling-shop-location",
+          "ride-hailing-surge-pricing",
+          "airline-overbooking",
+          "loyalty-discount-switching",
+          "startup-compete-or-merge"
         ]
       },
       {
@@ -336,13 +372,15 @@
           "lemons-market",
           "reputation-reviews",
           "travelers-dilemma",
-          "supply-chain-bullwhip"
+          "supply-chain-bullwhip",
+          "car-price-negotiation"
         ]
       },
       {
         "name": "Platforms and standards",
         "games": [
-          "standards-war-network-effects"
+          "standards-war-network-effects",
+          "open-source-contribution"
         ]
       },
       {
@@ -372,14 +410,17 @@
       {
         "name": "Financial stability",
         "games": [
-          "bank-run"
+          "bank-run",
+          "government-budget-trust"
         ]
       },
       {
         "name": "Expectations and markets",
         "games": [
           "keynes-beauty-contest",
-          "herding-cascades"
+          "herding-cascades",
+          "stock-bubble-ride-or-exit",
+          "crowdfunding-threshold"
         ]
       },
       {
@@ -410,13 +451,16 @@
         "name": "Fair division",
         "games": [
           "cake-cutting-fair-division",
-          "nash-bargaining-demands"
+          "nash-bargaining-demands",
+          "rawls-veil-of-ignorance-split",
+          "nozick-taking-by-force"
         ]
       },
       {
         "name": "Settlement",
         "games": [
-          "plea-bargaining"
+          "plea-bargaining",
+          "locke-property-claims"
         ]
       }
     ]
@@ -435,14 +479,21 @@
         "games": [
           "tragedy-of-the-commons",
           "public-goods",
-          "braess-paradox-traffic"
+          "braess-paradox-traffic",
+          "groundwater-pumping",
+          "illegal-fishing-patrol",
+          "abatement-public-good",
+          "fishing-catch-race",
+          "forest-corridor-conservation"
         ]
       },
       {
         "name": "Global and public health",
         "games": [
           "climate-treaty-public-goods",
-          "vaccination-free-riding"
+          "vaccination-free-riding",
+          "climate-club-coordination",
+          "green-tech-invest-or-wait"
         ]
       }
     ]
@@ -611,7 +662,9 @@
         "name": "Credibility and cooperation",
         "games": [
           "subgame-perfection-threats",
-          "folk-theorem-cooperation"
+          "folk-theorem-cooperation",
+          "kant-universal-promise",
+          "aristotle-golden-mean"
         ]
       },
       {

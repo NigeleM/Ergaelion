@@ -2,10 +2,10 @@
 
 A terminal tool that identifies the game behind a situation, explains how it works, and shows the paths to victory and failure. It runs offline: no accounts, no network calls, and no third-party libraries.
 
-- **110 games** across 17 families, each with how it works, its strategies, its pitfalls and, for all 110 of them, a payoff table (exact, or labelled as a simplified model).
-- **174 simulations**: 133 basic (fixed choices you can read and play) and 41 live (an opponent replies to each move, and remembers earlier rounds in the repeated games). Chances are estimates unless a simulation names its sources. They include family, parent-child, relationship, workplace, war and military cases.
+- **163 games** across 17 families and 10 topics (business, military, politics, everyday life and more), each with how it works, its strategies, its pitfalls and, for all 163 of them, a payoff table (exact, or labelled as a simplified model).
+- **231 simulations**: 190 basic (fixed choices you can read and play) and 41 live (an opponent replies to each move, and remembers earlier rounds in the repeated games). Chances are estimates unless a simulation names its sources. They include family, parent-child, relationship, workplace, war and military cases.
 - **Repeated play** against six bots, from 1 to 50 rounds.
-- **Engine games**: six games against a computer opponent that searches or adapts as you play. Tic-tac-toe, Nim, Connect Four, rock-paper-scissors, and two military games: Colonel Blotto and Border Patrol. Each one has a hint (`h`) for the board games.
+- **Engine games**: 172 games against a computer opponent. Nine search or adapt as you play; the other 163 are live duels, against a learning, reactive, mirroring or pattern-reading engine, for every catalogue game with a payoff table of up to four rows and columns. Tic-tac-toe, Nim, Connect Four, rock-paper-scissors, two military games (Colonel Blotto and Border Patrol), Ultimatum (split ten coins), Guess Two Thirds (a guessing game) and Matching Pennies. Each one has a hint (`h`) for the board games and the new games.
 - **Keyword search**, so a short description finds the games that fit it.
 - **Colour themes** you can change: classic, ocean, forest, contrast, sunset, midnight, rose, matrix, paper, Claude dark and light, plain (ASCII box edges) and mono.
 - **Export** of games, runs, records and charts to Markdown, JSON, CSV and SVG.
@@ -48,6 +48,7 @@ Run the Python version with `./playbook`, or the Go version with `bin/Ergaelion`
 - **Typos and unknown words:** a clear one-letter typo in a longer word is corrected and shown ("Reading your words as…"). When nothing matches, the playbook says so and lists the nearest known words ("Did you mean…").
 - **Autocomplete:** in the session, a partly typed word completes from the vocabulary of the phrases, area words and game names. Once you have typed two or more words that begin a known phrase, Tab completes the whole phrase (or the longest shared part of several). Type `/` for commands.
 - **By area:** `areas` lists the families, and `areas <family>` shows one with its games and reading list.
+- **By topic:** `topics` lists the topics (business, military, politics, government, economy, society, everyday life, environment, work and games), and `topics <topic>` lists the games in one, with the family each sits in. Topics come from each game's domains, so a game can be in several.
 
 ## Solving a payoff matrix
 
@@ -133,7 +134,7 @@ Each question sends only your question and the text you named: a game's summary,
 
 ## The menu
 
-`./playbook` opens the main menu first, in a terminal. Its first entry, Command prompt, opens the prompt, and `/menu` in the prompt returns here. Use the arrow keys, and Enter to open an item. It covers: browse games, simulations, advice, matrix solving, families and problems, the guide and setup, records and charts, repeated play, Ask Claude (optional, see above), and colours. Each choice runs the same command you could type. The numbered menu used without a terminal lists the same items; choose 11 to quit, and end of input also quits.
+`./playbook` opens the main menu first, in a terminal. Its first entry, Command prompt, opens the prompt, and `/menu` in the prompt returns here. Use the arrow keys, and Enter to open an item. It covers: browse games, simulations, advice, matrix solving, families and problems, topics, the guide and setup, records and charts, repeated play, Ask Claude (optional, see above), and colours. Each choice runs the same command you could type. The numbered menu used without a terminal lists the same items; choose 13 to quit, and end of input also quits.
 
 ## Tools for other programs
 

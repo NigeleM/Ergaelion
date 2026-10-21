@@ -18,6 +18,14 @@ import sims_g  # noqa: E402
 import sims_h  # noqa: E402
 import sims_i  # noqa: E402
 import sims_j  # noqa: E402
+import sims_k  # noqa: E402
+import sims_l  # noqa: E402
+import sims_m  # noqa: E402
+import sims_n  # noqa: E402
+import sims_o  # noqa: E402
+import sims_p  # noqa: E402
+import sims_q  # noqa: E402
+import sims_r  # noqa: E402
 from build_core import build_scored  # noqa: E402
 from full_rules import FULL_RULES  # noqa: E402
 from state_games import build_state_game  # noqa: E402
@@ -55,10 +63,15 @@ def legacy():
 
 
 def main(out_path):
-    specs = sims_a.SIMS + sims_b.SIMS + sims_c.SIMS + sims_d.SIMS + sims_e.SIMS + sims_f.SIMS + sims_g.SIMS + sims_h.SIMS + sims_i.SIMS + sims_j.SIMS
+    specs = sims_a.SIMS + sims_b.SIMS + sims_c.SIMS + sims_d.SIMS + sims_e.SIMS + sims_f.SIMS + sims_g.SIMS + sims_h.SIMS + sims_i.SIMS + sims_j.SIMS + sims_k.SIMS + sims_l.SIMS + sims_m.SIMS + sims_n.SIMS + sims_o.SIMS + sims_p.SIMS + sims_q.SIMS + sims_r.SIMS
     scored = [dict(build_scored(spec), mode="basic") for spec in specs]
     live = [build_state_game(spec) for spec in FULL_RULES]
-    everything = legacy() + scored + live
+    # The snapshot holds every simulation as it stands in the data file, including hand edits made
+    # after generation. An id in the snapshot always wins; the scripts only add ids it does not have.
+    snapshot = json.loads((HERE / "kept_sims.json").read_text(encoding="utf-8"))
+    kept_ids = {sim["id"] for sim in snapshot}
+    generated = [sim for sim in legacy() + scored + live if sim["id"] not in kept_ids]
+    everything = snapshot + generated
     ids = [s["id"] for s in everything]
     assert len(ids) == len(set(ids)), "duplicate simulation ids"
     Path(out_path).write_text(json.dumps(everything, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

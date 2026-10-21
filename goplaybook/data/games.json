@@ -64,7 +64,11 @@
     "pitfalls": [
       "Assuming the other side is cooperative because you are.",
       "Treating an ongoing relationship as one-shot."
-    ]
+    ],
+    "sources": [
+      "Checked: Tucker's prisoner story, from a talk at Stanford around 1950; the earliest printed use of the name is Luce and Raiffa, Games and Decisions (1957)"
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "repeated-prisoners-dilemma",
@@ -133,7 +137,10 @@
       "Defecting first to test the other side, which often starts a costly cycle.",
       "Ignoring that misread actions can trigger retaliation nobody intended."
     ],
-    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the one-shot prisoner's dilemma that the repeated game is built from)"
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (the one-shot prisoner's dilemma that the repeated game is built from)",
+    "sources": [
+      "From memory: Axelrod, The Evolution of Cooperation (1984)"
+    ]
   },
   {
     "id": "stag-hunt",
@@ -200,7 +207,11 @@
     "pitfalls": [
       "Assuming the best outcome for everyone will happen just because it is best.",
       "Dropping cooperation at the first failure without diagnosing why it failed."
-    ]
+    ],
+    "sources": [
+      "From memory: Rousseau, A Discourse on Inequality (1755), the stag hunt passage; Skyrms, The Stag Hunt (2003)"
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "chicken",
@@ -267,7 +278,11 @@
     "pitfalls": [
       "Bluffing a commitment the other side can call.",
       "Failing to tell a threat you can keep from one you cannot."
-    ]
+    ],
+    "sources": [
+      "Checked: Rapoport and Chammah, Prisoner's Dilemma (1965), on the game of chicken"
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "battle-of-the-sexes",
@@ -334,7 +349,11 @@
     "pitfalls": [
       "Assuming the other side will accept the same compromise you would.",
       "Waiting for perfect agreement and missing the coordination window."
-    ]
+    ],
+    "sources": [
+      "From memory: Luce and Raiffa, Games and Decisions (1957)"
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "zero-sum-games",
@@ -400,7 +419,11 @@
     "pitfalls": [
       "Trying to outguess an opponent who is simply playing maximin.",
       "Overweighting the most likely outcome and ignoring tail risk."
-    ]
+    ],
+    "sources": [
+      "Checked: von Neumann, Zur Theorie der Gesellschaftsspiele, Mathematische Annalen 100 (1928): 295-320"
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "inspection-game",
@@ -468,7 +491,8 @@
     "pitfalls": [
       "Publishing an inspection calendar.",
       "Inspecting only where violations are expected, which makes the schedule predictable."
-    ]
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "public-goods",
@@ -535,7 +559,11 @@
     "pitfalls": [
       "Assuming everyone contributes equally once free-riding is visible.",
       "Punishing without a clear rule, which invites retaliation."
-    ]
+    ],
+    "sources": [
+      "Checked: Samuelson, The Pure Theory of Public Expenditure, Review of Economics and Statistics 36 (1954): 387-389"
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "tragedy-of-the-commons",
@@ -602,7 +630,10 @@
       "Assuming a resource is free because nobody owns it.",
       "Relying on a single central regulator that lacks local information."
     ],
-    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two herders; exploiting the shared pasture gains you more, and hurts both)"
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two herders; exploiting the shared pasture gains you more, and hurts both)",
+    "sources": [
+      "Checked: Hardin, The Tragedy of the Commons, Science 162 (1968): 1243-1248"
+    ]
   },
   {
     "id": "ultimatum-game",
@@ -670,7 +701,12 @@
     "pitfalls": [
       "Assuming every responder is purely selfish.",
       "Ignoring that a take-it-or-leave-it framing can damage a long-term relationship."
-    ]
+    ],
+    "sources": [
+      "Checked: Güth, Schmittberger and Schwarze, An Experimental Analysis of Ultimatum Bargaining, Journal of Economic Behavior and Organization 3 (1982): 367-388",
+      "Checked: Oosterbeek, Sloof and van de Kuilen, Cultural differences in ultimatum game experiments: evidence from a meta-analysis, Experimental Economics 7 (2004): offers average about 40% of the pie, and rejections average about 16%"
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "rubinstein-bargaining",
@@ -739,7 +775,10 @@
       "Overestimating the advantage of making the first offer.",
       "Mistaking your own impatience for leverage."
     ],
-    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)",
+    "sources": [
+      "From memory: Rubinstein, Perfect Equilibrium in a Bargaining Model, Econometrica (1982)"
+    ]
   },
   {
     "id": "centipede-game",
@@ -808,7 +847,10 @@
       "Waiting too long and being exploited at the end.",
       "Assuming the other side will always reason backward."
     ],
-    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)",
+    "sources": [
+      "Checked: Rosenthal, Games of Perfect Information, Predatory Pricing and the Chain-Store Paradox, Journal of Economic Theory 25 (1981): 92-100"
+    ]
   },
   {
     "id": "trust-game",
@@ -877,7 +919,10 @@
       "Investing everything at once.",
       "Treating one reciprocal return as proof of long-term trustworthiness."
     ],
-    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the investor trusts or keeps; the trustee repays or keeps the money)"
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (the investor trusts or keeps; the trustee repays or keeps the money)",
+    "sources": [
+      "Checked: Berg, Dickhaut and McCabe, Trust, Reciprocity, and Social History, Games and Economic Behavior 10 (1995): 122-142"
+    ]
   },
   {
     "id": "entry-deterrence",
@@ -945,7 +990,8 @@
     "pitfalls": [
       "Bluffing a threat the other side can call.",
       "Letting a threat go unused when it was needed, which destroys future credibility."
-    ]
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "stackelberg-leadership",
@@ -1037,7 +1083,10 @@
       "Announcing a leadership move you cannot keep.",
       "Overestimating the first-mover advantage when the follower can retaliate."
     ],
-    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (simultaneous quantity choice with price 10 minus total output; the standard Cournot form, restricted to 1 to 3 units)"
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (simultaneous quantity choice with price 10 minus total output; the standard Cournot form, restricted to 1 to 3 units)",
+    "sources": [
+      "From memory: von Stackelberg, Market Structure and Equilibrium (1934)"
+    ]
   },
   {
     "id": "cournot-competition",
@@ -1102,7 +1151,11 @@
     "pitfalls": [
       "Ignoring that the rival adapts.",
       "Starting a price war that hurts you more than the rival."
-    ]
+    ],
+    "sources": [
+      "Checked: Cournot, Recherches sur les principes mathematiques de la theorie des richesses (1838)"
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "sealed-bid-auctions",
@@ -1193,7 +1246,10 @@
         ]
       ]
     },
-    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (first-price sealed bid; values 6 and 4; ties split the surplus)"
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (first-price sealed bid; values 6 and 4; ties split the surplus)",
+    "sources": [
+      "Checked: Vickrey, Counterspeculation, Auctions, and Competitive Sealed Tenders, Journal of Finance 16 (1961): 8-37"
+    ]
   },
   {
     "id": "war-of-attrition",
@@ -1260,7 +1316,8 @@
     "pitfalls": [
       "Escalating because of past investment (the sunk-cost fallacy).",
       "Mistaking the other side's bluff for resolve."
-    ]
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "colonel-blotto",
@@ -1436,7 +1493,10 @@
       "Paying for a signal that does not actually separate the types.",
       "Assuming a signal is credible just because it is expensive, without checking it."
     ],
-    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a worker signals ability with a credential; the employer pays a high or low wage)"
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a worker signals ability with a credential; the employer pays a high or low wage)",
+    "sources": [
+      "Checked: Spence, Job Market Signaling, Quarterly Journal of Economics 87 (1973): 355-374"
+    ]
   },
   {
     "id": "principal-agent",

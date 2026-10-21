@@ -35,6 +35,13 @@ BLOTTO_FRONTS = 3
 PATROL_GATES = 3
 PATROL_ROUNDS = 12
 SEARCH_LIMIT = 1 << 30
+ULTIMATUM_COINS = 10
+ULTIMATUM_THRESHOLD = 3  # the engine accepts an offer of at least this many coins
+ULTIMATUM_ROUNDS = 5
+BEAUTY_TOP = 100  # guesses run from 0 to this
+BEAUTY_OPENING = 50  # the engine's forecast of your guess before you have guessed
+BEAUTY_ROUNDS = 5
+PENNY_ROUNDS = 20
 
 
 def engine_games():
@@ -256,13 +263,42 @@ def patrol_engine_gate(history):
     return max(range(PATROL_GATES), key=lambda gate: (counts[gate], -gate))
 
 
+# ---- Ultimatum: you offer the engine coins out of ten. It accepts an offer of at least its threshold.
+
+def ultimatum_accepts(engine_share):
+    return engine_share >= ULTIMATUM_THRESHOLD
+
+
+# ---- Guess two thirds: the target is two thirds of the average of the two guesses, which is (you + engine) // 3.
+
+def beauty_engine_guess(history):
+    """Two thirds of your average guess so far, using whole numbers."""
+    if not history:
+        return 2 * BEAUTY_OPENING // 3
+    return 2 * sum(history) // (3 * len(history))
+
+
+def beauty_target(you, engine):
+    return (you + engine) // 3
+
+
+# ---- Matching pennies: the engine's coin differs from the call you have made most often.
+
+def penny_engine_coin(calls):
+    """Opposite of your most common call. Heads counts as your call when the calls are tied."""
+    predicted = "h" if calls.count("h") >= calls.count("t") else "t"
+    return "t" if predicted == "h" else "h"
+
+
 # ---- The game loop. ask(prompt) returns a line, or None at the end of input. say(text) prints.
 
-def play(game, ask, say):
-    """Play one engine game. Returns when the game ends or you quit."""
+def play(game, ask, say, catalog=None):
+    """Play one engine game. Returns when the game ends or you quit. Duel games need the catalogue."""
     say("\n" + game["name"])
     say(game["rules"])
     say("")
+    if game.get("kind") == "duel":
+        return _play_duel(game, catalog or [], ask, say)
     if game["id"] == "tic-tac-toe":
         return _play_tic_tac_toe(ask, say)
     if game["id"] == "nim":
@@ -275,6 +311,12 @@ def play(game, ask, say):
         return _play_blotto(ask, say)
     if game["id"] == "border-patrol":
         return _play_patrol(ask, say)
+    if game["id"] == "ultimatum":
+        return _play_ultimatum(ask, say)
+    if game["id"] == "beauty-contest":
+        return _play_beauty_contest(ask, say)
+    if game["id"] == "matching-pennies":
+        return _play_matching_pennies(ask, say)
     raise ValueError(f"no engine for '{game['id']}'")
 
 
@@ -401,13 +443,17 @@ def _play_connect_four(ask, say):
 def _play_rock_paper_scissors(ask, say):
     names = {"r": "rock", "rock": "rock", "p": "paper", "paper": "paper", "s": "scissors", "scissors": "scissors"}
     history, you, engine = [], 0, 0
-    say("Enter r, p or s. q quits.")
+    say("Enter r, p or s. h for a hint, q quits.")
     round_number = 1
     while round_number <= ROCK_PAPER_SCISSORS_ROUNDS:
         line = _read(ask, f"Round {round_number} (r, p or s): ")
         if line is None:
             say("You left the game.")
             return
+        if line == "h":
+            reply = rps_engine_move(history)
+            say(f"Hint: the engine will play {reply}. Play {COUNTER[reply]} to beat it.")
+            continue
         if line not in names:
             say("Enter r, p or s.")
             continue
@@ -430,13 +476,19 @@ def _play_rock_paper_scissors(ask, say):
 
 def _play_blotto(ask, say):
     history, net_total = [], 0
-    say(f"Send {BLOTTO_UNITS} units across {BLOTTO_FRONTS} fronts, for example 2 2 2. q quits.")
+    say(f"Send {BLOTTO_UNITS} units across {BLOTTO_FRONTS} fronts, for example 2 2 2. h for a hint, q quits.")
     for round_number in range(1, BLOTTO_ROUNDS + 1):
         while True:
             line = _read(ask, f"Round {round_number} split: ")
             if line is None:
                 say("You left the game.")
                 return
+            if line == "h":
+                engine_split = blotto_engine_split(history)
+                best = max(BLOTTO_SPLITS, key=lambda option: blotto_net(option, engine_split))
+                say(f"Hint: the engine will send {' '.join(map(str, engine_split))}. "
+                    f"{' '.join(map(str, best))} does best against that.")
+                continue
             split = parse_split(line)
             if split:
                 break
@@ -453,13 +505,16 @@ def _play_blotto(ask, say):
 
 def _play_patrol(ask, say):
     history, through = [], 0
-    say(f"Pick a gate from 1 to {PATROL_GATES}. q quits.")
+    say(f"Pick a gate from 1 to {PATROL_GATES}. h for a hint, q quits.")
     round_number = 1
     while round_number <= PATROL_ROUNDS:
         line = _read(ask, f"Round {round_number} gate: ")
         if line is None:
             say("You left the game.")
             return
+        if line == "h":
+            say("Hint: the guard watches the gate you have used most, so pick the gate you have used least.")
+            continue
         if not (line.isdigit() and 1 <= int(line) <= PATROL_GATES):
             say(f"Enter a gate from 1 to {PATROL_GATES}.")
             continue
@@ -474,3 +529,175 @@ def _play_patrol(ask, say):
         round_number += 1
     say(f"You got through {through} of {PATROL_ROUNDS} times.")
     say("You win." if through > PATROL_ROUNDS // 2 else "The guard wins.")
+
+
+def _play_ultimatum(ask, say):
+    you_total, engine_total = 0, 0
+    say(f"Enter how many of the {ULTIMATUM_COINS} coins the engine gets. h for a hint, q quits.")
+    round_number = 1
+    while round_number <= ULTIMATUM_ROUNDS:
+        line = _read(ask, f"Round {round_number} (coins for the engine): ")
+        if line is None:
+            say("You left the game.")
+            return
+        if line == "h":
+            say(f"Hint: offer the engine {ULTIMATUM_THRESHOLD} coins, the least it accepts. "
+                f"You keep {ULTIMATUM_COINS - ULTIMATUM_THRESHOLD}.")
+            continue
+        if not (line.isdigit() and int(line) <= ULTIMATUM_COINS):
+            say(f"Enter a whole number from 0 to {ULTIMATUM_COINS}.")
+            continue
+        share = int(line)
+        if ultimatum_accepts(share):
+            you_total += ULTIMATUM_COINS - share
+            engine_total += share
+            say(f"The engine accepts. You keep {ULTIMATUM_COINS - share} coins, it gets {share}.")
+        else:
+            say("The engine refuses. Neither of you gets anything this round.")
+        round_number += 1
+    say(f"You finished with {you_total} coins, the engine with {engine_total}.")
+    say("You win." if you_total > engine_total else "The engine wins." if engine_total > you_total
+        else "The match is drawn.")
+
+
+def _play_beauty_contest(ask, say):
+    guesses, you, engine = [], 0, 0
+    say(f"Guess a whole number from 0 to {BEAUTY_TOP}. h for a hint, q quits.")
+    round_number = 1
+    while round_number <= BEAUTY_ROUNDS:
+        line = _read(ask, f"Round {round_number} (0 to {BEAUTY_TOP}): ")
+        if line is None:
+            say("You left the game.")
+            return
+        engine_guess = beauty_engine_guess(guesses)
+        if line == "h":
+            say(f"Hint: the engine will guess {engine_guess}. About half of that, {engine_guess // 2}, "
+                "lands closest to the target.")
+            continue
+        if not (line.isdigit() and int(line) <= BEAUTY_TOP):
+            say(f"Enter a whole number from 0 to {BEAUTY_TOP}.")
+            continue
+        guess = int(line)
+        guesses.append(guess)
+        target = beauty_target(guess, engine_guess)
+        yours, theirs = abs(guess - target), abs(engine_guess - target)
+        if yours < theirs:
+            you += 1
+            result = "You win the round."
+        elif theirs < yours:
+            engine += 1
+            result = "The engine wins the round."
+        else:
+            result = "Round drawn."
+        say(f"You guessed {guess}, the engine guessed {engine_guess}. The target was {target}. {result}")
+        round_number += 1
+    say(f"Final score: you {you}, the engine {engine}, drawn {BEAUTY_ROUNDS - you - engine}.")
+    say("You win the match." if you > engine else "The engine wins the match." if engine > you
+        else "The match is drawn.")
+
+
+def _play_matching_pennies(ask, say):
+    calls, you, engine = [], 0, 0
+    say("Call h or t. ? for a hint, q quits.")
+    round_number = 1
+    while round_number <= PENNY_ROUNDS:
+        line = _read(ask, f"Round {round_number} (h or t): ")
+        if line is None:
+            say("You left the game.")
+            return
+        if line == "?":
+            say("Hint: the engine shows the opposite of your most common call, so calling the less common one wins "
+                "(tails, when tied). Mix your calls to stay unpredictable.")
+            continue
+        if line not in ("h", "t"):
+            say("Enter h or t.")
+            continue
+        coin = penny_engine_coin(calls)
+        calls.append(line)
+        if line == coin:
+            you += 1
+            result = "You win the round."
+        else:
+            engine += 1
+            result = "The engine wins the round."
+        say(f"You called {line}, the engine showed {coin}. {result}")
+        round_number += 1
+    say(f"Final score: you {you}, the engine {engine}.")
+    say("You win the match." if you > engine else "The engine wins the match." if engine > you
+        else "The match is drawn.")
+
+
+# ---- Duel games: a catalogue game with a payoff table. The engine answers each row with a column,
+# from one of two fixed rules. The Go version in goplaybook/duel.go follows the same rules.
+
+def duel_engine_col(matrix, played, policy):
+    """The engine's column. The learner plays the column that does best against your most common row;
+    the reactive engine plays the column that does best against your last row, and the first column first."""
+    cols = range(len(matrix["cols"]))
+    if policy == "mirror":
+        if not played:
+            return 0
+        return played[-1] if played[-1] < len(cols) else 0
+    if policy == "exploiter":
+        predicted = duel_predicted_row(matrix, played)
+        return max(cols, key=lambda c: (matrix["payoffs"][predicted][c][1], -c))
+    if policy == "reactive":
+        if not played:
+            return 0
+        last = played[-1]
+        return max(cols, key=lambda c: (matrix["payoffs"][last][c][1], -c))
+    rows = range(len(matrix["rows"]))
+    value = {c: sum(played.count(r) * matrix["payoffs"][r][c][1] for r in rows) for c in cols}
+    return max(cols, key=lambda c: (value[c], -c))
+
+
+def duel_predicted_row(matrix, played):
+    """The row the exploiter expects next: what you most often play after your last row, or your most
+    common row when that sequence has not happened yet. The first row is expected first."""
+    if not played:
+        return 0
+    last = played[-1]
+    pool = [played[i + 1] for i in range(len(played) - 1) if played[i] == last] or played
+    rows = range(len(matrix["rows"]))
+    return max(rows, key=lambda r: (pool.count(r), -r))
+
+
+def duel_best_row(matrix, col):
+    """Your best row against a column: the first row that does best for you."""
+    rows = range(len(matrix["rows"]))
+    return max(rows, key=lambda r: (matrix["payoffs"][r][col][0], -r))
+
+
+def _play_duel(game, catalog, ask, say):
+    match = next((item for item in catalog if item["id"] == game["game"]), None)
+    if match is None or not match.get("matrix"):
+        say(f"No payoff table for '{game['game']}'.")
+        return
+    matrix = match["matrix"]
+    rows = matrix["rows"]
+    say(f"Enter the number of your row, 1 to {len(rows)}. h for a hint, q quits.")
+    played, you, engine = [], 0, 0
+    round_number = 1
+    while round_number <= game["rounds"]:
+        line = _read(ask, f"Round {round_number} (row 1 to {len(rows)}): ")
+        if line is None:
+            say("You left the game.")
+            return
+        if line == "h":
+            col = duel_engine_col(matrix, played, game["policy"])
+            say(f"Hint: the engine will play {matrix['cols'][col]}. {rows[duel_best_row(matrix, col)]} does best against that.")
+            continue
+        if not (line.isdigit() and 1 <= int(line) <= len(rows)):
+            say(f"Enter a row number from 1 to {len(rows)}.")
+            continue
+        row = int(line) - 1
+        col = duel_engine_col(matrix, played, game["policy"])
+        played.append(row)
+        u, v = matrix["payoffs"][row][col]
+        you += u
+        engine += v
+        say(f"You played {rows[row]}, the engine played {matrix['cols'][col]}. You get {u}, it gets {v}.")
+        round_number += 1
+    say(f"Final score: you {you}, the engine {engine}.")
+    say("You win the match." if you > engine else "The engine wins the match." if engine > you else "The match is drawn.")
+

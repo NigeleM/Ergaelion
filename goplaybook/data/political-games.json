@@ -1,0 +1,338 @@
+[
+  {
+    "id": "filibuster-standoff",
+    "name": "Filibuster Standoff",
+    "category": "Simultaneous, legislative procedure, blocking power",
+    "summary": "A minority can hold up a vote by filibustering, and the majority can force the vote or give way. Each side tries to make the other back down first.",
+    "how_it_works": "The minority filibusters or allows a vote, and the majority forces the vote or concedes. Filibustering wins when the majority concedes, and forcing a vote wins when the minority allows it. The stable outcomes have one side giving way, so the procedure is decided by who is more willing to pay the cost of waiting.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "yes", "communication": "yes", "commitment": "yes"},
+    "domains": ["politics", "government"],
+    "examples": [
+      "A senate minority holding up a budget bill with a long speech",
+      "A majority leader deciding whether to cancel a recess to force a vote"
+    ],
+    "matrix": {"rows": ["Filibuster", "Allow a vote"], "cols": ["Majority forces the vote", "Majority concedes"], "payoffs": [[[-2, -2], [2, 0]], [[0, 1], [1, 1]]]},
+    "strategies": [
+      "Set a clear end date for the debate, so the cost of waiting is known to both sides.",
+      "Negotiate a package of amendments in return for allowing the vote, which gives each side something to report.",
+      "If you are the majority, count the votes you have before forcing the issue, so a defeat is not the outcome."
+    ],
+    "pitfalls": [
+      "Filibustering without a real plan to win, which can cost time and goodwill with no gain.",
+      "Forcing a vote you may lose, which hands the minority a visible win."
+    ],
+    "matrix_note": "simplified: a blocking-power form chosen to show who gives way; the numbers are not measured political costs"
+  },
+  {
+    "id": "negative-campaign-ads",
+    "name": "Negative Campaign Advertising",
+    "category": "Simultaneous, competition, attack advertising",
+    "summary": "Two candidates can attack each other or keep a positive campaign. Attacking can win voters when the rival stays positive, but if both attack, both lose.",
+    "how_it_works": "Each candidate attacks or stays positive. An attack against a positive rival wins voters, and staying positive while the rival attacks loses them. If both attack, both gain nothing and the public gets angrier. Attacking is the stable choice for both, even though a shared positive campaign would leave both better off.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "no", "communication": "no"},
+    "domains": ["politics", "government"],
+    "examples": [
+      "Two rival candidates for a city council seat deciding whether to run attack ads",
+      "Two parties in a national race weighing negative advertising against a positive message"
+    ],
+    "matrix": {"rows": ["Attack", "Stay positive"], "cols": ["Attack", "Stay positive"], "payoffs": [[[0, 0], [2, -1]], [[-1, 2], [1, 1]]]},
+    "strategies": [
+      "Agree a public code of conduct with the rival, so both sides can be held to it.",
+      "Attack the record rather than the person, and back each claim with a source.",
+      "Respond to attacks with facts within a day, so the attack does not gain traction."
+    ],
+    "pitfalls": [
+      "Attacking first because the rival might do it, which almost guarantees a negative race.",
+      "Staying positive while the rival attacks, which lets the attack define you."
+    ],
+    "matrix_note": "simplified: a prisoner's-dilemma form chosen to show the pull to attack; the numbers are not measured votes"
+  },
+  {
+    "id": "gerrymander-arms-race",
+    "name": "Gerrymandering Arms Race",
+    "category": "Simultaneous, electoral districts, arms race",
+    "summary": "Two parties draw district maps. If one party gerrymanders and the other stays fair, the gerrymander wins seats, so both parties are pulled toward gerrymandering.",
+    "how_it_works": "Each party draws a gerrymandered map or a fair one. A gerrymander against a fair map wins extra seats. If both gerrymander, the seats roughly cancel and both maps are distorted. The stable outcome is both gerrymandering, which is worse for the voters than two fair maps would be.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "yes", "communication": "no"},
+    "domains": ["politics", "government"],
+    "examples": [
+      "Two parties in a state legislature redrawing their districts after a census",
+      "A commission deciding whether to adopt a neutral map when the other side is not bound by it"
+    ],
+    "matrix": {"rows": ["Gerrymander", "Draw a fair map"], "cols": ["Gerrymander", "Draw a fair map"], "payoffs": [[[0, 0], [2, -2]], [[-2, 2], [1, 1]]]},
+    "strategies": [
+      "Hand map drawing to an independent commission with a published rule, so neither party can gerrymander alone.",
+      "Pass a rule that forbids unfair maps in every state, which removes the arms race.",
+      "Keep fair maps as the default, and make any change visible for public comment."
+    ],
+    "pitfalls": [
+      "Gerrymandering first to avoid being on the losing side, which starts the arms race.",
+      "Assuming a neutral map will be drawn when the other party is not bound by a rule."
+    ],
+    "matrix_note": "simplified: a symmetric arms-race form with chosen payoffs; the numbers are not measured seat gains"
+  },
+  {
+    "id": "referendum-turnout-threshold",
+    "name": "Referendum Turnout Threshold",
+    "category": "Simultaneous, voting, turnout threshold",
+    "summary": "A referendum counts only if enough people vote. Voters who support the change must turn out, and voting makes sense only if others vote too.",
+    "how_it_works": "You vote yes or stay home, and others vote yes or stay home. If enough people vote yes, the change passes and everyone who voted yes benefits. Voting yes alone gets nothing, and staying home when others vote yes gets the change without the effort. Two stable outcomes exist: a high turnout yes, and a low turnout where nothing happens.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "no", "communication": "yes"},
+    "domains": ["politics", "government"],
+    "examples": [
+      "Supporters of a local bus route deciding whether to vote in a referendum that needs a minimum turnout",
+      "A community deciding whether a shared project goes ahead when a quorum must be reached"
+    ],
+    "matrix": {"rows": ["Vote yes", "Stay home"], "cols": ["Others vote yes", "Others stay home"], "payoffs": [[[2, 2], [-1, -1]], [[0, 0], [0, 0]]]},
+    "strategies": [
+      "Organise a turnout drive that tells supporters the referendum is close, so they know their vote matters.",
+      "Publish polling and the turnout target, so the threshold is a shared goal.",
+      "Make voting easy with postal or early options, which lowers the cost of turning out."
+    ],
+    "pitfalls": [
+      "Assuming your vote will not matter, so the referendum fails for everyone.",
+      "Overestimating turnout, and then being caught out when the threshold is missed."
+    ],
+    "matrix_note": "simplified: a quorum coordination form with chosen payoffs; the numbers are not measured turnout or benefits"
+  },
+  {
+    "id": "sanctions-and-evasion",
+    "name": "Sanctions and Evasion",
+    "category": "Simultaneous, enforcement, inspection and evasion",
+    "summary": "One country tries to evade sanctions while the other decides whether to enforce them. Enforcing costs effort, and evading pays off only when nobody checks.",
+    "how_it_works": "A country evades or complies, and the enforcing country enforces or does not. Evasion gains when nobody enforces and is punished when enforcement catches it. Complying is worth little if enforcement is weak. There is no stable pure outcome, so each side mixes between evading and enforcing, which is why monitoring must be unpredictable.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "zero-sum", "enforcement": "yes", "communication": "no"},
+    "domains": ["politics", "military", "government"],
+    "examples": [
+      "A country buying restricted goods through a third party while customs checks randomly",
+      "An enforcement agency deciding how many shipments to inspect in a sanctions regime"
+    ],
+    "matrix": {"rows": ["Evade the sanctions", "Comply"], "cols": ["Enforce", "Do not enforce"], "payoffs": [[[-2, 2], [2, -1]], [[0, 0], [1, 1]]]},
+    "strategies": [
+      "Use random, unannounced checks, so evasion cannot be timed.",
+      "Share intelligence with partner countries, which raises the chance that evasion is caught.",
+      "Offer a clear route back to compliance, which reduces the reward for evasion over time."
+    ],
+    "pitfalls": [
+      "Enforcing on a fixed schedule, which makes evasion easy to plan.",
+      "Relaxing enforcement after a quiet period, which invites evasion again."
+    ],
+    "matrix_note": "simplified: a zero-sum inspection form with chosen payoffs; the mixed equilibrium shows the need for random checks, not a measured rate"
+  },
+  {
+    "id": "ceasefire-or-break",
+    "name": "Ceasefire or Break It",
+    "category": "Simultaneous, conflict, ceasefire commitment",
+    "summary": "Two sides in a conflict can hold a ceasefire or break it. Holding the ceasefire is best for both, but breaking it can seem safer if the other side does.",
+    "how_it_works": "Each side holds the ceasefire or breaks it. If both hold, both gain peace. If one breaks it while the other holds, the breaker gets an advantage and the other suffers. If both break it, both are worse off. Holding the ceasefire and breaking it are both stable when each side expects the other to do the same.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "repeated", "information": "imperfect", "payoff": "mixed", "enforcement": "no", "communication": "yes", "commitment": "yes"},
+    "domains": ["military", "politics", "government"],
+    "examples": [
+      "Two militia leaders deciding whether to observe a truce that has no monitors",
+      "Two governments deciding whether to keep a border ceasefire after an incident"
+    ],
+    "matrix": {"rows": ["Hold the ceasefire", "Break it"], "cols": ["Hold the ceasefire", "Break it"], "payoffs": [[[2, 2], [-3, 1]], [[1, -3], [-1, -1]]]},
+    "strategies": [
+      "Set up a joint monitoring team, so each side can see that the other is holding the ceasefire.",
+      "Respond to a violation with a proportionate, announced step, which keeps the ceasefire from collapsing.",
+      "Agree on a short review date, so both sides can extend the truce while trust builds."
+    ],
+    "pitfalls": [
+      "Breaking the ceasefire to get ahead of a rival who you think will break it.",
+      "Retaliating beyond the original violation, which starts an escalation spiral."
+    ],
+    "matrix_note": "simplified: a ceasefire coordination form with chosen payoffs; the numbers are not measured casualties or gains"
+  },
+  {
+    "id": "debate-attendance-frontrunner",
+    "name": "Debate Attendance and the Frontrunner",
+    "category": "Simultaneous, campaign strategy, debates",
+    "summary": "A frontrunner can attend a televised debate or skip it, and the challenger can attack or hold back. Skipping can look like fear, but attending can give the challenger a chance to win.",
+    "how_it_works": "The frontrunner attends or skips. The challenger attacks or does not. A frontrunner who attends while the challenger attacks gains some ground. If the frontrunner skips, the challenger gains more, whether or not they attack. The solver finds one stable outcome: the frontrunner attends and the challenger attacks.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "no", "communication": "no"},
+    "domains": ["politics", "games"],
+    "examples": [
+      "A party leader deciding whether to take part in a televised debate against a rising challenger",
+      "A challenger deciding whether to use the debate to attack a well-known incumbent"
+    ],
+    "matrix": {"rows": ["Attend the debate", "Skip the debate"], "cols": ["Challenger attacks", "Challenger does not attack"], "payoffs": [[[0, 1], [2, 0]], [[-1, 1], [1, 0]]]},
+    "strategies": [
+      "Prepare for the attacks you expect, and answer each with a fact rather than a repeat of the claim.",
+      "As a challenger, pick the attack that the audience will remember, and keep it short.",
+      "Agree the debate format in advance, so neither side can change the rules at the last minute."
+    ],
+    "pitfalls": [
+      "Skipping the debate and letting the challenger define you unanswered.",
+      "Attacking on a point that does not hurt the frontrunner, which loses the audience."
+    ],
+    "matrix_note": "simplified: illustrative numbers chosen to show the frontrunner's choice; they are not measured poll shifts"
+  },
+  {
+    "id": "primary-moderate-or-extreme",
+    "name": "Primary Election: Moderate or Extreme",
+    "category": "Simultaneous, party primaries, positioning",
+    "summary": "A candidate can take a moderate or an extreme position in a party primary. Extreme positions win the base, but moderate ones win the general election.",
+    "how_it_works": "Two candidates in a primary each choose a moderate or extreme position. Extremes win the most active voters, but if both are extreme, neither gains much against the other. The stable outcome is both moderate, which wins the general election and matches the median voter.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "no", "communication": "no"},
+    "domains": ["politics", "government"],
+    "examples": [
+      "Two candidates for a party nomination deciding whether to court the base or the centre",
+      "A challenger deciding whether to campaign to the left or the right of an incumbent"
+    ],
+    "matrix": {"rows": ["Moderate position", "Extreme position"], "cols": ["Moderate position", "Extreme position"], "payoffs": [[[1, 1], [2, -1]], [[-1, 2], [0, 0]]]},
+    "strategies": [
+      "Win the primary with a clear message, then shift toward the centre before the general election.",
+      "Test the positions with focus groups before committing, so you know which voters respond.",
+      "Keep your record consistent, since voters punish candidates who change positions too often."
+    ],
+    "pitfalls": [
+      "Locking into an extreme position in the primary, which makes the general election hard to win.",
+      "Assuming the base will not notice a shift to the centre."
+    ],
+    "matrix_note": "simplified: a primary and general-election form with chosen payoffs; the numbers are not measured vote shares"
+  },
+  {
+    "id": "government-budget-trust",
+    "name": "Government Spending and Market Trust",
+    "category": "Simultaneous, fiscal policy, credibility",
+    "summary": "A government chooses to keep spending or to cut it, and markets decide whether to trust its debt. Confidence keeps borrowing cheap, while doubt makes it expensive.",
+    "how_it_works": "The government spends or cuts, and markets trust or doubt its debt. Spending with trust is a good outcome for both. Spending that markets doubt is costly for the government. Cutting with trust gives a smaller but stable result. The solver finds a pure outcome where spending and trust both hold.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "imperfect", "payoff": "mixed", "enforcement": "no", "communication": "yes", "commitment": "yes"},
+    "domains": ["economy", "government", "politics"],
+    "examples": [
+      "A finance minister deciding whether to announce a deficit plan before bond markets react",
+      "A central bank deciding whether to back a government's borrowing programme"
+    ],
+    "matrix": {"rows": ["Keep spending", "Cut spending"], "cols": ["Markets trust", "Markets doubt"], "payoffs": [[[2, 2], [-2, 0]], [[1, 1], [0, -1]]]},
+    "strategies": [
+      "Publish a credible medium-term fiscal path with independent checks, so markets can see the plan.",
+      "Use a rule, such as a debt ceiling, that binds future governments as well.",
+      "Explain spending decisions in advance, so markets do not have to guess the government's intent."
+    ],
+    "pitfalls": [
+      "Making promises that are not backed by a plan, which markets quickly see through.",
+      "Cutting suddenly in a crisis, which can deepen the downturn it was meant to fix."
+    ],
+    "matrix_note": "simplified: a credibility form chosen to show how trust matters; the numbers are not measured yields or budgets"
+  },
+  {
+    "id": "coalition-confidence-vote",
+    "name": "Coalition Confidence Vote",
+    "category": "Simultaneous, coalition politics, government survival",
+    "summary": "A small party in a coalition can support the government or withdraw its support. The government can concede to keep the party or hold firm and risk a new election.",
+    "how_it_works": "The small party supports the government or withdraws. The government concedes or holds firm. If the party supports and the government holds firm, the party gets nothing and the government survives. If the party withdraws, the government must concede to survive. The stable outcomes have one side giving way, so the party's leverage depends on how much it is willing to risk.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "yes", "communication": "yes"},
+    "domains": ["politics", "government"],
+    "examples": [
+      "A small coalition partner threatening to vote against a budget unless its demands are met",
+      "A government deciding whether to give a junior party its cabinet post or call an election"
+    ],
+    "matrix": {"rows": ["Support the government", "Withdraw support"], "cols": ["Government concedes", "Government holds firm"], "payoffs": [[[1, 1], [0, 2]], [[2, 0], [-1, -1]]]},
+    "strategies": [
+      "Agree a written coalition agreement with clear rewards for support, so both sides know what concessions mean.",
+      "Offer a small, visible concession early, which keeps the coalition stable without a crisis.",
+      "If you are the small party, make your demand specific and time-limited, so it can be met."
+    ],
+    "pitfalls": [
+      "Threatening to withdraw support without being ready to go to an election.",
+      "Holding firm on every demand, which can bring down a government that was otherwise stable."
+    ],
+    "matrix_note": "simplified: a coalition bargaining form with chosen payoffs; the numbers are not measured seats or political costs"
+  },
+  {
+    "id": "vote-buying-secret-ballot",
+    "name": "Vote Buying and the Secret Ballot",
+    "category": "Simultaneous, corruption, secret voting",
+    "summary": "A candidate can offer money for votes, and a voter can accept or report the offer. Secret ballots make buying votes hard to enforce, but reporting can pay when the buyer is caught.",
+    "how_it_works": "The candidate offers money or does not. The voter accepts or reports the offer. If the offer is accepted, the candidate wins the vote and the voter gains money. If the offer is reported, the candidate is punished and the voter gets a reward. Two stable outcomes exist: the offer is accepted, or no offer is made, so there is nothing to report.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "imperfect", "payoff": "mixed", "enforcement": "yes", "communication": "no"},
+    "domains": ["politics", "government", "everyday"],
+    "examples": [
+      "A local candidate offering cash to voters in a low-income district",
+      "A voter deciding whether to report a payment offer to the election commission"
+    ],
+    "matrix": {"rows": ["Offer money", "Do not offer"], "cols": ["Voter accepts", "Voter reports"], "payoffs": [[[1, 1], [-3, 1]], [[0, 0], [0, 0]]]},
+    "strategies": [
+      "Publish a clear hotline for reporting offers, with protection for the person who reports.",
+      "Make the cost to the candidate of an offer higher, through fines and disqualification.",
+      "Teach voters that a secret ballot protects their choice, so an offer is not needed to know how they voted."
+    ],
+    "pitfalls": [
+      "Treating a small payment as harmless, when it still breaks election rules.",
+      "Assuming no one will report, which leaves offers unchecked."
+    ],
+    "matrix_note": "simplified: an illustrative corruption form with chosen payoffs; the numbers are not measured payments or penalties"
+  },
+  {
+    "id": "third-party-spoiler",
+    "name": "Third-Party Spoiler",
+    "category": "Simultaneous, electoral competition, third candidates",
+    "summary": "A third-party candidate can run and split votes from a main party. A main party can move toward the third party's voters or ignore them.",
+    "how_it_works": "The third party runs a candidate or stays out. The main party moves toward the third party's voters or does not. If the third party runs and the main party does not move, the spoiler takes votes from the main party. If the main party moves, the third party gains little by running. The stable outcome is the third party staying out while the main party moves.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "no", "communication": "no"},
+    "domains": ["politics", "government"],
+    "examples": [
+      "A green party deciding whether to field a candidate against a centre-left party",
+      "A main party deciding whether to adopt the policies of a rising third party"
+    ],
+    "matrix": {"rows": ["Run a third-party candidate", "Stay out"], "cols": ["Main party moves toward them", "Main party does not move"], "payoffs": [[[0, 2], [2, 0]], [[1, 1], [1, 1]]]},
+    "strategies": [
+      "If you are the third party, decide early on the one issue you can move the main party on, and campaign on it.",
+      "If you are the main party, adopt the parts of the third party's platform that you can deliver.",
+      "Consider a fusion or endorsement deal, which gives the third party influence without a split vote."
+    ],
+    "pitfalls": [
+      "Running a third candidate who splits the vote and hands the election to the opponent.",
+      "Ignoring the third party's voters until they turn into a serious threat."
+    ],
+    "matrix_note": "simplified: a spoiler form chosen to show the split-vote problem; the numbers are not measured vote shares"
+  },
+  {
+    "id": "international-aid-conditionality",
+    "name": "International Aid and Reform Conditions",
+    "category": "Simultaneous, aid, conditionality",
+    "summary": "A donor can give aid or withhold it, and a recipient can carry out reforms or not. Aid tied to reform works when both sides trust each other to keep the deal.",
+    "how_it_works": "The donor gives aid or withholds it. The recipient reforms or does not. If the donor gives aid and the recipient reforms, both gain. Aid without reform wastes money, and reform without aid leaves the recipient short of funds. The stable outcome is aid given and reform carried out, which both sides want.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "imperfect", "payoff": "common-interest", "enforcement": "yes", "communication": "yes", "commitment": "yes"},
+    "domains": ["government", "politics", "economy"],
+    "examples": [
+      "A lender tying a loan to anti-corruption reforms in a developing country",
+      "A donor releasing aid in stages, as each reform milestone is met"
+    ],
+    "matrix": {"rows": ["Give aid", "Withhold aid"], "cols": ["Recipient reforms", "Recipient does not reform"], "payoffs": [[[2, 2], [-2, 0]], [[0, 2], [0, 0]]]},
+    "strategies": [
+      "Release aid in tranches, each linked to a verified reform, so both sides can see progress.",
+      "Use independent monitors for the reforms, so the recipient and donor share the same facts.",
+      "Give the recipient a clear path to meeting the conditions, which makes reform the easier choice."
+    ],
+    "pitfalls": [
+      "Giving aid in one lump sum, which removes the reason to reform.",
+      "Setting conditions that cannot be met in the time given, which pushes the recipient to ignore them."
+    ],
+    "matrix_note": "simplified: a common-interest form chosen to show how conditions help; the numbers are not measured outcomes"
+  },
+  {
+    "id": "press-leak-to-journalist",
+    "name": "Leaks to the Press",
+    "category": "Simultaneous, information, leaks and publication",
+    "summary": "An official can leak information to a journalist or keep it secret, and the journalist can publish or hold back. Publication can expose wrongdoing, but a leak that is not published does harm to the source.",
+    "how_it_works": "The official leaks or keeps the information secret. The journalist publishes or holds the story. If the leak is published, the official is exposed and the story gets out. If the journalist holds back, the source is at risk and nothing changes. Two stable outcomes exist: a published leak, or secrecy with no story.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "imperfect", "payoff": "mixed", "enforcement": "no", "communication": "yes"},
+    "domains": ["government", "politics", "society"],
+    "examples": [
+      "A civil servant passing evidence of a budget overspend to a reporter",
+      "A reporter deciding whether to publish a leaked document before checking it"
+    ],
+    "matrix": {"rows": ["Leak", "Keep it secret"], "cols": ["Journalist publishes", "Journalist holds back"], "payoffs": [[[2, 2], [-2, 0]], [[0, -1], [0, 0]]]},
+    "strategies": [
+      "Document the evidence carefully before a leak, so the story stands up.",
+      "Agree with the journalist in advance on how the source will be protected.",
+      "Use official channels first where they exist, and leak only if they fail."
+    ],
+    "pitfalls": [
+      "Leaking without checking the facts, which can expose a source to harm for a story that falls apart.",
+      "Holding a story too long, which lets the leak lose its value."
+    ],
+    "matrix_note": "simplified: an information-disclosure form chosen to show the publication decision; the numbers are not measured harms or benefits"
+  }
+]

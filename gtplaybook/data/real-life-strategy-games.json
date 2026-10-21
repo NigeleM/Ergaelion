@@ -1,0 +1,242 @@
+[
+  {
+    "id": "ride-hailing-surge-pricing",
+    "name": "Ride-Hailing Surge Pricing",
+    "category": "Simultaneous, platform pricing, two-sided market",
+    "summary": "A ride platform chooses between fixed fares and surge pricing at peak times, and drivers choose whether to go online. Surge pricing draws drivers in, but riders may leave.",
+    "how_it_works": "The platform keeps fixed fares or surges. Drivers go online or stay offline. Surge pricing pays drivers more when many go online, and fixed fares keep riders on the platform. The pure outcome has the platform surging while drivers stay offline, which is worse for the platform than the fixed-fare outcome it expected.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "no", "communication": "no"},
+    "domains": ["business", "economy", "everyday"],
+    "examples": [
+      "A taxi app deciding whether to raise fares during a rainstorm",
+      "A delivery platform deciding how much to pay couriers at lunchtime"
+    ],
+    "matrix": {"rows": ["Fixed fares", "Surge pricing"], "cols": ["Drivers go online", "Drivers stay offline"], "payoffs": [[[2, 2], [0, 0]], [[3, 1], [1, 3]]]},
+    "strategies": [
+      "Publish the surge rule in advance, so drivers can plan and riders can see the price before they book.",
+      "Pay a guaranteed minimum to drivers at peak times, so they do not stay offline waiting for a surge.",
+      "Cap surges, which keeps the platform's riders while still drawing in drivers."
+    ],
+    "pitfalls": [
+      "Surging without telling drivers, which makes them stay offline the next time.",
+      "Assuming one price fits both riders and drivers, when each side responds to it differently."
+    ],
+    "matrix_note": "simplified: illustrative numbers chosen to show the platform and driver trade-off; they are not measured fares or earnings"
+  },
+  {
+    "id": "car-price-negotiation",
+    "name": "Car Price Negotiation",
+    "category": "Simultaneous, bargaining, price offers",
+    "summary": "A buyer offers a low price or the seller's asking price, and the seller accepts or holds out. Each side wants the other to give way first.",
+    "how_it_works": "The buyer offers a low price or the asking price. The seller accepts or refuses to move. A low offer that the seller accepts is good for the buyer, and holding out at the asking price keeps the seller's margin when the buyer offers the full price. The stable outcome is the buyer's low offer, which the seller would prefer to refuse.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "imperfect", "payoff": "mixed", "enforcement": "no", "communication": "yes", "bargaining": "yes"},
+    "domains": ["business", "everyday", "economy"],
+    "examples": [
+      "A buyer offering below the sticker price on a used car",
+      "A tenant haggling over a deposit before signing a lease"
+    ],
+    "matrix": {"rows": ["Offer a low price", "Offer the asking price"], "cols": ["Seller accepts", "Seller holds out"], "payoffs": [[[3, 1], [0, 0]], [[1, 3], [2, 2]]]},
+    "strategies": [
+      "Find out the seller's walk-away price first, using comparable sales as evidence.",
+      "Make a clear, reasoned offer and be ready to walk away, which signals that you will not overpay.",
+      "Negotiate on the total cost, including fees and warranty, rather than only the headline price."
+    ],
+    "pitfalls": [
+      "Offering a low price that is insulting, so the seller stops talking to you.",
+      "Revealing how much you can pay, which removes your bargaining room."
+    ],
+    "matrix_note": "simplified: a bargaining form with chosen payoffs; the numbers are not measured prices or margins"
+  },
+  {
+    "id": "dating-first-message",
+    "name": "Dating: Who Sends the First Message",
+    "category": "Simultaneous, signalling, social interaction",
+    "summary": "Two people who like each other must decide whether to send the first message. Waiting avoids the risk of rejection but can leave both silent.",
+    "how_it_works": "You send a first message or wait, and the other person replies or stays silent. A reply after a message leaves both happy. Waiting while the other also waits leaves both with nothing. Sending first is the stable choice for the one who wants the match most, and it is worth more than the risk of silence when the other is likely to reply.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "imperfect", "payoff": "mixed", "enforcement": "no", "communication": "yes"},
+    "domains": ["everyday"],
+    "examples": [
+      "Deciding whether to send the first text after a second date",
+      "Waiting for a match on a dating app to write first"
+    ],
+    "matrix": {"rows": ["Send the first message", "Wait for them"], "cols": ["They reply", "They stay silent"], "payoffs": [[[3, 3], [-1, 0]], [[1, 1], [0, 0]]]},
+    "strategies": [
+      "Send a short, specific message that is easy to answer, such as a question about something you both mentioned.",
+      "Accept silence after one follow-up as an answer, rather than messaging again and again.",
+      "If you are unsure of their interest, ask a friend who knows them, not a third party's guess."
+    ],
+    "pitfalls": [
+      "Waiting indefinitely for them to move first, which often ends the chance altogether.",
+      "Sending a long message that is hard to reply to, which lowers the chance of an answer."
+    ],
+    "matrix_note": "simplified: illustrative numbers chosen to show the first-move problem; they are not measured response rates"
+  },
+  {
+    "id": "crowdfunding-threshold",
+    "name": "Crowdfunding Threshold",
+    "category": "Simultaneous, coordination, threshold goods",
+    "summary": "A project is funded only if enough backers pledge. Backing alone is a waste, but backing together makes the project happen, so backers must expect each other to pledge.",
+    "how_it_works": "You back the project or hold your money. If both back it, both get the good result. Backing alone loses money, and holding back when others back gets nothing extra. Two stable outcomes exist: everyone backs, or nobody does, so expectations decide the result.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "no", "communication": "yes"},
+    "domains": ["economy", "business", "society"],
+    "examples": [
+      "Deciding whether to pledge to a community project that needs a set number of backers",
+      "Choosing whether to fund a shared software library that only gets built if enough users pay"
+    ],
+    "matrix": {"rows": ["Back the project", "Hold your money"], "cols": ["Others back it", "Others hold"], "payoffs": [[[2, 2], [-1, 0]], [[0, -1], [0, 0]]]},
+    "strategies": [
+      "Set a pledge deadline and a clear funding goal, so backers can see whether the threshold will be met.",
+      "Offer a refund if the goal is missed, which makes backing safe.",
+      "Publish the list of early backers, which gives others evidence that the threshold is within reach."
+    ],
+    "pitfalls": [
+      "Backing without checking that the goal is close, which can leave your money tied up in a failed project.",
+      "Waiting for others to pledge first, which can keep the project from ever reaching its goal."
+    ],
+    "matrix_note": "simplified: a threshold coordination form with chosen payoffs; the numbers are not measured pledges or returns"
+  },
+  {
+    "id": "airline-overbooking",
+    "name": "Airline Overbooking",
+    "category": "Simultaneous, revenue management, no-shows",
+    "summary": "An airline can sell more seats than it has, to cover passengers who do not show up. If too many show, some are bumped and everyone is worse off.",
+    "how_it_works": "The airline overbooks or sells exactly the seats it has. Passengers all show up, or some do not. Overbooking pays when some passengers fail to show, and costs the airline and passengers when everyone shows. The solver finds two stable outcomes, one that overbooks and one that sells exactly, depending on what the airline expects of passengers.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "imperfect", "payoff": "mixed", "enforcement": "no", "communication": "no"},
+    "domains": ["business", "economy"],
+    "examples": [
+      "An airline deciding how many extra tickets to sell on a full flight",
+      "A train operator choosing how many reservations to accept for a busy service"
+    ],
+    "matrix": {"rows": ["Overbook the seats", "Sell exactly the seats"], "cols": ["Everyone shows up", "Some do not show"], "payoffs": [[[-1, -1], [2, 2]], [[1, 1], [0, 0]]]},
+    "strategies": [
+      "Compensate bumped passengers generously and early, which makes them more willing to give up a seat.",
+      "Use past no-show data for each route, so the overbooking level matches what passengers actually do.",
+      "Ask for volunteers before boarding, rather than picking passengers by force."
+    ],
+    "pitfalls": [
+      "Overbooking a full flight with no data, which can leave several passengers bumped on a busy day.",
+      "Assuming passengers will never all show up, which is exactly when overbooking fails."
+    ],
+    "matrix_note": "simplified: illustrative numbers chosen to show the overbooking trade-off; they are not measured no-show rates or compensation costs"
+  },
+  {
+    "id": "stock-bubble-ride-or-exit",
+    "name": "Market Bubble: Ride It or Exit",
+    "category": "Simultaneous, speculation, expectations",
+    "summary": "Investors buy a rising asset and hope to sell before the crash. Each gains while others keep buying, and each loses if all rush out at once.",
+    "how_it_works": "You buy and hold or sell now, and others keep buying or sell. Holding while others buy pays well. Selling early is safe when others sell too. The stable outcomes are everyone holding, which is risky, or everyone selling, which is cautious. Which one prevails depends on expectations rather than on the asset's value.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "imperfect", "payoff": "mixed", "enforcement": "no", "communication": "no"},
+    "domains": ["economy", "business"],
+    "examples": [
+      "Investors deciding whether to hold a fast-rising tech stock or sell before others do",
+      "Homebuyers deciding whether to buy in a rising market or wait"
+    ],
+    "matrix": {"rows": ["Buy and hold", "Sell now"], "cols": ["Others keep buying", "Others sell"], "payoffs": [[[2, 2], [-2, -1]], [[0, 1], [1, 1]]]},
+    "strategies": [
+      "Decide in advance on a sale price or a date, so you are not driven by what others do.",
+      "Watch for signs that prices are rising faster than the underlying earnings or rents.",
+      "Diversify, so one collapse does not decide your overall position."
+    ],
+    "pitfalls": [
+      "Assuming you will sell in time, when everyone else plans the same exit.",
+      "Following the crowd because others are buying, which makes the bubble bigger."
+    ],
+    "matrix_note": "simplified: illustrative numbers chosen to show expectations driving the outcome; they are not measured returns or prices"
+  },
+  {
+    "id": "startup-compete-or-merge",
+    "name": "Startups: Compete or Merge",
+    "category": "Simultaneous, competition and mergers, market structure",
+    "summary": "Two startups in one market can compete for customers or merge. Competing wastes money on both sides, but a merger only pays if the other startup agrees.",
+    "how_it_works": "Each startup competes or proposes a merger. If both compete, both lose money on the price war. If both merge, the combined firm does well. If one merges and the other competes, the competitor takes the customers. Two stable outcomes exist, both competing and both merging, and the one reached depends on what each expects.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "no", "communication": "yes"},
+    "domains": ["business", "economy"],
+    "examples": [
+      "Two delivery start-ups deciding whether to join forces or fight for the same routes",
+      "Two software firms in one niche weighing a merger against a race to win customers"
+    ],
+    "matrix": {"rows": ["Compete", "Propose a merger"], "cols": ["Compete", "Propose a merger"], "payoffs": [[[0, 0], [2, -1]], [[-1, 2], [3, 3]]]},
+    "strategies": [
+      "Open talks early and set terms that both can accept, so the merger is a shared decision.",
+      "Compete only on a clear, short-term opportunity, and keep the option of a merger open.",
+      "Check competition rules before a merger, so the deal is not blocked later."
+    ],
+    "pitfalls": [
+      "Assuming the other firm will merge first, which can lead to a costly price war.",
+      "Proposing a merger that is one-sided, which the other firm will refuse."
+    ],
+    "matrix_note": "simplified: a stylised merger and competition form with chosen payoffs; the numbers are not measured profits"
+  },
+  {
+    "id": "basketball-foul-end-game",
+    "name": "Basketball: Foul or Defend at the End",
+    "category": "Simultaneous, sports strategy, time pressure",
+    "summary": "A team leading near the end of a game can foul to stop the clock, or defend cleanly. The trailing team can attack or try to run the clock out.",
+    "how_it_works": "The leading team fouls or defends. The trailing team drives to score or holds the ball. A clean defence is strongest when the trailing team has to hurry, so both sides settle on the choice that the other least expects. The pure outcome is a clean defence against a team that holds the ball.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "yes", "communication": "no"},
+    "domains": ["games", "everyday"],
+    "examples": [
+      "A leading team deciding whether to foul in the last seconds",
+      "A trailing team deciding whether to take a quick shot or hold the ball"
+    ],
+    "matrix": {"rows": ["Foul to stop the clock", "Defend cleanly"], "cols": ["Attack and drive", "Hold the ball"], "payoffs": [[[1, -1], [-1, 1]], [[0, 0], [2, 2]]]},
+    "strategies": [
+      "Count the time left and the fouls available before deciding, since a foul gives free throws.",
+      "Mix your choices so the other side cannot predict the next play.",
+      "As a trailing team, get a good shot early in the clock, rather than waiting until it is too late."
+    ],
+    "pitfalls": [
+      "Fouling too early and giving away free throws without need.",
+      "Falling into a pattern that the other team reads and exploits."
+    ],
+    "matrix_note": "simplified: a stylised end-of-game form chosen to show the trade-off; the numbers are not measured probabilities of winning"
+  },
+  {
+    "id": "loyalty-discount-switching",
+    "name": "Loyalty Discount and Customer Switching",
+    "category": "Simultaneous, retention pricing, customer switching",
+    "summary": "A shop can offer a loyalty discount to keep customers, and customers can stay or switch to a rival. Discounts cost the shop money, but losing a customer costs more.",
+    "how_it_works": "The shop offers a discount or none. The customer stays or switches. Without a discount the customer may stay, but the shop gains more when the customer stays. Discounts pay off when they stop the switch. The stable outcome is no discount with the customer staying, which is worse for the customer than a discount would have been.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "repeated", "information": "perfect", "payoff": "mixed", "enforcement": "no", "communication": "no"},
+    "domains": ["business", "economy"],
+    "examples": [
+      "A coffee shop deciding whether to give regulars a free drink after ten visits",
+      "A phone company deciding whether to match a rival's offer for a loyal customer"
+    ],
+    "matrix": {"rows": ["Offer a loyalty discount", "No discount"], "cols": ["Customer stays", "Customer switches"], "payoffs": [[[2, 2], [0, 1]], [[3, 1], [1, 0]]]},
+    "strategies": [
+      "Reward loyalty with something that costs you little but matters to the customer, such as priority service.",
+      "Target discounts at customers who are at risk of switching, rather than giving them to everyone.",
+      "Track which customers have switched, so the discount is aimed where it works."
+    ],
+    "pitfalls": [
+      "Discounting everyone, which costs money from customers who would have stayed anyway.",
+      "Withholding any reward, which can leave loyal customers open to a rival's offer."
+    ],
+    "matrix_note": "simplified: illustrative numbers chosen to show the retention trade-off; they are not measured margins or switching rates"
+  },
+  {
+    "id": "open-source-contribution",
+    "name": "Open-Source Contribution",
+    "category": "Simultaneous, public goods, volunteer maintenance",
+    "summary": "Users of an open-source library can contribute code and fixes, or use it for free. If everyone free-rides, maintainers burn out and the project fails.",
+    "how_it_works": "A user contributes or free-rides, and the maintainers keep maintaining or quit. Contributing helps the project, and maintainers stay when they see contributions. Free-riding is cheaper for users, so a project with many users and few contributors is fragile. The stable outcome has users free-riding while the maintainers keep going, which can run out.",
+    "traits": {"players": "two", "timing": "simultaneous", "interaction": "one-shot", "information": "perfect", "payoff": "mixed", "enforcement": "no", "communication": "yes"},
+    "domains": ["business", "society", "everyday"],
+    "examples": [
+      "A company using a free library without sending a single fix upstream",
+      "A volunteer maintainer deciding whether to keep reviewing pull requests"
+    ],
+    "matrix": {"rows": ["Contribute", "Free-ride"], "cols": ["Maintainers keep going", "Maintainers quit"], "payoffs": [[[2, 2], [-1, 0]], [[3, 1], [0, 0]]]},
+    "strategies": [
+      "Pay a small sponsorship or fund the maintainers of the libraries your work depends on.",
+      "Contribute a bug report or a documentation fix, which costs little and helps the maintainers most.",
+      "Set clear project rules for contributions, so maintainers do not have to answer everything alone."
+    ],
+    "pitfalls": [
+      "Assuming someone else will fix the bug, which leaves the project to a few maintainers.",
+      "Demanding features without helping, which pushes maintainers to quit."
+    ],
+    "matrix_note": "simplified: illustrative numbers chosen to show the public-goods problem of maintenance; they are not measured effort or pay"
+  }
+]

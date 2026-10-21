@@ -269,7 +269,10 @@
         ]
       ]
     },
-    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (value 2, cost 4, so Hawk against Hawk scores (2 - 4) / 2)"
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form (value 2, cost 4, so Hawk against Hawk scores (2 - 4) / 2)",
+    "sources": [
+      "Checked: Maynard Smith and Price, The Logic of Animal Conflict, Nature 246 (1973): 15-18"
+    ]
   },
   {
     "id": "vaccination-free-riding",
@@ -337,7 +340,8 @@
     "pitfalls": [
       "Assuming high uptake will continue without maintaining trust and access.",
       "Treating a rare side effect as a reason to ignore the much larger benefit."
-    ]
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "climate-treaty-public-goods",
@@ -405,7 +409,8 @@
     "pitfalls": [
       "Assuming a large, voluntary agreement will hold without penalties or incentives.",
       "Setting targets that everyone can agree to on paper but that no one has the means to meet."
-    ]
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "standards-war-network-effects",
@@ -472,7 +477,8 @@
     "pitfalls": [
       "Assuming superior technology wins by default.",
       "Locking users in so tightly that they quickly look for alternatives."
-    ]
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "insurance-moral-hazard",

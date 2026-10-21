@@ -1,0 +1,470 @@
+[
+  {
+    "id": "climate-club-coordination",
+    "name": "Climate Club: Join or Stay Out",
+    "category": "Simultaneous, coordination, public goods",
+    "summary": "Countries can join a climate club that cuts emissions only when enough members join. Joining together is best for both, but joining alone leaves a country exposed.",
+    "how_it_works": "Two countries each join the club or stay out. If both join, both gain. If one joins alone, it bears the cost while the other free-rides on its effort. If both stay out, both keep the status quo. Two stable outcomes exist, so the question is which one each country expects the other to pick.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": [
+      "environment",
+      "politics",
+      "government"
+    ],
+    "examples": [
+      "Two neighbouring countries deciding whether to join a shared emissions agreement",
+      "Two firms in one supply chain agreeing to cut a common pollutant together"
+    ],
+    "matrix": {
+      "rows": [
+        "Join the club",
+        "Stay out"
+      ],
+      "cols": [
+        "Join the club",
+        "Stay out"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Make joining conditional on a credible partner: agree a date, and a trigger that both sides can check.",
+      "Start with a small commitment that the other side can see, so each side learns the other is joining.",
+      "Offer early joiners a rule that rewards them, so the joint outcome becomes the one both expect."
+    ],
+    "pitfalls": [
+      "Waiting for the other country to move first, which keeps both in the status quo.",
+      "Joining alone and expecting others to follow without any evidence that they will."
+    ],
+    "matrix_note": "simplified: illustrative numbers that show a coordination structure with two stable outcomes; the numbers are chosen, not measured"
+  },
+  {
+    "id": "green-tech-invest-or-wait",
+    "name": "Green Technology: Invest or Wait",
+    "category": "Simultaneous, anti-coordination, public goods",
+    "summary": "Investing in clean technology is costly for the one who invests alone, but waiting is worst for both when neither invests. Each side would rather the other pay first.",
+    "how_it_works": "Each side invests or waits. If both invest, both gain. Waiting while the other invests gives the waiter the best payoff, because it gets the benefit without the cost. If both wait, the damage is largest. The stable outcomes have one side investing and the other waiting.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": [
+      "environment",
+      "economy",
+      "government"
+    ],
+    "examples": [
+      "Two countries deciding whether to fund a shared battery or grid project first",
+      "Two utilities deciding whether to build low-carbon capacity before the other does"
+    ],
+    "matrix": {
+      "rows": [
+        "Invest",
+        "Wait"
+      ],
+      "cols": [
+        "Invest",
+        "Wait"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            -2,
+            -2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Put a dated promise in writing before investing, so the other side's investment is a fact you can check.",
+      "Share cost estimates early, so neither side has to guess the other's price.",
+      "Propose that one side invests first and the other matches the commitment in a later round."
+    ],
+    "pitfalls": [
+      "Waiting because the other side will bear the cost, which can leave both waiting in the worst outcome.",
+      "Bluffing about refusing to invest to force the other side, which risks the mutual-wait outcome."
+    ],
+    "matrix_note": "simplified: the numbers are chosen to give the chicken structure, with mutual waiting as the worst outcome; they are not measured costs or benefits"
+  },
+  {
+    "id": "groundwater-pumping",
+    "name": "Shared Aquifer: Pump or Restrain",
+    "category": "Simultaneous, shared resource, non-zero-sum",
+    "summary": "Two farmers draw on one aquifer. Pumping more brings a private gain, but when both pump the water falls and both lose.",
+    "how_it_works": "Each farmer chooses to restrain or to pump. Pumping pays more whatever the other does, so both pump. The result is worse for both than mutual restraint, which keeps the aquifer full.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": [
+      "environment",
+      "economy",
+      "everyday"
+    ],
+    "examples": [
+      "Two farms on one water table deciding how much to pump in a dry season",
+      "Two fishing boats on one shared fishery deciding how many fish to take"
+    ],
+    "matrix": {
+      "rows": [
+        "Restrain",
+        "Pump"
+      ],
+      "cols": [
+        "Restrain",
+        "Pump"
+      ],
+      "payoffs": [
+        [
+          [
+            4,
+            4
+          ],
+          [
+            1,
+            6
+          ]
+        ],
+        [
+          [
+            6,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Agree a cap per farmer and check the wells together.",
+      "Trade pumping rights, so the amount taken is set in advance rather than raced for.",
+      "Make the game repeated and visible, so that pumping now brings retaliation later."
+    ],
+    "pitfalls": [
+      "Pumping first to beat the neighbour, which guarantees the shared loss.",
+      "Assuming the aquifer will recover on its own without a plan to limit use."
+    ],
+    "matrix_note": "simplified: a prisoner's-dilemma form chosen to show a tragedy of a shared resource; the numbers are not measured"
+  },
+  {
+    "id": "illegal-fishing-patrol",
+    "name": "Illegal Fishing and Patrol Zones",
+    "category": "Simultaneous, zero-sum, mixed strategies",
+    "summary": "A fishing boat chooses a zone to fish, and a patrol chooses a zone to watch. If the patrol watches the zone the boat fishes, the boat is caught, so neither side can keep one choice safely.",
+    "how_it_works": "The boat and the patrol choose zones at the same time. The boat gains when it fishes in a zone the patrol is not watching, and loses when it is caught. The game is zero-sum, and its equilibrium mixes the two zones equally for both sides.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "zero-sum",
+      "enforcement": "yes",
+      "communication": "no"
+    },
+    "domains": [
+      "environment",
+      "military",
+      "government"
+    ],
+    "examples": [
+      "A coastguard choosing which of two fishing grounds to patrol on a given night",
+      "A wildlife ranger choosing which of two reserve entrances to watch"
+    ],
+    "matrix": {
+      "rows": [
+        "Fish zone A",
+        "Fish zone B"
+      ],
+      "cols": [
+        "Patrol zone A",
+        "Patrol zone B"
+      ],
+      "payoffs": [
+        [
+          [
+            -2,
+            2
+          ],
+          [
+            1,
+            -1
+          ]
+        ],
+        [
+          [
+            1,
+            -1
+          ],
+          [
+            -2,
+            2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Patrol unpredictably: vary zones and times, since a fixed rota is easy to read.",
+      "Fish where the patrol has not been recently, if you can see its pattern.",
+      "Use cheap sensors or public reports to shift the odds, instead of only adding boats."
+    ],
+    "pitfalls": [
+      "Repeating the same zone each night, which the other side will learn.",
+      "Watching only one zone and leaving the other open for the whole season."
+    ],
+    "matrix_note": "simplified: a zero-sum matching form with chosen values; the structure is exact, and the mixed equilibrium is one half in each zone"
+  },
+  {
+    "id": "norm-enforcement-free-riders",
+    "name": "Punishing Free-Riders",
+    "category": "Simultaneous, enforcement, second-order public goods",
+    "summary": "A norm of contributing only lasts if someone is willing to punish those who free-ride. Punishing is costly, so the enforcer may prefer to let it pass, and the norm then fades.",
+    "how_it_works": "You choose to contribute to a shared good or to free-ride. Another member chooses to punish free-riders, which costs them something and hurts the free-rider, or to let it pass. Free-riding pays when nobody punishes, and punishing pays only when someone free-rides. With these payoffs, neither pure pair is stable, so each side mixes.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "yes",
+      "communication": "no"
+    },
+    "domains": [
+      "society",
+      "everyday",
+      "government"
+    ],
+    "examples": [
+      "A neighbour deciding whether to call out someone who never helps with a shared bin area",
+      "A club member deciding whether to challenge a member who skips their share of the work"
+    ],
+    "matrix": {
+      "rows": [
+        "Contribute",
+        "Free-ride"
+      ],
+      "cols": [
+        "Punish free-riders",
+        "Let it pass"
+      ],
+      "payoffs": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            -1,
+            -1
+          ],
+          [
+            2,
+            -2
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Make punishment cheap and clear, such as a short, public reminder, so enforcing the norm costs little.",
+      "Use a repeated setting where a reputation for enforcing matters, which makes letting free-riders pass costly.",
+      "Give credit to members who enforce, so the cost of enforcement is shared."
+    ],
+    "pitfalls": [
+      "Assuming a norm holds without anyone willing to enforce it.",
+      "Punishing harshly and in public, which can make enforcers stop acting."
+    ],
+    "matrix_note": "simplified: the numbers are chosen to show the enforcement problem, not measured; the lesson is in the mixed equilibrium, which has no stable pure pair"
+  },
+  {
+    "id": "forest-corridor-conservation",
+    "name": "Forest Corridor Conservation",
+    "category": "Simultaneous, conservation, habitat linking",
+    "summary": "Two landowners on either side of a forest can protect a wildlife corridor between their land or clear it. The corridor only works if both protect it, so the choice is a coordinated one.",
+    "how_it_works": "Each landowner protects the corridor or clears it. If both protect, the corridor works and both gain from the wildlife and the land value. If one clears while the other protects, the corridor is broken and the clearing owner gains a little more. If both clear, nothing is protected. The solver finds that mutual protection is the stable outcome.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "common-interest",
+      "enforcement": "no",
+      "communication": "yes"
+    },
+    "domains": [
+      "environment",
+      "government",
+      "everyday"
+    ],
+    "examples": [
+      "Two farms on either side of a river valley deciding whether to keep a hedgerow corridor",
+      "Two councils agreeing to protect a green link between two towns"
+    ],
+    "matrix": {
+      "rows": [
+        "Protect the corridor",
+        "Clear the land"
+      ],
+      "cols": [
+        "Protect the corridor",
+        "Clear the land"
+      ],
+      "payoffs": [
+        [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            -1
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Sign a shared conservation agreement with a payment for the protected land.",
+      "Start with the stretch both can protect now, and extend the corridor once it works.",
+      "Share monitoring data, so both owners see the corridor is in use."
+    ],
+    "pitfalls": [
+      "Clearing your strip while expecting the neighbour to keep theirs, which breaks the whole corridor.",
+      "Protecting only the parts that are easy, which leaves a gap that defeats the corridor."
+    ],
+    "matrix_note": "simplified: a coordinated conservation form with chosen payoffs; the numbers are not measured land values or wildlife counts"
+  },
+  {
+    "id": "bystander-intervention",
+    "name": "Bystander Intervention",
+    "category": "Simultaneous, diffusion of responsibility, helping",
+    "summary": "When someone needs help in a crowd, each bystander can step in or stay back. The more people watching, the less each feels responsible, so help often does not come at all.",
+    "how_it_works": "Each bystander helps or waits. If both help, the person is helped and both gain some credit. If one helps alone, that person bears the effort, and the other free-rides on it. If both wait, the person gets no help. Two stable outcomes exist: both help, or both wait, so the group's expectations decide.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": [
+      "society",
+      "everyday"
+    ],
+    "examples": [
+      "A passenger collapsing on a crowded train while others look away",
+      "A minor accident on a busy street where drivers assume someone else will call for help"
+    ],
+    "matrix": {
+      "rows": [
+        "Help",
+        "Wait"
+      ],
+      "cols": [
+        "Help",
+        "Wait"
+      ],
+      "payoffs": [
+        [
+          [
+            2,
+            2
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    "strategies": [
+      "Pick one person in the crowd and name them, which removes the diffusion.",
+      "Make a specific request to a named person, rather than a general call for help.",
+      "Act first, since a clear first move makes the others more likely to follow."
+    ],
+    "pitfalls": [
+      "Assuming someone else will call or help, which can leave the person with no help at all.",
+      "Waiting to see what others do, which can make the whole group freeze."
+    ],
+    "matrix_note": "simplified: a diffusion-of-responsibility form with chosen payoffs; the numbers are not measured response rates"
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "abatement-public-good",
+    "name": "Pollution Abatement as a Public Good",
+    "category": "Simultaneous, public goods, three levels",
+    "summary": "Each firm chooses how much to abate its pollution. Abatement is costly to the firm that does it, but the cleaner air helps both. Several stable levels of abatement exist, and the highest is not always reached.",
+    "how_it_works": "Each firm chooses no abatement, some abatement or full abatement. A firm's payoff rises with the total abatement of both firms and falls with its own cost, which rises faster than its share of the benefit. Each firm's best reply depends on what the other does, so more than one pair of choices is stable.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": ["environment", "economy", "government"],
+    "examples": [
+      "Two neighbouring factories choosing how far to cut a shared smoke or effluent",
+      "Two utilities deciding how much to clean up a shared river"
+    ],
+    "matrix": {
+      "rows": ["No abatement", "Some abatement", "Full abatement"],
+      "cols": ["No abatement", "Some abatement", "Full abatement"],
+      "payoffs": [
+        [[0, 0], [3, 2], [6, 2]],
+        [[2, 3], [5, 5], [8, 5]],
+        [[2, 6], [5, 8], [8, 8]]
+      ]
+    },
+    "strategies": [
+      "Agree a common target and a way to measure each side's abatement, so that both move together.",
+      "Pay for abatement jointly, so the cost of one firm's clean-up is shared with the firm that gains.",
+      "Start with the level both can afford to hold, then raise it in steps that the other can verify."
+    ],
+    "pitfalls": [
+      "Assuming the other firm will abate fully, and then doing less yourself.",
+      "Treating the first stable level you find as the best one, when a higher level would benefit both."
+    ],
+    "matrix_note": "simplified: a quadratic-cost form chosen to show several stable levels of a public good; the numbers are not measured"
+  },
+  {
+    "id": "fishing-catch-race",
+    "name": "Fishing Fleets Racing for the Catch",
+    "category": "Simultaneous, common resource, quantity competition",
+    "summary": "Two fleets choose how much to catch from one fishery. Each extra fish lowers the price for both, so each fleet catches more than the pair would agree to, and both end up poorer.",
+    "how_it_works": "Each fleet catches one, two or three units. The price falls as the total catch rises, and a fleet's profit is its catch times the price. Each fleet's best reply is to catch more when the other catches less, so the stable outcome is the heavy catch by both, which is worse for both than a lighter, shared catch.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": ["environment", "economy"],
+    "examples": [
+      "Two boats choosing how many trips to make to the same fishing ground",
+      "Two harvesting cooperatives selling into one market for the same timber"
+    ],
+    "matrix": {
+      "rows": ["Catch 1 unit", "Catch 2 units", "Catch 3 units"],
+      "cols": ["Catch 1 unit", "Catch 2 units", "Catch 3 units"],
+      "payoffs": [
+        [[0, 0], [0, 7], [0, 12]],
+        [[7, 0], [6, 6], [5, 10]],
+        [[12, 0], [10, 5], [8, 8]]
+      ]
+    },
+    "strategies": [
+      "Agree a total catch and a split of it, and check the landings together.",
+      "Limit trips or seasons, so each fleet's effort is set by the rule rather than by the race.",
+      "If a rule is not possible, expect the heavy catch and plan for lower prices."
+    ],
+    "pitfalls": [
+      "Catching more to get ahead of the other fleet, which lowers the price for both.",
+      "Assuming the stock will hold up without a limit on the total catch."
+    ],
+    "matrix_note": "exact: each cell follows from the rule that profit is catch times a price of ten minus the total catch; the mixed prices are chosen for whole numbers"
+  },
+  {
+    "id": "shared-norm-convention",
+    "name": "Choosing a Shared Norm",
+    "category": "Simultaneous, coordination, three conventions",
+    "summary": "Two people must settle on one convention, such as how to greet, file, or share a space. Each prefers a different one, but they gain most by matching, so the question is which convention they both expect.",
+    "how_it_works": "Each person picks convention A, B or C. Matching gives both a payoff, and each person also gets a small bonus for their own favourite. Matching on the favourite of the other is worth less to the person who was hoping for a different one, so the stable outcomes are the matched pairs.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": ["society", "everyday", "politics"],
+    "examples": [
+      "Two colleagues choosing one shared filing system for a joint project",
+      "Two neighbours settling how to share a bin area that each would arrange differently"
+    ],
+    "matrix": {
+      "rows": ["Convention A", "Convention B", "Convention C"],
+      "cols": ["Convention A", "Convention B", "Convention C"],
+      "payoffs": [
+        [[3, 2], [1, 1], [1, 0]],
+        [[0, 0], [2, 3], [0, 0]],
+        [[0, 0], [0, 1], [2, 2]]
+      ]
+    },
+    "strategies": [
+      "Say your preferred convention early, then offer to match the other person's on one point to settle it.",
+      "Look for a convention that is focal for both, such as the one already in use nearby.",
+      "Accept a convention you like less when it is the one the other person expects, because matching is worth more than winning."
+    ],
+    "pitfalls": [
+      "Insisting on your favourite, which can leave both with no shared norm at all.",
+      "Assuming the other person will guess your preference without a clear signal."
+    ],
+    "matrix_note": "simplified: a three-convention coordination form with a small preference bonus, chosen to show several stable norms; the numbers are not measured"
+  },
+  {
+    "id": "relationship-investment-holdup",
+    "name": "Relationship Investment and Hold-Up",
+    "category": "Simultaneous, investment, hold-up problem",
+    "summary": "Two partners invest in a project that only works between them. Each invests less than the pair would like, because the other could later claim the gain.",
+    "how_it_works": "Each partner chooses to invest nothing, a little or a lot. Investment raises both partners' gains, but the investment is specific to the relationship, so its value is shared. Each partner's best reply is to invest less when the other invests less, so the stable outcome is a modest investment by both.",
+    "traits": {
+      "players": "two",
+      "timing": "simultaneous",
+      "interaction": "one-shot",
+      "information": "perfect",
+      "payoff": "mixed",
+      "enforcement": "no",
+      "communication": "no"
+    },
+    "domains": ["work", "business", "economy"],
+    "examples": [
+      "A supplier and a manufacturer each deciding how much to tailor their systems to the other",
+      "Two co-founders deciding how much time to put into a shared product before the split of equity is settled"
+    ],
+    "matrix": {
+      "rows": ["Invest nothing", "Invest a little", "Invest a lot"],
+      "cols": ["Invest nothing", "Invest a little", "Invest a lot"],
+      "payoffs": [
+        [[0, 0], [1, 1], [2, 0]],
+        [[1, 1], [2, 2], [3, 1]],
+        [[0, 2], [1, 3], [2, 2]]
+      ]
+    },
+    "strategies": [
+      "Write the split of the gains into the contract before investing, so the investment is protected.",
+      "Invest in steps, each one tied to a verified result, so a partner who holds back cannot take the whole gain.",
+      "Share ownership of the specific assets, so both sides keep the value of the investment."
+    ],
+    "pitfalls": [
+      "Investing a lot while the terms are open, which hands the other partner the power to claim the gain.",
+      "Assuming that good faith will hold the deal together without any written terms."
+    ],
+    "matrix_note": "simplified: a hold-up form chosen to show under-investment; the numbers are not measured"
+  }
+]

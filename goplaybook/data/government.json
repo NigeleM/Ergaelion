@@ -642,7 +642,8 @@
     "pitfalls": [
       "Assuming a rival's build-up is aimed at you without checking.",
       "Matching every move so that the race escalates indefinitely."
-    ]
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "asymmetric-insurgency",

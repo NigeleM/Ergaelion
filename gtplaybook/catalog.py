@@ -15,7 +15,8 @@ from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 AREAS_FILE = "areas.json"
-NON_GAME_FILES = (AREAS_FILE, "simulations.json", "problems.json", "setup-help.json", "guide.json", "keywords.json", "tools.json", "help.txt", "combinations.json", "engine-games.json")
+TOPICS_FILE = "topics.json"
+NON_GAME_FILES = (AREAS_FILE, TOPICS_FILE, "simulations.json", "problems.json", "setup-help.json", "guide.json", "keywords.json", "tools.json", "help.txt", "combinations.json", "engine-games.json")
 
 # Every trait a scenario or game can declare, and its allowed values.
 TRAITS = {
@@ -110,6 +111,11 @@ def load_areas(data_dir=DATA_DIR, home=None):
     overlay = Path(home or playbook_home()) / AREAS_FILE
     path = overlay if overlay.exists() else Path(data_dir) / AREAS_FILE
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_topics(data_dir=DATA_DIR):
+    """The topics: groups of games by what they are about, such as business or military."""
+    return json.loads((Path(data_dir) / TOPICS_FILE).read_text(encoding="utf-8"))
 
 
 def safe_name(text):

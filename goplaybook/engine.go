@@ -18,6 +18,9 @@ type engineGame struct {
 	Summary string `json:"summary"`
 	Rules   string `json:"rules"`
 	Engine  string `json:"engine"`
+	Game    string `json:"game"`
+	Policy  string `json:"policy"`
+	Rounds  int    `json:"rounds"`
 }
 
 const (
@@ -31,6 +34,16 @@ const (
 	blottoFronts = 3
 	patrolGates  = 3
 	patrolRounds = 12
+)
+
+const (
+	ultimatumCoins     = 10
+	ultimatumThreshold = 3 // the engine accepts an offer of at least this many coins
+	ultimatumRounds    = 5
+	beautyTop          = 100 // guesses run from 0 to this
+	beautyOpening      = 50  // the engine's forecast of your guess before you have guessed
+	beautyRounds       = 5
+	pennyRounds        = 20
 )
 
 var c4Order = [c4Cols]int{3, 2, 4, 1, 5, 0, 6}
@@ -106,10 +119,14 @@ func buildBlottoSplits() [][blottoFronts]int {
 }
 
 // playEngine runs one engine game. ask returns a line, or false at the end of input. say prints a line.
-func playEngine(game engineGame, ask func(string) (string, bool), say func(string)) {
+func playEngine(game engineGame, catalog []Game, ask func(string) (string, bool), say func(string)) {
 	say("\n" + game.Name)
 	say(game.Rules)
 	say("")
+	if game.Kind == "duel" {
+		playDuel(game, catalog, ask, say)
+		return
+	}
 	switch game.ID {
 	case "tic-tac-toe":
 		playTicTacToe(ask, say)
@@ -123,6 +140,12 @@ func playEngine(game engineGame, ask func(string) (string, bool), say func(strin
 		playBlotto(ask, say)
 	case "border-patrol":
 		playPatrol(ask, say)
+	case "ultimatum":
+		playUltimatum(ask, say)
+	case "beauty-contest":
+		playBeautyContest(ask, say)
+	case "matching-pennies":
+		playMatchingPennies(ask, say)
 	}
 }
 
@@ -634,12 +657,17 @@ func playRockPaperScissors(ask func(string) (string, bool), say func(string)) {
 	names := map[string]string{"r": "rock", "rock": "rock", "p": "paper", "paper": "paper", "s": "scissors", "scissors": "scissors"}
 	var history []string
 	you, engine := 0, 0
-	say("Enter r, p or s. q quits.")
+	say("Enter r, p or s. h for a hint, q quits.")
 	for round := 1; round <= rpsRounds; {
 		line, ok := readAnswer(ask, fmt.Sprintf("Round %d (r, p or s): ", round))
 		if !ok {
 			say("You left the game.")
 			return
+		}
+		if line == "h" {
+			reply := rpsEngineMove(history)
+			say(fmt.Sprintf("Hint: the engine will play %s. Play %s to beat it.", reply, rpsCounter[reply]))
+			continue
 		}
 		move, known := names[line]
 		if !known {
@@ -733,7 +761,7 @@ func joinSplit(split [blottoFronts]int) string {
 func playBlotto(ask func(string) (string, bool), say func(string)) {
 	var history [][blottoFronts]int
 	netTotal := 0
-	say(fmt.Sprintf("Send %d units across %d fronts, for example 2 2 2. q quits.", blottoUnits, blottoFronts))
+	say(fmt.Sprintf("Send %d units across %d fronts, for example 2 2 2. h for a hint, q quits.", blottoUnits, blottoFronts))
 	for round := 1; round <= blottoRounds; round++ {
 		var split [blottoFronts]int
 		for {
@@ -741,6 +769,18 @@ func playBlotto(ask func(string) (string, bool), say func(string)) {
 			if !ok {
 				say("You left the game.")
 				return
+			}
+			if line == "h" {
+				engineSplit := blottoEngineSplit(history)
+				best := blottoSplits[0]
+				bestNet := blottoNet(best, engineSplit)
+				for _, option := range blottoSplits[1:] {
+					if net := blottoNet(option, engineSplit); net > bestNet {
+						best, bestNet = option, net
+					}
+				}
+				say(fmt.Sprintf("Hint: the engine will send %s. %s does best against that.", joinSplit(engineSplit), joinSplit(best)))
+				continue
 			}
 			var valid bool
 			split, valid = parseBlottoSplit(line)
@@ -795,12 +835,16 @@ func patrolEngineGate(history []int) int {
 func playPatrol(ask func(string) (string, bool), say func(string)) {
 	var history []int
 	through := 0
-	say(fmt.Sprintf("Pick a gate from 1 to %d. q quits.", patrolGates))
+	say(fmt.Sprintf("Pick a gate from 1 to %d. h for a hint, q quits.", patrolGates))
 	for round := 1; round <= patrolRounds; {
 		line, ok := readAnswer(ask, fmt.Sprintf("Round %d gate: ", round))
 		if !ok {
 			say("You left the game.")
 			return
+		}
+		if line == "h" {
+			say("Hint: the guard watches the gate you have used most, so pick the gate you have used least.")
+			continue
 		}
 		n := 0
 		if isDigits(line) {
@@ -829,8 +873,201 @@ func playPatrol(ask func(string) (string, bool), say func(string)) {
 	}
 }
 
+// wholeNumber reads a line of digits, and reports false unless it is a whole number at most max.
+func wholeNumber(line string, max int) (int, bool) {
+	if !isDigits(line) {
+		return 0, false
+	}
+	n := 0
+	for _, r := range line {
+		n = n*10 + int(r-'0')
+		if n > max {
+			return 0, false
+		}
+	}
+	return n, true
+}
+
+// ---- Ultimatum: you offer the engine coins out of ten. It accepts an offer of at least its threshold.
+
+func ultimatumAccepts(engineShare int) bool {
+	return engineShare >= ultimatumThreshold
+}
+
+func playUltimatum(ask func(string) (string, bool), say func(string)) {
+	youTotal, engineTotal := 0, 0
+	say(fmt.Sprintf("Enter how many of the %d coins the engine gets. h for a hint, q quits.", ultimatumCoins))
+	for round := 1; round <= ultimatumRounds; {
+		line, ok := readAnswer(ask, fmt.Sprintf("Round %d (coins for the engine): ", round))
+		if !ok {
+			say("You left the game.")
+			return
+		}
+		if line == "h" {
+			say(fmt.Sprintf("Hint: offer the engine %d coins, the least it accepts. You keep %d.",
+				ultimatumThreshold, ultimatumCoins-ultimatumThreshold))
+			continue
+		}
+		share, valid := wholeNumber(line, ultimatumCoins)
+		if !valid {
+			say(fmt.Sprintf("Enter a whole number from 0 to %d.", ultimatumCoins))
+			continue
+		}
+		if ultimatumAccepts(share) {
+			youTotal += ultimatumCoins - share
+			engineTotal += share
+			say(fmt.Sprintf("The engine accepts. You keep %d coins, it gets %d.", ultimatumCoins-share, share))
+		} else {
+			say("The engine refuses. Neither of you gets anything this round.")
+		}
+		round++
+	}
+	say(fmt.Sprintf("You finished with %d coins, the engine with %d.", youTotal, engineTotal))
+	switch {
+	case youTotal > engineTotal:
+		say("You win.")
+	case engineTotal > youTotal:
+		say("The engine wins.")
+	default:
+		say("The match is drawn.")
+	}
+}
+
+// ---- Guess two thirds: the target is two thirds of the average of the two guesses, which is (you + engine) / 3.
+
+// beautyEngineGuess is two thirds of your average guess so far, in whole numbers.
+func beautyEngineGuess(history []int) int {
+	if len(history) == 0 {
+		return 2 * beautyOpening / 3
+	}
+	sum := 0
+	for _, guess := range history {
+		sum += guess
+	}
+	return 2 * sum / (3 * len(history))
+}
+
+func beautyTarget(you, engine int) int {
+	return (you + engine) / 3
+}
+
+func abs(n int) int {
+	if n < 0 {
+		return -n
+	}
+	return n
+}
+
+func playBeautyContest(ask func(string) (string, bool), say func(string)) {
+	var guesses []int
+	you, engine := 0, 0
+	say(fmt.Sprintf("Guess a whole number from 0 to %d. h for a hint, q quits.", beautyTop))
+	for round := 1; round <= beautyRounds; {
+		line, ok := readAnswer(ask, fmt.Sprintf("Round %d (0 to %d): ", round, beautyTop))
+		if !ok {
+			say("You left the game.")
+			return
+		}
+		engineGuess := beautyEngineGuess(guesses)
+		if line == "h" {
+			say(fmt.Sprintf("Hint: the engine will guess %d. About half of that, %d, lands closest to the target.",
+				engineGuess, engineGuess/2))
+			continue
+		}
+		guess, valid := wholeNumber(line, beautyTop)
+		if !valid {
+			say(fmt.Sprintf("Enter a whole number from 0 to %d.", beautyTop))
+			continue
+		}
+		guesses = append(guesses, guess)
+		target := beautyTarget(guess, engineGuess)
+		yours, theirs := abs(guess-target), abs(engineGuess-target)
+		var result string
+		switch {
+		case yours < theirs:
+			you++
+			result = "You win the round."
+		case theirs < yours:
+			engine++
+			result = "The engine wins the round."
+		default:
+			result = "Round drawn."
+		}
+		say(fmt.Sprintf("You guessed %d, the engine guessed %d. The target was %d. %s", guess, engineGuess, target, result))
+		round++
+	}
+	say(fmt.Sprintf("Final score: you %d, the engine %d, drawn %d.", you, engine, beautyRounds-you-engine))
+	switch {
+	case you > engine:
+		say("You win the match.")
+	case engine > you:
+		say("The engine wins the match.")
+	default:
+		say("The match is drawn.")
+	}
+}
+
+// ---- Matching pennies: the engine's coin differs from the call you have made most often.
+
+// pennyEngineCoin is the opposite of your most common call. Heads counts as your call when the calls are tied.
+func pennyEngineCoin(calls []string) string {
+	heads := 0
+	for _, call := range calls {
+		if call == "h" {
+			heads++
+		}
+	}
+	if heads >= len(calls)-heads {
+		return "t"
+	}
+	return "h"
+}
+
+func playMatchingPennies(ask func(string) (string, bool), say func(string)) {
+	var calls []string
+	you, engine := 0, 0
+	say("Call h or t. ? for a hint, q quits.")
+	for round := 1; round <= pennyRounds; {
+		line, ok := readAnswer(ask, fmt.Sprintf("Round %d (h or t): ", round))
+		if !ok {
+			say("You left the game.")
+			return
+		}
+		if line == "?" {
+			say("Hint: the engine shows the opposite of your most common call, so calling the less common one wins " +
+				"(tails, when tied). Mix your calls to stay unpredictable.")
+			continue
+		}
+		if line != "h" && line != "t" {
+			say("Enter h or t.")
+			continue
+		}
+		coin := pennyEngineCoin(calls)
+		calls = append(calls, line)
+		var result string
+		if line == coin {
+			you++
+			result = "You win the round."
+		} else {
+			engine++
+			result = "The engine wins the round."
+		}
+		say(fmt.Sprintf("You called %s, the engine showed %s. %s", line, coin, result))
+		round++
+	}
+	say(fmt.Sprintf("Final score: you %d, the engine %d.", you, engine))
+	switch {
+	case you > engine:
+		say("You win the match.")
+	case engine > you:
+		say("The engine wins the match.")
+	default:
+		say("The match is drawn.")
+	}
+}
+
 // cmdEngine lists the engine games, or plays one.
-func cmdEngine(args []string, _ []Game) error {
+func cmdEngine(args []string, catalog []Game) error {
 	games, err := loadEngineGames()
 	if err != nil {
 		return err
@@ -848,6 +1085,6 @@ func cmdEngine(args []string, _ []Game) error {
 	if err != nil {
 		return err
 	}
-	playEngine(game, readInput, func(text string) { fmt.Println(text) })
+	playEngine(game, catalog, readInput, func(text string) { fmt.Println(text) })
 	return nil
 }

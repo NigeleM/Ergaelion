@@ -87,7 +87,10 @@
       "Repeating a winning move, which a player who saw it will counter.",
       "Believing human randomness is good randomness; people avoid repeats and under-use some options."
     ],
-    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form"
+    "matrix_note": "exact: computed from the rules of the game, or its standard textbook form",
+    "sources": [
+      "From memory: Traditional game; formal treatment in von Neumann and Morgenstern (1944)"
+    ]
   },
   {
     "id": "tic-tac-toe-minimax",
@@ -287,7 +290,8 @@
     "pitfalls": [
       "Spending more than the prize because you have already invested.",
       "Entering a contest where many well-funded rivals compete, with no edge."
-    ]
+    ],
+    "matrix_note": "simplified: a standard form of this game, with illustrative values chosen to show the structure; the numbers are not measured"
   },
   {
     "id": "lanchester-combat",
@@ -354,7 +358,10 @@
       "Assuming numbers alone decide the outcome without considering how fighting works.",
       "Splitting forces to cover every point, which the enemy can defeat in detail."
     ],
-    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two forces; concentrating forces wins a battle against a spread force)"
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (two forces; concentrating forces wins a battle against a spread force)",
+    "sources": [
+      "Checked: Lanchester, Aircraft in Warfare: The Dawn of the Fourth Arm (London: Constable, 1916)"
+    ]
   },
   {
     "id": "secretary-problem",
@@ -421,7 +428,10 @@
       "Rejecting every option because none is perfect.",
       "Ignoring the benchmark and taking the first decent option before you have seen enough."
     ],
-    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)"
+    "matrix_note": "simplified: an illustrative form that shows the structure; the numbers are chosen, not measured (a reduced form: a two-choice model of the key decision in this game; it is a different, smaller game from the original, which the simulation plays move by move)",
+    "sources": [
+      "Checked: Gilbert and Mosteller, Recognizing the Maximum of a Sequence (1966)"
+    ]
   },
   {
     "id": "explore-exploit-bandit",

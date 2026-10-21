@@ -1,0 +1,52 @@
+[
+  {
+    "id": "work",
+    "name": "Work",
+    "summary": "Hiring, teamwork, promotion and incentives inside an organisation."
+  },
+  {
+    "id": "business",
+    "name": "Business",
+    "summary": "Pricing, competition, contracts, auctions and information between firms."
+  },
+  {
+    "id": "military",
+    "name": "Military",
+    "summary": "Force, deterrence, attack and defence, and the search for an enemy."
+  },
+  {
+    "id": "politics",
+    "name": "Politics",
+    "summary": "Elections, coalitions, lobbying and the survival of leaders."
+  },
+  {
+    "id": "government",
+    "name": "Government",
+    "summary": "Institutions and public policy: legislatures, voting and cooperation between states."
+  },
+  {
+    "id": "economy",
+    "name": "Economy",
+    "summary": "Markets, financial stability, expectations and risk."
+  },
+  {
+    "id": "society",
+    "name": "Society",
+    "summary": "Groups, norms, law, shared resources and how people learn from one another."
+  },
+  {
+    "id": "everyday",
+    "name": "Everyday life",
+    "summary": "Home, health, personal choices and ordinary disagreements between people."
+  },
+  {
+    "id": "environment",
+    "name": "Environment",
+    "summary": "Shared natural resources, pollution and public health."
+  },
+  {
+    "id": "games",
+    "name": "Games",
+    "summary": "Classic games, puzzles and parlour games, and the reasoning they teach."
+  }
+]

@@ -11,7 +11,7 @@ import shlex
 import sys
 
 from . import advisor, cli, keywords, record
-from .catalog import find_game, load_areas, playbook_home
+from .catalog import find_game, load_areas, load_topics, playbook_home
 from .scenario import describe
 from . import lineedit
 from .i18n import t
@@ -21,12 +21,12 @@ from shlex import quote
 VERSION = cli.VERSION
 
 # Commands that reuse the subcommand parser and handlers.
-DELEGATED = {"list", "show", "solve", "new", "template", "areas", "log", "record", "edit", "add-play", "sim", "engine", "problems", "setup", "guide", "chart", "disable", "enable", "check", "unlog", "theme", "repeat", "keywords"}
+DELEGATED = {"list", "show", "solve", "new", "template", "areas", "topics", "log", "record", "edit", "add-play", "sim", "engine", "problems", "setup", "guide", "chart", "disable", "enable", "check", "unlog", "theme", "repeat", "keywords"}
 
 
 COMMANDS = sorted(
     ["/" + name for name in ("list", "show", "advise", "set", "unset", "scenario", "clear", "solve", "new", "template",
-                             "areas", "log", "record", "edit", "add-play", "sim", "engine", "problems", "setup", "guide", "chart",
+                             "areas", "topics", "log", "record", "edit", "add-play", "sim", "engine", "problems", "setup", "guide", "chart",
                              "disable", "enable", "check", "unlog", "theme", "repeat", "keywords", "claude", "menu", "cls", "help", "quit")]
 )
 
@@ -349,7 +349,7 @@ def print_help():
     print("\n" + dim("Or just type a situation in plain English. The playbook matches it to games and gives the rules to play."))
 
 
-MENU_ITEMS = ["menu_games", "menu_simulations", "menu_engine", "menu_advise", "menu_solve", "menu_areas", "menu_guide",
+MENU_ITEMS = ["menu_games", "menu_simulations", "menu_engine", "menu_advise", "menu_solve", "menu_areas", "menu_topics", "menu_guide",
               "menu_records", "menu_repeat", "menu_claude", "menu_theme", "menu_quit"]
 
 
@@ -363,7 +363,7 @@ def print_menu():
 MENU_DETAILS = {
     "menu_games": "detail_games", "menu_simulations": "detail_simulations", "menu_engine": "detail_engine",
     "menu_advise": "detail_advise",
-    "menu_solve": "detail_solve", "menu_areas": "detail_areas", "menu_guide": "detail_guide",
+    "menu_solve": "detail_solve", "menu_areas": "detail_areas", "menu_topics": "detail_topics", "menu_guide": "detail_guide",
     "menu_records": "detail_records", "menu_repeat": "detail_repeat",
     "menu_theme": "detail_theme", "menu_claude": "detail_claude",
     "menu_quit": "detail_quit", "menu_command": "detail_command",
@@ -456,6 +456,38 @@ def _menu_families(session):
             _captured_view(session, "problems")
         else:
             _menu_family_games(session, areas[index])
+
+
+def _menu_topics(session):
+    """The topics: each one lists its games, which you can play or simulate."""
+    topics = load_topics()
+    items = [(topic["name"], topic["summary"]) for topic in topics]
+    while True:
+        index, _ = lineedit.pick(heading(t("pick_topic")), items)
+        if index < 0:
+            return
+        _menu_topic_games(session, topics[index])
+
+
+def _menu_topic_games(session, topic):
+    """List the games in a topic, each with its place in the families. Play and simulate work as in a family."""
+    from .sim import load_simulations
+
+    has_sim = {sim["id"] for sim in load_simulations()}
+    places = cli.game_locations()
+    games = cli.topic_games(session.games, topic["id"])
+    items = [(game["name"], places.get(game["id"], "") + ". " + game["summary"]) for game in games]
+    while True:
+        index, key = lineedit.pick(heading(topic["name"]), items, {"s": t("simulate"), "p": t("play")})
+        if index < 0:
+            return
+        game_id = games[index]["id"]
+        if key == "s":
+            _captured_view(session, _sim_line(game_id, game_id in has_sim, False))
+        elif key == "p":
+            _plain(session, _sim_line(game_id, game_id in has_sim, True))
+        else:
+            _captured_view(session, f"show {_quote(game_id)}")
 
 
 def _menu_family_games(session, family):
@@ -648,6 +680,8 @@ def _run_menu(session, back_quits):
             _ask_and_show(session, t("ask_matrix") + ": ", lambda text: f"solve {_quote(text)}")
         elif key == "menu_areas":
             _menu_families(session)
+        elif key == "menu_topics":
+            _menu_topics(session)
         elif key == "menu_guide":
             _menu_guide(session)
         elif key == "menu_records":
@@ -717,6 +751,9 @@ def _run_menu_typed(session):
         elif key == "menu_areas":
             text = input(t("ask_query") + ": ").strip()
             line = f"problems {quote(text)}" if text else "areas"
+        elif key == "menu_topics":
+            text = input(t("ask_topic") + ": ").strip()
+            line = f"topics {quote(text)}" if text else "topics"
         elif key == "menu_guide":
             mode = input(t("ask_guide") + ": ").strip()
             if mode == "1":
