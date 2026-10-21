@@ -44,7 +44,7 @@ jobs:
             goos: linux
             goarch: amd64
             ext: ""
-          - os: macos-latest
+          - os: macos-13
             goos: darwin
             goarch: amd64
             ext: ""
